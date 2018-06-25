@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Marc Friederich</title>
+  <style media="screen">
+
+  /* color sheme https://coolors.co/f7eae3-64b78e-59a37e-302f4d-120d31 */
+
+
+  /* fonts */
+  @font-face {
+    font-family: 'Patua One';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Patua One'), local('PatuaOne-Regular'), url(ZXuke1cDvLCKLDcimxB44_luFgxbuQ.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+    font-family: 'Cabin Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Cabin Condensed'), local('CabinCondensed-Regular'), url(nwpMtK6mNhBK2err_hqkYhHRqmwqZ-LYxnV18A.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+
+  html{
+    font-size: 18px;
+  }
+  body{
+    font-family: 'Cabin Condensed', sans-serif;
+    font-size: calc(0.8em + 1vw);
+    font-size: -webkit-calc(60% + 1vw);
+    background-color: #f7ece6;
+    /* background: radial-gradient(ellipse at center, #f7eae3 0%,#fff 100%); */
+    border-top: #3472c9 1vh solid;
+    margin: 0;
+    color: #052a3f;
+  }
+
+
+  a{
+    color: #2d62ad;
+    text-decoration-skip-ink: auto;
+    text-decoration: currentcolor underline;
+  }
+  a:hover{
+    color: #3472c9;
+  }
+  a:visited{
+    color: #533a9e;
+  }
+
+  main{
+    max-width: 60rem;
+    margin: auto;
+  }
+  .items{
+
+  }
+  .item{
+    display: block;
+    margin: 1rem 0;
+  }
+
+  @supports (display: grid) and (not (-ms-ime-align: auto)) {
+    .container{
+      display: grid;
+      width: 100%;
+      max-width: 100%;
+      grid-template-columns:
+      [full-start] minmax(1em, 1fr)
+      [main-start] minmax(0, 40em) [main-end]
+      minmax(1em, 1fr) [full-end];
+    }
+    .container>*{
+      grid-column: main;
+    }
+    .container-main{
+      grid-column: main;
+    }
+    .container-full{
+      grid-column:full;
+    }
+  }
+
+
+  .gallery{
+    margin-top: 1rem;
+    padding: 1rem 1rem 0.3rem 1rem;
+    line-height: 0;
+    column-width: 10em;
+    column-gap: 0px;
+    /* background-color: #052a3f; */
+  }
+  .gallery .item {
+    margin-top: 0
+  }
+  .gallery .item img{
+    width: 100%;
+    height: auto;
+  }
+
+
+/* Navigation */
+.a11y-navigation{
+  position: fixed;
+  z-index: 100;
+  top: 1em;
+  left: 1em;
+}
+.a11y-navigation ul li{
+  list-style: none;
+}
+header{
+  /* background-color: #6369d1; */
+  margin-bottom: 20vh;
+}
+header nav ul{
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-top: 1vh;
+}
+header nav li {
+  list-style: none;
+
+}
+header nav a{
+  display: block;
+  padding: 0.3em 0.3em ;
+  text-decoration: none;
+  font-family: 'Patua One', Andale Mono, cursive;
+  /* color: #315659; */
+  border-bottom: 0.1em solid transparent;
+  transition: 0.2s all ease-in-out;
+
+}
+header nav a:hover{
+  padding: 0em 0em ;
+  margin: 0.3em 0.3em ;
+  /* color: #315659; */
+  border-bottom: 0.09em solid currentcolor;
+}
+header nav .home a, header nav .current a{
+  color: #3472c9;
+}
+header nav .home a{
+  font-size: 140%;
+}
+@media (max-width: 600px) {
+  header{
+    margin-bottom: 5vh;
+  }
+  header nav ul{
+    margin: 1em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+
+
+
+/* A11Y */
+.sr-only{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+.sr-show-on-focus:focus{
+  z-index: 20;
+  width: auto;
+  min-width: 10em;
+  height: auto;
+  clip: auto;
+  background-color: #120d31;
+  padding: 0.4em 1em;
+  color: #fff;
+}
+
+
+  /* Typography */
+  h1, h2, h3, h4, h5{
+    font-family: 'Patua One', Andale Mono, cursive;
+  }
+  h1, .h1, .h-huge {
+    font-size: calc(2.8em + 2vw);
+    font-size: -webkit-calc(280% + 2vw);
+    line-height: 1.1em;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  h2, .h2 {
+    font-size: calc(1.2em + 1vw);
+    font-size: -webkit-calc(120% + 1vw);
+    line-height: 1.3em;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  h3, .h3 {
+    font-size: calc(0.9em + 1vw);
+    font-size: -webkit-calc(90% + 1vw);
+    font-weight: normal;
+    line-height: 1.3em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 70rem) {
+    body{
+      font-size: 1.5em;
+    }
+    h3{
+      font-size: 1.8rem;
+    }
+    h4, h5, h6, p{
+      font-size: 1.4rem;
+    }
+  }
+  p, ul, ol, pre, table, blockquote {
+    line-height: 1.43em;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  p + p, p + h2, p + h3, p + ul, ul + p, h2 + p, h3 + ol, h3 + ul, h2 + ol, h2 + ul{
+    margin-top: 0.8em;
+  }
+  h1 + h2, h2 + h3{
+    margin-top: 0.5em;
+  }
+  ul, ol{
+    margin-left: 0;
+    padding-left: 0;
+  }
+  ul li , ol li{
+    margin-bottom: 0.4em;
+  }
+  ul ul, ol ol, ul ol, ol ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  input, textarea, keygen, select, button{
+    font-size: 100%;
+  }
+
+  ul li{
+    list-style: square;
+  }
+  ol{
+    margin-left: -0.2em;
+  }
+  ol li{
+    padding-left: 0.2em;
+    list-style: decimal;
+  }
+  @media (max-width: 40em) {
+    ol, ul{
+      margin-left: 1em;
+    }
+  }
+
+  section{
+    margin-bottom: 3rem;
+  }
+
+
+  </style>
+</head>
+<body>
+  <nav class="a11y-navigation" aria-label="Accessibility navigation">
+  	  <ul>
+  	    <li>
+  	      <a class="sr-only sr-show-on-focus" accesskey="0" href="/" title="[Alt+0] Homepage">Homepage</a>
+  	    </li>
+  	    <li>
+  	      <a class="sr-only sr-show-on-focus" accesskey="1" href="#menu" title="[Alt+1] Website Navigation">Website Navigation</a>
+  	    </li>
+  	    <li>
+  	      <a class="sr-only sr-show-on-focus" accesskey="2" href="#main" title="[Alt+2] Skip to content">Skip to content</a>
+  	    </li>
+  	  </ul>
+  	</nav>
+    <header>
+      <nav role="menubar" id="menu">
+        <ul>
+          <li class="home"><a href="#Home">zufrieden.io/</a></li>
+          <li><a href="#Thoughts">Thoughts</a></li>
+          <li class="current"><a href="#Talks">Talks</a></li>
+          <li><a href="#Views">Views</a></li>
+          <li><a href="#About">About</a></li>
+        </ul>
+      </nav>
+    </header>
+  <main class="container">
+    <h1>
+      Hello, my name is Marc Friederich
+    </h1>
+    <h2>
+      Web enthousiast
+    </h2>
+    <section>
+      <p>
+        With over 20 years of web experience, Marc has carried out and managed all types of projects in the field. Since he has experience working all parts of the media production chain, he can take on many different roles when it comes to designing, developing, project management and quality control. He has a clear vision of what is required for each project, thanks to his expertise in human factors and ergonomics, usability, accessibility and technology.
+      </p>
+      <h3>About</h3>
+      I listen to podcast and like/fav some of them
+      https://www.breaker.audio/u/zufrieden
+    </section>
+    <section class="talks">
+      <h2>Talks</h2>
+      <div class="items">
+        <a class="item talk" href="#Web">
+          <h3>Web Blend Mix 2016 – i18n & l10n — Internationalisation & localisation</h3>
+          <span>Marc Friederich & Guillaume Berry</span>
+          <span>Nov 3th 2016, 10:00 - 11:30 </span>
+        </a>
+        <a class="item talk" href="#UX">
+          <h3>UX Romandie – i18n & l10n — Internationalisation & localisation</h3>
+          <span>Marc Friederich & Guillaume Berry</span>
+          <span>Tue, May 9th 2017, 19:00 - 20:00 </span>
+        </a>
+        <a class="item talk" href="#FrontendConference">
+          <h3>FrontendConference – i18n & l10n — Internationalisation & localisation</h3>
+          <span>Marc Friederich & Guillaume Berry</span>
+          <span>Tue, May 9th 2017, 19:00 - 20:00 </span>
+        </a>
+        <a class="item talk" href="#Locale">
+          <h3>Locale, Culture and Flag - Welcome in an i17ed world</h3>
+          <span></span>
+          <span>Tue, May 9th 2017, 19:00 - 20:00 </span>
+        </a>
+        <a class="item talk" href="#Build">
+          <h3>Build a HTML Presentations Directory in 2 Days - Slidedeck.io</h3>
+          <span>Frontend Conference</span>
+          <span>2013</span>
+        </a>
+        <a class="item talk" href="#Generate">
+          <h3>Generate Styleguides for Every Project</h3>
+          <span>A "Styleguide generated by default" approach makes your life easier. There is plenty of generator to help you document your components and have a future friendly code. Return of over 2 years experience, the talk shows a benchmark of styleguide generators.</span>
+          <span> Friday, August 29th , 11:00 - 12:00 </span>
+        </a>
+      </div>
+    </section>
+    <section>
+      <h2>Projects</h2>
+      <div class="items">
+        <a class="item project" href="#Interaction18">
+          <h3>Interaction18</h3>
+          <span>Styleguide and Static generated website</span>
+        </a>
+        <a class="item project" href="#Slidedeck">
+          <h3>Slidedeck.io</h3>
+          <span>A repository of great HTML presentations. It indexes HTML presentations hosted on github.</span>
+        </a>
+      </div>
+    </section>
+    <section>
+      <h2>Thoughts</h2>
+      <div class="items">
+        <a class="item thought" href="#Maintaining">
+          <h3>Maintaining Your Working Environment</h3>
+          <p>We all have our weapons of choice to code and design. I was a textmate addict and switched to SublimeText a few months ago.</p>
+        </a>
+        <a class="item thought" href="#Designing">
+          <h3>Designing a documentation made to last</h3>
+          <p>After building and talking about web Styleguide, pattern libraries and design systems</p>
+        </a>
+      </div>
+    </section>
+    <section class="photos container container-full">
+      <div class="container-main">
+        <h2>Pictures</h2>
+        <p>Travelling with my eyes open and trying to capture shades, light and mostly clouds. You can find my pictures on <a href="https://instagram.com/mfriederich" target="_blank">instagram</a></p>
+      </div>
+      <div class="items gallery container-full">
+        <a class="item photo" href="https://www.instagram.com/p/BcARwRdlfD3/?taken-by=mfriederich">
+          <img src="23969547_151533138801722_3164988600450285568_n.jpg" alt="">
+        </a>
+        <a class="item photo" href="https://www.instagram.com/p/BcR75dlARMR/?taken-by=mfriederich">
+          <img src="24327916_1645666035455346_3639202948988272640_n.jpg" alt="">
+        </a>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
