@@ -1,0 +1,34 @@
+baseURL = "http://zufrieden.io/"
+languageCode = "en-us"
+title = "zufrieden.io/"
+theme = "zufrieden"
+
+[params]
+    dateform            = "Mon Jan 02, 2006"
+    dateformfull        = "Mon Jan 2 2006 15:04:05 EST"
+    # favicon             = "/zufrieden"
+    homepage            = "zufrieden.io/"                        # What to call the home page link
+    galleryFolder       = "images/"                     # Where you've put your images, after "/content/gallery/"
+    clickablePhotos     = false                          # Allow links to the full size images
+    footerText          = ""
+
+# Metadata
+    description         = "Hello, my name is Marc Friederich"            # Max 160 characters show in search results
+    # twitterCard         = "summary_large_image"         # Card value “summary”, “summary_large_image”, “app”, or “player”
+    # primaryImage        = "/tn.png"                     # Image that shows on Twitter cards and OpenGraph links
+
+[[params.mainMenu]]
+    link = "/writing"
+    text = "Writing"
+
+[[params.mainMenu]]
+    link = "/talking"
+    text = "Talking"
+
+[[params.mainMenu]]
+    link = "/making-pictures"
+    text = "Making pictures"
+
+[[params.mainMenu]]
+    link = "/about"
+    text = "About"

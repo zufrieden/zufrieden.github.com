@@ -1,0 +1,48 @@
+{{ partial "head.html" . }}
+<body>
+  {{ if .Site.Params.mainMenu }}
+    {{ partial "top_menu.html" (dict "Page" . "show_back_menu_item" false) }}
+  {{ end }}
+  <main class="container">
+    <section>
+      <h3>
+        {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006") }}
+      </h3>
+      <h1>
+        {{ .Title }}
+      </h1>
+      {{ if .Params.event }}
+        <h2>
+          {{ .Params.event }}
+        </h2>
+      {{ end }}
+    </section>
+    <section>
+      {{ .Content }}
+    </section>
+
+    {{ if .Params.video }}
+    <section>
+      <h2>Recording</h2>
+      <p>Also available here <a href="{{ .Params.video }}">{{ .Params.video }}</a></p>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" width="100%"  src="{{ .Params.video }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </section>
+    {{ end }}
+
+    {{ if .Params.slides }}
+    <section>
+      <h2>Slides</h2>
+      <p>Also available here <a href="{{ .Params.slides }}">{{ .Params.slides }}</a></p>
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="{{ .Params.slides }}" frameborder="0" allowfullscreen=""></iframe>
+      </div>
+    </section>
+    {{ end }}
+  </main>
+  <footer class="footer">
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+{{ partial "foot.html" . }}
