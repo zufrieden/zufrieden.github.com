@@ -115,62 +115,61 @@ main{
 
 /* Navigation */
 .a11y-navigation{
-position: fixed;
-z-index: 100;
-top: 1em;
-left: 1em;
+  position: fixed;
+  z-index: 100;
+  top: 1em;
+  left: 1em;
 }
 .a11y-navigation ul li{
-list-style: none;
+  list-style: none;
 }
 header{
-/* background-color: #6369d1; */
-margin-bottom: 20vh;
+  margin-bottom: 20vh;
 }
 header nav ul{
-display: flex;
-justify-content: center;
-align-items: baseline;
-flex-wrap: wrap;
-margin: 0;
-margin-top: 1vh;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin: 0;
+  margin-top: 1vh;
+  line-height: 1em;
 }
 header nav li {
-list-style: none;
-
+  list-style: none;
 }
 header nav a{
-display: block;
-padding: 0.3em 0.3em ;
-text-decoration: none;
-font-family: 'Patua One', Andale Mono, cursive;
-color: #052a3f;
-border-bottom: 0.1em solid transparent;
-transition: 0.2s all ease-in-out;
+  display: block;
+  padding: 0.3em 0.3em ;
+  text-decoration: none;
+  font-family: 'Patua One', Andale Mono, cursive;
+  color: #052a3f;
+  border-bottom: 0.1em solid transparent;
+  transition: 0.2s all ease-in-out;
 }
 header nav a:visited{
-color: #052a3f;
+  color: #052a3f;
 }
 header nav a:hover{
-padding: 0em 0em ;
-margin: 0.3em 0.3em ;
-border-bottom: 0.09em solid currentcolor;
+  padding: 0em 0em ;
+  margin: 0.3em 0.3em ;
+  border-bottom: 0.09em solid currentcolor;
 }
 header nav .home a, header nav .current a{
-color: #3472c9;
+  color: #3472c9;
 }
 header nav .home a{
-font-size: 140%;
+  font-size: 140%;
 }
 @media (max-width: 600px) {
-header{
-  margin-bottom: 5vh;
-}
-header nav ul{
-  margin: 1em;
-  flex-direction: column;
-  align-items: flex-start;
-}
+  header{
+    margin-bottom: 5vh;
+  }
+  header nav ul{
+    margin: 1em;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 
@@ -189,20 +188,21 @@ header nav ul{
   border: 0;
 }
 .sr-show-on-focus:focus{
-z-index: 20;
-width: auto;
-min-width: 10em;
-height: auto;
-clip: auto;
-background-color: #120d31;
-padding: 0.4em 1em;
-color: #fff;
+  z-index: 20;
+  width: auto;
+  min-width: 10em;
+  height: auto;
+  clip: auto;
+  background-color: #120d31;
+  padding: 0.4em 1em;
+  color: #fff;
 }
 
 
 /* Typography */
 h1, h2, h3, h4, h5{
   font-family: 'Patua One', Andale Mono, cursive;
+  word-wrap: break-word;
 }
 h1, .h1, .h-huge {
   font-size: calc(2.8em + 2vw);
