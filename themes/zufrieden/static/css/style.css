@@ -256,7 +256,7 @@ ul, ol{
   padding-left: 0;
 }
 ul li , ol li{
-  margin-bottom: 0.4em;
+  margin-bottom: 0.2em;
 }
 ul ul, ol ol, ul ol, ol ul {
   margin-top: 0px;
@@ -336,6 +336,19 @@ section{
 
 .tags a:hover{background:#3472c9;}
 .tags a:hover:before{border-color:transparent #3472c9 transparent transparent;}
+
+
+/* List-Icons Contact */
+.list-icons{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.list-icons li{
+  list-style: none;
+  text-align: center;
+  margin: 1em;
+}
 
 
 /* Embed responsive */
