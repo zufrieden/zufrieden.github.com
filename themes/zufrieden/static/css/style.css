@@ -350,6 +350,19 @@ section{
   margin: 1em;
 }
 
+/* Quotes */
+blockquote {
+  padding: 1rem;
+  margin: 2rem 0;
+  border: none;
+  border: solid 2px #052a3f;
+  box-shadow: 10px 10px 0 0 #052a3f;
+}
+blockquote p, blockquote h1, blockquote h2, blockquote h3, blockquote h4 {
+  /* font-family: 'Patua One', Andale Mono, cursive; */
+
+}
+
 
 /* Embed responsive */
 .embed-responsive .embed-responsive-item, .embed-responsive embed, .embed-responsive iframe, .embed-responsive object, .embed-responsive video {
@@ -360,6 +373,10 @@ section{
   height: 100%;
   width: 100%;
   border: 0;
+}
+.embed-responsive iframe{
+  /* border: 1px solid #3472c9; */
+  box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.6);
 }
 .embed-responsive {
     position: relative;

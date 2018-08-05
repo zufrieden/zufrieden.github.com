@@ -14,11 +14,22 @@
       {{ if .Params.event }}
         <h2>
           {{ .Params.event }}
+          {{ if .Params.location }} –
+              {{ .Params.location }}
+          {{ end }}
         </h2>
       {{ end }}
     </section>
     <section>
       {{ .Content }}
+      {{ if .Params.eventurl }}
+        <p>
+          🌍
+            <a href="{{ .Params.eventurl }}">
+              {{ .Params.eventurl }}
+            </a>
+          </p>
+      {{ end }}
     </section>
 
     {{ if .Params.video }}

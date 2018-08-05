@@ -1,13 +1,13 @@
 ---
-title: "i18n & l10n — Internationalisation & localisation"
-date: 2016-11-03T12:34:41+02:00
+title: "SÃ©lectionnez votre pays. Quelle est votre langueâ€‰?"
+date: 2017-05-09T19:00:00+02:00
 showDate: true
 draft: false
-event: Web Blend Mix 2016
-eventurl: https://www.blendwebmix.com/
-location: Lyon
+event: IxDA Lausanne
+eventurl: http://uxromandie.ch/internationalisation-localisation/index.html
+location: Lausanne
 slides: https://1810io.github.io/slides-i18n-l10n/
-video: https://www.youtube.com/embed/38B8v07K8kQ
+video:
 speakers: Marc Friederich & Guillaume Berry
 ---
 Sélectionnez votre pays. Quelle est votre langue ? Je veux que les chiffres soient formatés de cette manière. Quel est le fuseau horaire ? Je lis de droite à gauche.
