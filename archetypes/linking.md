@@ -1,8 +1,9 @@
 ---
 title: "{{ replace .Name "_" " " | title }}"
 date: {{ .Date }}
-showDate: true
+showDate: false
 draft: false
 tags: ["blog","dev"]
+link: https://
 description :
 ---

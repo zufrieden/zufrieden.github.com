@@ -3,6 +3,7 @@ title: "Maintaining your working environment"
 date: 2012-11-04T12:35:11-05:00
 showDate: true
 draft: false
+description: We all have our weapons of choice to code and design.
 tags: ["blog","dev"]
 ---
 

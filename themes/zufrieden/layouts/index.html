@@ -18,7 +18,7 @@
       <p>{{.Description}}</p>
       <a href="{{.Permalink}}">{{.LinkTitle}}</a>
       <div class="items">
-        {{ range .Data.Pages }}
+        {{ range first 6 .Data.Pages }}
           <a class="item" href="{{.Permalink}}">
             <h3>
               {{.Title}}

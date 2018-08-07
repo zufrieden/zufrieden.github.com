@@ -3,9 +3,9 @@ title: "My leadership cheatsheet"
 date: 2018-08-05T13:49:44+02:00
 showDate: true
 draft: false
+description: Writing down ideas and links to articles and found ressources.
 tags: ["leadership","learning"]
 ---
-### Writing down ideas and links to articles and found ressources.
 
 ### Seeking the right role for an Entrepeneur
 - becoming an observer instead of an active participant in your business

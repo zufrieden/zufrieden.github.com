@@ -22,6 +22,10 @@ theme = "zufrieden"
     text = "Writing"
 
 [[params.mainMenu]]
+    link = "/linking"
+    text = "Linking"
+
+[[params.mainMenu]]
     link = "/talking"
     text = "Talking"
 

@@ -1,5 +1,5 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "{{ replace .Name "_" " " | title }}"
 date: {{ .Date }}
 draft: true
 showDate: true
@@ -9,4 +9,5 @@ location:
 slides: http://zufrieden.github.io/slides-...
 video:
 speakers: Marc Friederich
+description :
 ---
