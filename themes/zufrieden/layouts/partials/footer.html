@@ -1,1 +1,65 @@
-{{ .Site.Params.footerText }}
+<style media="screen">
+footer{
+  margin-top: 1vh;
+  height: 40vh;
+  background-color: #052a3f;
+  position: relative;
+}
+.footer-icon{
+  font-size: 300%;
+  /* transform: rotate(180deg); */
+  text-align: center;
+  line-height: 40vh;
+}
+#footer-icon-hover, #footer-mail{
+  display: none;
+}
+#footer-mail{
+  position: absolute;
+  top: 22vh;
+  padding: 3vh;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 150%;
+}
+input.footer-switch{
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 40vh;
+  cursor: pointer;
+  box-shadow: none;
+  padding: 0;
+  margin: 0;
+}
+input.footer-switch:checked ~ #footer-icon-hover {
+  display: block;
+}
+input.footer-switch:checked ~ #footer-mail {
+  display: block;
+}
+input.footer-switch:checked ~ #footer-icon {
+  display: none;
+}
+</style>
+
+<footer>
+  <div id="footer-lamp">
+    <div id="footer-rope">
+      <div id="footer-lightbulb">
+        <input type="checkbox" class="footer-switch" name="switch" />
+        <label for="switch"></label>
+        <div id="footer-icon" class="footer-icon">
+          📨
+        </div>
+        <div id="footer-icon-hover" class="footer-icon">
+          💌
+        </div>
+        <a href="mailto:m@zufrieden.io" id="footer-mail">
+          m@zufrieden.io
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

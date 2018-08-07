@@ -22,16 +22,18 @@
                 {{.Title}}
               </h2>
             </a>
-            {{ if .Description }}
-            <h3>{{ .Description }}</h3>
-            {{ end }}
-            <p>
+            <h3>
+              {{ if .Description }}
+                {{ .Description }}
+              {{ end }}
               {{ if .Params.event }}
               {{ .Params.event }} –
               {{ end }}
               {{ if .Params.location }}
-              {{ .Params.location }} –
+              {{ .Params.location }}
               {{ end }}
+            </h3>
+            <p>
               {{ if .Params.showDate }}
               {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006")}}
               {{ end }}

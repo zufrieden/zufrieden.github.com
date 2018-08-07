@@ -19,6 +19,12 @@
           {{ end }}
         </h2>
       {{ end }}
+
+      {{ if .Params.speakers }}
+      <h3>
+        By {{ .Params.speakers }}
+      </h3>
+      {{ end }}
     </section>
     <section>
       {{ .Content }}

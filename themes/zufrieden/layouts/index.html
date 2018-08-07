@@ -15,8 +15,7 @@
     {{ range .Site.Sections }}
     <section>
       <h2>{{.Title}}</h2>
-      <p>{{.Description}}</p>
-      <a href="{{.Permalink}}">{{.LinkTitle}}</a>
+      <h3>{{.Description}}</h3>
       <div class="items">
         {{ range first 6 .Data.Pages }}
           <a class="item" href="{{.Permalink}}">
@@ -39,8 +38,10 @@
             </p>
           </a>
         {{ end }}
+        <a href="{{.Permalink}}" class="item">{{.LinkTitle}}</a>
       </div>
     </section>
     {{ end }}
   </main>
+  {{ partial "footer.html" }}
 </body>

@@ -29,6 +29,7 @@ body{
   border-top: #3472c9 1vh solid;
   margin: 0;
   color: #052a3f;
+  border-bottom: #052a3f 5vh solid;
 }
 
 
@@ -161,7 +162,7 @@ header nav .home a, header nav .current a{
 header nav .home a{
   font-size: 140%;
 }
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   header{
     margin-bottom: 5vh;
   }
@@ -252,11 +253,12 @@ h1 + h2, h2 + h3{
   margin-top: 0.5em;
 }
 ul, ol{
-  margin-left: 0;
-  padding-left: 0;
+  margin-left: 1em;
+  padding-left: 0em;
+  margin-bottom: 1em;
 }
 ul li , ol li{
-  margin-bottom: 0.2em;
+  margin-bottom: 0.3em;
 }
 ul ul, ol ol, ul ol, ol ul {
   margin-top: 0px;
@@ -270,18 +272,10 @@ input, textarea, keygen, select, button{
 ul li{
   list-style: square;
 }
-ol{
-  margin-left: -0.2em;
-}
 ol li{
-  padding-left: 0.2em;
   list-style: decimal;
 }
-@media (max-width: 40em) {
-  ol, ul{
-    margin-left: 1em;
-  }
-}
+
 
 section{
   margin-bottom: 3rem;
