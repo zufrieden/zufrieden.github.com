@@ -13,4 +13,4 @@ First I saw tweets about [beaker browser](https://beakerbrowser.com/) so I insta
   <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/rJ_WvfF3FN8" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
-Just to try this out, I configured this website on **dat://** too. [Setting DNS records](https://beakerbrowser.com/docs/guides/use-a-domain-name-with-dat#dat-dns-txt-records) is easy too.
+Just to try this out, I configured this website on **dat://**. [Setting DNS records](https://beakerbrowser.com/docs/guides/use-a-domain-name-with-dat#dat-dns-txt-records) is easy as adding my address b3ad7ca317fb128838497e911262d4b18be3a09e6d7545ff0aed6488d2db9938 in a TXT DNS record. So just visit my website on [dat://zufrieden.io](dat://zufrieden.io).
