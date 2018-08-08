@@ -1,65 +1,85 @@
 <style media="screen">
-footer{
+footer.snowy{
   margin-top: 1vh;
-  height: 40vh;
-  background-color: #052a3f;
+  height: 60vh;
+  background-color: #3472c9;
+  position: relative;
+  border-bottom: 6vh #fff solid;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+  width: 100%;
+}
+.floor_snow_bottom{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-top: -2.3vh;
+  border-width: 2.3vh 0 0 100vw;
+  border-color: transparent transparent transparent #f7ece6;
+  bottom:0;
   position: relative;
 }
-.footer-icon{
-  font-size: 300%;
-  /* transform: rotate(180deg); */
-  text-align: center;
-  line-height: 40vh;
-}
-#footer-icon-hover, #footer-mail{
-  display: none;
-}
-#footer-mail{
+.floor_sky_top{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-top: 0;
+  border-width: 0 0 2.3vh 100vw;
+  border-color: transparent transparent transparent #f7ece6;
+  top:0;
   position: absolute;
-  top: 22vh;
-  padding: 3vh;
-  text-align: center;
-  width: 100%;
-  box-sizing: border-box;
-  font-size: 150%;
 }
-input.footer-switch{
+.floor_snow_2{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20vh 0 0 100vw;
+  border-color: transparent transparent transparent #3C85EA;
   position: absolute;
-  opacity: 0;
-  width: 100%;
-  height: 40vh;
-  cursor: pointer;
-  box-shadow: none;
-  padding: 0;
-  margin: 0;
+  bottom:0;
 }
-input.footer-switch:checked ~ #footer-icon-hover {
-  display: block;
+.floor_snow{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 2.3vh 0 0 100vw;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  bottom:0;
 }
-input.footer-switch:checked ~ #footer-mail {
-  display: block;
+.floor_snow_top{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 1vh 0 0 100vw;
+  border-color: transparent transparent transparent #fff;
+  position: absolute;
+  bottom:0;
 }
-input.footer-switch:checked ~ #footer-icon {
-  display: none;
+.snowman{
+  position: absolute;
+  right:10vh;
+  bottom:0vh;
+  font-size: 10vh;
+  line-height: 8vh;
 }
+
 </style>
 
-<footer>
-  <div id="footer-lamp">
-    <div id="footer-rope">
-      <div id="footer-lightbulb">
-        <input type="checkbox" class="footer-switch" name="switch" />
-        <label for="switch"></label>
-        <div id="footer-icon" class="footer-icon">
-          📨
-        </div>
-        <div id="footer-icon-hover" class="footer-icon">
-          💌
-        </div>
-        <a href="mailto:m@zufrieden.io" id="footer-mail">
-          m@zufrieden.io
-        </a>
-      </div>
-    </div>
+<footer class="snowy">
+  <div class="floor_sky_top">
+  </div>
+  <div class="floor_snow_2">
+  </div>
+  <div class="floor_snow">
+  </div>
+
+  <div class="snowman">
+    ⛄️
+  </div>
+  <div class="floor_snow_top">
   </div>
 </footer>
+<div class="floor_snow_bottom">
+</div>
