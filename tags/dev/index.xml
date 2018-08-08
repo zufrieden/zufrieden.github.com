@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dev on zufrieden.io/</title>
+    <link>http://zufrieden.io/tags/dev/</link>
+    <description>Recent content in Dev on zufrieden.io/</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 08 Aug 2018 15:22:06 +0200</lastBuildDate>
+    
+	<atom:link href="http://zufrieden.io/tags/dev/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About dat:// to a distributed Web</title>
+      <link>http://zufrieden.io/writing/about_dat_to_a_distributed_web/</link>
+      <pubDate>Wed, 08 Aug 2018 15:22:06 +0200</pubDate>
+      
+      <guid>http://zufrieden.io/writing/about_dat_to_a_distributed_web/</guid>
+      <description>First I saw tweets about beaker browser so I installed it and then forget it. Then I saw this talk Imagine This: A Web Without Servers by Tara Vancil at JSConf EU 2018. And I remembered again. dat:// a protocol to allow a P2P web to exist. A concept of a fully distributed web where the architecture works without servers so to say or where every device may become a server.</description>
+    </item>
+    
+    <item>
+      <title>Maintaining your working environment</title>
+      <link>http://zufrieden.io/writing/2012-11-04-maintaining-your-working-environment/</link>
+      <pubDate>Sun, 04 Nov 2012 12:35:11 -0500</pubDate>
+      
+      <guid>http://zufrieden.io/writing/2012-11-04-maintaining-your-working-environment/</guid>
+      <description>It&amp;rsquo;s quite hard for a first post to choose a topic. I was used to blog a lot 6 years ago. My topics of choice were mainly webdesign, xhtml, css, my student life and so on. I stopped for many reasons (personal life, moving a year to finland, building my company) but since I like sharing things and collecting thoughs about by day and night work. I am here to share.</description>
+    </item>
+    
+  </channel>
+</rss>

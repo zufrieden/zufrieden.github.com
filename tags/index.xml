@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on zufrieden.io/</title>
+    <link>http://zufrieden.io/tags/</link>
+    <description>Recent content in Tags on zufrieden.io/</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 07 Aug 2018 16:43:37 +0200</lastBuildDate>
+    
+	<atom:link href="http://zufrieden.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ai</title>
+      <link>http://zufrieden.io/tags/ai/</link>
+      <pubDate>Tue, 07 Aug 2018 16:43:37 +0200</pubDate>
+      
+      <guid>http://zufrieden.io/tags/ai/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>http://zufrieden.io/tags/blog/</link>
+      <pubDate>Wed, 08 Aug 2018 15:22:06 +0200</pubDate>
+      
+      <guid>http://zufrieden.io/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dat</title>
+      <link>http://zufrieden.io/tags/dat/</link>
+      <pubDate>Wed, 08 Aug 2018 15:22:06 +0200</pubDate>
+      
+      <guid>http://zufrieden.io/tags/dat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dev</title>
+      <link>http://zufrieden.io/tags/dev/</link>
+      <pubDate>Wed, 08 Aug 2018 15:22:06 +0200</pubDate>
+      
+      <guid>http://zufrieden.io/tags/dev/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Leadership</title>
+      <link>http://zufrieden.io/tags/leadership/</link>
+      <pubDate>Sun, 05 Aug 2018 14:20:37 +0200</pubDate>
+      
+      <guid>http://zufrieden.io/tags/leadership/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning</title>
+      <link>http://zufrieden.io/tags/learning/</link>
+      <pubDate>Sun, 05 Aug 2018 14:20:37 +0200</pubDate>
+      
+      <guid>http://zufrieden.io/tags/learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Link</title>
+      <link>http://zufrieden.io/tags/link/</link>
+      <pubDate>Sun, 05 Aug 2018 14:20:37 +0200</pubDate>
+      
+      <guid>http://zufrieden.io/tags/link/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Philosophically</title>
+      <link>http://zufrieden.io/tags/philosophically/</link>
+      <pubDate>Tue, 07 Aug 2018 16:43:37 +0200</pubDate>
+      
+      <guid>http://zufrieden.io/tags/philosophically/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
