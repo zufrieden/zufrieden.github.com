@@ -15,9 +15,6 @@ fields:
 - type: boolean
   name: showDate
   label: Show date
-- type: boolean
-  name: draft
-  label: Draft
 - type: text
   name: link
   label: Link
