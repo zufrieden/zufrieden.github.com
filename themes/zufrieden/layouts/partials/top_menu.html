@@ -1,0 +1,42 @@
+<nav class="a11y-navigation" aria-label="Accessibility navigation">
+    <ul>
+      <li>
+        <a class="sr-only sr-show-on-focus" accesskey="0" href="/" title="[Alt+0] Homepage">Homepage</a>
+      </li>
+      <li>
+        <a class="sr-only sr-show-on-focus" accesskey="1" href="#menu" title="[Alt+1] Website Navigation">Website Navigation</a>
+      </li>
+      <li>
+        <a class="sr-only sr-show-on-focus" accesskey="2" href="#main" title="[Alt+2] Skip to content">Skip to content</a>
+      </li>
+    </ul>
+  </nav>
+  <header>
+    <nav role="menubar" id="menu">
+      <ul>
+        <li class="home">
+          <a href="{{.Page.Site.BaseURL}}">
+            {{ .Page.Site.Params.homepage }}
+          </a>
+        </li>
+        {{ if .Page.Site.Params.mainMenu }}
+          {{ range first 1 .Page.Site.Params.mainMenu }}
+            <li>
+              <a href="{{ .link }}">
+                {{ .text }}
+              </a>
+            </li>
+          {{ end }}
+          {{ if ( gt ( len .Page.Site.Params.mainMenu ) 1 ) }}
+            {{ range after 1 .Page.Site.Params.mainMenu }}
+                <li>
+                  <a href="{{ .link }}">
+                    {{ .text }}
+                  </a>
+                </li>
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      </ul>
+    </nav>
+  </header>

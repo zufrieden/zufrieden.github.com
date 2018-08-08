@@ -1,0 +1,39 @@
+{{ partial "head.html" . }}
+<body>
+  {{ if .Site.Params.mainMenu }}
+    {{ partial "top_menu.html" (dict "Page" . "show_back_menu_item" false) }}
+  {{ end }}
+  <main class="container">
+    <h1>
+      {{ .Title }}
+    </h1>
+    <h2>
+      {{ .Description }}
+    </h2>
+    <section>
+      {{ .Content }}
+    </section>
+    <section class="photos container container-full">
+      <div class="items gallery container-full">
+        {{ $name := .Site.Params.galleryFolder | default "images/"}}
+        {{ $path := "making-pictures/" }}
+        {{ $content := "/content/" }}
+        {{ $src := (print $path $name) }}
+
+        {{ $folder := (print $content $path $name) }}
+
+        {{ $files := readDir $folder }}
+
+        {{ range $files }}
+        <div class="item photo">
+          <img src="{{ $src | absURL }}{{.Name }}"/>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+{{ partial "foot.html" . }}

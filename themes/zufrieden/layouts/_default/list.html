@@ -1,0 +1,57 @@
+{{ partial "head.html" . }}
+<body>
+  {{ if .Site.Params.mainMenu }}
+    {{ partial "top_menu.html" (dict "Page" . "show_back_menu_item" false) }}
+  {{ end }}
+  <main class="container">
+    <h1>
+      {{ .Title }}
+    </h1>
+    <h2>
+      {{ .Description }}
+    </h2>
+    <section>
+      {{ .Content }}
+    </section>
+    <section>
+      <div class="items">
+        {{ range .Data.Pages }}
+          <div class="item">
+            <a href="{{.Permalink}}">
+              <h2>
+                {{.Title}}
+              </h2>
+            </a>
+            <h3>
+              {{ if .Description }}
+                {{ .Description }}
+              {{ end }}
+              {{ if .Params.event }}
+              {{ .Params.event }} –
+              {{ end }}
+              {{ if .Params.location }}
+              {{ .Params.location }}
+              {{ end }}
+            </h3>
+            <p>
+              {{ if .Params.showDate }}
+              {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006")}}
+              {{ end }}
+              {{ if .Params.speakers }}
+              – by {{ .Params.speakers }}
+              {{ end }}
+            </p>
+              {{ if .Params.link }}
+              <small>🌍 <a href="{{ .Params.link }}">{{ .Params.link | truncate 80 }}</a></small>
+              {{ end }}
+            </div>
+            {{ end }}
+          </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+{{ partial "foot.html" . }}
