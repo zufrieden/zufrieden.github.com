@@ -23,3 +23,5 @@ fields:
   label: Link
   config:
     required: true
+pages:
+- content/linking/https-required-is-for-the-west-white-web.md
