@@ -11,6 +11,11 @@ theme = "zufrieden"
     galleryFolder       = "images/"                     # Where you've put your images, after "/content/gallery/"
     clickablePhotos     = false                          # Allow links to the full size images
     footerText          = ""
+    twitterHandle       = "twitter.com/zufrieden"
+    twitterLink         = "https://twitter.com/zufrieden"
+    githubHandle        = "github.com/zufrieden"
+    githubLink          = "https://github.com/zufrieden"
+    email               = "m@zufrieden.io"  
 
 # Metadata
     description         = "Hello, my name is Marc Friederich"            # Max 160 characters show in search results
