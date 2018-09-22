@@ -1,4 +1,4 @@
-baseURL = "http://zufrieden.io/"
+baseURL = "/"
 languageCode = "en-us"
 title = "zufrieden.io/"
 theme = "zufrieden"
@@ -15,7 +15,7 @@ theme = "zufrieden"
     twitterLink         = "https://twitter.com/zufrieden"
     githubHandle        = "github.com/zufrieden"
     githubLink          = "https://github.com/zufrieden"
-    email               = "m@zufrieden.io"  
+    email               = "m@zufrieden.io"
 
 # Metadata
     description         = "Hello, my name is Marc Friederich"            # Max 160 characters show in search results

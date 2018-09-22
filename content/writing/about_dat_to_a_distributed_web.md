@@ -13,4 +13,8 @@ First I saw tweets about [beaker browser](https://beakerbrowser.com/) so I insta
   <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/rJ_WvfF3FN8" frameborder="0" allowfullscreen=""></iframe>
 </div>
 
-Just to try this out, I configured this website on **dat://**. [Setting DNS records](https://beakerbrowser.com/docs/guides/use-a-domain-name-with-dat#dat-dns-txt-records) is easy as adding my address b3ad7ca317fb128838497e911262d4b18be3a09e6d7545ff0aed6488d2db9938 in a TXT DNS record. So just visit my website on [dat://zufrieden.io](dat://zufrieden.io).
+## Just trying with this website
+Just to try this out, I configured this website on **dat://**. [Setting DNS records](https://beakerbrowser.com/docs/guides/use-a-domain-name-with-dat#dat-dns-txt-records) is easy as adding my address 9ab9316ae2ac629042207a43590c48fae4e4d2beb62379741efe147425d711dd in a TXT DNS record. So just visit my website on [dat://zufrieden.io](dat://zufrieden.io).
+
+Another article published on Mozilla Hacks to go a bit further and implement DatArchive
+[https://hacks.mozilla.org/2018/08/dweb-serving-the-web-from...](https://hacks.mozilla.org/2018/08/dweb-serving-the-web-from-the-browser-with-beaker/)
