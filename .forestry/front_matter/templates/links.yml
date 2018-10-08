@@ -21,4 +21,5 @@ fields:
   config:
     required: true
 pages:
+- content/linking/hiring-web-developers-some-tips.md
 - content/linking/https-required-is-for-the-west-white-web.md
