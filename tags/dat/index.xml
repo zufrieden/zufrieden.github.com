@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dat on zufrieden.io/</title>
-    <link>http://zufrieden.io/tags/dat/</link>
+    <link>/tags/dat/</link>
     <description>Recent content in Dat on zufrieden.io/</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 08 Aug 2018 15:22:06 +0200</lastBuildDate>
     
-	<atom:link href="http://zufrieden.io/tags/dat/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/dat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About dat:// to a distributed Web</title>
-      <link>http://zufrieden.io/writing/about_dat_to_a_distributed_web/</link>
+      <link>/writing/about_dat_to_a_distributed_web/</link>
       <pubDate>Wed, 08 Aug 2018 15:22:06 +0200</pubDate>
       
-      <guid>http://zufrieden.io/writing/about_dat_to_a_distributed_web/</guid>
+      <guid>/writing/about_dat_to_a_distributed_web/</guid>
       <description>First I saw tweets about beaker browser so I installed it and then forget it. Then I saw this talk Imagine This: A Web Without Servers by Tara Vancil at JSConf EU 2018. And I remembered again. dat:// a protocol to allow a P2P web to exist. A concept of a fully distributed web where the architecture works without servers so to say or where every device may become a server.</description>
     </item>
     

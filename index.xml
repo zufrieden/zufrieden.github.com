@@ -2,115 +2,152 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hello, I&#39;m Marc Friederich 👋 on zufrieden.io/</title>
-    <link>http://zufrieden.io/</link>
+    <link>/</link>
     <description>Recent content in Hello, I&#39;m Marc Friederich 👋 on zufrieden.io/</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Feb 2018 13:42:49 -0500</lastBuildDate>
     
-	<atom:link href="http://zufrieden.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Cabal</title>
+      <link>/linking/cabal/</link>
+      <pubDate>Sun, 23 Sep 2018 18:44:02 +0200</pubDate>
+      
+      <guid>/linking/cabal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tutorial on dat://</title>
+      <link>/linking/try-dat/</link>
+      <pubDate>Sun, 23 Sep 2018 18:42:52 +0200</pubDate>
+      
+      <guid>/linking/try-dat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How and why asking for help</title>
+      <link>/writing/leadership-how-and-why-asking-for-help/</link>
+      <pubDate>Sun, 23 Sep 2018 14:13:56 +0200</pubDate>
+      
+      <guid>/writing/leadership-how-and-why-asking-for-help/</guid>
+      <description>Asking for help is fine We tend to not ask for help. Usually because it transmit the idea of a weak person. It may expose our weakness right. But human being likes to help and saying you need some help is a good honest gesture. Because you can&amp;rsquo;t do everything alone right.
+3 reinforcements that helps to get buys-in  Being part of the group is something you have to consider when asking for help.</description>
+    </item>
+    
+    <item>
+      <title>Start a localwiki.org page for Lausanne</title>
+      <link>/writing/start-local-wiki-for-lausanne/</link>
+      <pubDate>Sun, 23 Sep 2018 12:05:03 +0200</pubDate>
+      
+      <guid>/writing/start-local-wiki-for-lausanne/</guid>
+      <description>Just created a page on LocalWiki about Lausanne. Being impressed by the story behind Davis LocalWiki and how it this city is using a wiki for online/open/free/ communication and API&amp;rsquo;s services. More about this on the about LocalWiki page.</description>
+    </item>
+    
+    <item>
       <title>Hiring web developers - some tips</title>
-      <link>http://zufrieden.io/linking/hiring-web-developers-some-tips/</link>
+      <link>/linking/hiring-web-developers-some-tips/</link>
       <pubDate>Mon, 03 Sep 2018 16:45:03 +0000</pubDate>
       
-      <guid>http://zufrieden.io/linking/hiring-web-developers-some-tips/</guid>
+      <guid>/linking/hiring-web-developers-some-tips/</guid>
       <description>Really like how the article makes clear the basics are more important than the hype.</description>
     </item>
     
     <item>
       <title>HTTPS required is for the West White Web</title>
-      <link>http://zufrieden.io/linking/https-required-is-for-the-west-white-web/</link>
+      <link>/linking/https-required-is-for-the-west-white-web/</link>
       <pubDate>Wed, 08 Aug 2018 20:39:21 +0000</pubDate>
       
-      <guid>http://zufrieden.io/linking/https-required-is-for-the-west-white-web/</guid>
+      <guid>/linking/https-required-is-for-the-west-white-web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About dat:// to a distributed Web</title>
-      <link>http://zufrieden.io/writing/about_dat_to_a_distributed_web/</link>
+      <link>/writing/about_dat_to_a_distributed_web/</link>
       <pubDate>Wed, 08 Aug 2018 15:22:06 +0200</pubDate>
       
-      <guid>http://zufrieden.io/writing/about_dat_to_a_distributed_web/</guid>
+      <guid>/writing/about_dat_to_a_distributed_web/</guid>
       <description>First I saw tweets about beaker browser so I installed it and then forget it. Then I saw this talk Imagine This: A Web Without Servers by Tara Vancil at JSConf EU 2018. And I remembered again. dat:// a protocol to allow a P2P web to exist. A concept of a fully distributed web where the architecture works without servers so to say or where every device may become a server.</description>
     </item>
     
     <item>
       <title>How the Enlightenment Ends</title>
-      <link>http://zufrieden.io/linking/how_the_enlightenment_ends/</link>
+      <link>/linking/how_the_enlightenment_ends/</link>
       <pubDate>Tue, 07 Aug 2018 16:43:37 +0200</pubDate>
       
-      <guid>http://zufrieden.io/linking/how_the_enlightenment_ends/</guid>
+      <guid>/linking/how_the_enlightenment_ends/</guid>
       <description> The Enlightenment started with essentially philosophical insights spread by a new technology. Our period is moving in the opposite direction. It has generated a potentially dominating technology in search of a guiding philosophy.
  </description>
     </item>
     
     <item>
       <title>Look for Integrity</title>
-      <link>http://zufrieden.io/linking/look_for_integrity/</link>
+      <link>/linking/look_for_integrity/</link>
       <pubDate>Sun, 05 Aug 2018 14:20:37 +0200</pubDate>
       
-      <guid>http://zufrieden.io/linking/look_for_integrity/</guid>
+      <guid>/linking/look_for_integrity/</guid>
       <description> “You’re looking for three things, generally, in a person,” says Buffett. “Intelligence, energy, and integrity. And if they don’t have the last one, don’t even bother with the first two. I tell them, ‘Everyone here has the intelligence and energy—you wouldn’t be here otherwise. But the integrity is up to you. You weren’t born with it, you can’t learn it in school.”
  </description>
     </item>
     
     <item>
       <title>My leadership cheatsheet</title>
-      <link>http://zufrieden.io/writing/leadership_cheatsheet/</link>
+      <link>/writing/leadership_cheatsheet/</link>
       <pubDate>Sun, 05 Aug 2018 13:49:44 +0200</pubDate>
       
-      <guid>http://zufrieden.io/writing/leadership_cheatsheet/</guid>
+      <guid>/writing/leadership_cheatsheet/</guid>
       <description>Seeking the right role for an Entrepeneur  becoming an observer instead of an active participant in your business Entrepreneurship is really just a fancy word for delegation   &amp;ldquo;My company felt like an unmanned car, slowly swerving into the ditch only to be pulled back — usually by me — at the last second.&amp;rdquo;
 &amp;ldquo;Many CEO’s forget this and get stuck in sales, marketing, product — whatever part of the business they love — while they ignore the bigger picture.</description>
     </item>
     
     <item>
       <title>Design Systems</title>
-      <link>http://zufrieden.io/talking/2018_un_designers_design_documentation_made_to_last/</link>
+      <link>/talking/2018_un_designers_design_documentation_made_to_last/</link>
       <pubDate>Fri, 27 Apr 2018 10:00:00 +0200</pubDate>
       
-      <guid>http://zufrieden.io/talking/2018_un_designers_design_documentation_made_to_last/</guid>
+      <guid>/talking/2018_un_designers_design_documentation_made_to_last/</guid>
       <description>Marc Friederich from Lausanne based agency Antistatique will be discussing in &amp;lsquo;Design Systems&amp;rsquo; how shifting from print to digital has shaped branding and design systems.</description>
     </item>
     
     <item>
       <title>Marc Friederich 🔮</title>
-      <link>http://zufrieden.io/about/</link>
+      <link>/about/</link>
       <pubDate>Tue, 13 Feb 2018 13:42:49 -0500</pubDate>
       
-      <guid>http://zufrieden.io/about/</guid>
+      <guid>/about/</guid>
       <description>About me Co-founder of Antistatique, a swiss web agency in Lausanne, Geneva and Miami.
 With over =(time() - 1998) years of web experience, Marc has carried out and managed all types of projects in the field. Since he has experience working all parts of the media production chain, he can take on many different roles when it comes to designing, developing, project management and quality control. He has a clear vision of what is required for each project, thanks to his expertise in human factors and ergonomics, usability, accessibility and technology.</description>
     </item>
     
     <item>
       <title>Design documentation</title>
-      <link>http://zufrieden.io/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</link>
+      <link>/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</link>
       <pubDate>Wed, 18 Oct 2017 19:00:00 +0200</pubDate>
       
-      <guid>http://zufrieden.io/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</guid>
+      <guid>/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Design documentation made to last</title>
-      <link>http://zufrieden.io/talking/2017_producttank_design_documentation_made_to_last/</link>
+      <link>/talking/2017_producttank_design_documentation_made_to_last/</link>
       <pubDate>Thu, 29 Jun 2017 18:30:00 +0200</pubDate>
       
-      <guid>http://zufrieden.io/talking/2017_producttank_design_documentation_made_to_last/</guid>
+      <guid>/talking/2017_producttank_design_documentation_made_to_last/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SÃ©lectionnez votre pays. Quelle est votre langueâ€‰?</title>
-      <link>http://zufrieden.io/talking/2017_ixda_lausanne_i18n_l10n/</link>
+      <link>/talking/2017_ixda_lausanne_i18n_l10n/</link>
       <pubDate>Tue, 09 May 2017 19:00:00 +0200</pubDate>
       
-      <guid>http://zufrieden.io/talking/2017_ixda_lausanne_i18n_l10n/</guid>
+      <guid>/talking/2017_ixda_lausanne_i18n_l10n/</guid>
       <description>Sélectionnez votre pays. Quelle est votre langue ? Je veux que les chiffres soient formatés de cette manière. Quel est le fuseau horaire ? Je lis de droite à gauche.
 Comment obtenez-vous ces informations de la part des gens ? Et comment donnez-vous ces informations aux gens qui viennent de différents pays et de différentes cultures ? Et que ces personnes parlent différentes langues…
 La localisation et l’internationalisation sont des sujets complexes.</description>
@@ -118,10 +155,10 @@ La localisation et l’internationalisation sont des sujets complexes.</descript
     
     <item>
       <title>i18n &amp; l10n — Internationalisation &amp; localisation</title>
-      <link>http://zufrieden.io/talking/2016_web_blend_mix_i18n_l10n/</link>
+      <link>/talking/2016_web_blend_mix_i18n_l10n/</link>
       <pubDate>Thu, 03 Nov 2016 12:34:41 +0200</pubDate>
       
-      <guid>http://zufrieden.io/talking/2016_web_blend_mix_i18n_l10n/</guid>
+      <guid>/talking/2016_web_blend_mix_i18n_l10n/</guid>
       <description>Sélectionnez votre pays. Quelle est votre langue ? Je veux que les chiffres soient formatés de cette manière. Quel est le fuseau horaire ? Je lis de droite à gauche.
 Comment obtenez-vous ces informations de la part des gens ? Et comment donnez-vous ces informations aux gens qui viennent de différents pays et de différentes cultures ? Et que ces personnes parlent différentes langues…
 La localisation et l’internationalisation sont des sujets complexes.</description>
@@ -129,10 +166,10 @@ La localisation et l’internationalisation sont des sujets complexes.</descript
     
     <item>
       <title>Flexbox - layouting finally made easy</title>
-      <link>http://zufrieden.io/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</link>
+      <link>/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</link>
       <pubDate>Tue, 29 Mar 2016 19:00:00 +0200</pubDate>
       
-      <guid>http://zufrieden.io/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</guid>
+      <guid>/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</guid>
       <description>This talk will cover the flexible box module layout specifications, with samples and use cases.
 • Flex direction and understand axis
 • Justify-content, align-items and align-content when wrapping
@@ -143,19 +180,19 @@ La localisation et l’internationalisation sont des sujets complexes.</descript
     
     <item>
       <title>Frontend Toolbox</title>
-      <link>http://zufrieden.io/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</link>
+      <link>/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</link>
       <pubDate>Tue, 20 Oct 2015 12:34:41 -0500</pubDate>
       
-      <guid>http://zufrieden.io/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</guid>
+      <guid>/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dynamic Style Guides – Retour d&#39;experience</title>
-      <link>http://zufrieden.io/talking/2014_softshake_styleguide_by_default/</link>
+      <link>/talking/2014_softshake_styleguide_by_default/</link>
       <pubDate>Fri, 24 Oct 2014 10:30:00 +0200</pubDate>
       
-      <guid>http://zufrieden.io/talking/2014_softshake_styleguide_by_default/</guid>
+      <guid>/talking/2014_softshake_styleguide_by_default/</guid>
       <description>Avec l’émergence des styles modulaires, le style guide est devenu un outil indispensable pour documenter et organiser le travail du frontend développeur.
 Véritable moyen de communication entre designer et développeur, le styleguide établit un dialogue efficient et pratique.
 L’emploi d’un système de styleguide vous obligera à penser et coder modulaire. En effet, si vous commencer par concevoir les éléments de votre design indépendamment les uns des autres en ne les consultants que dans votre styleguide, vous aurez intégré le plus gros du concept.</description>
@@ -163,10 +200,10 @@ L’emploi d’un système de styleguide vous obligera à penser et coder modula
     
     <item>
       <title>Prototype in the browser</title>
-      <link>http://zufrieden.io/talking/2013_softshake_prototyping_in_the_browser/</link>
+      <link>/talking/2013_softshake_prototyping_in_the_browser/</link>
       <pubDate>Thu, 24 Oct 2013 13:37:02 +0200</pubDate>
       
-      <guid>http://zufrieden.io/talking/2013_softshake_prototyping_in_the_browser/</guid>
+      <guid>/talking/2013_softshake_prototyping_in_the_browser/</guid>
       <description>Rien ne vaut du papier et un bon vieux crayon pour coucher ses idées. Puis vient le moment où il faut présenter et éprouver son concept. Dans une démarche agile, il est indispensable d’obtenir rapidement un concept testable.
 À travers plusieurs retours d’expérience, cette présentation vous donnera un aperçu des méthodes de prototypage en HTML. Construire son interface en quelques lignes pour pouvoir la tester rapidement.
 Valable pour tous les types d’applications, ces méthodes sont idéales pour réaliser des tests utilisateurs.</description>
@@ -174,19 +211,19 @@ Valable pour tous les types d’applications, ces méthodes sont idéales pour r
     
     <item>
       <title>WordPress - feedback and lesson learned</title>
-      <link>http://zufrieden.io/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</link>
+      <link>/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</link>
       <pubDate>Wed, 08 May 2013 19:00:00 +0200</pubDate>
       
-      <guid>http://zufrieden.io/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</guid>
+      <guid>/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</guid>
       <description>Slides from our lessons learned and experience about wordpress project at Antistatique</description>
     </item>
     
     <item>
       <title>Maintaining your working environment</title>
-      <link>http://zufrieden.io/writing/2012-11-04-maintaining-your-working-environment/</link>
+      <link>/writing/2012-11-04-maintaining-your-working-environment/</link>
       <pubDate>Sun, 04 Nov 2012 12:35:11 -0500</pubDate>
       
-      <guid>http://zufrieden.io/writing/2012-11-04-maintaining-your-working-environment/</guid>
+      <guid>/writing/2012-11-04-maintaining-your-working-environment/</guid>
       <description>It&amp;rsquo;s quite hard for a first post to choose a topic. I was used to blog a lot 6 years ago. My topics of choice were mainly webdesign, xhtml, css, my student life and so on. I stopped for many reasons (personal life, moving a year to finland, building my company) but since I like sharing things and collecting thoughs about by day and night work. I am here to share.</description>
     </item>
     
