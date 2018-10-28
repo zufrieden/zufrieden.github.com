@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Podcast on zufrieden.io/</title>
+    <link>/tags/podcast/</link>
+    <description>Recent content in Podcast on zufrieden.io/</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Oct 2018 20:39:22 +0100</lastBuildDate>
+    
+	<atom:link href="/tags/podcast/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Infused design with Jared Spool - UX Podcast</title>
+      <link>/linking/uxpodcast-infused-design/</link>
+      <pubDate>Sun, 28 Oct 2018 20:39:22 +0100</pubDate>
+      
+      <guid>/linking/uxpodcast-infused-design/</guid>
+      <description>We can identify business value by asking the following questions about the end results of our project:
+ Will it increase revenue? Will it decrease expenses? Will it bring in new customers? Will it bring in more money from existing customers? Will it increase shareholder/taxpayer value?  &amp;ndash;&amp;gt; About business value</description>
+    </item>
+    
+  </channel>
+</rss>

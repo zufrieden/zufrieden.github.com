@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Talk on zufrieden.io/</title>
+    <link>/tags/talk/</link>
+    <description>Recent content in Talk on zufrieden.io/</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Oct 2018 20:35:32 +0100</lastBuildDate>
+    
+	<atom:link href="/tags/talk/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>I don’t care what Airbnb is doing. (And neither should you.)</title>
+      <link>/linking/dontcarewhatairbnbisdoing/</link>
+      <pubDate>Sun, 28 Oct 2018 20:35:32 +0100</pubDate>
+      
+      <guid>/linking/dontcarewhatairbnbisdoing/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
