@@ -18,25 +18,37 @@
       <h3>{{.Description}}</h3>
       <div class="items">
         {{ range first 6 .Data.Pages }}
-          <a class="item" href="{{.Permalink}}">
+
+        <div class="item">
+          <a href="{{.Permalink}}">
             <h3>
               {{.Title}}
             </h3>
-            <p>
-              {{ if .Params.event }}
-                {{ .Params.event }} –
-              {{ end }}
-              {{ if .Params.location }}
-                {{ .Params.location }} –
-              {{ end }}
-              {{ if .Params.showDate }}
-              {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006")}}
-              {{ end }}
-              {{ if .Params.speakers }}
-                – by {{ .Params.speakers }}
-              {{ end }}
-            </p>
           </a>
+          <h4>
+            {{ if .Description }}
+              {{ .Description }}
+            {{ end }}
+            {{ if .Params.event }}
+              {{ .Params.event }} –
+            {{ end }}
+            {{ if .Params.location }}
+              {{ .Params.location }}
+            {{ end }}
+          </h4>
+          <p>
+            {{ if .Params.showDate }}
+              {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006")}}
+            {{ end }}
+            {{ if .Params.speakers }}
+            – by {{ .Params.speakers }}
+            {{ end }}
+          </p>
+            {{ if .Params.link }}
+              <small>🌍 <a href="{{ .Params.link }}">{{ .Params.link | truncate 80 }}</a></small>
+            {{ end }}
+          </div>
+
         {{ end }}
         <a href="{{.Permalink}}" class="item">{{.LinkTitle}}</a>
       </div>
