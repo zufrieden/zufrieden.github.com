@@ -1,6 +1,6 @@
 ---
 title: "Frontend Toolbox"
-date: 2015-10-20T12:34:41-05:00
+date: 2015-08-28T12:34:41-05:00
 showDate: true
 draft: false
 event: Frontend Conference Zürich
