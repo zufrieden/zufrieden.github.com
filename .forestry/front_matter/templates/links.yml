@@ -21,6 +21,7 @@ fields:
   config:
     required: true
 pages:
+- content/linking/the-circular-classroom-a-free-toolkit-for-activating-the-circular-economy-through-experiential-learning.md
 - content/linking/as-wired-magazine-turns-25-we-remember-when-email-was-fun.md
 - content/linking/hiring-web-developers-some-tips.md
 - content/linking/https-required-is-for-the-west-white-web.md
