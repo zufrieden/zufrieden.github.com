@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/linking/why_doctors_hate_their_computers/</loc>
+    <lastmod>2018-11-27T22:01:04+01:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/linking/a-primer-on-documentation-content-strategy/</loc>
     <lastmod>2018-11-11T15:33:52+00:00</lastmod>
   </url>
@@ -224,6 +229,18 @@
   <url>
     <loc>/tags/dev/</loc>
     <lastmod>2018-10-28T20:37:37+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/human/</loc>
+    <lastmod>2018-11-27T22:01:04+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/it/</loc>
+    <lastmod>2018-11-27T22:01:04+01:00</lastmod>
     <priority>0</priority>
   </url>
   
