@@ -7,7 +7,7 @@ event: Performance Web
 eventurl: https://performanceweb.ch/evenement/performance-web/
 location: Genève
 slides: https://zufrieden.github.io/slides-surtout-ne-pas-refaire-son-site/
-video:
+video: https://www.youtube-nocookie.com/embed/6BxthG2wqkc
 speakers: Marc Friederich
 ---
 Dans la course à la refonte, on se soucie d’avoir un nouveau design qui fait waouh, du responsive et heureusement aussi de l’ergonomie. On se soucie malheureusement rarement des implications sur le traffic, le référencement, la mesure du succès de cette même refonte. Le but de ce talk est de vous convaincre d’approcher une refonte par plus petite partie pour un vrai développement durable et mesurable.
