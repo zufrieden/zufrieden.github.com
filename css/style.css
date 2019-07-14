@@ -18,19 +18,17 @@
 }
 
 html{
-  font-size: 18px;
+  font-size: 22px;
 }
 body{
   font-family: 'Cabin Condensed', sans-serif;
   font-size: calc(0.8em + 1vw);
   font-size: -webkit-calc(60% + 1vw);
   background-color: #f7ece6;
-  /* background: radial-gradient(ellipse at center, #f7eae3 0%,#fff 100%); */
   border-top: #3472c9 1vh solid;
   margin: 0;
   color: #052a3f;
 }
-
 
 a{
   color: #2d62ad;
@@ -45,7 +43,7 @@ a:visited{
 }
 
 main{
-  max-width: 60rem;
+  max-width: 50rem;
   margin: auto;
 }
 .items{
@@ -141,22 +139,18 @@ header nav ul{
 header nav li {
   list-style: none;
 }
-header nav a{
+header nav a, header nav a:visited{
   display: block;
   padding: 0.3em 0.3em ;
   text-decoration: none;
   font-family: 'Patua One', Andale Mono, cursive;
   color: #052a3f;
-  border-bottom: 0.1em solid transparent;
-  transition: 0.2s all ease-in-out;
+  transition: 0.12s color ease-in-out;
 }
-header nav a:visited{
-  color: #052a3f;
-}
+
 header nav a:hover{
-  padding: 0em 0em ;
-  margin: 0.3em 0.3em ;
-  border-bottom: 0.09em solid currentcolor;
+  text-decoration: underline;
+  color: #3472c9;
 }
 header nav .home a, header nav .current a{
   color: #3472c9;
@@ -240,21 +234,11 @@ h4, .h4 {
   margin-bottom: 0;
 }
 
-@media (min-width: 70rem) {
-  body{
-    font-size: 1.5em;
-  }
-  h3{
-    font-size: 1.8rem;
-  }
-  h4, h5, h6, p{
-    font-size: 1.4rem;
-  }
-}
+
 p, ul, ol, pre, table, blockquote {
   line-height: 1.43em;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 0.5em;
 }
 p + p, p + h2, p + h3, p + ul, ul + p, h2 + p, h3 + ol, h3 + ul, h2 + ol, h2 + ul{
   margin-top: 0.8em;
@@ -285,6 +269,14 @@ ul li{
 ol li{
   list-style: decimal;
 }
+
+hr {
+  width: 100%;
+  border: 2px solid #052a3f;
+  height: 0px;
+  margin: 40px 0;
+}
+
 
 
 section{

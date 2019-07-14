@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Philosophy on zufrieden.io/</title>
+    <link>/tags/philosophy/</link>
+    <description>Recent content in Philosophy on zufrieden.io/</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 08 Jul 2019 16:20:20 +0200</lastBuildDate>
+    
+	<atom:link href="/tags/philosophy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chaos Design: Before the robots take our jobs, can we please get them to help us do some good work?</title>
+      <link>/linking/chaos-design/</link>
+      <pubDate>Mon, 08 Jul 2019 16:20:20 +0200</pubDate>
+      
+      <guid>/linking/chaos-design/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
