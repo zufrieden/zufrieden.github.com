@@ -23,7 +23,7 @@
     <item>
       <title>Blog</title>
       <link>/tags/blog/</link>
-      <pubDate>Mon, 08 Jul 2019 16:23:49 +0200</pubDate>
+      <pubDate>Fri, 26 Jul 2019 21:29:29 +0200</pubDate>
       
       <guid>/tags/blog/</guid>
       <description></description>
@@ -41,7 +41,7 @@
     <item>
       <title>Design</title>
       <link>/tags/design/</link>
-      <pubDate>Mon, 08 Jul 2019 16:20:20 +0200</pubDate>
+      <pubDate>Fri, 26 Jul 2019 21:29:29 +0200</pubDate>
       
       <guid>/tags/design/</guid>
       <description></description>
@@ -50,7 +50,7 @@
     <item>
       <title>Dev</title>
       <link>/tags/dev/</link>
-      <pubDate>Mon, 08 Jul 2019 16:16:59 +0200</pubDate>
+      <pubDate>Fri, 26 Jul 2019 21:25:35 +0200</pubDate>
       
       <guid>/tags/dev/</guid>
       <description></description>
@@ -134,6 +134,15 @@
       <pubDate>Sun, 28 Oct 2018 20:39:22 +0100</pubDate>
       
       <guid>/tags/podcast/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sustainability</title>
+      <link>/tags/sustainability/</link>
+      <pubDate>Fri, 26 Jul 2019 21:18:51 +0200</pubDate>
+      
+      <guid>/tags/sustainability/</guid>
       <description></description>
     </item>
     

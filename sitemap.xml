@@ -3,6 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>/linking/frontend-design-system-stack/</loc>
+    <lastmod>2019-07-26T21:29:29+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/linking/browser-fingerprinting/</loc>
+    <lastmod>2019-07-26T21:25:35+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/linking/automotive-era-a-terrible-mistake/</loc>
+    <lastmod>2019-07-26T21:18:51+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/linking/being-a-developer-in-iran/</loc>
+    <lastmod>2019-07-26T21:14:48+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>/writing/a-love-letter-to-the-web/</loc>
     <lastmod>2019-07-08T16:23:49+02:00</lastmod>
   </url>
@@ -235,7 +255,7 @@
   
   <url>
     <loc>/tags/blog/</loc>
-    <lastmod>2019-07-08T16:23:49+02:00</lastmod>
+    <lastmod>2019-07-26T21:29:29+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -252,13 +272,13 @@
   
   <url>
     <loc>/tags/design/</loc>
-    <lastmod>2019-07-08T16:20:20+02:00</lastmod>
+    <lastmod>2019-07-26T21:29:29+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/dev/</loc>
-    <lastmod>2019-07-08T16:16:59+02:00</lastmod>
+    <lastmod>2019-07-26T21:25:35+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -313,6 +333,12 @@
   <url>
     <loc>/tags/podcast/</loc>
     <lastmod>2018-10-28T20:39:22+01:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/sustainability/</loc>
+    <lastmod>2019-07-26T21:18:51+02:00</lastmod>
     <priority>0</priority>
   </url>
   

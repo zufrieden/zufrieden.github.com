@@ -6,10 +6,28 @@
     <description>Recent content in Dev on zufrieden.io/</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 08 Jul 2019 16:16:59 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 26 Jul 2019 21:25:35 +0200</lastBuildDate>
     
 	<atom:link href="/tags/dev/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Browser Fingerprinting - Master thesis</title>
+      <link>/linking/browser-fingerprinting/</link>
+      <pubDate>Fri, 26 Jul 2019 21:25:35 +0200</pubDate>
+      
+      <guid>/linking/browser-fingerprinting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hos is it like to be a dev in Iran</title>
+      <link>/linking/being-a-developer-in-iran/</link>
+      <pubDate>Fri, 26 Jul 2019 21:14:48 +0200</pubDate>
+      
+      <guid>/linking/being-a-developer-in-iran/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Designing For Users Across Cultures: An Interview With Jenny Shen</title>
