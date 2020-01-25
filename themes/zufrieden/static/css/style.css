@@ -21,7 +21,7 @@ html{
   font-size: 22px;
 }
 body{
-  font-family: 'Cabin Condensed', sans-serif;
+  font-family: 'Cabin Condensed',-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
   font-size: calc(0.8em + 1vw);
   font-size: -webkit-calc(60% + 1vw);
   background-color: #f7ece6;
@@ -143,7 +143,7 @@ header nav a, header nav a:visited{
   display: block;
   padding: 0.3em 0.3em ;
   text-decoration: none;
-  font-family: 'Patua One', Andale Mono, cursive;
+  font-family: 'Patua One', Andale Mono, serif;
   color: #052a3f;
   transition: 0.12s color ease-in-out;
 }
@@ -198,7 +198,7 @@ header nav .home a{
 
 /* Typography */
 h1, h2, h3, h4, h5{
-  font-family: 'Patua One', Andale Mono, cursive;
+  font-family: 'Patua One', Andale Mono, serif;
   word-wrap: break-word;
 }
 h1, .h1, .h-huge {
