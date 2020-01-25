@@ -13,9 +13,15 @@
             margin: 3em 0;
           }
           hr{
-            margin: 3em 0 ;
+            margin: 3em 0 40vh;
+            border: none;
           }
+          
         </style>
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('cumulus-service-worker.js');}
+        </script>        
     </head>
     <body bgcolor="white">
       <h2>Cumulus</h2>
