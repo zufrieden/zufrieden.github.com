@@ -1,12 +1,14 @@
 +++
 date = 2020-02-08T23:00:00Z
-description = "On which Internet we dream of"
+description = "On which Internet we all dream of!"
 link = "https://idlewords.com/talks/web_design_first_100_years.htm"
 showDate = true
 title = "Some articles worth reading again once a Year"
 
 +++
 There is this article I keep refering to. A good narative and some choice for you to make at the end. On which Internet you aspire to build, which Internet you'd like to have. Well "The Internet for people".
+
+Go dig in : [Web Design: The First 100 Years](https://idlewords.com/talks/web_design_first_100_years.htm)
 
 > When we point out that Silicon Valley doesn't seem to be engaging the real world, that wages have been flat for thirty years, that Utopia seems further away than it's been in a generation, we get impatient excuses.
 >
@@ -25,5 +27,3 @@ There is this article I keep refering to. A good narative and some choice for yo
 > “Well, wait until they all have smartphones... and wearable devices,” and the excuses continue.
 >
 > The real answer is, technology hasn't changed the world because we haven't cared enough to change it.
-
-[Web Design: The First 100 Years](https://idlewords.com/talks/web_design_first_100_years.htm)
