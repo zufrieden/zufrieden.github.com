@@ -27,3 +27,5 @@ Go dig in : [Web Design: The First 100 Years](https://idlewords.com/talks/web_de
 > “Well, wait until they all have smartphones... and wearable devices,” and the excuses continue.
 >
 > The real answer is, technology hasn't changed the world because we haven't cared enough to change it.
+
+A good follow up on the tech culture (Software eat the world) utopian future : [The biggest lie tech people tell themselves — and the rest of us](https://www.vox.com/the-highlight/2019/10/1/20887003/tech-technology-evolution-natural-inevitable-ethics "The biggest lie tech people tell themselves — and the rest of us")
