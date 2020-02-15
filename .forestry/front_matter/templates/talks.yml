@@ -1,0 +1,31 @@
+---
+label: Talks
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: boolean
+  name: showDate
+  label: showDate
+- type: text
+  name: event
+  label: event
+- type: text
+  name: eventurl
+  label: eventurl
+- type: text
+  name: location
+  label: location
+- type: text
+  name: slides
+  label: slides
+- type: text
+  name: video
+  label: video
+- type: text
+  name: speakers
+  label: speakers
