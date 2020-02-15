@@ -12,6 +12,17 @@
     
     
     <item>
+      <title>Easy as the web</title>
+      <link>/talking/easy-as-the-web/</link>
+      <pubDate>Tue, 02 Jul 2019 17:00:00 +0000</pubDate>
+      
+      <guid>/talking/easy-as-the-web/</guid>
+      <description>The Web is so simple, yet we often create cumbersome solutions.
+When the developer’s experience is balanced over user’s experience, we may lose what&amp;rsquo;s valuable in the process. This talk will try to look at our brief web history to find patterns and loops.
+The goal of this talk is to create together a more resilient Web, to understand the value of the Web and how we can build a more sustainable heritage.</description>
+    </item>
+    
+    <item>
       <title>Surtout ne pas refaire son site</title>
       <link>/talking/2018_performanceweb_surtout_ne_pas_refaire_son_site/</link>
       <pubDate>Thu, 24 May 2018 14:44:15 +0100</pubDate>

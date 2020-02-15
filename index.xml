@@ -151,6 +151,17 @@ Building a more resilient web, understanding the value of the web and how we bui
     </item>
     
     <item>
+      <title>Easy as the web</title>
+      <link>/talking/easy-as-the-web/</link>
+      <pubDate>Tue, 02 Jul 2019 17:00:00 +0000</pubDate>
+      
+      <guid>/talking/easy-as-the-web/</guid>
+      <description>The Web is so simple, yet we often create cumbersome solutions.
+When the developer’s experience is balanced over user’s experience, we may lose what&amp;rsquo;s valuable in the process. This talk will try to look at our brief web history to find patterns and loops.
+The goal of this talk is to create together a more resilient Web, to understand the value of the Web and how we can build a more sustainable heritage.</description>
+    </item>
+    
+    <item>
       <title>Creating some slack</title>
       <link>/linking/creating_some_slack/</link>
       <pubDate>Wed, 12 Dec 2018 20:42:21 +0100</pubDate>
