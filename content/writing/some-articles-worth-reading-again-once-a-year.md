@@ -1,7 +1,6 @@
 +++
 date = 2020-02-08T23:00:00Z
 description = "On which Internet we all dream of!"
-link = "https://idlewords.com/talks/web_design_first_100_years.htm"
 showDate = true
 title = "Some articles worth reading again once a Year"
 
@@ -29,3 +28,5 @@ Go dig in : [Web Design: The First 100 Years](https://idlewords.com/talks/web_de
 > The real answer is, technology hasn't changed the world because we haven't cared enough to change it.
 
 A good follow up on the tech culture (Software eat the world) utopian future : [The biggest lie tech people tell themselves — and the rest of us](https://www.vox.com/the-highlight/2019/10/1/20887003/tech-technology-evolution-natural-inevitable-ethics "The biggest lie tech people tell themselves — and the rest of us")
+
+Not totally related to the web but about technology utopia and well, the bad effects of Ayn Rand's ideas on American financial markets, consider watching this documentary [All Watched Over by Machines of Loving Grace](https://www.bbc.co.uk/programmes/b011lvb9/episodes/guide) (more on [wikipedia:All Watched Over by Machines of Loving Grace (TV series)](https://en.wikipedia.org/wiki/All_Watched_Over_by_Machines_of_Loving_Grace_(TV_series))). And Mike Monteiro has also a take on Ayn Rand, read online sample chapter [Ayn Rand is a dick](https://www.ruinedby.design/sample-chapter).
