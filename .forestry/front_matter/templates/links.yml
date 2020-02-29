@@ -19,7 +19,7 @@ fields:
   name: link
   label: Link
   config:
-    required: true
+    required: false
 pages:
 - content/linking/a-primer-on-documentation-content-strategy.md
 - content/linking/as-wired-magazine-turns-25-we-remember-when-email-was-fun.md
