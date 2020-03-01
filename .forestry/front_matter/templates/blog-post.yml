@@ -18,3 +18,5 @@ fields:
 - type: text
   name: description
   label: description
+pages:
+- content/writing/traveling-to-this-remote-island-called-japan.md
