@@ -19,4 +19,5 @@ fields:
   name: description
   label: description
 pages:
+- content/writing/celebrating-css-naked-day-2020.md
 - content/writing/traveling-to-this-remote-island-called-japan.md
