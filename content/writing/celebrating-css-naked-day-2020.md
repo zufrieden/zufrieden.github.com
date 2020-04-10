@@ -6,4 +6,4 @@ tags = []
 title = "Celebrating CSS Naked Day 2020"
 
 +++
-Nice that [Eric Meyer brought it back](https://meyerweb.com/eric/thoughts/2020/04/09/css-naked-day-2020/)
+Nice that [Eric Meyer brought it back](https://meyerweb.com/eric/thoughts/2020/04/09/css-naked-day-2020/). But now it’s April 10th so back to normal design. 
