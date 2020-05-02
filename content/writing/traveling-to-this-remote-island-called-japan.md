@@ -1,9 +1,8 @@
 +++
 date = 2020-02-29T23:00:00Z
 description = "A series of links and some thoughts about Japanese discoveries"
-draft = false
 showDate = true
-tags = []
+tags = ["Links"]
 title = "Traveling to this remote island called Japan"
 
 +++
