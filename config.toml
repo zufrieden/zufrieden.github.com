@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://zufrieden.io/"
 languageCode = "en-us"
 title = "zufrieden.io/"
 theme = "zufrieden"
@@ -16,6 +16,11 @@ theme = "zufrieden"
     githubHandle        = "github.com/zufrieden"
     githubLink          = "https://github.com/zufrieden"
     email               = "m@zufrieden.io"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 # Metadata
     description         = "Hello, my name is Marc Friederich"            # Max 160 characters show in search results
