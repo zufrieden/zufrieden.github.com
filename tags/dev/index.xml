@@ -1,112 +1,112 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dev on zufrieden.io/</title>
-    <link>/tags/dev/</link>
-    <description>Recent content in Dev on zufrieden.io/</description>
+    <title>dev on zufrieden.io/</title>
+    <link>https://zufrieden.io/tags/dev/</link>
+    <description>Recent content in dev on zufrieden.io/</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Jul 2019 21:37:00 +0200</lastBuildDate>
     
-	<atom:link href="/tags/dev/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zufrieden.io/tags/dev/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The Web Can&#39;t Survive a Monoculture</title>
-      <link>/linking/the-web-cant-survive-a-monoculture/</link>
+      <link>https://zufrieden.io/linking/the-web-cant-survive-a-monoculture/</link>
       <pubDate>Fri, 26 Jul 2019 21:37:00 +0200</pubDate>
       
-      <guid>/linking/the-web-cant-survive-a-monoculture/</guid>
+      <guid>https://zufrieden.io/linking/the-web-cant-survive-a-monoculture/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Browser Fingerprinting - Master thesis</title>
-      <link>/linking/browser-fingerprinting/</link>
+      <link>https://zufrieden.io/linking/browser-fingerprinting/</link>
       <pubDate>Fri, 26 Jul 2019 21:25:35 +0200</pubDate>
       
-      <guid>/linking/browser-fingerprinting/</guid>
+      <guid>https://zufrieden.io/linking/browser-fingerprinting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hos is it like to be a dev in Iran</title>
-      <link>/linking/being-a-developer-in-iran/</link>
+      <link>https://zufrieden.io/linking/being-a-developer-in-iran/</link>
       <pubDate>Fri, 26 Jul 2019 21:14:48 +0200</pubDate>
       
-      <guid>/linking/being-a-developer-in-iran/</guid>
+      <guid>https://zufrieden.io/linking/being-a-developer-in-iran/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Designing For Users Across Cultures: An Interview With Jenny Shen</title>
-      <link>/linking/designing-users-across-cultures-interview-jenny-shen/</link>
+      <link>https://zufrieden.io/linking/designing-users-across-cultures-interview-jenny-shen/</link>
       <pubDate>Mon, 08 Jul 2019 16:16:59 +0200</pubDate>
       
-      <guid>/linking/designing-users-across-cultures-interview-jenny-shen/</guid>
+      <guid>https://zufrieden.io/linking/designing-users-across-cultures-interview-jenny-shen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>the Origins of Opera and the Future of Programming</title>
-      <link>/linking/the-origins-of-opera-and-the-future-of-programming/</link>
+      <link>https://zufrieden.io/linking/the-origins-of-opera-and-the-future-of-programming/</link>
       <pubDate>Mon, 08 Jul 2019 16:12:10 +0200</pubDate>
       
-      <guid>/linking/the-origins-of-opera-and-the-future-of-programming/</guid>
+      <guid>https://zufrieden.io/linking/the-origins-of-opera-and-the-future-of-programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Taking PHP Seriously</title>
-      <link>/linking/takingphpseriously/</link>
+      <link>https://zufrieden.io/linking/takingphpseriously/</link>
       <pubDate>Sun, 28 Oct 2018 20:37:37 +0100</pubDate>
       
-      <guid>/linking/takingphpseriously/</guid>
+      <guid>https://zufrieden.io/linking/takingphpseriously/</guid>
       <description>Tools are not important</description>
     </item>
     
     <item>
       <title>I don’t care what Airbnb is doing. (And neither should you.)</title>
-      <link>/linking/dontcarewhatairbnbisdoing/</link>
+      <link>https://zufrieden.io/linking/dontcarewhatairbnbisdoing/</link>
       <pubDate>Sun, 28 Oct 2018 20:35:32 +0100</pubDate>
       
-      <guid>/linking/dontcarewhatairbnbisdoing/</guid>
+      <guid>https://zufrieden.io/linking/dontcarewhatairbnbisdoing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cabal</title>
-      <link>/linking/cabal/</link>
+      <link>https://zufrieden.io/linking/cabal/</link>
       <pubDate>Sun, 23 Sep 2018 18:44:02 +0200</pubDate>
       
-      <guid>/linking/cabal/</guid>
+      <guid>https://zufrieden.io/linking/cabal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorial on dat://</title>
-      <link>/linking/try-dat/</link>
+      <link>https://zufrieden.io/linking/try-dat/</link>
       <pubDate>Sun, 23 Sep 2018 18:42:52 +0200</pubDate>
       
-      <guid>/linking/try-dat/</guid>
+      <guid>https://zufrieden.io/linking/try-dat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About dat:// to a distributed Web</title>
-      <link>/writing/about_dat_to_a_distributed_web/</link>
+      <link>https://zufrieden.io/writing/about_dat_to_a_distributed_web/</link>
       <pubDate>Wed, 08 Aug 2018 15:22:06 +0200</pubDate>
       
-      <guid>/writing/about_dat_to_a_distributed_web/</guid>
+      <guid>https://zufrieden.io/writing/about_dat_to_a_distributed_web/</guid>
       <description>First I saw tweets about beaker browser so I installed it and then forget it. Then I saw this talk Imagine This: A Web Without Servers by Tara Vancil at JSConf EU 2018. And I remembered again. dat:// a protocol to allow a P2P web to exist. A concept of a fully distributed web where the architecture works without servers so to say or where every device may become a server.</description>
     </item>
     
     <item>
       <title>Maintaining your working environment</title>
-      <link>/writing/2012-11-04-maintaining-your-working-environment/</link>
+      <link>https://zufrieden.io/writing/2012-11-04-maintaining-your-working-environment/</link>
       <pubDate>Sun, 04 Nov 2012 12:35:11 -0500</pubDate>
       
-      <guid>/writing/2012-11-04-maintaining-your-working-environment/</guid>
+      <guid>https://zufrieden.io/writing/2012-11-04-maintaining-your-working-environment/</guid>
       <description>It&amp;rsquo;s quite hard for a first post to choose a topic. I was used to blog a lot 6 years ago. My topics of choice were mainly webdesign, xhtml, css, my student life and so on. I stopped for many reasons (personal life, moving a year to finland, building my company) but since I like sharing things and collecting thoughs about by day and night work. I am here to share.</description>
     </item>
     

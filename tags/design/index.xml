@@ -1,49 +1,49 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Design on zufrieden.io/</title>
-    <link>/tags/design/</link>
-    <description>Recent content in Design on zufrieden.io/</description>
+    <title>design on zufrieden.io/</title>
+    <link>https://zufrieden.io/tags/design/</link>
+    <description>Recent content in design on zufrieden.io/</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Jul 2019 21:29:29 +0200</lastBuildDate>
     
-	<atom:link href="/tags/design/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zufrieden.io/tags/design/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>The Modern Front-End Design System Stack</title>
-      <link>/linking/frontend-design-system-stack/</link>
+      <link>https://zufrieden.io/linking/frontend-design-system-stack/</link>
       <pubDate>Fri, 26 Jul 2019 21:29:29 +0200</pubDate>
       
-      <guid>/linking/frontend-design-system-stack/</guid>
+      <guid>https://zufrieden.io/linking/frontend-design-system-stack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chaos Design: Before the robots take our jobs, can we please get them to help us do some good work?</title>
-      <link>/linking/chaos-design/</link>
+      <link>https://zufrieden.io/linking/chaos-design/</link>
       <pubDate>Mon, 08 Jul 2019 16:20:20 +0200</pubDate>
       
-      <guid>/linking/chaos-design/</guid>
+      <guid>https://zufrieden.io/linking/chaos-design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Control--Panel</title>
-      <link>/linking/control--panel/</link>
+      <link>https://zufrieden.io/linking/control-panel/</link>
       <pubDate>Sun, 28 Oct 2018 20:42:21 +0100</pubDate>
       
-      <guid>/linking/control--panel/</guid>
+      <guid>https://zufrieden.io/linking/control-panel/</guid>
       <description>And there is more on flickr</description>
     </item>
     
     <item>
       <title>Infused design with Jared Spool - UX Podcast</title>
-      <link>/linking/uxpodcast-infused-design/</link>
+      <link>https://zufrieden.io/linking/uxpodcast-infused-design/</link>
       <pubDate>Sun, 28 Oct 2018 20:39:22 +0100</pubDate>
       
-      <guid>/linking/uxpodcast-infused-design/</guid>
+      <guid>https://zufrieden.io/linking/uxpodcast-infused-design/</guid>
       <description>We can identify business value by asking the following questions about the end results of our project:
  Will it increase revenue? Will it decrease expenses? Will it bring in new customers? Will it bring in more money from existing customers? Will it increase shareholder/taxpayer value?  &amp;ndash;&amp;gt; About business value</description>
     </item>

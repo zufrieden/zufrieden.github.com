@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Ux on zufrieden.io/</title>
-    <link>/tags/ux/</link>
-    <description>Recent content in Ux on zufrieden.io/</description>
+    <title>ux on zufrieden.io/</title>
+    <link>https://zufrieden.io/tags/ux/</link>
+    <description>Recent content in ux on zufrieden.io/</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Jul 2019 16:18:42 +0200</lastBuildDate>
     
-	<atom:link href="/tags/ux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zufrieden.io/tags/ux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Consistency in Design is the Wrong Approach by Jared M. Spool</title>
-      <link>/linking/consistency-in-design-is-the-wrong-approach/</link>
+      <link>https://zufrieden.io/linking/consistency-in-design-is-the-wrong-approach/</link>
       <pubDate>Mon, 08 Jul 2019 16:18:42 +0200</pubDate>
       
-      <guid>/linking/consistency-in-design-is-the-wrong-approach/</guid>
+      <guid>https://zufrieden.io/linking/consistency-in-design-is-the-wrong-approach/</guid>
       <description></description>
     </item>
     

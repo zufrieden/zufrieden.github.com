@@ -1,31 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hello, I&#39;m Marc Friederich 👋 on zufrieden.io/</title>
-    <link>/</link>
+    <link>https://zufrieden.io/</link>
     <description>Recent content in Hello, I&#39;m Marc Friederich 👋 on zufrieden.io/</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 13 Feb 2018 13:42:49 -0500</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zufrieden.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Celebrating CSS Naked Day 2020</title>
-      <link>/writing/celebrating-css-naked-day-2020/</link>
+      <link>https://zufrieden.io/writing/celebrating-css-naked-day-2020/</link>
       <pubDate>Wed, 08 Apr 2020 22:00:00 +0000</pubDate>
       
-      <guid>/writing/celebrating-css-naked-day-2020/</guid>
+      <guid>https://zufrieden.io/writing/celebrating-css-naked-day-2020/</guid>
       <description>Nice that Eric Meyer brought it back. But now it’s April 10th so back to normal design.</description>
     </item>
     
     <item>
+      <title>Traveling to this remote island called Japan</title>
+      <link>https://zufrieden.io/writing/traveling-to-this-remote-island-called-japan/</link>
+      <pubDate>Sat, 29 Feb 2020 23:00:00 +0000</pubDate>
+      
+      <guid>https://zufrieden.io/writing/traveling-to-this-remote-island-called-japan/</guid>
+      <description>Being lucky enough to travel to Japan twice. I can&amp;rsquo;t wait going back. And obsessively take aside every article mentioning it.
+Fascination for the culture, the food, the landscape, the organisation, the history, the geography and so on. Being outside of this world, don&amp;rsquo;t want to touch anything but at the same time dive into it head first. With the most respectful behaviour.
+So here are the collected links :  The Glorious, Almost-Disconnected Boredom of My Walk in Japan These photos are why I’m trapped in Tokyo forever now Teachings From Japanese Craftsmanship: What Is Enough?</description>
+    </item>
+    
+    <item>
       <title>Some articles worth reading again once a Year</title>
-      <link>/writing/some-articles-worth-reading-again-once-a-year/</link>
+      <link>https://zufrieden.io/writing/some-articles-worth-reading-again-once-a-year/</link>
       <pubDate>Sat, 08 Feb 2020 23:00:00 +0000</pubDate>
       
-      <guid>/writing/some-articles-worth-reading-again-once-a-year/</guid>
+      <guid>https://zufrieden.io/writing/some-articles-worth-reading-again-once-a-year/</guid>
       <description>There is this article I keep refering to. A good narative and some choice for you to make at the end. On which Internet you aspire to build, which Internet you&amp;rsquo;d like to have. Well &amp;ldquo;The Internet for people&amp;rdquo;.
 Go dig in : Web Design: The First 100 Years
  When we point out that Silicon Valley doesn&amp;rsquo;t seem to be engaging the real world, that wages have been flat for thirty years, that Utopia seems further away than it&amp;rsquo;s been in a generation, we get impatient excuses.</description>
@@ -33,138 +44,138 @@ Go dig in : Web Design: The First 100 Years
     
     <item>
       <title>Web Design: The First 100 Years</title>
-      <link>/linking/web-design-the-first-100-years/</link>
+      <link>https://zufrieden.io/linking/web-design-the-first-100-years/</link>
       <pubDate>Sat, 08 Feb 2020 23:00:00 +0000</pubDate>
       
-      <guid>/linking/web-design-the-first-100-years/</guid>
+      <guid>https://zufrieden.io/linking/web-design-the-first-100-years/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The biggest lie tech people tell themselves — and the rest of us</title>
-      <link>/linking/the-biggest-lie-tech-people-tell-themselves-and-the-rest-of-us/</link>
+      <link>https://zufrieden.io/linking/the-biggest-lie-tech-people-tell-themselves-and-the-rest-of-us/</link>
       <pubDate>Wed, 05 Feb 2020 23:00:00 +0000</pubDate>
       
-      <guid>/linking/the-biggest-lie-tech-people-tell-themselves-and-the-rest-of-us/</guid>
+      <guid>https://zufrieden.io/linking/the-biggest-lie-tech-people-tell-themselves-and-the-rest-of-us/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Brutalism and Antidesign - in webdesign</title>
-      <link>/linking/brutalism-and-antidesign-in-webdesign/</link>
+      <link>https://zufrieden.io/linking/brutalism-and-antidesign-in-webdesign/</link>
       <pubDate>Thu, 23 Jan 2020 23:00:00 +0000</pubDate>
       
-      <guid>/linking/brutalism-and-antidesign-in-webdesign/</guid>
+      <guid>https://zufrieden.io/linking/brutalism-and-antidesign-in-webdesign/</guid>
       <description>Found in another article on the subject
 smashingmagazine.com/2017/10/functional-minimal-web-design/</description>
     </item>
     
     <item>
       <title>Teachings From Japanese Craftsmanship: What Is Enough?</title>
-      <link>/linking/teachings-from-japanese-craftsmanship-what-is-enough/</link>
+      <link>https://zufrieden.io/linking/teachings-from-japanese-craftsmanship-what-is-enough/</link>
       <pubDate>Tue, 07 Jan 2020 23:00:00 +0000</pubDate>
       
-      <guid>/linking/teachings-from-japanese-craftsmanship-what-is-enough/</guid>
+      <guid>https://zufrieden.io/linking/teachings-from-japanese-craftsmanship-what-is-enough/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Web Can&#39;t Survive a Monoculture</title>
-      <link>/linking/the-web-cant-survive-a-monoculture/</link>
+      <link>https://zufrieden.io/linking/the-web-cant-survive-a-monoculture/</link>
       <pubDate>Fri, 26 Jul 2019 21:37:00 +0200</pubDate>
       
-      <guid>/linking/the-web-cant-survive-a-monoculture/</guid>
+      <guid>https://zufrieden.io/linking/the-web-cant-survive-a-monoculture/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Modern Front-End Design System Stack</title>
-      <link>/linking/frontend-design-system-stack/</link>
+      <link>https://zufrieden.io/linking/frontend-design-system-stack/</link>
       <pubDate>Fri, 26 Jul 2019 21:29:29 +0200</pubDate>
       
-      <guid>/linking/frontend-design-system-stack/</guid>
+      <guid>https://zufrieden.io/linking/frontend-design-system-stack/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Browser Fingerprinting - Master thesis</title>
-      <link>/linking/browser-fingerprinting/</link>
+      <link>https://zufrieden.io/linking/browser-fingerprinting/</link>
       <pubDate>Fri, 26 Jul 2019 21:25:35 +0200</pubDate>
       
-      <guid>/linking/browser-fingerprinting/</guid>
+      <guid>https://zufrieden.io/linking/browser-fingerprinting/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Was the Automotive Era a Terrible Mistake?</title>
-      <link>/linking/automotive-era-a-terrible-mistake/</link>
+      <link>https://zufrieden.io/linking/automotive-era-a-terrible-mistake/</link>
       <pubDate>Fri, 26 Jul 2019 21:18:51 +0200</pubDate>
       
-      <guid>/linking/automotive-era-a-terrible-mistake/</guid>
+      <guid>https://zufrieden.io/linking/automotive-era-a-terrible-mistake/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Hos is it like to be a dev in Iran</title>
-      <link>/linking/being-a-developer-in-iran/</link>
+      <link>https://zufrieden.io/linking/being-a-developer-in-iran/</link>
       <pubDate>Fri, 26 Jul 2019 21:14:48 +0200</pubDate>
       
-      <guid>/linking/being-a-developer-in-iran/</guid>
+      <guid>https://zufrieden.io/linking/being-a-developer-in-iran/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Simple is the web, and why I love it so much.</title>
-      <link>/writing/a-love-letter-to-the-web/</link>
+      <link>https://zufrieden.io/writing/a-love-letter-to-the-web/</link>
       <pubDate>Mon, 08 Jul 2019 16:23:49 +0200</pubDate>
       
-      <guid>/writing/a-love-letter-to-the-web/</guid>
+      <guid>https://zufrieden.io/writing/a-love-letter-to-the-web/</guid>
       <description>The web is so simple yet we often create cumbersome solutions. When the Developer Experience is balanced over User Experience, we may lose what&amp;rsquo;s valuable in the process. This talk will try to look at my brief web history to find patterns and loops.
 Building a more resilient web, understanding the value of the web and how we build a more sustainable heritage. I consider myself a web dinosaur, let&amp;rsquo;s not condemn ourself to quickly to extinction.</description>
     </item>
     
     <item>
       <title>Chaos Design: Before the robots take our jobs, can we please get them to help us do some good work?</title>
-      <link>/linking/chaos-design/</link>
+      <link>https://zufrieden.io/linking/chaos-design/</link>
       <pubDate>Mon, 08 Jul 2019 16:20:20 +0200</pubDate>
       
-      <guid>/linking/chaos-design/</guid>
+      <guid>https://zufrieden.io/linking/chaos-design/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Consistency in Design is the Wrong Approach by Jared M. Spool</title>
-      <link>/linking/consistency-in-design-is-the-wrong-approach/</link>
+      <link>https://zufrieden.io/linking/consistency-in-design-is-the-wrong-approach/</link>
       <pubDate>Mon, 08 Jul 2019 16:18:42 +0200</pubDate>
       
-      <guid>/linking/consistency-in-design-is-the-wrong-approach/</guid>
+      <guid>https://zufrieden.io/linking/consistency-in-design-is-the-wrong-approach/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Designing For Users Across Cultures: An Interview With Jenny Shen</title>
-      <link>/linking/designing-users-across-cultures-interview-jenny-shen/</link>
+      <link>https://zufrieden.io/linking/designing-users-across-cultures-interview-jenny-shen/</link>
       <pubDate>Mon, 08 Jul 2019 16:16:59 +0200</pubDate>
       
-      <guid>/linking/designing-users-across-cultures-interview-jenny-shen/</guid>
+      <guid>https://zufrieden.io/linking/designing-users-across-cultures-interview-jenny-shen/</guid>
       <description></description>
     </item>
     
     <item>
       <title>the Origins of Opera and the Future of Programming</title>
-      <link>/linking/the-origins-of-opera-and-the-future-of-programming/</link>
+      <link>https://zufrieden.io/linking/the-origins-of-opera-and-the-future-of-programming/</link>
       <pubDate>Mon, 08 Jul 2019 16:12:10 +0200</pubDate>
       
-      <guid>/linking/the-origins-of-opera-and-the-future-of-programming/</guid>
+      <guid>https://zufrieden.io/linking/the-origins-of-opera-and-the-future-of-programming/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Easy as the web</title>
-      <link>/talking/easy-as-the-web/</link>
+      <link>https://zufrieden.io/talking/easy-as-the-web/</link>
       <pubDate>Tue, 02 Jul 2019 17:00:00 +0000</pubDate>
       
-      <guid>/talking/easy-as-the-web/</guid>
+      <guid>https://zufrieden.io/talking/easy-as-the-web/</guid>
       <description>The Web is so simple, yet we often create cumbersome solutions.
 When the developer’s experience is balanced over user’s experience, we may lose what&amp;rsquo;s valuable in the process. This talk will try to look at our brief web history to find patterns and loops.
 The goal of this talk is to create together a more resilient Web, to understand the value of the Web and how we can build a more sustainable heritage.</description>
@@ -172,233 +183,233 @@ The goal of this talk is to create together a more resilient Web, to understand 
     
     <item>
       <title>Creating some slack</title>
-      <link>/linking/creating_some_slack/</link>
+      <link>https://zufrieden.io/linking/creating_some_slack/</link>
       <pubDate>Wed, 12 Dec 2018 20:42:21 +0100</pubDate>
       
-      <guid>/linking/creating_some_slack/</guid>
+      <guid>https://zufrieden.io/linking/creating_some_slack/</guid>
       <description>The best way to think about a household is as a miniature ecosystem that has inputs, outputs, and a flow of resources that power and sustain it.</description>
     </item>
     
     <item>
       <title>Why Doctors Hate Their Computers</title>
-      <link>/linking/why_doctors_hate_their_computers/</link>
+      <link>https://zufrieden.io/linking/why_doctors_hate_their_computers/</link>
       <pubDate>Tue, 27 Nov 2018 22:01:04 +0100</pubDate>
       
-      <guid>/linking/why_doctors_hate_their_computers/</guid>
+      <guid>https://zufrieden.io/linking/why_doctors_hate_their_computers/</guid>
       <description></description>
     </item>
     
     <item>
       <title>A primer on documentation content strategy</title>
-      <link>/linking/a-primer-on-documentation-content-strategy/</link>
+      <link>https://zufrieden.io/linking/a-primer-on-documentation-content-strategy/</link>
       <pubDate>Sun, 11 Nov 2018 15:33:52 +0000</pubDate>
       
-      <guid>/linking/a-primer-on-documentation-content-strategy/</guid>
+      <guid>https://zufrieden.io/linking/a-primer-on-documentation-content-strategy/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Circular Classroom: a Free Toolkit for Activating the Circular Economy through Experiential Learning</title>
-      <link>/linking/the-circular-classroom-a-free-toolkit-for-activating-the-circular-economy-through-experiential-learning/</link>
+      <link>https://zufrieden.io/linking/the-circular-classroom-a-free-toolkit-for-activating-the-circular-economy-through-experiential-learning/</link>
       <pubDate>Sun, 11 Nov 2018 15:32:57 +0000</pubDate>
       
-      <guid>/linking/the-circular-classroom-a-free-toolkit-for-activating-the-circular-economy-through-experiential-learning/</guid>
+      <guid>https://zufrieden.io/linking/the-circular-classroom-a-free-toolkit-for-activating-the-circular-economy-through-experiential-learning/</guid>
       <description></description>
     </item>
     
     <item>
       <title>As Wired magazine turns 25, we remember when email was fun</title>
-      <link>/linking/as-wired-magazine-turns-25-we-remember-when-email-was-fun/</link>
+      <link>https://zufrieden.io/linking/as-wired-magazine-turns-25-we-remember-when-email-was-fun/</link>
       <pubDate>Sun, 11 Nov 2018 15:30:31 +0000</pubDate>
       
-      <guid>/linking/as-wired-magazine-turns-25-we-remember-when-email-was-fun/</guid>
+      <guid>https://zufrieden.io/linking/as-wired-magazine-turns-25-we-remember-when-email-was-fun/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Control--Panel</title>
-      <link>/linking/control--panel/</link>
+      <link>https://zufrieden.io/linking/control-panel/</link>
       <pubDate>Sun, 28 Oct 2018 20:42:21 +0100</pubDate>
       
-      <guid>/linking/control--panel/</guid>
+      <guid>https://zufrieden.io/linking/control-panel/</guid>
       <description>And there is more on flickr</description>
     </item>
     
     <item>
       <title>Infused design with Jared Spool - UX Podcast</title>
-      <link>/linking/uxpodcast-infused-design/</link>
+      <link>https://zufrieden.io/linking/uxpodcast-infused-design/</link>
       <pubDate>Sun, 28 Oct 2018 20:39:22 +0100</pubDate>
       
-      <guid>/linking/uxpodcast-infused-design/</guid>
+      <guid>https://zufrieden.io/linking/uxpodcast-infused-design/</guid>
       <description>We can identify business value by asking the following questions about the end results of our project:
  Will it increase revenue? Will it decrease expenses? Will it bring in new customers? Will it bring in more money from existing customers? Will it increase shareholder/taxpayer value?  &amp;ndash;&amp;gt; About business value</description>
     </item>
     
     <item>
       <title>Taking PHP Seriously</title>
-      <link>/linking/takingphpseriously/</link>
+      <link>https://zufrieden.io/linking/takingphpseriously/</link>
       <pubDate>Sun, 28 Oct 2018 20:37:37 +0100</pubDate>
       
-      <guid>/linking/takingphpseriously/</guid>
+      <guid>https://zufrieden.io/linking/takingphpseriously/</guid>
       <description>Tools are not important</description>
     </item>
     
     <item>
       <title>I don’t care what Airbnb is doing. (And neither should you.)</title>
-      <link>/linking/dontcarewhatairbnbisdoing/</link>
+      <link>https://zufrieden.io/linking/dontcarewhatairbnbisdoing/</link>
       <pubDate>Sun, 28 Oct 2018 20:35:32 +0100</pubDate>
       
-      <guid>/linking/dontcarewhatairbnbisdoing/</guid>
+      <guid>https://zufrieden.io/linking/dontcarewhatairbnbisdoing/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Cabal</title>
-      <link>/linking/cabal/</link>
+      <link>https://zufrieden.io/linking/cabal/</link>
       <pubDate>Sun, 23 Sep 2018 18:44:02 +0200</pubDate>
       
-      <guid>/linking/cabal/</guid>
+      <guid>https://zufrieden.io/linking/cabal/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tutorial on dat://</title>
-      <link>/linking/try-dat/</link>
+      <link>https://zufrieden.io/linking/try-dat/</link>
       <pubDate>Sun, 23 Sep 2018 18:42:52 +0200</pubDate>
       
-      <guid>/linking/try-dat/</guid>
+      <guid>https://zufrieden.io/linking/try-dat/</guid>
       <description></description>
     </item>
     
     <item>
       <title>How and why asking for help</title>
-      <link>/writing/leadership-how-and-why-asking-for-help/</link>
+      <link>https://zufrieden.io/writing/leadership-how-and-why-asking-for-help/</link>
       <pubDate>Sun, 23 Sep 2018 14:13:56 +0200</pubDate>
       
-      <guid>/writing/leadership-how-and-why-asking-for-help/</guid>
+      <guid>https://zufrieden.io/writing/leadership-how-and-why-asking-for-help/</guid>
       <description>Asking for help is fine We tend to not ask for help. Usually because it transmit the idea of a weak person. It may expose our weakness right. But human being likes to help and saying you need some help is a good honest gesture. Because you can&amp;rsquo;t do everything alone right.
 3 reinforcements that helps to get buys-in  Being part of the group is something you have to consider when asking for help.</description>
     </item>
     
     <item>
       <title>Start a localwiki.org page for Lausanne</title>
-      <link>/writing/start-local-wiki-for-lausanne/</link>
+      <link>https://zufrieden.io/writing/start-local-wiki-for-lausanne/</link>
       <pubDate>Sun, 23 Sep 2018 12:05:03 +0200</pubDate>
       
-      <guid>/writing/start-local-wiki-for-lausanne/</guid>
+      <guid>https://zufrieden.io/writing/start-local-wiki-for-lausanne/</guid>
       <description>Just created a page on LocalWiki about Lausanne. Being impressed by the story behind Davis LocalWiki and how it this city is using a wiki for online/open/free/ communication and API&amp;rsquo;s services. More about this on the about LocalWiki page.</description>
     </item>
     
     <item>
       <title>Hiring web developers - some tips</title>
-      <link>/linking/hiring-web-developers-some-tips/</link>
+      <link>https://zufrieden.io/linking/hiring-web-developers-some-tips/</link>
       <pubDate>Mon, 03 Sep 2018 16:45:03 +0000</pubDate>
       
-      <guid>/linking/hiring-web-developers-some-tips/</guid>
+      <guid>https://zufrieden.io/linking/hiring-web-developers-some-tips/</guid>
       <description>Really like how the article makes clear the basics are more important than the hype.</description>
     </item>
     
     <item>
       <title>HTTPS required is for the West White Web</title>
-      <link>/linking/https-required-is-for-the-west-white-web/</link>
+      <link>https://zufrieden.io/linking/https-required-is-for-the-west-white-web/</link>
       <pubDate>Wed, 08 Aug 2018 20:39:21 +0000</pubDate>
       
-      <guid>/linking/https-required-is-for-the-west-white-web/</guid>
+      <guid>https://zufrieden.io/linking/https-required-is-for-the-west-white-web/</guid>
       <description></description>
     </item>
     
     <item>
       <title>About dat:// to a distributed Web</title>
-      <link>/writing/about_dat_to_a_distributed_web/</link>
+      <link>https://zufrieden.io/writing/about_dat_to_a_distributed_web/</link>
       <pubDate>Wed, 08 Aug 2018 15:22:06 +0200</pubDate>
       
-      <guid>/writing/about_dat_to_a_distributed_web/</guid>
+      <guid>https://zufrieden.io/writing/about_dat_to_a_distributed_web/</guid>
       <description>First I saw tweets about beaker browser so I installed it and then forget it. Then I saw this talk Imagine This: A Web Without Servers by Tara Vancil at JSConf EU 2018. And I remembered again. dat:// a protocol to allow a P2P web to exist. A concept of a fully distributed web where the architecture works without servers so to say or where every device may become a server.</description>
     </item>
     
     <item>
       <title>How the Enlightenment Ends</title>
-      <link>/linking/how_the_enlightenment_ends/</link>
+      <link>https://zufrieden.io/linking/how_the_enlightenment_ends/</link>
       <pubDate>Tue, 07 Aug 2018 16:43:37 +0200</pubDate>
       
-      <guid>/linking/how_the_enlightenment_ends/</guid>
+      <guid>https://zufrieden.io/linking/how_the_enlightenment_ends/</guid>
       <description> The Enlightenment started with essentially philosophical insights spread by a new technology. Our period is moving in the opposite direction. It has generated a potentially dominating technology in search of a guiding philosophy.
  </description>
     </item>
     
     <item>
       <title>Look for Integrity</title>
-      <link>/linking/look_for_integrity/</link>
+      <link>https://zufrieden.io/linking/look_for_integrity/</link>
       <pubDate>Sun, 05 Aug 2018 14:20:37 +0200</pubDate>
       
-      <guid>/linking/look_for_integrity/</guid>
+      <guid>https://zufrieden.io/linking/look_for_integrity/</guid>
       <description> “You’re looking for three things, generally, in a person,” says Buffett. “Intelligence, energy, and integrity. And if they don’t have the last one, don’t even bother with the first two. I tell them, ‘Everyone here has the intelligence and energy—you wouldn’t be here otherwise. But the integrity is up to you. You weren’t born with it, you can’t learn it in school.”
  </description>
     </item>
     
     <item>
       <title>My leadership cheatsheet</title>
-      <link>/writing/leadership_cheatsheet/</link>
+      <link>https://zufrieden.io/writing/leadership_cheatsheet/</link>
       <pubDate>Sun, 05 Aug 2018 13:49:44 +0200</pubDate>
       
-      <guid>/writing/leadership_cheatsheet/</guid>
+      <guid>https://zufrieden.io/writing/leadership_cheatsheet/</guid>
       <description>Seeking the right role for an Entrepeneur  becoming an observer instead of an active participant in your business Entrepreneurship is really just a fancy word for delegation   &amp;ldquo;My company felt like an unmanned car, slowly swerving into the ditch only to be pulled back — usually by me — at the last second.&amp;rdquo;
-&amp;ldquo;Many CEO’s forget this and get stuck in sales, marketing, product — whatever part of the business they love — while they ignore the bigger picture.</description>
+  &amp;ldquo;Many CEO’s forget this and get stuck in sales, marketing, product — whatever part of the business they love — while they ignore the bigger picture.</description>
     </item>
     
     <item>
       <title>Surtout ne pas refaire son site</title>
-      <link>/talking/2018_performanceweb_surtout_ne_pas_refaire_son_site/</link>
+      <link>https://zufrieden.io/talking/2018_performanceweb_surtout_ne_pas_refaire_son_site/</link>
       <pubDate>Thu, 24 May 2018 14:44:15 +0100</pubDate>
       
-      <guid>/talking/2018_performanceweb_surtout_ne_pas_refaire_son_site/</guid>
+      <guid>https://zufrieden.io/talking/2018_performanceweb_surtout_ne_pas_refaire_son_site/</guid>
       <description>Dans la course à la refonte, on se soucie d’avoir un nouveau design qui fait waouh, du responsive et heureusement aussi de l’ergonomie. On se soucie malheureusement rarement des implications sur le traffic, le référencement, la mesure du succès de cette même refonte. Le but de ce talk est de vous convaincre d’approcher une refonte par plus petite partie pour un vrai développement durable et mesurable.
 Source https://twitter.com/PerformanceWeb_/status/999547106481397760</description>
     </item>
     
     <item>
       <title>Design Systems</title>
-      <link>/talking/2018_un_designers_design_documentation_made_to_last/</link>
+      <link>https://zufrieden.io/talking/2018_un_designers_design_documentation_made_to_last/</link>
       <pubDate>Fri, 27 Apr 2018 10:00:00 +0200</pubDate>
       
-      <guid>/talking/2018_un_designers_design_documentation_made_to_last/</guid>
+      <guid>https://zufrieden.io/talking/2018_un_designers_design_documentation_made_to_last/</guid>
       <description>Marc Friederich from Lausanne based agency Antistatique will be discussing in &amp;lsquo;Design Systems&amp;rsquo; how shifting from print to digital has shaped branding and design systems.</description>
     </item>
     
     <item>
       <title>Marc Friederich 🔮</title>
-      <link>/about/</link>
+      <link>https://zufrieden.io/about/</link>
       <pubDate>Tue, 13 Feb 2018 13:42:49 -0500</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://zufrieden.io/about/</guid>
       <description>About me Co-founder of Antistatique, a swiss web agency in Lausanne, Geneva and Miami.
 With over =(time() - 1998) years of web experience, Marc has carried out and managed all types of projects in the field. Since he has experience working all parts of the media production chain, he can take on many different roles when it comes to designing, developing, project management and quality control. He has a clear vision of what is required for each project, thanks to his expertise in human factors and ergonomics, usability, accessibility and technology.</description>
     </item>
     
     <item>
       <title>Design documentation</title>
-      <link>/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</link>
+      <link>https://zufrieden.io/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</link>
       <pubDate>Wed, 18 Oct 2017 19:00:00 +0200</pubDate>
       
-      <guid>/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</guid>
+      <guid>https://zufrieden.io/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Design documentation made to last</title>
-      <link>/talking/2017_producttank_design_documentation_made_to_last/</link>
+      <link>https://zufrieden.io/talking/2017_producttank_design_documentation_made_to_last/</link>
       <pubDate>Thu, 29 Jun 2017 18:30:00 +0200</pubDate>
       
-      <guid>/talking/2017_producttank_design_documentation_made_to_last/</guid>
+      <guid>https://zufrieden.io/talking/2017_producttank_design_documentation_made_to_last/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SÃ©lectionnez votre pays. Quelle est votre langueâ€‰?</title>
-      <link>/talking/2017_ixda_lausanne_i18n_l10n/</link>
+      <link>https://zufrieden.io/talking/2017_ixda_lausanne_i18n_l10n/</link>
       <pubDate>Tue, 09 May 2017 19:00:00 +0200</pubDate>
       
-      <guid>/talking/2017_ixda_lausanne_i18n_l10n/</guid>
+      <guid>https://zufrieden.io/talking/2017_ixda_lausanne_i18n_l10n/</guid>
       <description>Sélectionnez votre pays. Quelle est votre langue ? Je veux que les chiffres soient formatés de cette manière. Quel est le fuseau horaire ? Je lis de droite à gauche.
 Comment obtenez-vous ces informations de la part des gens ? Et comment donnez-vous ces informations aux gens qui viennent de différents pays et de différentes cultures ? Et que ces personnes parlent différentes langues…
 La localisation et l’internationalisation sont des sujets complexes.</description>
@@ -406,10 +417,10 @@ La localisation et l’internationalisation sont des sujets complexes.</descript
     
     <item>
       <title>i18n &amp; l10n — Internationalisation &amp; localisation</title>
-      <link>/talking/2016_web_blend_mix_i18n_l10n/</link>
+      <link>https://zufrieden.io/talking/2016_web_blend_mix_i18n_l10n/</link>
       <pubDate>Thu, 03 Nov 2016 12:34:41 +0200</pubDate>
       
-      <guid>/talking/2016_web_blend_mix_i18n_l10n/</guid>
+      <guid>https://zufrieden.io/talking/2016_web_blend_mix_i18n_l10n/</guid>
       <description>Sélectionnez votre pays. Quelle est votre langue ? Je veux que les chiffres soient formatés de cette manière. Quel est le fuseau horaire ? Je lis de droite à gauche.
 Comment obtenez-vous ces informations de la part des gens ? Et comment donnez-vous ces informations aux gens qui viennent de différents pays et de différentes cultures ? Et que ces personnes parlent différentes langues…
 La localisation et l’internationalisation sont des sujets complexes.</description>
@@ -417,10 +428,10 @@ La localisation et l’internationalisation sont des sujets complexes.</descript
     
     <item>
       <title>Flexbox - layouting finally made easy</title>
-      <link>/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</link>
+      <link>https://zufrieden.io/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</link>
       <pubDate>Tue, 29 Mar 2016 19:00:00 +0200</pubDate>
       
-      <guid>/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</guid>
+      <guid>https://zufrieden.io/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</guid>
       <description>This talk will cover the flexible box module layout specifications, with samples and use cases.
 • Flex direction and understand axis
 • Justify-content, align-items and align-content when wrapping
@@ -431,19 +442,19 @@ La localisation et l’internationalisation sont des sujets complexes.</descript
     
     <item>
       <title>Frontend Toolbox</title>
-      <link>/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</link>
+      <link>https://zufrieden.io/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</link>
       <pubDate>Fri, 28 Aug 2015 12:34:41 -0500</pubDate>
       
-      <guid>/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</guid>
+      <guid>https://zufrieden.io/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dynamic Style Guides – Retour d&#39;experience</title>
-      <link>/talking/2014_softshake_styleguide_by_default/</link>
+      <link>https://zufrieden.io/talking/2014_softshake_styleguide_by_default/</link>
       <pubDate>Fri, 24 Oct 2014 10:30:00 +0200</pubDate>
       
-      <guid>/talking/2014_softshake_styleguide_by_default/</guid>
+      <guid>https://zufrieden.io/talking/2014_softshake_styleguide_by_default/</guid>
       <description>Avec l’émergence des styles modulaires, le style guide est devenu un outil indispensable pour documenter et organiser le travail du frontend développeur.
 Véritable moyen de communication entre designer et développeur, le styleguide établit un dialogue efficient et pratique.
 L’emploi d’un système de styleguide vous obligera à penser et coder modulaire. En effet, si vous commencer par concevoir les éléments de votre design indépendamment les uns des autres en ne les consultants que dans votre styleguide, vous aurez intégré le plus gros du concept.</description>
@@ -451,28 +462,28 @@ L’emploi d’un système de styleguide vous obligera à penser et coder modula
     
     <item>
       <title>Generate Styleguides for Every Project</title>
-      <link>/talking/2014_frontendconf_generate_styleguides_for_every_project/</link>
+      <link>https://zufrieden.io/talking/2014_frontendconf_generate_styleguides_for_every_project/</link>
       <pubDate>Thu, 28 Aug 2014 14:11:11 +0100</pubDate>
       
-      <guid>/talking/2014_frontendconf_generate_styleguides_for_every_project/</guid>
+      <guid>https://zufrieden.io/talking/2014_frontendconf_generate_styleguides_for_every_project/</guid>
       <description>A &amp;ldquo;Styleguide generated by default&amp;rdquo; approach makes your life easier. There is plenty of generator to help you document your components and have a future friendly code. Return of over 2 years experience, the talk shows a benchmark of styleguide generators.</description>
     </item>
     
     <item>
       <title>Digital par défault</title>
-      <link>/talking/2014_digital_par_default/</link>
+      <link>https://zufrieden.io/talking/2014_digital_par_default/</link>
       <pubDate>Mon, 14 Jul 2014 14:19:27 +0100</pubDate>
       
-      <guid>/talking/2014_digital_par_default/</guid>
+      <guid>https://zufrieden.io/talking/2014_digital_par_default/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Dynamic Style-Guides</title>
-      <link>/talking/2014_webmardi_dynamic_style_guides/</link>
+      <link>https://zufrieden.io/talking/2014_webmardi_dynamic_style_guides/</link>
       <pubDate>Tue, 07 Jan 2014 14:22:59 +0100</pubDate>
       
-      <guid>/talking/2014_webmardi_dynamic_style_guides/</guid>
+      <guid>https://zufrieden.io/talking/2014_webmardi_dynamic_style_guides/</guid>
       <description>Les styleguides dynamiques Avec l&amp;rsquo;émergence des styles modulaires, le style guide est devenu un outil indispensable pour documenter et organiser le travail du frontend développeur.
 Véritable moyen de communication entre designer et développeur, le styleguide établit un dialogue efficient et pratique.
 L&amp;rsquo;emploi d&amp;rsquo;un système de styleguide vous obligera à penser et coder modulaire. En effet, si vous commencer par concevoir les éléments de votre design indépendamment les uns des autres en ne les consultants que dans votre styleguide, vous aurez intégré le plus gros du concept.</description>
@@ -480,10 +491,10 @@ L&amp;rsquo;emploi d&amp;rsquo;un système de styleguide vous obligera à penser
     
     <item>
       <title>Prototype in the browser</title>
-      <link>/talking/2013_softshake_prototyping_in_the_browser/</link>
+      <link>https://zufrieden.io/talking/2013_softshake_prototyping_in_the_browser/</link>
       <pubDate>Thu, 24 Oct 2013 13:37:02 +0200</pubDate>
       
-      <guid>/talking/2013_softshake_prototyping_in_the_browser/</guid>
+      <guid>https://zufrieden.io/talking/2013_softshake_prototyping_in_the_browser/</guid>
       <description>Rien ne vaut du papier et un bon vieux crayon pour coucher ses idées. Puis vient le moment où il faut présenter et éprouver son concept. Dans une démarche agile, il est indispensable d’obtenir rapidement un concept testable.
 À travers plusieurs retours d’expérience, cette présentation vous donnera un aperçu des méthodes de prototypage en HTML. Construire son interface en quelques lignes pour pouvoir la tester rapidement.
 Valable pour tous les types d’applications, ces méthodes sont idéales pour réaliser des tests utilisateurs.</description>
@@ -491,46 +502,55 @@ Valable pour tous les types d’applications, ces méthodes sont idéales pour r
     
     <item>
       <title>Build a HTML Presentations Directory in 2 Days - Slidedeck.io</title>
-      <link>/talking/2013_frontend_slidedeckio/</link>
+      <link>https://zufrieden.io/talking/2013_frontend_slidedeckio/</link>
       <pubDate>Fri, 30 Aug 2013 14:29:40 +0100</pubDate>
       
-      <guid>/talking/2013_frontend_slidedeckio/</guid>
+      <guid>https://zufrieden.io/talking/2013_frontend_slidedeckio/</guid>
       <description></description>
     </item>
     
     <item>
       <title>WordPress - feedback and lesson learned</title>
-      <link>/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</link>
+      <link>https://zufrieden.io/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</link>
       <pubDate>Wed, 08 May 2013 19:00:00 +0200</pubDate>
       
-      <guid>/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</guid>
+      <guid>https://zufrieden.io/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</guid>
       <description>Slides from our lessons learned and experience about wordpress project at Antistatique</description>
     </item>
     
     <item>
       <title>Maintaining your working environment</title>
-      <link>/writing/2012-11-04-maintaining-your-working-environment/</link>
+      <link>https://zufrieden.io/writing/2012-11-04-maintaining-your-working-environment/</link>
       <pubDate>Sun, 04 Nov 2012 12:35:11 -0500</pubDate>
       
-      <guid>/writing/2012-11-04-maintaining-your-working-environment/</guid>
+      <guid>https://zufrieden.io/writing/2012-11-04-maintaining-your-working-environment/</guid>
       <description>It&amp;rsquo;s quite hard for a first post to choose a topic. I was used to blog a lot 6 years ago. My topics of choice were mainly webdesign, xhtml, css, my student life and so on. I stopped for many reasons (personal life, moving a year to finland, building my company) but since I like sharing things and collecting thoughs about by day and night work. I am here to share.</description>
     </item>
     
     <item>
       <title>Nothing Fails Like Success</title>
-      <link>/linking/nothing-fails-like-success/</link>
+      <link>https://zufrieden.io/linking/nothing-fails-like-success/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/linking/nothing-fails-like-success/</guid>
+      <guid>https://zufrieden.io/linking/nothing-fails-like-success/</guid>
       <description></description>
     </item>
     
     <item>
       <title>The Case for the Disconnected Commute</title>
-      <link>/linking/the-case-for-the-disconnected-commute/</link>
+      <link>https://zufrieden.io/linking/the-case-for-the-disconnected-commute/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/linking/the-case-for-the-disconnected-commute/</guid>
+      <guid>https://zufrieden.io/linking/the-case-for-the-disconnected-commute/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Your website’s only as strong as the weakest device you’ve tested it on.</title>
+      <link>https://zufrieden.io/linking/your-website-s-only-as-strong-as-the-weakest-device-you-ve-tested-it-on/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zufrieden.io/linking/your-website-s-only-as-strong-as-the-weakest-device-you-ve-tested-it-on/</guid>
       <description></description>
     </item>
     

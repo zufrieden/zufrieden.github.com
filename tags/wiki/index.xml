@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Wiki on zufrieden.io/</title>
-    <link>/tags/wiki/</link>
-    <description>Recent content in Wiki on zufrieden.io/</description>
+    <title>wiki on zufrieden.io/</title>
+    <link>https://zufrieden.io/tags/wiki/</link>
+    <description>Recent content in wiki on zufrieden.io/</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 23 Sep 2018 12:05:03 +0200</lastBuildDate>
     
-	<atom:link href="/tags/wiki/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zufrieden.io/tags/wiki/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Start a localwiki.org page for Lausanne</title>
-      <link>/writing/start-local-wiki-for-lausanne/</link>
+      <link>https://zufrieden.io/writing/start-local-wiki-for-lausanne/</link>
       <pubDate>Sun, 23 Sep 2018 12:05:03 +0200</pubDate>
       
-      <guid>/writing/start-local-wiki-for-lausanne/</guid>
+      <guid>https://zufrieden.io/writing/start-local-wiki-for-lausanne/</guid>
       <description>Just created a page on LocalWiki about Lausanne. Being impressed by the story behind Davis LocalWiki and how it this city is using a wiki for online/open/free/ communication and API&amp;rsquo;s services. More about this on the about LocalWiki page.</description>
     </item>
     

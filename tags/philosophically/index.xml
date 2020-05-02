@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Philosophically on zufrieden.io/</title>
-    <link>/tags/philosophically/</link>
-    <description>Recent content in Philosophically on zufrieden.io/</description>
+    <title>philosophically on zufrieden.io/</title>
+    <link>https://zufrieden.io/tags/philosophically/</link>
+    <description>Recent content in philosophically on zufrieden.io/</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 07 Aug 2018 16:43:37 +0200</lastBuildDate>
     
-	<atom:link href="/tags/philosophically/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zufrieden.io/tags/philosophically/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How the Enlightenment Ends</title>
-      <link>/linking/how_the_enlightenment_ends/</link>
+      <link>https://zufrieden.io/linking/how_the_enlightenment_ends/</link>
       <pubDate>Tue, 07 Aug 2018 16:43:37 +0200</pubDate>
       
-      <guid>/linking/how_the_enlightenment_ends/</guid>
+      <guid>https://zufrieden.io/linking/how_the_enlightenment_ends/</guid>
       <description> The Enlightenment started with essentially philosophical insights spread by a new technology. Our period is moving in the opposite direction. It has generated a potentially dominating technology in search of a guiding philosophy.
  </description>
     </item>
