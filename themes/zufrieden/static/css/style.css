@@ -18,12 +18,12 @@
 }
 
 html{
-  font-size: 22px;
+  font-size: 20px;
 }
 body{
   font-family: 'Cabin Condensed',-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
-  font-size: calc(0.8em + 1vw);
-  font-size: -webkit-calc(60% + 1vw);
+  font-size: calc(0.7em + 1vw);
+  font-size: -webkit-calc(70% + 1vw);
   background-color: #f7ece6;
   border-top: #3472c9 1vh solid;
   margin: 0;
@@ -202,8 +202,8 @@ h1, h2, h3, h4, h5{
   word-wrap: break-word;
 }
 h1, .h1, .h-huge {
-  font-size: calc(2.8em + 2vw);
-  font-size: -webkit-calc(280% + 2vw);
+  font-size: calc(3.1em + 1vw);
+  font-size: -webkit-calc(310% + 1vw);
   line-height: 1.1em;
   font-weight: normal;
   margin-top: 0;
