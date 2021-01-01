@@ -7,9 +7,6 @@ tags: ["geek"]
 description : As a reminder to my future self, here is my personal recipe for new fresh install
 ---
 
-
-# Fresh install - OSX 
-
 As a reminder to my future self, here is my personal recipe for new fresh install. Yes it looks like holiday is a great time to update OSX to the new and shiny one.
 
 ## Install OSX - then re-install OSX
@@ -17,7 +14,11 @@ Format the hard drive with Disk Utility between the 2 installs
 `⌘ + R` on startup
 
 ## Get .dotfile and .ssh keys
-From only you know where :-)
+From only you know where :-) and set right permissions
+* .ssh directory: 700 (drwx------)
+* public key (.pub file): 644 (-rw-r--r--)
+* private key (id_rsa): 600 (-rw-------)
+* lastly your home directory should not be writeable by the group or others (at most 755 (drwxr-xr-x)).
 
 ## Sync iCloud 
 - Careful with the 2 accounts (1 coming from a previous era of .Mac account)
