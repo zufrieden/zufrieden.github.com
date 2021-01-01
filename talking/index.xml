@@ -1,177 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Talking 🎩 on zufrieden.io/</title>
-    <link>https://zufrieden.io/talking/</link>
-    <description>Recent content in Talking 🎩 on zufrieden.io/</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 13 Feb 2018 12:21:57 -0500</lastBuildDate>
-    
-	<atom:link href="https://zufrieden.io/talking/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Easy as the web</title>
-      <link>https://zufrieden.io/talking/2020_easy-as-the-web/</link>
-      <pubDate>Tue, 02 Jul 2019 17:00:00 +0000</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2020_easy-as-the-web/</guid>
-      <description>The Web is so simple, yet we often create cumbersome solutions.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Talking 🎩 on zufrieden.io/</title><link>https://zufrieden.io/talking/</link><description>Recent content in Talking 🎩 on zufrieden.io/</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 13 Feb 2018 12:21:57 -0500</lastBuildDate><atom:link href="https://zufrieden.io/talking/index.xml" rel="self" type="application/rss+xml"/><item><title>Easy as the web</title><link>https://zufrieden.io/talking/2020_easy-as-the-web/</link><pubDate>Tue, 02 Jul 2019 17:00:00 +0000</pubDate><guid>https://zufrieden.io/talking/2020_easy-as-the-web/</guid><description>The Web is so simple, yet we often create cumbersome solutions.
 When the developer’s experience is balanced over user’s experience, we may lose what&amp;rsquo;s valuable in the process. This talk will try to look at our brief web history to find patterns and loops.
-The goal of this talk is to create together a more resilient Web, to understand the value of the Web and how we can build a more sustainable heritage.</description>
-    </item>
-    
-    <item>
-      <title>Surtout ne pas refaire son site</title>
-      <link>https://zufrieden.io/talking/2018_performanceweb_surtout_ne_pas_refaire_son_site/</link>
-      <pubDate>Thu, 24 May 2018 14:44:15 +0100</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2018_performanceweb_surtout_ne_pas_refaire_son_site/</guid>
-      <description>Dans la course à la refonte, on se soucie d’avoir un nouveau design qui fait waouh, du responsive et heureusement aussi de l’ergonomie. On se soucie malheureusement rarement des implications sur le traffic, le référencement, la mesure du succès de cette même refonte. Le but de ce talk est de vous convaincre d’approcher une refonte par plus petite partie pour un vrai développement durable et mesurable.
-Source https://twitter.com/PerformanceWeb_/status/999547106481397760</description>
-    </item>
-    
-    <item>
-      <title>Design Systems</title>
-      <link>https://zufrieden.io/talking/2018_un_designers_design_documentation_made_to_last/</link>
-      <pubDate>Fri, 27 Apr 2018 10:00:00 +0200</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2018_un_designers_design_documentation_made_to_last/</guid>
-      <description>Marc Friederich from Lausanne based agency Antistatique will be discussing in &amp;lsquo;Design Systems&amp;rsquo; how shifting from print to digital has shaped branding and design systems.</description>
-    </item>
-    
-    <item>
-      <title>Design documentation</title>
-      <link>https://zufrieden.io/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</link>
-      <pubDate>Wed, 18 Oct 2017 19:00:00 +0200</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Design documentation made to last</title>
-      <link>https://zufrieden.io/talking/2017_producttank_design_documentation_made_to_last/</link>
-      <pubDate>Thu, 29 Jun 2017 18:30:00 +0200</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2017_producttank_design_documentation_made_to_last/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>SÃ©lectionnez votre pays. Quelle est votre langueâ€‰?</title>
-      <link>https://zufrieden.io/talking/2017_ixda_lausanne_i18n_l10n/</link>
-      <pubDate>Tue, 09 May 2017 19:00:00 +0200</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2017_ixda_lausanne_i18n_l10n/</guid>
-      <description>Sélectionnez votre pays. Quelle est votre langue ? Je veux que les chiffres soient formatés de cette manière. Quel est le fuseau horaire ? Je lis de droite à gauche.
+The goal of this talk is to create together a more resilient Web, to understand the value of the Web and how we can build a more sustainable heritage.</description></item><item><title>Surtout ne pas refaire son site</title><link>https://zufrieden.io/talking/2018_performanceweb_surtout_ne_pas_refaire_son_site/</link><pubDate>Thu, 24 May 2018 14:44:15 +0100</pubDate><guid>https://zufrieden.io/talking/2018_performanceweb_surtout_ne_pas_refaire_son_site/</guid><description>Dans la course à la refonte, on se soucie d’avoir un nouveau design qui fait waouh, du responsive et heureusement aussi de l’ergonomie. On se soucie malheureusement rarement des implications sur le traffic, le référencement, la mesure du succès de cette même refonte. Le but de ce talk est de vous convaincre d’approcher une refonte par plus petite partie pour un vrai développement durable et mesurable.
+Source https://twitter.com/PerformanceWeb_/status/999547106481397760</description></item><item><title>Design Systems</title><link>https://zufrieden.io/talking/2018_un_designers_design_documentation_made_to_last/</link><pubDate>Fri, 27 Apr 2018 10:00:00 +0200</pubDate><guid>https://zufrieden.io/talking/2018_un_designers_design_documentation_made_to_last/</guid><description>Marc Friederich from Lausanne based agency Antistatique will be discussing in &amp;lsquo;Design Systems&amp;rsquo; how shifting from print to digital has shaped branding and design systems.</description></item><item><title>Design documentation</title><link>https://zufrieden.io/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</link><pubDate>Wed, 18 Oct 2017 19:00:00 +0200</pubDate><guid>https://zufrieden.io/talking/2017_ux_strategy_meetup_gva_design_documentation_101/</guid><description/></item><item><title>Design documentation made to last</title><link>https://zufrieden.io/talking/2017_producttank_design_documentation_made_to_last/</link><pubDate>Thu, 29 Jun 2017 18:30:00 +0200</pubDate><guid>https://zufrieden.io/talking/2017_producttank_design_documentation_made_to_last/</guid><description/></item><item><title>SÃ©lectionnez votre pays. Quelle est votre langueâ€‰?</title><link>https://zufrieden.io/talking/2017_ixda_lausanne_i18n_l10n/</link><pubDate>Tue, 09 May 2017 19:00:00 +0200</pubDate><guid>https://zufrieden.io/talking/2017_ixda_lausanne_i18n_l10n/</guid><description>Sélectionnez votre pays. Quelle est votre langue ? Je veux que les chiffres soient formatés de cette manière. Quel est le fuseau horaire ? Je lis de droite à gauche.
 Comment obtenez-vous ces informations de la part des gens ? Et comment donnez-vous ces informations aux gens qui viennent de différents pays et de différentes cultures ? Et que ces personnes parlent différentes langues…
-La localisation et l’internationalisation sont des sujets complexes.</description>
-    </item>
-    
-    <item>
-      <title>i18n &amp; l10n — Internationalisation &amp; localisation</title>
-      <link>https://zufrieden.io/talking/2016_web_blend_mix_i18n_l10n/</link>
-      <pubDate>Thu, 03 Nov 2016 12:34:41 +0200</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2016_web_blend_mix_i18n_l10n/</guid>
-      <description>Sélectionnez votre pays. Quelle est votre langue ? Je veux que les chiffres soient formatés de cette manière. Quel est le fuseau horaire ? Je lis de droite à gauche.
+La localisation et l’internationalisation sont des sujets complexes.</description></item><item><title>i18n &amp; l10n — Internationalisation &amp; localisation</title><link>https://zufrieden.io/talking/2016_web_blend_mix_i18n_l10n/</link><pubDate>Thu, 03 Nov 2016 12:34:41 +0200</pubDate><guid>https://zufrieden.io/talking/2016_web_blend_mix_i18n_l10n/</guid><description>Sélectionnez votre pays. Quelle est votre langue ? Je veux que les chiffres soient formatés de cette manière. Quel est le fuseau horaire ? Je lis de droite à gauche.
 Comment obtenez-vous ces informations de la part des gens ? Et comment donnez-vous ces informations aux gens qui viennent de différents pays et de différentes cultures ? Et que ces personnes parlent différentes langues…
-La localisation et l’internationalisation sont des sujets complexes.</description>
-    </item>
-    
-    <item>
-      <title>Flexbox - layouting finally made easy</title>
-      <link>https://zufrieden.io/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</link>
-      <pubDate>Tue, 29 Mar 2016 19:00:00 +0200</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</guid>
-      <description>This talk will cover the flexible box module layout specifications, with samples and use cases.
+La localisation et l’internationalisation sont des sujets complexes.</description></item><item><title>Flexbox - layouting finally made easy</title><link>https://zufrieden.io/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</link><pubDate>Tue, 29 Mar 2016 19:00:00 +0200</pubDate><guid>https://zufrieden.io/talking/2016_frontend_meetup_flexbox_layouting_finally_made_easy/</guid><description>This talk will cover the flexible box module layout specifications, with samples and use cases.
 • Flex direction and understand axis
 • Justify-content, align-items and align-content when wrapping
 • Shrink, Grow, Basis
 • Order
-• Use case</description>
-    </item>
-    
-    <item>
-      <title>Frontend Toolbox</title>
-      <link>https://zufrieden.io/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</link>
-      <pubDate>Fri, 28 Aug 2015 12:34:41 -0500</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dynamic Style Guides – Retour d&#39;experience</title>
-      <link>https://zufrieden.io/talking/2014_softshake_styleguide_by_default/</link>
-      <pubDate>Fri, 24 Oct 2014 10:30:00 +0200</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2014_softshake_styleguide_by_default/</guid>
-      <description>Avec l’émergence des styles modulaires, le style guide est devenu un outil indispensable pour documenter et organiser le travail du frontend développeur.
+• Use case</description></item><item><title>Frontend Toolbox</title><link>https://zufrieden.io/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</link><pubDate>Fri, 28 Aug 2015 12:34:41 -0500</pubDate><guid>https://zufrieden.io/talking/2015_frontendconf_lightingtalk_frontendtoolbox/</guid><description/></item><item><title>Dynamic Style Guides – Retour d'experience</title><link>https://zufrieden.io/talking/2014_softshake_styleguide_by_default/</link><pubDate>Fri, 24 Oct 2014 10:30:00 +0200</pubDate><guid>https://zufrieden.io/talking/2014_softshake_styleguide_by_default/</guid><description>Avec l’émergence des styles modulaires, le style guide est devenu un outil indispensable pour documenter et organiser le travail du frontend développeur.
 Véritable moyen de communication entre designer et développeur, le styleguide établit un dialogue efficient et pratique.
-L’emploi d’un système de styleguide vous obligera à penser et coder modulaire. En effet, si vous commencer par concevoir les éléments de votre design indépendamment les uns des autres en ne les consultants que dans votre styleguide, vous aurez intégré le plus gros du concept.</description>
-    </item>
-    
-    <item>
-      <title>Generate Styleguides for Every Project</title>
-      <link>https://zufrieden.io/talking/2014_frontendconf_generate_styleguides_for_every_project/</link>
-      <pubDate>Thu, 28 Aug 2014 14:11:11 +0100</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2014_frontendconf_generate_styleguides_for_every_project/</guid>
-      <description>A &amp;ldquo;Styleguide generated by default&amp;rdquo; approach makes your life easier. There is plenty of generator to help you document your components and have a future friendly code. Return of over 2 years experience, the talk shows a benchmark of styleguide generators.</description>
-    </item>
-    
-    <item>
-      <title>Digital par défault</title>
-      <link>https://zufrieden.io/talking/2014_digital_par_default/</link>
-      <pubDate>Mon, 14 Jul 2014 14:19:27 +0100</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2014_digital_par_default/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Dynamic Style-Guides</title>
-      <link>https://zufrieden.io/talking/2014_webmardi_dynamic_style_guides/</link>
-      <pubDate>Tue, 07 Jan 2014 14:22:59 +0100</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2014_webmardi_dynamic_style_guides/</guid>
-      <description>Les styleguides dynamiques Avec l&amp;rsquo;émergence des styles modulaires, le style guide est devenu un outil indispensable pour documenter et organiser le travail du frontend développeur.
+L’emploi d’un système de styleguide vous obligera à penser et coder modulaire. En effet, si vous commencer par concevoir les éléments de votre design indépendamment les uns des autres en ne les consultants que dans votre styleguide, vous aurez intégré le plus gros du concept.</description></item><item><title>Generate Styleguides for Every Project</title><link>https://zufrieden.io/talking/2014_frontendconf_generate_styleguides_for_every_project/</link><pubDate>Thu, 28 Aug 2014 14:11:11 +0100</pubDate><guid>https://zufrieden.io/talking/2014_frontendconf_generate_styleguides_for_every_project/</guid><description>A &amp;ldquo;Styleguide generated by default&amp;rdquo; approach makes your life easier. There is plenty of generator to help you document your components and have a future friendly code. Return of over 2 years experience, the talk shows a benchmark of styleguide generators.</description></item><item><title>Digital par défault</title><link>https://zufrieden.io/talking/2014_digital_par_default/</link><pubDate>Mon, 14 Jul 2014 14:19:27 +0100</pubDate><guid>https://zufrieden.io/talking/2014_digital_par_default/</guid><description/></item><item><title>Dynamic Style-Guides</title><link>https://zufrieden.io/talking/2014_webmardi_dynamic_style_guides/</link><pubDate>Tue, 07 Jan 2014 14:22:59 +0100</pubDate><guid>https://zufrieden.io/talking/2014_webmardi_dynamic_style_guides/</guid><description>Les styleguides dynamiques Avec l&amp;rsquo;émergence des styles modulaires, le style guide est devenu un outil indispensable pour documenter et organiser le travail du frontend développeur.
 Véritable moyen de communication entre designer et développeur, le styleguide établit un dialogue efficient et pratique.
-L&amp;rsquo;emploi d&amp;rsquo;un système de styleguide vous obligera à penser et coder modulaire. En effet, si vous commencer par concevoir les éléments de votre design indépendamment les uns des autres en ne les consultants que dans votre styleguide, vous aurez intégré le plus gros du concept.</description>
-    </item>
-    
-    <item>
-      <title>Prototype in the browser</title>
-      <link>https://zufrieden.io/talking/2013_softshake_prototyping_in_the_browser/</link>
-      <pubDate>Thu, 24 Oct 2013 13:37:02 +0200</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2013_softshake_prototyping_in_the_browser/</guid>
-      <description>Rien ne vaut du papier et un bon vieux crayon pour coucher ses idées. Puis vient le moment où il faut présenter et éprouver son concept. Dans une démarche agile, il est indispensable d’obtenir rapidement un concept testable.
+L&amp;rsquo;emploi d&amp;rsquo;un système de styleguide vous obligera à penser et coder modulaire. En effet, si vous commencer par concevoir les éléments de votre design indépendamment les uns des autres en ne les consultants que dans votre styleguide, vous aurez intégré le plus gros du concept.</description></item><item><title>Prototype in the browser</title><link>https://zufrieden.io/talking/2013_softshake_prototyping_in_the_browser/</link><pubDate>Thu, 24 Oct 2013 13:37:02 +0200</pubDate><guid>https://zufrieden.io/talking/2013_softshake_prototyping_in_the_browser/</guid><description>Rien ne vaut du papier et un bon vieux crayon pour coucher ses idées. Puis vient le moment où il faut présenter et éprouver son concept. Dans une démarche agile, il est indispensable d’obtenir rapidement un concept testable.
 À travers plusieurs retours d’expérience, cette présentation vous donnera un aperçu des méthodes de prototypage en HTML. Construire son interface en quelques lignes pour pouvoir la tester rapidement.
-Valable pour tous les types d’applications, ces méthodes sont idéales pour réaliser des tests utilisateurs.</description>
-    </item>
-    
-    <item>
-      <title>Build a HTML Presentations Directory in 2 Days - Slidedeck.io</title>
-      <link>https://zufrieden.io/talking/2013_frontend_slidedeckio/</link>
-      <pubDate>Fri, 30 Aug 2013 14:29:40 +0100</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2013_frontend_slidedeckio/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>WordPress - feedback and lesson learned</title>
-      <link>https://zufrieden.io/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</link>
-      <pubDate>Wed, 08 May 2013 19:00:00 +0200</pubDate>
-      
-      <guid>https://zufrieden.io/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</guid>
-      <description>Slides from our lessons learned and experience about wordpress project at Antistatique</description>
-    </item>
-    
-  </channel>
-</rss>
+Valable pour tous les types d’applications, ces méthodes sont idéales pour réaliser des tests utilisateurs.</description></item><item><title>Build a HTML Presentations Directory in 2 Days - Slidedeck.io</title><link>https://zufrieden.io/talking/2013_frontend_slidedeckio/</link><pubDate>Fri, 30 Aug 2013 14:29:40 +0100</pubDate><guid>https://zufrieden.io/talking/2013_frontend_slidedeckio/</guid><description/></item><item><title>WordPress - feedback and lesson learned</title><link>https://zufrieden.io/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</link><pubDate>Wed, 08 May 2013 19:00:00 +0200</pubDate><guid>https://zufrieden.io/talking/2013_wordpress_geneva_meetup_feedback_and_lesson_learned/</guid><description>Slides from our lessons learned and experience about wordpress project at Antistatique</description></item></channel></rss>
