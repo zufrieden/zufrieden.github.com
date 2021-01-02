@@ -70,7 +70,7 @@ main{
 }
 .item{
   display: block;
-  margin: 1rem 0;
+  margin: 1.5em 0;
 }
 
 @supports (display: grid) and (not (-ms-ime-align: auto)) {
@@ -299,7 +299,7 @@ hr {
 
 
 section{
-  margin-bottom: 3rem;
+  margin-bottom: 4em;
 }
 
 /* Tags */
@@ -367,6 +367,11 @@ section{
 .list-icons-center{
   justify-content: center;
   margin: 0;
+}
+
+/* Highlight */
+.highlight pre{
+  padding: 1em;
 }
 
 /* Quotes */

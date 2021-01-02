@@ -11,7 +11,8 @@ As a reminder to my future self, here is my personal recipe for new fresh instal
 
 ## Install OSX - then re-install OSX
 Format the hard drive with Disk Utility between the 2 installs
-`⌘ + R` on startup
+`⌘ + R` on star
+tup
 
 ## Get .dotfile and .ssh keys
 From only you know where :-) and set right permissions
@@ -39,50 +40,41 @@ From only you know where :-) and set right permissions
 - Download previously bought apps (that I still need)
 
 ## Install Homebrew
-`/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
 ## Add cask
-`brew tap homebrew/cask`
+```bash
+brew tap homebrew/cask
+```
 
 ## Install softs
-`brew install --cask finicky`
-
-`brew install --cask beaker-browser`
-
-`brew install --cask homebrew/cask-versions/firefox-developer-edition`
-
-`brew install --cask hazel`
-
-`brew install --cask firefox`
-
-`brew install --cask doxie`
-
-`brew install --cask authy`
-
-`brew install --cask nova`
-
-`brew install --cask alfred`
-
-`brew install --cask docker`
-
-`brew install --cask transmit`
-
-`brew install --cask vlc`
-
-`brew install fish`
-
-`brew install --cask sequel-pro`
-
-`brew install tig`
-
-`brew install --cask sitesucker`
-
-`brew install --cask Transmission`
-
-`brew install hugo`
+```bash
+brew install --cask finicky
+brew install --cask beaker-browser
+brew install --cask homebrew/cask-versions/firefox-developer-edition
+brew install --cask hazel
+brew install --cask firefox
+brew install --cask doxie
+brew install --cask authy
+brew install --cask nova
+brew install --cask alfred
+brew install --cask docker
+brew install --cask transmit
+brew install --cask vlc
+brew install fish
+brew install --cask sequel-pro
+brew install tig
+brew install --cask sitesucker
+brew install --cask Transmission
+brew install hugo
+```
 
 
 ## Install oh my zsh
-`sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
 
 

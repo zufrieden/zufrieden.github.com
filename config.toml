@@ -21,6 +21,8 @@ theme = "zufrieden"
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+    [markup.highlight]
+      style = "paraiso-dark"   
 
 # Metadata
     description         = "Hello, my name is Marc Friederich"            # Max 160 characters show in search results
