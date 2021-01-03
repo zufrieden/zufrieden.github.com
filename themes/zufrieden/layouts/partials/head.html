@@ -18,7 +18,20 @@
     <meta name="og:url" content="{{.Site.BaseURL}}">
     <meta name="og:image" itemprop="image primaryImageOfPage" content="{{.Site.Params.primaryImage | default "tn.png" | absURL}}">
     <title>{{.Title}}</title>
-    <link rel="shortcut icon" href="{{.Site.Params.favicon | default "marcfriederich.ico" | absURL }}" id="favicon">
-    <link rel="stylesheet" href="/css/style.css?version=30f011b5681705aacbe1b95bae6edd12c5382e52">
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="/css/style.css?20210102-0007">
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <script>
+        // Register our service-worker
+        if (navigator.serviceWorker) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/zufrieden-sw.js', {
+                    scope: '/'
+                });
+                if (navigator.serviceWorker.controller) {
+                    navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
+                }
+            });
+        }
+    </script>    
 </head>
