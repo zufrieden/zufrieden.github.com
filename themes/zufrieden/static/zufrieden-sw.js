@@ -2,7 +2,7 @@
 
 // Inspired/understood by the book GoingOffline from Jeremy Keith and also quite copied his very own website https://adactio.com/serviceworker.js
 
-const version = '20210102-0008';
+const version = '20210102-0009';
 const staticCacheName = version + 'static';
 const pagesCacheName = 'pages';
 const imagesCacheName = 'images';
@@ -24,7 +24,8 @@ function updateStaticCache() {
 			'/css/nwpMtK6mNhBK2err_hqkYhHRqmwqZ-LYxnV18A.woff2',
 			'/css/style.css?' + version,
 			'/css/ZXuke1cDvLCKLDcimxB44_luFgxbuQ.woff2',
-			'/writing/going-offline-is-great/'
+			'/writing/going-offline-is-great/',
+			'/writing/a-love-letter-to-the-web/'
 		]);
 	});
 }

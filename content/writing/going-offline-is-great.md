@@ -59,3 +59,6 @@ addEventListener('activate', function (event) {
 
 More offline project to discover : [The Disconnect](https://thedisconnect.co) is a great exemple of playing with service worker strategy.
 
+## Still offline, check my love letter to the web
+Building a more resilient web, understanding the value of the web and how we build a more sustainable heritage. I consider myself a web dinosaur, let's not condemn ourself to quickly to extinction. [Read my article about why I love the web](/writing/a-love-letter-to-the-web/)
+
