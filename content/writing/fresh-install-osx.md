@@ -63,12 +63,12 @@ brew install --cask alfred
 brew install --cask docker
 brew install --cask transmit
 brew install --cask vlc
-brew install fish
 brew install --cask sequel-pro
 brew install tig
 brew install --cask sitesucker
 brew install --cask Transmission
 brew install hugo
+brew install woff2
 ```
 
 
