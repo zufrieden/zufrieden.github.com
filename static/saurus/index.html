@@ -1,0 +1,235 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<style>
+			body{
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				font-family: helvetica;
+				background-color: #6C6CC6;
+				background-color: color(srgb 0.404 0.677 0.974);
+				color: white;
+				text-transform: uppercase;
+				font-size:140%;
+			}
+			h1{
+				color: color(srgb 1 0.877 0.235);
+			}
+			form{
+
+			}
+			legend{
+				margin-top: 10%;
+			}
+			.radiogroupe {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+			}
+			.radiogroupe label{
+				display: flex;
+				align-items: center;
+				gap: 0.3em;
+				font-size: 200%;
+				margin: 0 5%;
+			}
+			button{
+				font-size: 150%;
+				margin: 10% 0;
+			}
+			input{
+				
+				
+			}
+			.show-result{
+				display: flex;
+			}
+			.result{
+				display: none;
+				flex-wrap: wrap;
+				gap: 2vw;
+				overflow: hidden;
+				height: 50vw;
+			}
+			.result div{
+				order: 0;
+				width:100vw;
+				height: 50vw;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			/* .result div:first-child{
+				display: flex;
+			} */
+			.result p{
+				font-size: 80%;
+			}
+			.result img{
+				/* object-fit: contain; */
+				width: 60%;
+				height: auto;
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Allo les dinos 🦖🦕</h1>
+		
+		<div>
+			<legend>
+				<p>Tu manges quoi à midi ?</p>
+				<div class="radiogroupe">	
+				<label for="🐟">🐟<input type="radio" name="food" id="🐟" onclick="DINO('🐟')"></label>
+				<label for="🥩">🥩<input type="radio" name="food" id="🥩" onclick="DINO('🥩')"></label>
+				<label for="🥗">🥗<input type="radio" name="food" id="🥗" onclick="DINO('🥗')"></label>
+				<label for="👩‍🏫">👩‍🏫<input type="radio" name="food" id="👩‍🏫" onclick="DINO('👩‍🏫')"></label>
+				</div>
+			</legend>
+			<legend>
+				<p>Comment vas-tu à l'école ?</p>
+				<div class="radiogroupe">	
+				<label for="🚲">🚲<input type="radio" name="go" id="🚲" onclick="DINO('🚲')"></label>
+				<label for="🛴">🛴<input type="radio" name="go" id="🛴" onclick="DINO('🛴')"></label>
+				<label for="🚘">🚘<input type="radio" name="go" id="🚘" onclick="DINO('🚘')"></label>
+				<label for="🚶">🚶<input type="radio" name="go" id="🚶" onclick="DINO('🚶')"></label>
+				<label for="🛥">🛥<input type="radio" name="go" id="🛥" onclick="DINO('🛥')"></label>
+				</div>
+			</legend>
+			<legend>
+				<p>Biscuit en vue ?</p>
+				<div class="radiogroupe">	
+				<label for="🏃‍♂️">🏃‍♂️<input type="radio" name="cookie" id="🏃‍♂️" onclick="DINO('🏃‍♂️')"></label>
+				<label for="👩‍👦">👩‍👦<input type="radio" name="cookie" id="👩‍👦" onclick="DINO('👩‍👦')"></label>
+				<label for="👟">👟<input type="radio" name="cookie" id="👟" onclick="DINO('👟')"></label>
+				</div>
+			</legend>
+			<legend>
+				<p>Ton sport préféré ?</p>
+				<div class="radiogroupe">	
+				<label for="🏀">🏀<input type="radio" name="sport" id="🏀" onclick="DINO('🏀')"></label>
+				<label for="🎾">🎾<input type="radio" name="sport" id="🎾" onclick="DINO('🎾')"></label>
+				<label for="⚽️">⚽️<input type="radio" name="sport" id="⚽️" onclick="DINO('⚽️')"></label>
+				<label for="🏈">🏈<input type="radio" name="sport" id="🏈" onclick="DINO('🏈')"></label>
+				</div>
+			</legend>
+			<legend>
+				<p>Tes vacances de rêve ?</p>
+				<div class="radiogroupe">	
+				<label for="🏔">🧍🏔<input type="radio" name="holyday" id="🏔" onclick="DINO('🏔')"></label>
+				<label for="🏝">🐕‍🦺🏝<input type="radio" name="holyday" id="🏝" onclick="DINO('🏝')"></label>
+				<label for="🎢">🎢🎡<input type="radio" name="holyday" id="🎢" onclick="DINO('🎢')"></label>
+				</div>
+			</legend>
+			<legend>
+				<button id="SHOW">
+					Montrer le dino !
+				</button>
+			</legend>
+		</div>
+		
+	
+		
+		<div class="result" id="result">
+			<div class="dino" id="Parasaurolophus" data-score="0" style="order:0;" data-name="Parasaurolophus" data-food="🥩" data-go="🚘" data-cookie="👟" data-sport="🏈" data-holyday="🎢"><img src="images/dino_1.jpeg"/>
+				<p>Parasaurolophus</p>
+			</div>  
+			<div class="dino" id="Spinosaurs" data-score="0" style="order:0;" data-name="Spinosaurs" data-food="🐟" data-go="🚶" data-cookie="👟" data-sport="🏈" data-holyday="🎢"><img src="images/dino_2.jpeg"/>
+				<p>Spinosaurs</p>
+			</div>  
+			<div class="dino" id="Monolophosaurus" data-score="0" style="order:0;" data-name="Monolophosaurus" data-food="🥩" data-go="🚲" data-cookie="👟" data-sport="⚽️" data-holyday="🎢"><img src="images/dino_3.jpeg"/>
+				<p>Monolophosaurus</p>
+			</div>  
+			<div class="dino" id="Baryonix" data-score="0" style="order:0;" data-name="Baryonix" data-food="🐟" data-go="🚘" data-cookie="👩‍👦" data-sport="⚽️" data-holyday="🎢"><img src="images/dino_4.jpeg"/>
+				<p>Baryonix</p>
+			</div>  
+			<div class="dino" id="Brachiosaurus" data-score="0" style="order:0;" data-name="Brachiosaurus" data-food="🥗" data-go="🚶" data-cookie="🏃‍♂️" data-sport="🎾" data-holyday="🏝"><img src="images/dino_5.jpeg"/>
+				<p>Brachiosaurus</p>
+			</div>  
+			<div class="dino" id="Cryolophosaurus" data-score="0" style="order:0;" data-name="Cryolophosaurus" data-food="🥩" data-go="🛴" data-cookie="🏃‍♂️" data-sport="🎾" data-holyday="🏝"><img src="images/dino_6.jpeg"/>
+				<p>Cryolophosaurus</p>
+			</div>  
+			<div class="dino" id="Centrosorus" data-score="0" style="order:0;" data-name="Centrosorus" data-food="🥗" data-go="🚶" data-cookie="👩‍👦" data-sport="⚽️" data-holyday="🎢"><img src="images/dino_7.jpeg"/>
+				<p>Centrosorus</p>
+			</div>  
+			<div class="dino" id="Superosaurus" data-score="0" style="order:0;" data-name="Superosaurus" data-food="🥗" data-go="🛴" data-cookie="🏃‍♂️" data-sport="🏀" data-holyday="🏝"><img src="images/dino_8.jpeg"/>
+				<p>Superosaurus</p>
+			</div>
+			<div class="dino" id="TRex" data-score="0" style="order:0;" data-name="TRex" data-food="👩‍🏫" data-go="🛴" data-cookie="🏃‍♂️" data-sport="🎾" data-holyday="🏔"><img src="images/dino_9.jpeg"/>
+				<p>T-Rex</p>
+			</div>			
+			<div class="dino" id="Procompsognathus" data-score="0" style="order:0;" data-name="Procompsognathus" data-food="🥩" data-go="🛴" data-cookie="🏃‍♂️" data-sport="🎾" data-holyday="🏔"><img src="images/dino_10.jpeg"/>
+				<p>Procompsognathus</p>
+			</div> 
+			<div class="dino" id="Tyranosaurus" data-score="0" style="order:0;" data-name="Tyranosaurus" data-food="👩‍🏫" data-go="🛴" data-cookie="🏃‍♂️" data-sport="🏀" data-holyday="🏔"><img src="images/dino_11.jpeg"/>
+				<p>Tyranosaurus</p>
+			</div> 
+		</div>
+		<script>
+		
+			let dinos = document.querySelectorAll('.dino');
+
+			function result(){
+				for (var i = 0; i < dinos.length; i++) {
+					console.log(dinos[i].dataset.name);
+					// console.log(dinos[i].dataset.food);
+					// console.log(dinos[i].dataset.go);
+					// console.log(dinos[i].dataset.cookie);
+					// console.log(dinos[i].dataset.sport);
+					// console.log(dinos[i].dataset.holyday);
+					console.log(dinos[i].dataset.score);
+					// console.log(dinos[i].style.order);
+				}	
+				console.log("-------");
+			}
+			
+			
+		
+			document.querySelector("#SHOW").addEventListener("click", function(event) {
+				  document.getElementById("result").style.display = "flex";
+				  event.preventDefault();
+				}, false);
+			
+		
+			function DINO(value){
+				// console.log(category);	
+				// console.log(value);	
+				
+				for (var i = 0; i < dinos.length; i++) {
+					
+					if(dinos[i].dataset.food == value){
+						dinos[i].dataset.score =  parseInt(dinos[i].dataset.score) + 1; 
+						dinos[i].style.order = dinos[i].style.order - 1;
+					}
+					if(dinos[i].dataset.go == value){
+						dinos[i].dataset.score =  parseInt(dinos[i].dataset.score) + 1; 
+						dinos[i].style.order = dinos[i].style.order - 1;
+					}
+					if(dinos[i].dataset.cookie == value){
+						dinos[i].dataset.score =  parseInt(dinos[i].dataset.score) + 1; 
+						dinos[i].style.order = dinos[i].style.order - 1;
+					}
+					if(dinos[i].dataset.sport == value){
+						dinos[i].dataset.score =  parseInt(dinos[i].dataset.score) + 1; 
+						dinos[i].style.order = dinos[i].style.order - 1;
+					}
+					if(dinos[i].dataset.holyday == value){
+						dinos[i].dataset.score =  parseInt(dinos[i].dataset.score) + 1; 
+						dinos[i].style.order = dinos[i].style.order - 1;
+					}
+				}
+				
+				result();
+				
+			}
+		
+
+			
+		</script>
+		
+	</body>
+	
+</html>
