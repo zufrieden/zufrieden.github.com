@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width">
 		<style>
 			body{
 				display: flex;
@@ -190,6 +191,7 @@
 		
 			document.querySelector("#SHOW").addEventListener("click", function(event) {
 				  document.getElementById("result").style.display = "flex";
+				  document.getElementById("result").scrollIntoView({ behavior: 'smooth', block: 'end'});
 				  event.preventDefault();
 				}, false);
 			
