@@ -2,6 +2,20 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 		<meta name="viewport" content="width=device-width">
+		<link rel="manifest" href="manifest.json" />
+		<script>
+			// Register our service-worker
+			if (navigator.serviceWorker) {
+				window.addEventListener('load', function() {
+					navigator.serviceWorker.register('saurus-sw.js', {
+						scope: '/'
+					});
+					if (navigator.serviceWorker.controller) {
+						navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
+					}
+				});
+			}
+		</script>  
 		<style>
 			body{
 				display: flex;
@@ -278,7 +292,7 @@
 		</script>
 		
 		<style>
-			
+				// source https://jsfiddle.net/elin/7m3bL/
 				.pyro{
 					position:fixed;
 					width: 100vw;
