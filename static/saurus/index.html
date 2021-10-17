@@ -6,8 +6,8 @@
 			body{
 				display: flex;
 				flex-direction: column;
-				justify-content: center;
-				align-items: center;
+				justify-content: flex-start;
+				align-items: flex-start;
 				font-family: helvetica;
 				background-color: #6C6CC6;
 				background-color: color(srgb 0.404 0.677 0.974);
@@ -17,13 +17,19 @@
 				margin-bottom: 40%;
 			}
 			h1{
-				/* color: color(srgb 1 0.877 0.235); */
+				text-align: left;
+			}
+			h1 span{
+				font-size: 200%;
 			}
 			form{
 
 			}
-			legend{
-				margin-top: 10%;
+			legend + legend{
+				margin-top: 20%;
+			}
+			section{
+				margin: 4% 6%;
 			}
 			.radiogroupe {
 				display: flex;
@@ -58,7 +64,7 @@
 			}
 			.result .dino{
 				order: 0;
-				width:100vw;
+				width:80vw;
 				height: 50vw;
 				display: flex;
 				flex-direction: column;
@@ -105,8 +111,8 @@
 				height: 90px;
 				padding: 0;
 				position: fixed;
-				bottom: 5%;
-				right: 5%;
+				bottom: 3%;
+				right: 3%;
 			}
 			
 			button:hover {
@@ -123,7 +129,7 @@
 	</head>
 	<body>
 		<section id="title">
-		<h1>🦖🦕<br/>Quel dino es-tu  ?</h1>
+		<h1><span>🦖🦕</span><br/>Quel dino es-tu  ?</h1>
 		</section>
 		<section id="questions">
 			<div>
@@ -256,33 +262,13 @@
 			
 		
 			function DINO(value,points){
-				// console.log(category);	
-				// console.log(value);	
 				
 				for (var i = 0; i < dinos.length; i++) {
-					
-					if(dinos[i].dataset.food == value){
-						dinos[i].dataset.score =  parseInt(dinos[i].dataset.score) + points; 
-						dinos[i].style.order = dinos[i].style.order - points;
-					}
-					if(dinos[i].dataset.go == value){
-						dinos[i].dataset.score =  parseInt(dinos[i].dataset.score) + points; 
-						dinos[i].style.order = dinos[i].style.order - points;
-					}
-					if(dinos[i].dataset.cookie == value){
-						dinos[i].dataset.score =  parseInt(dinos[i].dataset.score) + points; 
-						dinos[i].style.order = dinos[i].style.order - points;
-					}
-					if(dinos[i].dataset.sport == value){
-						dinos[i].dataset.score =  parseInt(dinos[i].dataset.score) + points; 
-						dinos[i].style.order = dinos[i].style.order - points;
-					}
-					if(dinos[i].dataset.holyday == value){
+					if(dinos[i].dataset.food == value || dinos[i].dataset.go == value || dinos[i].dataset.cookie == value || dinos[i].dataset.sport == value || dinos[i].dataset.holyday == value){
 						dinos[i].dataset.score =  parseInt(dinos[i].dataset.score) + points; 
 						dinos[i].style.order = dinos[i].style.order - points;
 					}
 				}
-				
 				result();
 				
 			}
@@ -292,11 +278,7 @@
 		</script>
 		
 		<style>
-			/* body {
-				  margin: 0;
-				  padding: 0;
-				  background: #000;
-				  overflow: hidden; } */
+			
 				.pyro{
 					position:fixed;
 					width: 100vw;
