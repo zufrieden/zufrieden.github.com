@@ -1,0 +1,78 @@
+<html>
+	<head>
+		<title>JellyFish</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<style>
+			body{
+				background-color: #2800A3;
+			}
+	
+			.water{
+				position:relative;
+				width:95vw;
+				height:95vh;
+				overflow: hidden;
+			}
+			.jelly{
+				position:absolute;
+				width: 3vw;
+				height: 3vw;
+				border-radius: 3vw;
+				background-color: #fff;
+				animation-name: bobble-up;
+				animation-duration: 2s;
+			    animation-iteration-count: infinite;
+			    animation-fill-mode: forwards;
+			}
+
+			
+			@keyframes bobble-up {
+				  0%, 100% {
+					transform: translate(-100%, 10%) translateY(-40px) translateX(-10px);
+				  }
+				  50% {
+					transform: translate(-100%, 0) translateY(0px);
+				  }
+				}
+			
+	
+		</style>
+	</head>
+	<body>
+		<div class="water">
+			<div class="jelly"></div>
+			<div class="jelly"></div>
+			<div class="jelly"></div>
+			<div class="jelly"></div>
+			<div class="jelly"></div>
+			<div class="jelly"></div>
+			<div class="jelly"></div>
+			<div class="jelly"></div>
+			<div class="jelly"></div>
+			<div class="jelly"></div>
+			<div class="jelly"></div>
+			<div class="jelly">	</div>
+			
+		</div>
+        <script>
+			
+			function getRandomInt(min, max) {
+				  min = Math.ceil(min);
+				  max = Math.floor(max);
+				  return Math.floor(Math.random() * (max - min) + min); //The maximum is exclusive and the minimum is inclusive
+			}
+				
+			
+			let jellys = document.querySelectorAll('.jelly');
+			
+			
+			for (var i = 0; i < jellys.length; i++) {
+				jellys[i].style.top = getRandomInt(1,99) + '%';
+				jellys[i].style.left = getRandomInt(1,99)+ '%';
+				jellys[i].style.animationDuration = getRandomInt(3,8)+ 's';
+				jellys[i].style.transform = "rotate("+ getRandomInt(1,180) + "deg)";
+			}	
+			
+		</script>
+	</body>
+</html>

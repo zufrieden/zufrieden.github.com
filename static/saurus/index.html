@@ -5,16 +5,16 @@
 		<link rel="manifest" href="manifest.json" />
 		<script>
 			// Register our service-worker
-			if (navigator.serviceWorker) {
-				window.addEventListener('load', function() {
-					navigator.serviceWorker.register('saurus-sw.js', {
-						scope: '/'
-					});
-					if (navigator.serviceWorker.controller) {
-						navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
-					}
-				});
-			}
+			// if (navigator.serviceWorker) {
+			// 	window.addEventListener('load', function() {
+			// 		navigator.serviceWorker.register('saurus-sw.js', {
+			// 			scope: '/'
+			// 		});
+			// 		if (navigator.serviceWorker.controller) {
+			// 			navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
+			// 		}
+			// 	});
+			// }
 		</script>  
 		<style>
 			body{
@@ -175,6 +175,47 @@
 					</div>
 				</legend>
 				<legend>
+					<p>Quel est ton dessert préféré ?</p>
+					<div class="radiogroupe">	
+					<label for="🍩">🍩<input type="radio" name="desert" id="🍩" onclick="DINO('🍩',1)"></label>
+					<label for="🍪">🍪<input type="radio" name="desert" id="🍪" onclick="DINO('🍪',1)"></label>
+					<label for="🥜">🥜<input type="radio" name="desert" id="🥜" onclick="DINO('🥜',1)"></label>
+					<label for="🍓">🍓<input type="radio" name="desert" id="🍓" onclick="DINO('🍓',1)"></label>
+					<label for="🍉">🍉<input type="radio" name="desert" id="🍉" onclick="DINO('🍉',1)"></label>
+					</div>
+				</legend>
+				<legend>
+					<p>Quel est ton poisson préféré ?</p>
+					<div class="radiogroupe">	
+					<label for="🐡">🐡<input type="radio" name="fish" id="🐡" onclick="DINO('🐡',1)"></label>
+					<label for="🐠">🐠<input type="radio" name="fish" id="🐠" onclick="DINO('🐠',1)"></label>
+					<label for="🎸">🐬<input type="radio" name="fish" id="🐬" onclick="DINO('🐬',1)"></label>
+					<label for="🐳">🐳<input type="radio" name="fish" id="🐳" onclick="DINO('🐳',1)"></label>
+					<label for="🦈">🦈<input type="radio" name="fish" id="🦈" onclick="DINO('🦈',1)"></label>
+					</div>
+				</legend>
+				<legend>
+					<p>Quel musique joue-tu ?</p>
+					<div class="radiogroupe">	
+					<label for="🎺">🎺<input type="radio" name="music" id="🎺" onclick="DINO('🎺',1)"></label>
+					<label for="🥁">🥁<input type="radio" name="music" id="🥁" onclick="DINO('🥁',1)"></label>
+					<label for="🎸">🎸<input type="radio" name="music" id="🎸" onclick="DINO('🎸',1)"></label>
+					<label for="🪕">🪕<input type="radio" name="music" id="🪕" onclick="DINO('🪕',1)"></label>
+					<label for="🎷">🎷<input type="radio" name="music" id="🎷" onclick="DINO('🎷',1)"></label>
+					<label for="🎻">🎻<input type="radio" name="music" id="🎻" onclick="DINO('🎻',1)"></label>
+					<label for="🪗">🪗<input type="radio" name="music" id="🪗" onclick="DINO('🪗',1)"></label>
+					</div>
+				</legend>
+				<legend>
+					<p>Quel est ton train préféré ?</p>
+					<div class="radiogroupe">	
+					<label for="🚅">🚅<input type="radio" name="train" id="🚅" onclick="DINO('🚅',1)"></label>
+					<label for="🚄">🚄<input type="radio" name="train" id="🚄" onclick="DINO('🚄',1)"></label>
+					<label for="🚃">🚃<input type="radio" name="train" id="🚃" onclick="DINO('🚃',1)"></label>
+					<label for="🚂">🚂<input type="radio" name="train" id="🚂" onclick="DINO('🚂',1)"></label>
+					</div>
+				</legend>				
+				<legend>
 					<p>Ton sport préféré ?</p>
 					<div class="radiogroupe">	
 					<label for="🏀">🏀<input type="radio" name="sport" id="🏀" onclick="DINO('🏀',1)"></label>
@@ -184,6 +225,25 @@
 					</div>
 				</legend>
 				<legend>
+					<p>Ton bateau préféré ?</p>
+					<div class="radiogroupe">	
+					<label for="🛶">🛶<input type="radio" name="boat" id="🛶" onclick="DINO('🛶',1)"></label>
+					<label for="⛵️">⛵️<input type="radio" name="boat" id="⛵️" onclick="DINO('⛵️',1)"></label>
+					<label for="🚤">🚤<input type="radio" name="boat" id="🚤" onclick="DINO('🚤',1)"></label>
+					<label for="🛳">🛳<input type="radio" name="boat" id="🛳" onclick="DINO('🛳',1)"></label>
+					<label for="⛴">⛴<input type="radio" name="boat" id="⛴" onclick="DINO('⛴',1)"></label>
+					<label for="🚢">🚢<input type="radio" name="boat" id="🚢" onclick="DINO('🚢',1)"></label>
+					</div>
+				</legend>
+				<legend>
+					<p>Ton moyen de transport pour voyager dans l'espace ?</p>
+					<div class="radiogroupe">	
+					<label for="🛸">🛸<input type="radio" name="space" id="🛸" onclick="DINO('🛸',1)"></label>
+					<label for="🚀">🚀<input type="radio" name="space" id="🚀" onclick="DINO('🚀',1)"></label>
+					<label for="🛰">🛰<input type="radio" name="space" id="🛰" onclick="DINO('🛰',1)"></label>
+					</div>
+				</legend>								
+				<legend>
 					<p>Tes vacances de rêve ?</p>
 					<div class="radiogroupe">	
 					<label for="🏔">🧍🏔<input type="radio" name="holyday" id="🏔" onclick="DINO('🏔',2)"></label>
@@ -191,6 +251,25 @@
 					<label for="🎢">🎢🎡<input type="radio" name="holyday" id="🎢" onclick="DINO('🎢',2)"></label>
 					</div>
 				</legend>
+				<legend>
+					<p>Quel est ton drapeau préféré ?</p>
+					<div class="radiogroupe">	
+					<label for="🇫🇷">🇫🇷<input type="radio" name="country" id="🇫🇷" onclick="DINO('🇫🇷',1)"></label>
+					<label for="🇯🇵">🇯🇵<input type="radio" name="country" id="🇯🇵" onclick="DINO('🇯🇵',1)"></label>
+					<label for="🇨🇦">🇨🇦<input type="radio" name="country" id="🇨🇦" onclick="DINO('🇨🇦',1)"></label>
+					<label for="🇨🇭">🇨🇭<input type="radio" name="country" id="🇨🇭" onclick="DINO('🇨🇭',1)"></label>
+					<label for="🇬🇧">🇬🇧<input type="radio" name="country" id="🇬🇧" onclick="DINO('🇬🇧',1)"></label>
+					<label for="🇨🇳">🇨🇳<input type="radio" name="country" id="🇨🇳" onclick="DINO('🇨🇳',1)"></label>
+					<label for="🇪🇺">🇪🇺<input type="radio" name="country" id="🇪🇺" onclick="DINO('🇪🇺',1)"></label>
+					<label for="🇧🇧">🇧🇧<input type="radio" name="country" id="🇧🇧" onclick="DINO('🇧🇧',1)"></label>
+					<label for="🇩🇪">🇩🇪<input type="radio" name="country" id="🇩🇪" onclick="DINO('🇩🇪',1)"></label>
+					<label for="🇪🇸">🇪🇸<input type="radio" name="country" id="🇪🇸" onclick="DINO('🇪🇸',1)"></label>
+					<label for="🇻🇺">🇻🇺<input type="radio" name="country" id="🇻🇺" onclick="DINO('🇻🇺',1)"></label>
+					<label for="🏴‍☠️">🏴‍☠️<input type="radio" name="country" id="🏴‍☠️" onclick="DINO('🏴‍☠️',1)"></label>
+					<label for="🇬🇮">🇬🇮<input type="radio" name="country" id="🇬🇮" onclick="DINO('🇬🇮',1)"></label>
+					<label for="🇧🇼">🇧🇼<input type="radio" name="country" id="🇧🇼" onclick="DINO('🇧🇼',1)"></label>
+					</div>
+				</legend>				
 				<legend>
 					<button id="SHOW">
 						🦖
@@ -204,43 +283,494 @@
 			<button id="BACK">
 				🏁
 			</button>
-			<div class="pyro">
-				<div class="before"></div>
-				<div class="after"></div>
+			<div class="pyro-container">	
+				<div class="pyro">
+					<div class="before"></div>
+					<div class="after"></div>
+				</div>
 			</div>
-			<div class="dino" id="Parasaurolophus" data-score="0" style="order:0;" data-name="Parasaurolophus" data-food="🥩" data-go="🚘" data-cookie="👟" data-sport="🏈" data-holyday="🎢"><img src="images/dino_1.jpeg"/>
+			<div class="dino" id="Parasaurolophus" data-score="0" style="order:0;" data-name="Parasaurolophus" 
+				data-food="🥩" 
+				data-go="🚘" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="👟"
+				data-sport="🏈" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🎢">
+				<img src="images/dino_1.jpeg"/>
 				<p>Parasaurolophus</p>
 			</div>  
-			<div class="dino" id="Spinosaurs" data-score="0" style="order:0;" data-name="Spinosaurs" data-food="🐟" data-go="🚶" data-cookie="👟" data-sport="🏈" data-holyday="🎢"><img src="images/dino_2.jpeg"/>
+			<div class="dino" id="Spinosaurs" data-score="0" style="order:0;" data-name="Spinosaurs" 
+				data-food="🐟" 
+				data-go="🚶" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="👟"
+				data-sport="🏈" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🎢">
+				<img src="images/dino_2.jpeg"/>
 				<p>Spinosaurs</p>
 			</div>  
-			<div class="dino" id="Monolophosaurus" data-score="0" style="order:0;" data-name="Monolophosaurus" data-food="🥩" data-go="🚲" data-cookie="👟" data-sport="⚽️" data-holyday="🎢"><img src="images/dino_3.jpeg"/>
+			<div class="dino" id="Monolophosaurus" data-score="0" style="order:0;" data-name="Monolophosaurus" 
+				data-food="🥩" 
+				data-go="🚲" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="👟"
+				data-sport="⚽" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🎢">
+				<img src="images/dino_3.jpeg"/>
 				<p>Monolophosaurus</p>
 			</div>  
-			<div class="dino" id="Baryonix" data-score="0" style="order:0;" data-name="Baryonix" data-food="🐟" data-go="🛥" data-cookie="👩‍👦" data-sport="⚽️" data-holyday="🎢"><img src="images/dino_4.jpeg"/>
+			<div class="dino" id="Baryonix" data-score="0" style="order:0;" data-name="Baryonix" 
+				data-food="🐟" 
+				data-go="🛥" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="👩‍👦"
+				data-sport="⚽" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🎢">
+				<img src="images/dino_4.jpeg"/>
 				<p>Baryonix</p>
 			</div>  
-			<div class="dino" id="Brachiosaurus" data-score="0" style="order:0;" data-name="Brachiosaurus" data-food="🥗" data-go="🚶" data-cookie="🏃‍♂️" data-sport="🎾" data-holyday="🏝"><img src="images/dino_5.jpeg"/>
+			<div class="dino" id="Brachiosaurus" data-score="0" style="order:0;" data-name="Brachiosaurus" 
+				data-food="🥗" 
+				data-go="🚶" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️"
+				data-sport="🎾" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏝">
+				<img src="images/dino_5.jpeg"/>
 				<p>Brachiosaurus</p>
 			</div>  
-			<div class="dino" id="Cryolophosaurus" data-score="0" style="order:0;" data-name="Cryolophosaurus" data-food="🥩" data-go="🛴" data-cookie="🏃‍♂️" data-sport="🎾" data-holyday="🏝"><img src="images/dino_6.jpeg"/>
+			<div class="dino" id="Cryolophosaurus" data-score="0" style="order:0;" data-name="Cryolophosaurus" 
+				data-food="🥩" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️"
+				data-sport="🎾" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏝">
+				<img src="images/dino_6.jpeg"/>
 				<p>Cryolophosaurus</p>
 			</div>  
-			<div class="dino" id="Centrosorus" data-score="0" style="order:0;" data-name="Centrosorus" data-food="🥗" data-go="🚶" data-cookie="👩‍👦" data-sport="⚽️" data-holyday="🎢"><img src="images/dino_7.jpeg"/>
+			<div class="dino" id="Centrosorus" data-score="0" style="order:0;" data-name="Centrosorus" 
+				data-food="🥗" 
+				data-go="🚶" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="👩‍👦"
+				data-sport="⚽" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🎢">
+				<img src="images/dino_7.jpeg"/>
 				<p>Centrosorus</p>
 			</div>  
-			<div class="dino" id="Superosaurus" data-score="0" style="order:0;" data-name="Superosaurus" data-food="🥗" data-go="🛴" data-cookie="🏃‍♂️" data-sport="🏀" data-holyday="🏝"><img src="images/dino_8.jpeg"/>
+			<div class="dino" id="Superosaurus" data-score="0" style="order:0;" data-name="Superosaurus" 
+				data-food="🥗" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️"
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏝">
+				<img src="images/dino_8.jpeg"/>
 				<p>Superosaurus</p>
 			</div>
-			<div class="dino" id="TRex" data-score="0" style="order:0;" data-name="TRex" data-food="👩‍🏫" data-go="🛴" data-cookie="🏃‍♂️" data-sport="🎾" data-holyday="🏔"><img src="images/dino_9.jpeg"/>
+			<div class="dino" id="TRex" data-score="0" style="order:0;" data-name="TRex" 
+				data-food="👩‍🏫" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️"
+				data-sport="🎾" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_9.jpeg"/>
 				<p>T-Rex</p>
 			</div>			
-			<div class="dino" id="Procompsognathus" data-score="0" style="order:0;" data-name="Procompsognathus" data-food="🥩" data-go="🛴" data-cookie="🏃‍♂️" data-sport="🎾" data-holyday="🏔"><img src="images/dino_10.jpeg"/>
+			<div class="dino" id="Procompsognathus" data-score="0" style="order:0;" data-name="Procompsognathus" 
+				data-food="🥩" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️"
+				data-sport="🎾" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_10.jpeg"/>
 				<p>Procompsognathus</p>
 			</div> 
-			<div class="dino" id="Tyranosaurus" data-score="0" style="order:0;" data-name="Tyranosaurus" data-food="👩‍🏫" data-go="🛴" data-cookie="🏃‍♂️" data-sport="🏀" data-holyday="🏔"><img src="images/dino_11.jpeg"/>
+			<div class="dino" id="Tyranosaurus" data-score="0" style="order:0;" data-name="Tyranosaurus" 
+				data-food="👩‍🏫" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️"
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_11.jpeg"/>
 				<p>Tyranosaurus</p>
 			</div> 
+			<div class="dino" id="Allosaurus" data-score="0" style="order:0;" 
+				data-name="Allosaurus" 
+				data-food="👩‍🏫" 
+				data-go="🚶" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="👟" 
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏝">
+				<img src="images/dino_12.jpeg"/>
+				<p>Allosaurus</p>
+			</div>
+			<div class="dino" id="Omeisaurus" data-score="0" style="order:0;" 
+				data-name="Omeisaurus" 
+				data-food="🥗" 
+				data-go="🚲" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="👩‍👦" 
+				data-sport="⚽️" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🎢">
+				<img src="images/dino_13.jpeg"/>
+				<p>Omeisaurus</p>
+			</div>
+			<div class="dino" id="Saurophaganax" data-score="0" style="order:0;" 
+				data-name="Saurophaganax" 
+				data-food="👩‍🏫" 
+				data-go="🚲" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🎾" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_14.jpeg"/>
+				<p>Saurophaganax</p>
+			</div>
+			<div class="dino" id="Shamosaurus" data-score="0" style="order:0;" 
+				data-name="Shamosaurus" 
+				data-food="🥗" 
+				data-go="🚘" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="👩‍👦" 
+				data-sport="🏈" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🎢">
+				<img src="images/dino_15.jpeg"/>
+				<p>Shamosaurus</p>
+			</div>
+			<div class="dino" id="Segisaurus" data-score="0" style="order:0;" 
+				data-name="Segisaurus" 
+				data-food="🥩" 
+				data-go="🚶" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🎾" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_16.jpeg"/>
+				<p>Segisaurus</p>
+			</div>
+			<div class="dino" id="Troodon" data-score="0" style="order:0;" 
+				data-name="Troodon" 
+				data-food="👩‍🏫" 
+				data-go="🚶" 
+				data-desert="🥜"
+				data-fish="🐡"
+				data-music="🎸"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🏀" 
+				data-boat="⛴"
+				data-space="🚀"
+				data-country="🇬🇧"
+				data-holyday="🏔">
+				<img src="images/dino_17.jpeg"/>
+				<p>Troodon</p>
+			</div>
+			<div class="dino" id="Triceratops" data-score="0" style="order:0;" 
+				data-name="Triceratops" 
+				data-food="🥗" 
+				data-go="🚲" 
+				data-desert="🍪"
+				data-fish="🐬"
+				data-music="🪗"
+				data-train="🚂"
+				data-cookie="👩‍👦" 
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛰"
+				data-country="🇫🇷"
+				data-holyday="🎢">
+				<img src="images/dino_18.jpeg"/>
+				<p>Triceratops</p>
+			</div>
+			<div class="dino" id="Sinocalliopteryx" data-score="0" style="order:0;" 
+				data-name="Sinocalliopteryx" 
+				data-food="🥩" 
+				data-go="🚶" 
+				data-desert="🍩"
+				data-fish="🐳"
+				data-music="🎻"
+				data-train="🚃"
+				data-cookie="🏃‍♂️" 
+				data-sport="🏈" 
+				data-boat="🚤"
+				data-space="🛸"
+				data-country="🇪🇸"
+				data-holyday="🏝">
+				<img src="images/dino_20.jpeg"/>
+				<p>Sinocalliopteryx</p>
+			</div>
+			<div class="dino" id="Suchomimus" data-score="0" style="order:0;" 
+				data-name="Suchomimus" 
+				data-food="🐟" 
+				data-go="🚘" 
+				data-desert="🥜"
+				data-fish="🦈"
+				data-music="🎺"
+				data-train="🚃"
+				data-cookie="🏃‍♂️" 
+				data-sport="🎾" 
+				data-boat="🛳"
+				data-space="🚀"
+				data-country="🇯🇵"
+				data-holyday="🏔">
+				<img src="images/dino_21.jpeg"/>
+				<p>Suchomimus</p>
+			</div>
+			<div class="dino" id="Tyranosaurus" data-score="0" style="order:0;" 
+				data-name="Tyranosaurus" 
+				data-food="👩‍🏫" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_22.jpeg"/>
+				<p>Tyranosaurus</p>
+			</div>
+			<div class="dino" id="Tyranosaurus" data-score="0" style="order:0;" 
+				data-name="Tyranosaurus" 
+				data-food="👩‍🏫" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_23.jpeg"/>
+				<p>Tyranosaurus</p>
+			</div>
+			<div class="dino" id="Tyranosaurus" data-score="0" style="order:0;" 
+				data-name="Tyranosaurus" 
+				data-food="👩‍🏫" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_24.jpeg"/>
+				<p>Tyranosaurus</p>
+			</div>
+			<div class="dino" id="Neovenator" data-score="0" style="order:0;" 
+				data-name="Neovenator" 
+				data-food="👩‍🏫" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_25.jpeg"/>
+				<p>Neovenator</p>
+			</div>
+			<div class="dino" id="Melanorosaurus" data-score="0" style="order:0;" 
+				data-name="Melanorosaurus" 
+				data-food="👩‍🏫" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_26.jpeg"/>
+				<p>Melanorosaurus</p>
+			</div>
+			<div class="dino" id="Metriacanthosaurus" data-score="0" style="order:0;" 
+				data-name="Metriacanthosaurus" 
+				data-food="👩‍🏫" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_27.jpeg"/>
+				<p>Metriacanthosaurus</p>
+			</div>
+			<div class="dino" id="Leptoceratops" data-score="0" style="order:0;" 
+				data-name="Leptoceratops" 
+				data-food="👩‍🏫" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_28.jpeg"/>
+				<p>Leptoceratops</p>
+			</div>
+			<div class="dino" id="Chingkingosaurus" data-score="0" style="order:0;" 
+				data-name="Chingkingosaurus" 
+				data-food="👩‍🏫" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_29.jpeg"/>
+				<p>Chingkingosaurus</p>
+			</div>
+			<div class="dino" id="Yinlong" data-score="0" style="order:0;" 
+				data-name="Yinlong" 
+				data-food="👩‍🏫" 
+				data-go="🛴" 
+				data-desert="🍉"
+				data-fish="🐠"
+				data-music="🥁"
+				data-train="🚅"
+				data-cookie="🏃‍♂️" 
+				data-sport="🏀" 
+				data-boat="⛵️"
+				data-space="🛸"
+				data-country="🇨🇭"
+				data-holyday="🏔">
+				<img src="images/dino_30.jpeg"/>
+				<p>Yinlong</p>
+			</div>
 		</section>
 		<script>
 		
@@ -292,12 +822,18 @@
 		</script>
 		
 		<style>
-				// source https://jsfiddle.net/elin/7m3bL/
-				.pyro{
-					position:fixed;
+				
+				.pyro-container{
+					position:absolute;
+					overflow:hidden;
 					width: 100vw;
 					height: 100vh;
 					z-index:-1; 
+					top:0;
+					left: 0;
+				}
+				.pyro{
+
 				}
 				.pyro > .before, .pyro > .after {
 				  position: absolute;
