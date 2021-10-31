@@ -1,0 +1,502 @@
+<html>
+	<head>
+		<title>JellyFish</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<style>
+			body{
+				background-color: #2800A3;
+			}
+	
+	
+	
+	
+	.green,
+	.blue {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  width: 300px;
+	  height: 300px;
+	}
+	
+	
+	
+	.green {
+	  animation-name: bobble-up-green;
+	}
+	
+	.blue {
+	  animation-name: bobble-up-blue;
+	}
+	
+	
+	
+	.head {
+	  top: 30%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  position: absolute;
+	  height: 110px;
+	  width: 150px;
+	  background-color: black;
+	  border-radius: 15em 15em 3em 3em;
+	}
+	
+	
+	.blue > .head {
+	  background-color: #66afd8;
+	}
+	
+	.green > .head {
+	  background-color: #13ba66;
+	}
+	
+	
+	
+	.backhead {
+	  top: 30%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  position: absolute;
+	  height: 127px;
+	  width: 167px;
+	  background-color: black;
+	  border-radius: 15em 15em 0em 0em;
+	}
+	.backhead:before {
+	  left: 50%;
+	  transform: translate(-50%, 0);
+	  top: 110px;
+	  content: "";
+	  position: absolute;
+	  background-color: transparent;
+	  width: 25.5px;
+	  height: 34px;
+	  border-radius: 0 0 5em 5em;
+	  box-shadow: 71px 0 0 black, -71px 0 0 black, 43px 0 0 black, -43px 0 0 black, 16px 0 0 black, -16px 0 0 black;
+	}
+	.backhead:after {
+	  left: 50%;
+	  transform: translate(-50%, 0);
+	  top: 127px;
+	  content: "";
+	  position: absolute;
+	  background-color: transparent;
+	  width: 5.6666666667px;
+	  height: 17px;
+	  border-radius: 5em;
+	  box-shadow: 57px 0 0 #f0f9fc, -57px 0 0 #f0f9fc, 30px 0 0 #f0f9fc, -30px 0 0 #f0f9fc;
+	}
+	
+	
+	.blue > .backhead {
+	  background-color: #cce7ff;
+	}
+	.blue > .backhead:before {
+	  background-color: #cce7ff;
+	  box-shadow: 71px 0 0 #cce7ff, -71px 0 0 #cce7ff, 43px 0 0 #cce7ff, -43px 0 0 #cce7ff, 16px 0 0 #cce7ff, -16px 0 0 #cce7ff;
+	}
+	
+	.green > .backhead {
+	  background-color: #bbefab;
+	}
+	.green > .backhead:before {
+	  background-color: #bbefab;
+	  box-shadow: 71px 0 0 #bbefab, -71px 0 0 #bbefab, 43px 0 0 #bbefab, -43px 0 0 #bbefab, 16px 0 0 #bbefab, -16px 0 0 #bbefab;
+	}
+	
+	
+	.legs {
+	  top: 65%;
+	  left: 50%;
+	  position: absolute;
+	  height: 100px;
+	  width: 22px;
+	  background-color: black;
+	  border-radius: 0 0 5em 5em;
+	  animation-name: bobble-down;
+	}
+	.legs:after {
+	  content: "";
+	  position: absolute;
+	  height: 100px;
+	  width: 22px;
+	  background-color: transparent;
+	  border-radius: 0 0 5em 5em;
+	  top: 20px;
+	  box-shadow: 0 -20px 0 black;
+	}
+	
+	
+	.blue > .legs {
+	  background-color: #66afd8;
+	}
+	.blue > .legs:after {
+	  box-shadow: 0 -20px 0 #4B99BC;
+	}
+	
+	.green > .legs {
+	  background-color: #13ba66;
+	}
+	.green > .legs:after {
+	  box-shadow: 0 -20px 0 #10A055;
+	}
+	
+	
+	.curvy {
+	  top: -50px;
+	  position: absolute;
+	  width: 22px;
+	  height: 80px;
+	  background-color: transparent;
+	  left: 40px;
+	  border: solid 22px black;
+	  border-radius: 0 0 5em 5em;
+	  border-top-color: transparent;
+	  border-right-color: transparent;
+	  animation-name: remove-scale;
+	}
+	.curvy:before {
+	  content: "";
+	  position: absolute;
+	  width: 22px;
+	  height: 80px;
+	  top: -22px;
+	  background-color: transparent;
+	  left: -146px;
+	  border: solid 22px black;
+	  border-radius: 0 0 5em 5em;
+	  border-top-color: transparent;
+	  border-left-color: transparent;
+	}
+	.curvy:after {
+	  z-index: 1;
+	  content: "";
+	  position: absolute;
+	  top: 72px;
+	  left: 17px;
+	  width: 22px;
+	  height: 22px;
+	  background-color: black;
+	  border-radius: 50%;
+	  box-shadow: -158px 0 0 black;
+	}
+	
+	
+	.blue > .legs > .curvy {
+	  border: solid 22px #4B99BC;
+	  border-top-color: transparent;
+	  border-right-color: transparent;
+	}
+	.blue > .legs > .curvy:before {
+	  border: solid 22px #4B99BC;
+	  border-top-color: transparent;
+	  border-left-color: transparent;
+	}
+	.blue > .legs > .curvy:after {
+	  background-color: #4B99BC;
+	  box-shadow: -158px 0 0 #4B99BC;
+	}
+	
+	.green > .legs > .curvy {
+	  border: solid 22px #10A055;
+	  border-top-color: transparent;
+	  border-right-color: transparent;
+	}
+	.green > .legs > .curvy:before {
+	  border: solid 22px #10A055;
+	  border-top-color: transparent;
+	  border-left-color: transparent;
+	}
+	.green > .legs > .curvy:after {
+	  background-color: #10A055;
+	  box-shadow: -158px 0 0 #10A055;
+	}
+	
+	.blue > .head > .eyes {
+	  position: absolute;
+	  width: 20px;
+	  height: 15px;
+	  border: solid 5px rgba(0, 0, 0, 0.5);
+	  background-color: transparent;
+	  border-radius: 0 5em 5em 0;
+	  border-top-color: transparent;
+	  border-left-color: transparent;
+	  top: 35px;
+	  left: 30px;
+	}
+	.blue > .head > .eyes:after {
+	  content: "";
+	  position: absolute;
+	  width: 20px;
+	  height: 15px;
+	  border: solid 5px rgba(0, 0, 0, 0.5);
+	  background-color: transparent;
+	  border-radius: 5em 0 0 5em;
+	  border-top-color: transparent;
+	  border-right-color: transparent;
+	  top: -5px;
+	  left: 50px;
+	}
+	.blue > .head > .eyes:before {
+	  content: "";
+	  position: absolute;
+	  height: 50px;
+	  width: 17px;
+	  background-color: white;
+	  top: 20px;
+	  box-shadow: 58px 0 0 white;
+	}
+	
+	.green > .head > .eyes {
+	  position: absolute;
+	  width: 20px;
+	  height: 10px;
+	  border: solid 5px black;
+	  background-color: transparent;
+	  border-bottom-color: transparent;
+	  border-radius: 5em 5em 0 0;
+	  top: 35px;
+	  left: 30px;
+	}
+	.green > .head > .eyes:after {
+	  content: "";
+	  position: absolute;
+	  width: 20px;
+	  height: 10px;
+	  border: solid 5px black;
+	  background-color: transparent;
+	  border-bottom-color: transparent;
+	  border-radius: 5em 5em 0 0;
+	  top: -5px;
+	  left: 60px;
+	}
+	.green > .head > .eyes:before {
+	  position: absolute;
+	  width: 5px;
+	  height: 5px;
+	  background-color: black;
+	  border-radius: 50%;
+	  top: 10px;
+	  left: -5px;
+	  box-shadow: 25px 0 0 black, 65px 0 0 black, 90px 0 0 black;
+	}
+	
+	
+	.blue > .head > .mouth {
+	  position: absolute;
+	  width: 22px;
+	  height: 12px;
+	  border-radius: 15em 15em 5em 5em;
+	  background-color: black;
+	  top: 70px;
+	  left: 64px;
+	}
+	
+	.green > .head > .mouth {
+	  z-index: 1;
+	  position: absolute;
+	  width: 25px;
+	  height: 15px;
+	  background-color: black;
+	  border-radius: 2em 2em 8em 8em;
+	  top: 65px;
+	  left: 65px;
+	}
+	
+	
+	.blue > .symbol {
+	  position: absolute;
+	  background-color: #66afd8;
+	  width: 30px;
+	  height: 30px;
+	  border-radius: 100% 0 55% 40%/55% 0 100% 40%;
+	  transform: rotate(-45deg);
+	  top: 25px;
+	  left: 230px;
+	}
+	
+	.green > .symbol {
+	  position: absolute;
+	  width: 50px;
+	  height: 50px;
+	  border-radius: 50%;
+	  background-color: #13ba66;
+	}
+	.green > .symbol:before {
+	  content: "";
+	  position: absolute;
+	  top: 50px;
+	  left: 50px;
+	  width: 13px;
+	  height: 13px;
+	  background-color: #13ba66;
+	  border-radius: 50%;
+	}
+	.green > .symbol:after {
+	  content: "";
+	  position: absolute;
+	  top: 18px;
+	  left: 37px;
+	  background-color: white;
+	  border-radius: 5em;
+	  width: 4px;
+	  height: 15px;
+	  transform: rotate(60deg);
+	}
+	
+	.green > .symbol > .fish {
+	  position: absolute;
+	  background-color: white;
+	  height: 25px;
+	  width: 25px;
+	  border-radius: 75% 10%;
+	  transform: rotate(45deg);
+	  top: 12px;
+	  left: 11px;
+	}
+	.green > .symbol > .fish:after {
+	  content: "";
+	  position: absolute;
+	  top: -5px;
+	  left: 23px;
+	  background-color: white;
+	  border-radius: 5em;
+	  width: 4px;
+	  height: 15px;
+	  transform: rotate(-105deg);
+	}
+	.green > .symbol > .fish:before {
+	  transform: rotate(-45deg);
+	  position: absolute;
+	  content: "";
+	  background-color: #13ba66;
+	  width: 5px;
+	  height: 5px;
+	  border-radius: 50%;
+	  top: 15px;
+	  left: 5px;
+	}
+	
+	
+	.blue > .head > .spots {
+	  position: absolute;
+	  background-color: #cce7ff;
+	  width: 10px;
+	  height: 6px;
+	  border-radius: 50%;
+	  left: 68px;
+	  top: 5px;
+	}
+	.blue > .head > .spots:after {
+	  content: "";
+	  position: absolute;
+	  background-color: transparent;
+	  width: 12px;
+	  height: 8px;
+	  border-radius: 50%;
+	  top: 5px;
+	  box-shadow: 13px 0 0 #cce7ff, -15px 0 0 #cce7ff;
+	}
+	
+	.green > .head > .drool {
+	  position: absolute;
+	  width: 10px;
+	  height: 25px;
+	  background-color: white;
+	  top: 73px;
+	  left: 68px;
+	  border-radius: 5em;
+	}
+	.green > .head > .drool:after {
+	  content: "";
+	  position: absolute;
+	  width: 10px;
+	  height: 25px;
+	  background-color: white;
+	  top: -7px;
+	  left: 8px;
+	  border-radius: 5em;
+	}
+	
+	
+	.green,
+	.blue,
+	.legs,
+	.curvy {
+	  animation-duration: 2s;
+	  animation-iteration-count: infinite;
+	  animation-fill-mode: forwards;
+	}
+	
+	
+	@keyframes bobble-up-green {
+	  0%, 100% {
+		transform: translate(-100%, 0) translateY(-20px);
+	  }
+	  50% {
+		transform: translate(-100%, 0) translateY(0px);
+	  }
+	}
+	@keyframes bobble-up-blue {
+	  0%, 100% {
+		transform: translate(0, -100%) translateY(-20px);
+	  }
+	  50% {
+		transform: translate(0, -100%) translateY(0px);
+	  }
+	}
+	
+	@keyframes bobble-down {
+	  0%, 100% {
+		transform: translate(-50%, -50%) scaleY(1);
+	  }
+	  50% {
+		transform: translate(-50%, -60%) scaleY(0.8);
+	  }
+	}
+	@keyframes remove-scale {
+	  0%, 100% {
+		transform: scaleY(1);
+	  }
+	  50% {
+		transform: scaleY(1.2);
+	  }
+	}
+		
+		</style>
+	</head>
+	<body>
+		<div class="water">
+			<div class="blue">
+				<div class="backhead"></div>
+				<div class="legs">
+					<div class="curvy"></div>
+				</div>
+				<div class="head">
+					<div class="eyes"></div>
+					<div class="mouth"></div>
+					<div class="spots"></div>
+				</div>
+				<div class="symbol"></div>
+			</div>
+			<div class="green">
+				<div class="backhead"></div>
+				<div class="legs">
+					<div class="curvy"></div>
+				</div>
+				<div class="head">
+					<div class="eyes"></div>
+					<div class="mouth"></div>
+					<div class="drool"></div>
+				</div>
+				<div class="symbol">
+					<div class="fish"></div>
+				</div>
+				
+			</div>
+			
+		</div>
+
+	</body>
+</html>

@@ -1,0 +1,9 @@
+{
+	"lang": "fr",
+	"short_name": "Saurus",
+	"name": "Saurus",
+	"start_url": "/",
+	"display": "minimal-ui",
+	"background_color": "#6C6CC6",
+	"theme_color": "#6C6CC6"
+}
