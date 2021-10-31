@@ -779,13 +779,13 @@
 
 			function result(){
 				for (var i = 0; i < dinos.length; i++) {
-					console.log(dinos[i].dataset.name);
+					console.log(dinos[i].dataset.name + ' = ' + dinos[i].dataset.score);
 					// console.log(dinos[i].dataset.food);
 					// console.log(dinos[i].dataset.go);
 					// console.log(dinos[i].dataset.cookie);
 					// console.log(dinos[i].dataset.sport);
 					// console.log(dinos[i].dataset.holyday);
-					console.log(dinos[i].dataset.score);
+					// console.log(dinos[i].dataset.score);
 					// console.log(dinos[i].style.order);
 				}	
 				console.log("-------");
@@ -809,7 +809,18 @@
 			function DINO(value,points){
 				
 				for (var i = 0; i < dinos.length; i++) {
-					if(dinos[i].dataset.food == value || dinos[i].dataset.go == value || dinos[i].dataset.cookie == value || dinos[i].dataset.sport == value || dinos[i].dataset.holyday == value){
+					if(dinos[i].dataset.food == value || 
+						dinos[i].dataset.go == value || 
+						dinos[i].dataset.cookie == value || 
+						dinos[i].dataset.sport == value || 
+						dinos[i].dataset.holyday == value || 
+						dinos[i].dataset.country == value || 
+						dinos[i].dataset.space == value || 
+						dinos[i].dataset.boat == value || 
+						dinos[i].dataset.train == value || 
+						dinos[i].dataset.music == value || 
+						dinos[i].dataset.fish == value || 
+						dinos[i].dataset.desert == value){
 						dinos[i].dataset.score =  parseInt(dinos[i].dataset.score) + points; 
 						dinos[i].style.order = dinos[i].style.order - points;
 					}
