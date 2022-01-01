@@ -3,7 +3,10 @@ title: "Marc Friederich 🔮"
 date: 2018-02-13T13:42:49-05:00
 ---
 
+<img src="/images/marc_friederich.jpg" alt="Marc Friederich" style="float:right; margin:2em; max-width: 30vw; max-height:16em;">
+
 ## About me
+
 
 Co-founder of <a href="https://antistatique.net">Antistatique</a>, a swiss web agency in Lausanne, Geneva and Miami.
 
