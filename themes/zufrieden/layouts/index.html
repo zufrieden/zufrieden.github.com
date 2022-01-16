@@ -68,7 +68,7 @@
     
         {{ range last 8 $files }}
         <div class="slider-item photo">
-          <img src="{{ $src | absURL }}{{.Name }}"/>
+          <img src="{{ $src | absURL }}{{.Name }}" loading="lazy"/>
         </div>
         {{ end }}
       </div>

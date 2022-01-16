@@ -26,7 +26,7 @@
 
         {{ range $files }}
         <div class="item photo">
-          <img src="{{ $src | absURL }}{{.Name }}"/>
+          <img src="{{ $src | absURL }}{{.Name }}" loading="lazy"/>
         </div>
         {{ end }}
       </div>
