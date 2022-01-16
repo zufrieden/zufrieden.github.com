@@ -393,6 +393,30 @@ blockquote p, blockquote h1, blockquote h2, blockquote h3, blockquote h4 {
 
 }
 
+/* Slider */
+.slider-container{
+  height: 60vh;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+}
+.slider{
+  height: 60vh;
+  width: calc(60vh * 8);
+  display: flex;
+  flex-flow: row nowrap;
+}
+.slider-item{
+  scroll-snap-align: start;
+}
+.slider-item img{
+  object-fit: cover;
+  height: 60vh;
+  width: 60vh;
+}
+
+
 /* Footer */
 footer.snowy{
   margin-top: 1vh;

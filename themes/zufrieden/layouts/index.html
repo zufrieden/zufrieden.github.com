@@ -54,6 +54,26 @@
       </div>
     </section>
     {{ end }}
+    
+    <section class="homepage-photos slider-container container-full">
+      <div class="slider">
+        {{ $name := .Site.Params.galleryFolder | default "images/"}}
+        {{ $path := "making-pictures/" }}
+        {{ $content := "/content/" }}
+        {{ $src := (print $path $name) }}
+    
+        {{ $folder := (print $content $path $name) }}
+    
+        {{ $files := readDir $folder }}
+    
+        {{ range last 8 $files }}
+        <div class="slider-item photo">
+          <img src="{{ $src | absURL }}{{.Name }}"/>
+        </div>
+        {{ end }}
+      </div>
+    </section>
+    
   </main>
   {{ partial "footer.html" . }}
 </body>
