@@ -71,6 +71,12 @@ brew install hugo
 brew install woff2
 ```
 
+## Workflows
+
+* Alfred - [switch to darkmode](https://www.packal.org/workflow/dark-mode-toggle)
+
+
+
 
 ## Install oh my zsh
 ```bash
