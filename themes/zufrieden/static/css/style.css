@@ -123,14 +123,14 @@ main{
 }
 @media (min-width: 600px) {
   .gallery .item img{
-    width: calc(100vw/3);
-    height: calc(100vw/3);
+    width: calc(100vw/4);
+    height: calc(100vw/4);
   }
 }
 @media (min-width: 1200px) {
   .gallery .item img{
-    width: calc(100vw/5);
-    height: calc(100vw/5);
+    width: calc(100vw/6);
+    height: calc(100vw/6);
   }
 }
 
