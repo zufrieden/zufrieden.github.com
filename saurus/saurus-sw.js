@@ -2,7 +2,7 @@
 
 // Inspired/understood by the book GoingOffline from Jeremy Keith and also quite copied his very own website https://adactio.com/serviceworker.js
 
-const version = '20220116-0001';
+const version = '20220412-0002';
 const staticCacheName = version + 'static';
 const pagesCacheName = 'pages';
 const imagesCacheName = 'images';
