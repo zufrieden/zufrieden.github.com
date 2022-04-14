@@ -29,3 +29,7 @@ It's really nice to go on this path, but we need some numbers before and after. 
 ## Learnings
 
 ## What can you do
+
+
+-- sources https://www.wholegraindigital.com/blog/website-energy-efficiency/
+-- https://gomakethings.com/your-website-is-a-pollution-machine/
