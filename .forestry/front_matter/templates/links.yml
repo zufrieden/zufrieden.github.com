@@ -21,6 +21,7 @@ fields:
   config:
     required: false
 pages:
+- content/linking/a-practical-utopian-s-guide-to-the-coming-collapse.md
 - content/linking/a-primer-on-documentation-content-strategy.md
 - content/linking/as-wired-magazine-turns-25-we-remember-when-email-was-fun.md
 - content/linking/brutalism-and-antidesign-in-webdesign.md
