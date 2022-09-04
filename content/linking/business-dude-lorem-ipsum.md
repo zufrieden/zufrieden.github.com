@@ -4,7 +4,7 @@ date: 2022-09-03T18:52:24+02:00
 showDate: false
 draft: false
 link: https://newsletters.theatlantic.com/galaxy-brain/630ec150bcbd490021b17eab/business-dudes-need-to-stop-talking-like-this/
-description :The scourge of business-dude lorem ipsum By Charlie Warzel - Metaverse or crypto, you'll find plenty of people sharing LinkedIn empty posts. As empty vessel of content just following the hype but there's still no value whatsoever.
+description : "The scourge of business-dude lorem ipsum By Charlie Warzel - Metaverse or crypto, you'll find plenty of people sharing LinkedIn empty posts. As empty vessel of content just following the hype but there's still no value whatsoever."
 ---
 Love this part of the article :
 
