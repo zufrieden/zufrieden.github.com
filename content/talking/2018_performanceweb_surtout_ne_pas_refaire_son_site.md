@@ -6,7 +6,7 @@ showDate: true
 event: Performance Web
 eventurl: https://performanceweb.ch/evenement/performance-web/
 location: Genève
-slides: https://zufrieden.io/slides-surtout-ne-pas-refaire-son-site/
+slides: https://zufrieden.github.io/slides-surtout-ne-pas-refaire-son-site/
 video: https://www.youtube-nocookie.com/embed/6BxthG2wqkc
 speakers: Marc Friederich
 ---

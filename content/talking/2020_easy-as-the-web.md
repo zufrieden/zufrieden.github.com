@@ -5,10 +5,10 @@ event = "Webmardi"
 eventurl = "https://www.meetup.com/webmardi/events/262026624/"
 location = "Lausanne"
 showDate = true
-slides = "https://zufrieden.io/slides-easy-as-web/"
+slides = "https://zufrieden.github.io/slides-easy-as-web/"
 speakers = "Marc Friederich"
 title = "Easy as the web"
-video = "https://www.youtube.com/embed/u6smvYZbrDQ"
+video = "https://www.youtube.com/embed/IIBVvtNwkcY"
 
 +++
 The Web is so simple, yet we often create cumbersome solutions.  
