@@ -97,6 +97,7 @@ a{
   color: var(--link-color);
   text-decoration-skip-ink: auto;
   text-decoration: currentcolor underline;
+  word-break: break-all;
 }
 a:visited{
   color: var(--link-color-visited);
