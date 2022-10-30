@@ -3,7 +3,5 @@
 	"short_name": "zufrieden",
 	"name": "zufrieden",
 	"start_url": "/",
-	"display": "minimal-ui",
-	"background_color": "hsla(202, 85%, 4%, 1)",
-	"theme_color": "hsla(215, 100%, 59.6%, 0.9)"
+	"display": "minimal-ui"
 }
