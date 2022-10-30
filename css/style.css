@@ -1,69 +1,108 @@
-/* color sheme https://coolors.co/f7eae3-64b78e-59a37e-302f4d-120d31 */
-
 :root {
---bg-color: hsla(21, 52%, 94%, 1);
---snow-bg-color: hsla(215, 59%, 43%, 1);
---snow-bg-color-light: hsla(215, 59%, 50%, 1);
---link-color: hsla(215, 59%, 43%, 1);
---link-color-hover: hsla(215, 59%, 50%, 1);
---link-color-visited: hsla(255, 46%, 42%, 1);
---text-color: hsla(202, 85%, 5%, 1);
+--color-h: 225; /* Hue General */
+
+/* background */ 
+--bg-color-s: 80%; /* Saturation */
+--bg-color-l: 96%; /* Lightness  */
+
+--bg-color: hsl(
+  var(--color-h), 
+  var(--bg-color-s), 
+  var(--bg-color-l)
+);
+
+/* color: hsl( 310, 100%, 8% ); */
+
+/* link */
+--link-color-s : 100% ;
+--link-color-l : 50% ;
+
+--link-color: hsl(
+  var(--color-h), 
+  var(--link-color-s), 
+  var(--link-color-l)
+);
+
+/* link hover */
+--link-color-hover-s : 100% ;
+--link-color-hover-l : 30% ;
+
+--link-color-hover: hsl(
+  var(--color-h), 
+  var(--link-color-hover-s), 
+  var(--link-color-hover-l)
+);
+
+/* link hover */
+--link-color-visited-s : 70% ;
+--link-color-visited-l : 30% ;
+
+--link-color-visited: hsl(
+  var(--color-h), 
+  var(--link-color-visited-s), 
+  var(--link-color-visited-l)
+);
+
+/* Text color */
+--text-color-s : 15% ;
+--text-color-l : 16% ;
+
+--text-color: hsl(
+  var(--color-h), 
+  var(--text-color-s), 
+  var(--text-color-l)
+);
+
 }
+
+
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: hsla(202, 85%, 4%, 1);
-    --snow-bg-color: hsla(202, 85%, 8%, 1);
-    --snow-bg-color-light: hsla(202, 85%, 12%, 1);
-    --link-color: hsla(215, 100%, 59.6%, 0.9);
-    --link-color-hover: hsla(215, 100%, 59.6%, 1);
-    --link-color-visited: hsla(255, 100%, 69.4%, 0.96);
-    --text-color: hsl(20, 60%, 98%);
+    /* Redfeine Lightness  */
+    --bg-color-l: 8%; 
+    --text-color-l : 95% ;
+    --text-color-s : 43% ;
+    --link-color-l : 70% ;
+    --link-color-hover-l : 80% ;
+    --link-color-visited-l : 85% ;
     }
 }
 
 /* fonts */
 @font-face {
-  font-family: 'Patua One';
+  font-family: 'work sans';
   font-style: normal;
-  font-weight: 400;
   font-display: fallback;
-  src: local('Patua One'), local('PatuaOne-Regular'), url(ZXuke1cDvLCKLDcimxB44_luFgxbuQ.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  font-weight: 1 999;
+  src: local('Work-Sans'), url('fonts/WorkSans[wght].ttf') format("truetype-variations");
 }
-@font-face {
-  font-family: 'Cabin Condensed';
-  font-style: normal;
-  font-weight: 400;
-  font-display: fallback;
-  src: local('Cabin Condensed'), local('CabinCondensed-Regular'), url(nwpMtK6mNhBK2err_hqkYhHRqmwqZ-LYxnV18A.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
+
 
 html{
   font-size: 20px;
 }
 body{
-  font-family: 'Cabin Condensed',-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+  font-family: 'work sans',-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
   font-size: calc(0.7em + 1vw);
   font-size: -webkit-calc(70% + 1vw);
   background-color: var(--bg-color);
-  border-top: var(--link-color) 1vh solid;
+  background-repeat: no-repeat;
   margin: 0;
+  border-top: var(--link-color) 1.5vh solid;
   color: var(--text-color);
 }
 
 a{
-  
   color: var(--link-color);
   text-decoration-skip-ink: auto;
   text-decoration: currentcolor underline;
 }
-a:hover{
-  color: var(--link-color-hover);
-}
 a:visited{
   color: var(--link-color-visited);
+}
+a:hover{
+  color: var(--link-color-hover);
 }
 
 main{
@@ -161,10 +200,10 @@ header nav li {
   list-style: none;
 }
 header nav a, header nav a:visited{
+  font-weight: 600;
   display: block;
-  padding: 0.3em 0.3em ;
+  padding: 0.3em 0.5em ;
   text-decoration: none;
-  font-family: 'Patua One', Georgia, serif;
   color: var(--text-color);
   transition: 0.12s color ease-in-out;
 }
@@ -173,13 +212,15 @@ header nav a:hover{
   text-decoration: underline;
   color: var(--link-color);
 }
-header nav .home a, header nav .current a{
+header nav .current a{
   color: var(--link-color-hover);
 }
 header nav .home a{
   font-size: 140%;
+  font-weight: 700;
+  color: var(--link-color);
 }
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   header{
     margin-bottom: 5vh;
   }
@@ -219,47 +260,47 @@ header nav .home a{
 
 /* Typography */
 h1, h2, h3, h4, h5{
-  font-family: 'Patua One', Georgia serif;
   word-wrap: break-word;
 }
 h1, .h1, .h-huge {
   font-size: calc(3.1em + 1vw);
   font-size: -webkit-calc(310% + 1vw);
   line-height: 1.1em;
-  font-weight: normal;
+  font-weight: 800;
   margin-top: 0;
   margin-bottom: 0;
 }
 h2, .h2 {
   font-size: calc(1.2em + 1vw);
   font-size: -webkit-calc(120% + 1vw);
-  line-height: 1.3em;
-  font-weight: normal;
+  line-height: 1.2em;
+  font-weight: 800;
   margin-top: 0;
   margin-bottom: 0;
 }
 h3, .h3 {
   font-size: calc(0.9em + 1vw);
   font-size: -webkit-calc(90% + 1vw);
-  font-weight: normal;
-  line-height: 1.3em;
+  font-weight: 550;
+  line-height: 1.2em;
   margin-top: 0;
   margin-bottom: 0;
 }
 h4, .h4 {
   font-size: calc(0.8em + 1vw);
   font-size: -webkit-calc(80% + 1vw);
-  font-weight: normal;
-  line-height: 1.3em;
+  font-weight: 400;
+  line-height: 1.2em;
   margin-top: 0;
   margin-bottom: 0;
 }
 
 
 p, ul, ol, pre, table, blockquote {
-  line-height: 1.43em;
+  line-height: 1.33em;
   margin-top: 0;
   margin-bottom: 0.5em;
+  font-weight: 280;
 }
 p + p, p + h2, p + h3, p + ul, ul + p, h2 + p, h3 + ol, h3 + ul, h2 + ol, h2 + ul{
   margin-top: 0.8em;
@@ -317,8 +358,8 @@ section{
 	position:relative;
 	}
 .tags a{
-	margin-left:1em;
-	padding:0.1em 0.5em 0.1em 0.6em;
+	margin-right:0.4em;
+	padding:0.18em 0.5em 0.18em 1em;
 	background: var(--link-color);
 	color: #fff;
 	text-decoration:none;
@@ -326,23 +367,11 @@ section{
 	/* border-bottom-right-radius:0.3em;
 	border-top-right-radius:0.3em; */
 	}
-.tags a:before{
-	content:"";
-	float:left;
-	position:absolute;
-	top:0;
-	left:-0.65em;
-	width:0;
-	height:0;
-	border-color:transparent var(--link-color) transparent transparent;
-	border-style:solid;
-	border-width:0.8em 0.8em 0.7em 0;
-	}
 .tags a:after{
 	content:"";
 	position:absolute;
-	top:0.65em;
-	left:-0.2em;
+	top:0.75em;
+	left:0.4em;
 	float:left;
 	width:0.2em;
 	height:0.2em;
@@ -418,72 +447,9 @@ blockquote p, blockquote h1, blockquote h2, blockquote h3, blockquote h4 {
 
 
 /* Footer */
-footer.snowy{
-  margin-top: 1vh;
-  height: 60vh;
-  background-color: var(--snow-bg-color);
-  position: relative;
-  display: flex;
-  align-items: flex-end;
-  overflow: hidden;
-  width: 100%;
-}
-.floor_snow_bottom{
-  width: 0;
-  height: 0;
-  border-style: solid;
-  margin-top: -2.3vh;
-  border-width: 2.3vh 0 0 100vw;
-  border-color: transparent transparent transparent var(--bg-color);
-  bottom:0;
-  position: relative;
-}
-.floor_sky_top{
-  width: 0;
-  height: 0;
-  border-style: solid;
-  margin-top: 0;
-  border-width: 0 0 2.3vh 100vw;
-  border-color: transparent transparent transparent var(--bg-color);
-  top:0;
-  position: absolute;
-}
-.floor_snow_2{
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 20vh 0 0 100vw;
-  border-color: transparent transparent transparent var(--snow-bg-color-light);
-  position: absolute;
-  bottom:0;
-}
-.floor_snow{
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 2.3vh 0 0 100vw;
-  border-color: transparent transparent transparent var(--bg-color);
-  position: absolute;
-  bottom:0;
-}
-.floor_snow_top{
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 1vh 0 0 100vw;
-  border-color: transparent transparent transparent var(--bg-color);
-  position: absolute;
-  bottom:0;
-}
-.snowman{
-  position: absolute;
-  right:10vh;
-  bottom:0vh;
-  font-size: 10vh;
-  line-height: 8vh;
-}
+
 .footer_links{
-  background-color: var(--bg-color);
+  font-weight: 400 !important;
   padding-bottom: 2vh;
 }
 
