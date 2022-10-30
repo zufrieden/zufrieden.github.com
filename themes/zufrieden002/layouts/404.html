@@ -1,0 +1,13 @@
+{{ partial "head.html" . }}
+<body>
+  {{ if .Site.Params.mainMenu }}
+    {{ partial "top_menu.html" (dict "Page" . "show_back_menu_item" false) }}
+  {{ end }}
+  <main class="container">
+    <h1>
+      🥕 Error 404 - Page not found
+    </h1>
+  </main>
+  {{ partial "footer.html" }}
+</body>
+{{ partial "foot.html" }}

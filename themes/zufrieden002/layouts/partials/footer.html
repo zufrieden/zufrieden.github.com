@@ -1,0 +1,22 @@
+
+
+<div class="footer_links">
+  <ul class="list-icons list-icons-center">
+    <li>
+      <h2>📨</h2>
+      <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+    </li>
+    <li>
+      <h2>🙊</h2>
+      <a data-hint="Twitter" title="Twitter" href="{{ .Site.Params.twitterLink }}"  target="_blank" rel="me">
+        {{ .Site.Params.twitterHandle }}
+      </a>
+    </li>
+    <li>
+      <h2>🐙</h2>
+      <a data-hint="Github" title="Github" href="{{ .Site.Params.githubLink }}"  target="_blank" rel="me">
+        {{ .Site.Params.githubHandle }}
+      </a>
+    </li>
+  </ul>
+</div>

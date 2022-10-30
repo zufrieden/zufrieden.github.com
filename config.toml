@@ -1,7 +1,7 @@
 baseURL = "https://zufrieden.io/"
 languageCode = "en-us"
 title = "zufrieden.io/"
-theme = "zufrieden"
+theme = "zufrieden002"
 
 [params]
     dateform            = "Jan 02, 2006"

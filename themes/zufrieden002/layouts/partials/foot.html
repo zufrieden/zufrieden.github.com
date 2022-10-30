@@ -1,0 +1,12 @@
+<script>
+	function gethue(){
+	  const x = 1 - (window.innerWidth) / 10000;
+	  const actual_color_hue = getComputedStyle(document.documentElement).getPropertyValue('--color-h');
+	  document.documentElement.style.setProperty('--color-h', Math.round(300*x));		
+	}
+	gethue();
+	window.addEventListener('resize', () => {
+		gethue();
+	})
+</script>
+</html>

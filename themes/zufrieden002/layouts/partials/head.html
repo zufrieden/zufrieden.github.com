@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US" class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="{{.Site.Params.description | default "Marc Friederich"}}">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="{{.Site.BaseURL}}">
+    <meta name="twitter:image" content="{{ .Site.Params.primaryImage | default "tn.png" | absURL }}">
+    <meta name="twitter:title" property="og:title" itemprop="title name" content="{{.Site.Title | default "Sam"}}">
+    <meta name="twitter:description" property="og:description" itemprop="description" content="{{.Site.Params.description | default "Marc Friederich"}}">
+    <meta name="og:type" content="website">
+    <meta name="og:url" content="{{.Site.BaseURL}}">
+    <meta name="og:image" itemprop="image primaryImageOfPage" content="{{.Site.Params.primaryImage | default "tn.png" | absURL}}">
+    <title>{{.Title}}</title>
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="stylesheet" href="/css/style.css?20221030-0003">
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
+    <script>
+        // Register our service-worker
+        if (navigator.serviceWorker) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/zufrieden-sw.js', {
+                    scope: '/'
+                });
+                if (navigator.serviceWorker.controller) {
+                    navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
+                }
+            });
+        }
+    </script>    
+    <script>
+        document.documentElement.className = document.documentElement.className.replace("no-js","js");
+    </script>
+</head>

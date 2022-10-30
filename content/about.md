@@ -14,19 +14,3 @@ With over =(time() - 1998) years of web experience, Marc has carried out and man
 
 Marc interests are about Design, CSS, Documentation, Web Standards, A11y and I18n.
 
-## Contact me
-
-<ul class="list-icons">
-  <li>
-    <h2>📨</h2>
-    <a href="mailto:m@zufrieden.io">m@zufrieden.io</a>
-  </li>
-  <li>
-    <h2>🙊</h2>
-     <a href="https://twitter.com/zufrieden">twitter.com/zufrieden</a>
-  </li>
-  <li>
-    <h2>🐙</h2>
-     <a href="https://github.com/zufrieden">github.com/zufrieden</a>
-  </li>
-</ul>
