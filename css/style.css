@@ -75,7 +75,7 @@
   font-style: normal;
   font-display: fallback;
   font-weight: 1 999;
-  src: local('Work-Sans'), url('fonts/WorkSans[wght].ttf') format("truetype-variations");
+  src: local('Work-Sans'), url('fonts/worksans.woff2') format("woff2-variations");
 }
 
 
@@ -384,6 +384,16 @@ section{
 .tags a:hover{background: var(--link-color-hover);}
 .tags a:hover:before{border-color:transparent var(--link-color-hover) transparent transparent;}
 
+/* code */
+code{
+  border-left: 1px solid var(--link-color);
+  padding: 0.5em 1em;
+  background-color: rgba(255,255,255,0.1);
+  display: block;
+  max-width: 100%;
+  overflow: scroll;
+  font-size: 70%;
+}
 
 /* List-Icons Contact */
 .list-icons{

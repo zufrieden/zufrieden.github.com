@@ -1,0 +1,31 @@
+<!doctype html><html lang=en-us class=no-js><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="chrome=1"><meta name=HandheldFriendly content="True"><meta name=MobileOptimized content="320"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=referrer content="no-referrer"><meta name=description content="Marc Friederich"><meta name=twitter:card content="summary"><meta name=twitter:domain content="https://zufrieden.io/"><meta name=twitter:image content="https://zufrieden.io/tn.png"><meta name=twitter:title property="og:title" itemprop="title name" content="zufrieden.io/"><meta name=twitter:description property="og:description" itemprop=description content="Marc Friederich"><meta name=og:type content="website"><meta name=og:url content="https://zufrieden.io/"><meta name=og:image itemprop="image primaryImageOfPage" content="https://zufrieden.io/tn.png"><title>Here is a new design to my website - variable is the keyword</title><link rel=manifest href=/manifest.json><link rel=stylesheet href=/css/style.css?20221030-0006><link rel=authorization_endpoint href=https://indieauth.com/auth><script>if(navigator.serviceWorker){window.addEventListener('load',function(){navigator.serviceWorker.register('/zufrieden-sw.js',{scope:'/'});if(navigator.serviceWorker.controller){navigator.serviceWorker.controller.postMessage({'command':'trimCaches'});}});}</script><script>document.documentElement.className=document.documentElement.className.replace("no-js","js");</script></head><body><nav class=a11y-navigation aria-label="Accessibility navigation"><ul><li><a class="sr-only sr-show-on-focus" accesskey=0 href=/ title="[Alt+0] Homepage">Homepage</a></li><li><a class="sr-only sr-show-on-focus" accesskey=1 href=#menu title="[Alt+1] Website Navigation">Website Navigation</a></li><li><a class="sr-only sr-show-on-focus" accesskey=2 href=#main title="[Alt+2] Skip to content">Skip to content</a></li></ul></nav><header><nav role=menubar id=menu><ul><li class=home><a href=https://zufrieden.io/>zufrieden.io/</a></li><li><a href=/writing>Writing</a></li><li><a href=/linking>Linking</a></li><li><a href=/talking>Talking</a></li><li><a href=/making-pictures>Making pictures</a></li><li><a href=/about>About</a></li></ul></nav></header><main class=container><h1>Here is a new design to my website - variable is the keyword</h1><h2>With new colors reacting responsively and a new variable font</h2><section><h3>Nov 11, 2022 &#183; 225 words<ul class=tags><li class=tag><a href=https://zufrieden.io/tags/blog>blog</a></li><li class=tag><a href=https://zufrieden.io/tags/dev>dev</a></li></ul></h3></section><section><p>Using Work Sans variable font to choose</p><h3 class=youpi>whatever weight I want</h3><style>.youpi{animation-duration:2s;animation-name:getbold;animation-iteration-count:infinite;animation-timing-function:ease-in-out;text-align:center;padding:1em}@keyframes getbold{from{font-weight:1}50%{font-weight:999}to{font-weight:1}}</style><p>Using a variable font with 900 different weights allow to have only 1 file to load. But the original TTF is 300ko.
+After a special treatment, the woff2 is only 30ko.</p><p>installing Python, pip etc &mldr;</p><pre><code>sudo port install python39
+sudo port select --set python python39
+</code></pre><pre><code>pip install fonttools
+pip install brotli
+</code></pre><p>Remove all glyphs except basic latin characters (punctuation, digits, letters)</p><pre><code>fonttools subset WorkSans\[wght\].ttf  --output-file=worksans.ttf --unicodes=U+0020-007E
+</code></pre><p>Use <a href=https://github.com/google/woff2>woff2 library</a> or in only one line</p><pre><code>fonttools subset WorkSans\[wght\].ttf  --output-file=worksans.woff --flavor=woff  --unicodes=U+0020-007E
+</code></pre><h2 id=variable-color-scheme>Variable color scheme</h2><p>My CSS goes with variable constructed around HSL attributes</p><pre><code>:root {
+	--color-h: 225; /* Hue General */
+	
+	/* background */ 
+	--bg-color-s: 80%; /* Saturation */
+	--bg-color-l: 96%; /* Lightness  */
+	
+	--bg-color: hsl(
+  	var(--color-h), 
+  	var(--bg-color-s), 
+  	var(--bg-color-l)
+	);
+}
+</code></pre><p>Then with a little unobstructive Javascript</p><pre><code>function gethue(){
+  const x = 1 - (window.innerWidth) / 10000;
+  const actual_color_hue = getComputedStyle(document.documentElement).getPropertyValue('--color-h');
+  document.documentElement.style.setProperty('--color-h', Math.round(300*x));		
+}
+gethue();
+window.addEventListener('resize', () =&gt; {
+	gethue();
+})
+</code></pre><p>Just try resizing the page to see it in action.</p><p>Or simply drag the following input</p><script>function getlivehue(){const x=1-(document.getElementById('hue').value)/10000;const actual_color_hue=getComputedStyle(document.documentElement).getPropertyValue('--color-h');document.documentElement.style.setProperty('--color-h',Math.round(300*x));}</script><p><input type=range id=hue name=hue min=0 max=5000 onchange=getlivehue();></p></section></main><footer class=footer><div class=footer_links><ul class="list-icons list-icons-center"><li><h2>📨</h2><a href=mailto:m@zufrieden.io>m@zufrieden.io</a></li><li><h2>🙊</h2><a data-hint=Twitter title=Twitter href=https://twitter.com/zufrieden target=_blank rel=me>twitter.com/zufrieden</a></li><li><h2>🐙</h2><a data-hint=Github title=Github href=https://github.com/zufrieden target=_blank rel=me>github.com/zufrieden</a></li></ul></div></footer></body><script>function gethue(){const x=1-(window.innerWidth)/10000;const actual_color_hue=getComputedStyle(document.documentElement).getPropertyValue('--color-h');document.documentElement.style.setProperty('--color-h',Math.round(300*x));}
+gethue();window.addEventListener('resize',()=>{gethue();})</script></html>
