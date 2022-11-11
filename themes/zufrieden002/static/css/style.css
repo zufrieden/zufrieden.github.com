@@ -385,7 +385,7 @@ section{
 .tags a:hover:before{border-color:transparent var(--link-color-hover) transparent transparent;}
 
 /* code */
-code{
+/* code{
   border-left: 1px solid var(--link-color);
   padding: 0.5em 1em;
   background-color: rgba(255,255,255,0.1);
@@ -393,7 +393,7 @@ code{
   max-width: 100%;
   overflow: scroll;
   font-size: 70%;
-}
+} */
 
 /* List-Icons Contact */
 .list-icons{

@@ -21,7 +21,14 @@ theme = "zufrieden002"
     [markup.goldmark.renderer]
       unsafe = true
     [markup.highlight]
-      style = "paraiso-dark"   
+      anchorLineNos = true
+      codeFences = true
+      guessSyntax = true
+      lineNumbersInTable = true
+      noClasses = true
+      noHl = false
+      style = 'solarized-dark256'
+      tabWidth = 3
 
 # Metadata
     description         = "Hello, my name is Marc Friederich"            # Max 160 characters show in search results
