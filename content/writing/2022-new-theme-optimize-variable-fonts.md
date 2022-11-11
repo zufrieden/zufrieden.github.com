@@ -101,5 +101,5 @@ Or simply drag the following input
 }</script>
 
 <input type="range" id="hue" name="hue"
- min="0" max="5000" onChange="getlivehue();">
+ min="0" max="5000" onmousemove="getlivehue();" style="width: 90%;">
  
