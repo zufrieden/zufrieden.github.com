@@ -39,6 +39,10 @@ Be leader that people choose to follow (not authoritatry leader people have to f
 
 >"We call them leaders because they go first. We call them leaders because they take the risk before anybody else does. We call them leaders because they will choose to sacrifice so that their people may be safe and protected and so their people may gain, and when we do, the natural response is that our people will sacrifice for us. They will give us their blood and sweat and tears to see that their leader's vision comes to life, and when we ask them, "Why would you do that? Why would you give your blood and sweat and tears for that person?" they all say the same thing: "Because they would have done it for me." And isn't that the organization we would all like to work in?"
 
+## Performance review
+- Say clearly the purpose of performance review (improve both of us, manager and employee worknig together)
+- Give full sense of what to be improve (exemple, why it matters, how to do it the right way)
+
 ## Notes from a conference "Jusqu'où peut-on partager le leadership - 31 mai 2018 15h30"
 
 ### La vérité sur la direction
@@ -62,6 +66,7 @@ Be leader that people choose to follow (not authoritatry leader people have to f
 - Objectives have to be shared wuth the whole team
 
 ## Sources
+- Doing performance reviews : https://www.youtube.com/watch?v=pyat7wbDmLU&list=PLJnuzdCBXa_y25NpI_TM7sk9SVZF3SBSm
 - The lazy leader : https://medium.com/flow/lazy-leadership-8ba19e34f959?__s=wcpbt4trg2z6y86opizz
 - Leader makes you feel safe : https://www.ted.com/talks/simon_sinek_why_good_leaders_make_you_feel_safe
 - Sur l'appréciation de ses propres compétences https://www.psychologytoday.com/intl/blog/supersurvivors/201806/why-incompetent-people-don-t-know-they-re-incompetent
