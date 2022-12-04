@@ -17,4 +17,3 @@ fields:
   label: Show date
   config:
     required: false
-pages:

@@ -28,7 +28,7 @@ sections:
   path: content/sharing
   label: sharing
   create: all
-  match: "**/*"  
+  match: "**/*"
 - type: directory
   path: content/writing
   label: Writing
