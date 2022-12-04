@@ -1,0 +1,8 @@
+---
+date: 2016-07-20T06:14:26.000Z
+title: "RT <a href='http://twitter.com/jasonsantamaria'>@jasonsantamaria</a>: Coming soon from <a href='http://twitter.com/abookapart'>@abookapart</a>, Practical SVG by <a href='http://twitter.com/chriscoyier'>@chriscoyier</a>. This is a seriously great book! https://t.co/K8rc1NLYpb h…″"
+user_mentions: "undefined"
+tweet_id: "755647033910919169"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["755647033910919169"],"editableUntil":"2016-07-20T06:44:26.784Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iΟS</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Jason Santa Maria","screen_name":"jasonsantamaria","indices":["3","19"],"id_str":"60273","id":"60273"},{"name":"A Book Apart","screen_name":"abookapart","indices":["38","49"],"id_str":"106418338","id":"106418338"},{"name":"Chris Coyier","screen_name":"chriscoyier","indices":["68","80"],"id_str":"793830","id":"793830"}],"urls":[{"url":"https://t.co/K8rc1NLYpb","expanded_url":"https://abookapart.com/products/practical-svg","display_url":"abookapart.com/products/pract…","indices":["114","137"]}]},"display_text_range":["0","140"],"favorite_count":"0","id_str":"755647033910919169","truncated":false,"retweet_count":"0","id":"755647033910919169","possibly_sensitive":false,"created_at":"Wed Jul 20 06:14:26 +0000 2016","favorited":false,"full_text":"RT @jasonsantamaria: Coming soon from @abookapart, Practical SVG by @chriscoyier. This is a seriously great book! https://t.co/K8rc1NLYpb h…","lang":"en"}

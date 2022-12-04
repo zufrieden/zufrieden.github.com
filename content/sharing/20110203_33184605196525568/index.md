@@ -1,0 +1,8 @@
+---
+date: 2011-02-03T15:26:41.000Z
+title: "RT <a href='http://twitter.com/kidvaldez'>@kidvaldez</a>: <a href='http://twitter.com/briansolis'>@briansolis</a> #lift11 is the brother of Gabrielle Solis = <a href='http://twitter.com/evalongoria'>@evalongoria</a> #desperatehousewife ? Please Help Me! <a href='http://twitter.com/briansolis'>@briansolis</a> gi ...″"
+user_mentions: "undefined"
+tweet_id: "33184605196525568"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["33184605196525568"],"editableUntil":"2011-02-03T15:56:41.076Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://twitter.com/#!/download/ipad\" rel=\"nofollow\">Twitter for iPad</a>","entities":{"hashtags":[{"text":"lift11","indices":["27","34"]},{"text":"desperatehousewife","indices":["84","103"]}],"symbols":[],"user_mentions":[{"name":"Alberto","screen_name":"kidvaldez","indices":["3","13"],"id_str":"53017241","id":"53017241"},{"name":"Brian Solis","screen_name":"briansolis","indices":["15","26"],"id_str":"11489","id":"11489"},{"name":"Eva Longoria Baston","screen_name":"EvaLongoria","indices":["71","83"],"id_str":"110827653","id":"110827653"},{"name":"Brian Solis","screen_name":"briansolis","indices":["122","133"],"id_str":"11489","id":"11489"}],"urls":[]},"display_text_range":["0","140"],"favorite_count":"0","id_str":"33184605196525568","truncated":false,"retweet_count":"0","id":"33184605196525568","created_at":"Thu Feb 03 15:26:41 +0000 2011","favorited":false,"full_text":"RT @kidvaldez: @briansolis #lift11 is the brother of Gabrielle Solis = @evalongoria #desperatehousewife ? Please Help Me! @briansolis gi ...","lang":"en"}

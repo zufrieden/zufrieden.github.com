@@ -1,0 +1,8 @@
+---
+date: 2012-05-31T14:46:27.000Z
+title: "RT <a href='http://twitter.com/heigvd'>@heigvd</a>: Marée noire hier à Yverdon lors du #Sonisphere... http://t.co/VzWBRoDm <a href='http://twitter.com/RPod_ch'>@RPod_ch</a> #festival #metallica /cc <a href='http://twitter.com/gil_les'>@gil_les</a>″"
+user_mentions: "undefined"
+tweet_id: "208207822209548288"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["208207822209548288"],"editableUntil":"2012-05-31T15:16:27.786Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>","entities":{"hashtags":[{"text":"Sonisphere","indices":["47","58"]},{"text":"festival","indices":["92","101"]},{"text":"metallica","indices":["102","112"]}],"symbols":[],"user_mentions":[{"name":"HEIG-VD","screen_name":"heigvd","indices":["3","10"],"id_str":"72938829","id":"72938829"},{"name":"R-Pod","screen_name":"RPod_ch","indices":["83","91"],"id_str":"208144915","id":"208144915"},{"name":"Gilles Doge","screen_name":"gil_les","indices":["117","125"],"id_str":"23044467","id":"23044467"}],"urls":[{"url":"http://t.co/VzWBRoDm","expanded_url":"http://heig.ch/bupafu","display_url":"heig.ch/bupafu","indices":["62","82"]}]},"display_text_range":["0","125"],"favorite_count":"0","id_str":"208207822209548288","truncated":false,"retweet_count":"0","id":"208207822209548288","possibly_sensitive":false,"created_at":"Thu May 31 14:46:27 +0000 2012","favorited":false,"full_text":"RT @heigvd: Marée noire hier à Yverdon lors du #Sonisphere... http://t.co/VzWBRoDm @RPod_ch #festival #metallica /cc @gil_les","lang":"fr"}

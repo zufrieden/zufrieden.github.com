@@ -1,0 +1,8 @@
+---
+date: 2013-02-01T16:07:44.000Z
+title: "WHYYY !!!!! http://t.co/cOzS0iDa //cc <a href='http://twitter.com/gil_les'>@gil_les</a> <a href='http://twitter.com/xavieralexandre'>@xavieralexandre</a> <a href='http://twitter.com/gagarine'>@gagarine</a> <a href='http://twitter.com/rainbow4u'>@rainbow4u</a>″"
+user_mentions: "undefined"
+tweet_id: "297375693300449280"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["297375693300449280"],"editableUntil":"2013-02-01T16:37:44.913Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"https://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Gilles Doge","screen_name":"gil_les","indices":["38","46"],"id_str":"23044467","id":"23044467"},{"name":"Xavier Alexandre","screen_name":"XavierAlexandre","indices":["47","63"],"id_str":"1175470163824713729","id":"1175470163824713729"},{"name":"Gaga_Rine","screen_name":"GagaRine","indices":["64","73"],"id_str":"1120597036548677632","id":"1120597036548677632"},{"name":"Fearless","screen_name":"Rainbow4U","indices":["74","84"],"id_str":"2227208220","id":"2227208220"}],"urls":[{"url":"http://t.co/cOzS0iDa","expanded_url":"http://www.forkingrecipes.com/","display_url":"forkingrecipes.com","indices":["12","32"]}]},"display_text_range":["0","84"],"favorite_count":"0","id_str":"297375693300449280","truncated":false,"retweet_count":"0","id":"297375693300449280","possibly_sensitive":false,"created_at":"Fri Feb 01 16:07:44 +0000 2013","favorited":false,"full_text":"WHYYY !!!!! http://t.co/cOzS0iDa //cc @gil_les @xavieralexandre @gagarine @rainbow4u","lang":"en"}

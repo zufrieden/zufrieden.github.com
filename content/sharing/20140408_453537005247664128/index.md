@@ -1,0 +1,8 @@
+---
+date: 2014-04-08T14:17:03.000Z
+title: "RT <a href='http://twitter.com/antistatique'>@antistatique</a>: Book review of “Digital adaptation” by <a href='http://twitter.com/boagworld'>@boagworld</a> on our blog –  http://t.co/LmWQyV4fwc - Go read this book from <a href='http://twitter.com/smashin'>@smashin</a>…″"
+user_mentions: "undefined"
+tweet_id: "453537005247664128"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["453537005247664128"],"editableUntil":"2014-04-08T14:47:03.018Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"https://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Antistatique","screen_name":"antistatique","indices":["3","16"],"id_str":"21387125","id":"21387125"},{"name":"Paul Boag (Parody of myself)","screen_name":"boagworld","indices":["57","67"],"id_str":"12830","id":"12830"}],"urls":[{"url":"http://t.co/LmWQyV4fwc","expanded_url":"http://antistatique.net/blog/2014/04/07/sadapter-au-digital/?utm_source=social&utm_medium=twitter&utm_campaign=blog-digital-adaptation","display_url":"antistatique.net/blog/2014/04/0…","indices":["83","105"]}]},"display_text_range":["0","140"],"favorite_count":"0","id_str":"453537005247664128","truncated":false,"retweet_count":"0","id":"453537005247664128","possibly_sensitive":false,"created_at":"Tue Apr 08 14:17:03 +0000 2014","favorited":false,"full_text":"RT @antistatique: Book review of “Digital adaptation” by @boagworld on our blog –  http://t.co/LmWQyV4fwc - Go read this book from @smashin…","lang":"en"}

@@ -1,0 +1,8 @@
+---
+date: 2015-11-14T09:41:13.000Z
+title: "RT <a href='http://twitter.com/MGullbrandson'>@MGullbrandson</a>: All in the audience was stand up for Get involved! Best talk <a href='http://twitter.com/SlushHQ'>@SlushHQ</a> thanks <a href='http://twitter.com/mikebutcher'>@mikebutcher</a>  https://t.co/9ZV4hvrNFg″"
+user_mentions: "undefined"
+tweet_id: "665464491543498752"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["665464491543498752"],"editableUntil":"2015-11-14T10:11:13.173Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://getfalcon.pro\" rel=\"nofollow\">FalconPro3 BETA</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Mathias Gullbrandson","screen_name":"MGullbrandson","indices":["3","17"],"id_str":"45527210","id":"45527210"},{"name":"Slush","screen_name":"SlushHQ","indices":["80","88"],"id_str":"30626658","id":"30626658"},{"name":"Mike Butcher🇬🇧🇪🇺","screen_name":"mikebutcher","indices":["96","108"],"id_str":"13666","id":"13666"}],"urls":[{"url":"https://t.co/9ZV4hvrNFg","expanded_url":"https://twitter.com/alesspetic/status/664775056187371520","display_url":"twitter.com/alesspetic/sta…","indices":["110","133"]}]},"display_text_range":["0","133"],"favorite_count":"0","id_str":"665464491543498752","truncated":false,"retweet_count":"0","id":"665464491543498752","possibly_sensitive":false,"created_at":"Sat Nov 14 09:41:13 +0000 2015","favorited":false,"full_text":"RT @MGullbrandson: All in the audience was stand up for Get involved! Best talk @SlushHQ thanks @mikebutcher  https://t.co/9ZV4hvrNFg","lang":"en"}

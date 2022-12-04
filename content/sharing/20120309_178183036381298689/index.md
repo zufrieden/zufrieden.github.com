@@ -1,0 +1,8 @@
+---
+date: 2012-03-09T18:18:41.000Z
+title: "<a href='http://twitter.com/stephtara'>@stephtara</a> <a href='http://twitter.com/YannLugrin'>@YannLugrin</a> <a href='http://twitter.com/julienhenzelin'>@julienhenzelin</a> <a href='http://twitter.com/xavieralexandre'>@xavieralexandre</a> laser game pour moi :-P amusez-vous bien !″"
+user_mentions: "undefined"
+tweet_id: "178183036381298689"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["178183036381298689"],"editableUntil":"2012-03-09T18:48:41.011Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"stephtara@octodon.social","screen_name":"stephtara","indices":["0","10"],"id_str":"50043","id":"50043"},{"name":"Yann Lugrin","screen_name":"YannLugrin","indices":["11","22"],"id_str":"5831552","id":"5831552"},{"name":"Julien Henzelin","screen_name":"julienhenzelin","indices":["23","38"],"id_str":"8853202","id":"8853202"},{"name":"Xavier Alexandre","screen_name":"XavierAlexandre","indices":["39","55"],"id_str":"1175470163824713729","id":"1175470163824713729"}],"urls":[]},"display_text_range":["0","98"],"favorite_count":"0","in_reply_to_status_id_str":"178181955878268929","id_str":"178183036381298689","in_reply_to_user_id":"50043","truncated":false,"retweet_count":"0","id":"178183036381298689","in_reply_to_status_id":"178181955878268929","created_at":"Fri Mar 09 18:18:41 +0000 2012","favorited":false,"full_text":"@stephtara @YannLugrin @julienhenzelin @xavieralexandre laser game pour moi :-P amusez-vous bien !","lang":"fr","in_reply_to_screen_name":"stephtara","in_reply_to_user_id_str":"50043"}

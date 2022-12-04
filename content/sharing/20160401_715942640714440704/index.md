@@ -1,0 +1,8 @@
+---
+date: 2016-04-01T16:43:21.000Z
+title: "<a href='http://twitter.com/favreloic'>@favreloic</a> <a href='http://twitter.com/letemps'>@letemps</a> tous ces gens qui essayent de trouver de la substance dans GoT ;-) même Kant https://t.co/p6wbkgkVts″"
+user_mentions: "undefined"
+tweet_id: "715942640714440704"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["715942640714440704"],"editableUntil":"2016-04-01T17:13:21.774Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iΟS</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Loïc Favre","screen_name":"favreloic","indices":["0","10"],"id_str":"1125843638","id":"1125843638"},{"name":"Le Temps","screen_name":"LeTemps","indices":["11","19"],"id_str":"2711336076","id":"2711336076"}],"urls":[{"url":"https://t.co/p6wbkgkVts","expanded_url":"http://www.rts.ch/la-1ere/programmes/tribu/7581692-tribu-du-01-04-2016.html#7581691","display_url":"rts.ch/la-1ere/progra…","indices":["97","120"]}]},"display_text_range":["0","120"],"favorite_count":"1","in_reply_to_status_id_str":"715862082395238400","id_str":"715942640714440704","in_reply_to_user_id":"1125843638","truncated":false,"retweet_count":"0","id":"715942640714440704","in_reply_to_status_id":"715862082395238400","possibly_sensitive":false,"created_at":"Fri Apr 01 16:43:21 +0000 2016","favorited":false,"full_text":"@favreloic @letemps tous ces gens qui essayent de trouver de la substance dans GoT ;-) même Kant https://t.co/p6wbkgkVts","lang":"fr","in_reply_to_screen_name":"favreloic","in_reply_to_user_id_str":"1125843638"}

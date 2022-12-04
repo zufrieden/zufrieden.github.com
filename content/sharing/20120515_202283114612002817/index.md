@@ -1,0 +1,9 @@
+---
+date: 2012-05-15T06:23:47.000Z
+title: "http://t.co/SavKwUlO scrum introduction by <a href='http://twitter.com/jvonlanthen'>@jvonlanthen</a> ....
+<a href='http://twitter.com/julienhenzelin'>@julienhenzelin</a> <a href='http://twitter.com/YannLugrin'>@YannLugrin</a> and <a href='http://twitter.com/gil_les'>@gil_les</a> where are you ?″"
+user_mentions: "undefined"
+tweet_id: "202283114612002817"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["202283114612002817"],"editableUntil":"2012-05-15T06:53:47.419Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Jonas Vonlanthen","screen_name":"jvonlanthen","indices":["43","55"],"id_str":"15138496","id":"15138496"},{"name":"Julien Henzelin","screen_name":"julienhenzelin","indices":["61","76"],"id_str":"8853202","id":"8853202"},{"name":"Yann Lugrin","screen_name":"YannLugrin","indices":["77","88"],"id_str":"5831552","id":"5831552"},{"name":"Gilles Doge","screen_name":"gil_les","indices":["93","101"],"id_str":"23044467","id":"23044467"}],"urls":[{"url":"http://t.co/SavKwUlO","expanded_url":"http://instagr.am/p/KoxU-dgyxY/","display_url":"instagr.am/p/KoxU-dgyxY/","indices":["0","20"]}]},"display_text_range":["0","117"],"favorite_count":"0","id_str":"202283114612002817","in_reply_to_user_id":"8853202","truncated":false,"retweet_count":"1","id":"202283114612002817","possibly_sensitive":false,"created_at":"Tue May 15 06:23:47 +0000 2012","favorited":false,"full_text":"http://t.co/SavKwUlO scrum introduction by @jvonlanthen ....\n@julienhenzelin @YannLugrin and @gil_les where are you ?","lang":"en","in_reply_to_screen_name":"julienhenzelin","in_reply_to_user_id_str":"8853202"}

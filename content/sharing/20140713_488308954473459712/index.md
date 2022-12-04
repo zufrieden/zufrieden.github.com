@@ -1,0 +1,8 @@
+---
+date: 2014-07-13T13:08:21.000Z
+title: "RT <a href='http://twitter.com/detailsch'>@detailsch</a>: 2 Swiss web agences mentioned the same day by <a href='http://twitter.com/awwwards'>@awwwards</a>, <a href='http://twitter.com/detailsch'>@detailsch</a> and <a href='http://twitter.com/antistatique'>@antistatique</a>: #swisspride #design #web″"
+user_mentions: "undefined"
+tweet_id: "488308954473459712"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["488308954473459712"],"editableUntil":"2014-07-13T13:38:21.745Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>","entities":{"hashtags":[{"text":"swisspride","indices":["102","113"]},{"text":"design","indices":["114","121"]},{"text":"web","indices":["122","126"]}],"symbols":[],"user_mentions":[{"name":"detailsch","screen_name":"detailsch","indices":["3","13"],"id_str":"112743984","id":"112743984"},{"name":"awwwards.","screen_name":"awwwards","indices":["61","70"],"id_str":"67026664","id":"67026664"},{"name":"detailsch","screen_name":"detailsch","indices":["72","82"],"id_str":"112743984","id":"112743984"},{"name":"Antistatique","screen_name":"antistatique","indices":["87","100"],"id_str":"21387125","id":"21387125"}],"urls":[]},"display_text_range":["0","126"],"favorite_count":"0","id_str":"488308954473459712","truncated":false,"retweet_count":"0","id":"488308954473459712","created_at":"Sun Jul 13 13:08:21 +0000 2014","favorited":false,"full_text":"RT @detailsch: 2 Swiss web agences mentioned the same day by @awwwards, @detailsch and @antistatique: #swisspride #design #web","lang":"en"}

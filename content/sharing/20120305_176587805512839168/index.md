@@ -1,0 +1,8 @@
+---
+date: 2012-03-05T08:39:48.000Z
+title: "<a href='http://twitter.com/CBDStudios'>@CBDStudios</a> <a href='http://twitter.com/yannlugrin'>@yannlugrin</a> SCSS et LESS sont assez semblables mais SCSS est plus complet ;-) surtout en ajoutant https://t.co/LmdjFTSu #mixins″"
+user_mentions: "undefined"
+tweet_id: "176587805512839168"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["176587805512839168"],"editableUntil":"2012-03-05T09:09:48.334Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>","entities":{"hashtags":[{"text":"mixins","indices":["132","139"]}],"symbols":[],"user_mentions":[{"name":"Laura","screen_name":"cbdstudios","indices":["0","11"],"id_str":"2481523874","id":"2481523874"},{"name":"Yann Lugrin","screen_name":"YannLugrin","indices":["12","23"],"id_str":"5831552","id":"5831552"}],"urls":[{"url":"https://t.co/LmdjFTSu","expanded_url":"https://github.com/thoughtbot/bourbon","display_url":"github.com/thoughtbot/bou…","indices":["110","131"]}]},"display_text_range":["0","139"],"favorite_count":"0","in_reply_to_status_id_str":"176582574762754049","id_str":"176587805512839168","in_reply_to_user_id":"106381144","truncated":false,"retweet_count":"0","id":"176587805512839168","in_reply_to_status_id":"176582574762754049","possibly_sensitive":false,"created_at":"Mon Mar 05 08:39:48 +0000 2012","favorited":false,"full_text":"@CBDStudios @yannlugrin SCSS et LESS sont assez semblables mais SCSS est plus complet ;-) surtout en ajoutant https://t.co/LmdjFTSu #mixins","lang":"fr","in_reply_to_screen_name":"CharlyBnd","in_reply_to_user_id_str":"106381144"}

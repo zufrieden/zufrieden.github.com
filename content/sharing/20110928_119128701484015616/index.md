@@ -1,0 +1,9 @@
+---
+date: 2011-09-28T19:17:50.000Z
+title: "10 Omnigraffle tips you might not know          http://t.co/L1ZXxaEx 
+#ux #omnigraffle /cc <a href='http://twitter.com/rainbow4u'>@rainbow4u</a> <a href='http://twitter.com/simon_bricolo'>@simon_bricolo</a> <a href='http://twitter.com/cirkus_'>@cirkus_</a>″"
+user_mentions: "undefined"
+tweet_id: "119128701484015616"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["119128701484015616"],"editableUntil":"2011-09-28T19:47:50.395Z","editsRemaining":"5","isEditEligible":true}},"coordinates":{"type":"Point","coordinates":["6.62111334","46.52635822"]},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>","entities":{"hashtags":[{"text":"ux","indices":["70","73"]},{"text":"omnigraffle","indices":["74","86"]}],"symbols":[],"user_mentions":[{"name":"Fearless","screen_name":"Rainbow4U","indices":["91","101"],"id_str":"2227208220","id":"2227208220"},{"name":"Simon Bricolo","screen_name":"simon_bricolo","indices":["102","116"],"id_str":"1893620539","id":"1893620539"},{"name":"Cyril","screen_name":"cirkus_","indices":["117","125"],"id_str":"15278897","id":"15278897"}],"urls":[{"url":"http://t.co/L1ZXxaEx","expanded_url":"http://feedproxy.google.com/~r/konigi/~3/2fcTYpASS1g/10-omnigraffle-tips-you-might-not-know","display_url":"feedproxy.google.com/~r/konigi/~3/2…","indices":["48","68"]}]},"display_text_range":["0","125"],"favorite_count":"1","geo":{"type":"Point","coordinates":["46.52635822","6.62111334"]},"id_str":"119128701484015616","truncated":false,"retweet_count":"0","id":"119128701484015616","possibly_sensitive":false,"created_at":"Wed Sep 28 19:17:50 +0000 2011","favorited":false,"full_text":"10 Omnigraffle tips you might not know          http://t.co/L1ZXxaEx \n#ux #omnigraffle /cc @rainbow4u @simon_bricolo @cirkus_","lang":"en"}

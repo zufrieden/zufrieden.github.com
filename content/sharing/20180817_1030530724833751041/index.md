@@ -1,0 +1,8 @@
+---
+date: 2018-08-17T19:04:05.000Z
+title: "RT <a href='http://twitter.com/clagnut'>@clagnut</a>: Some excellent AI-related commentary and links from <a href='http://twitter.com/adactio'>@adactio</a> in this week's <a href='http://twitter.com/clearleft'>@clearleft</a> Clearletter: https://t.co/H5DV6vpGND″"
+user_mentions: "undefined"
+tweet_id: "1030530724833751041"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["1030530724833751041"],"editableUntil":"2018-08-17T19:34:05.792Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iΟS</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Richard Rutter","screen_name":"clagnut","indices":["3","11"],"id_str":"11682","id":"11682"},{"name":"Jeremy Keith","screen_name":"adactio","indices":["65","73"],"id_str":"11250","id":"11250"},{"name":"Clearleft","screen_name":"clearleft","indices":["89","99"],"id_str":"14133641","id":"14133641"}],"urls":[{"url":"https://t.co/H5DV6vpGND","expanded_url":"https://tinyletter.com/clearleft/letters/clearletter-from-clearleft-monster-machine","display_url":"tinyletter.com/clearleft/lett…","indices":["113","136"]}]},"display_text_range":["0","136"],"favorite_count":"0","id_str":"1030530724833751041","truncated":false,"retweet_count":"0","id":"1030530724833751041","possibly_sensitive":false,"created_at":"Fri Aug 17 19:04:05 +0000 2018","favorited":false,"full_text":"RT @clagnut: Some excellent AI-related commentary and links from @adactio in this week's @clearleft Clearletter: https://t.co/H5DV6vpGND","lang":"en"}

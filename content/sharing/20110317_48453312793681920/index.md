@@ -1,0 +1,8 @@
+---
+date: 2011-03-17T18:39:04.000Z
+title: "SenchaTouch evening <a href='http://twitter.com/antistatique'>@antistatique</a> ... #chinois de http://t.co/xuvpich ... Bon anniversaire <a href='http://twitter.com/nevillefacts'>@nevillefacts</a> ! Et bonne ST-Patrick <a href='http://twitter.com/rainbow4u'>@rainbow4u</a>″"
+user_mentions: "undefined"
+tweet_id: "48453312793681920"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["48453312793681920"],"editableUntil":"2011-03-17T19:09:04.646Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>","entities":{"hashtags":[{"text":"chinois","indices":["38","46"]}],"symbols":[],"user_mentions":[{"name":"Antistatique","screen_name":"antistatique","indices":["20","33"],"id_str":"21387125","id":"21387125"},{"name":"Gary Neville ","screen_name":"NevilleFacts","indices":["91","104"],"id_str":"1924038104","id":"1924038104"},{"name":"Fearless","screen_name":"Rainbow4U","indices":["127","137"],"id_str":"2227208220","id":"2227208220"}],"urls":[{"url":"http://t.co/xuvpich","expanded_url":"http://www.bokyonline.com","display_url":"bokyonline.com","indices":["50","69"]}]},"display_text_range":["0","137"],"favorite_count":"0","id_str":"48453312793681920","truncated":false,"retweet_count":"0","id":"48453312793681920","possibly_sensitive":false,"created_at":"Thu Mar 17 18:39:04 +0000 2011","favorited":false,"full_text":"SenchaTouch evening @antistatique ... #chinois de http://t.co/xuvpich ... Bon anniversaire @nevillefacts ! Et bonne ST-Patrick @rainbow4u","lang":"fr"}

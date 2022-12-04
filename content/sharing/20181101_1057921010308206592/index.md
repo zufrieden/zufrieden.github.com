@@ -1,0 +1,8 @@
+---
+date: 2018-11-01T09:03:18.000Z
+title: "RT <a href='http://twitter.com/antistatique'>@antistatique</a>: Tervetuloa Helsinkiin! At #span18 https://t.co/DhVVztnmtI conference. We are here with <a href='http://twitter.com/guillaumeberry'>@guillaumeberry</a> and <a href='http://twitter.com/zufrieden'>@zufrieden</a>. Sh…″"
+user_mentions: "undefined"
+tweet_id: "1057921010308206592"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["1057921010308206592"],"editableUntil":"2018-11-01T09:33:18.736Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iΟS</a>","entities":{"hashtags":[{"text":"span18","indices":["44","51"]}],"symbols":[],"user_mentions":[{"name":"Antistatique","screen_name":"antistatique","indices":["3","16"],"id_str":"21387125","id":"21387125"},{"name":"Guillaume Berry","screen_name":"guillaumeberry","indices":["105","120"],"id_str":"25840054","id":"25840054"},{"name":"Marc Friederich","screen_name":"zufrieden","indices":["125","135"],"id_str":"18915289","id":"18915289"}],"urls":[{"url":"https://t.co/DhVVztnmtI","expanded_url":"http://Design.Google","display_url":"Design.Google","indices":["52","75"]}]},"display_text_range":["0","140"],"favorite_count":"0","id_str":"1057921010308206592","truncated":false,"retweet_count":"0","id":"1057921010308206592","possibly_sensitive":false,"created_at":"Thu Nov 01 09:03:18 +0000 2018","favorited":false,"full_text":"RT @antistatique: Tervetuloa Helsinkiin! At #span18 https://t.co/DhVVztnmtI conference. We are here with @guillaumeberry and @zufrieden. Sh…","lang":"en"}

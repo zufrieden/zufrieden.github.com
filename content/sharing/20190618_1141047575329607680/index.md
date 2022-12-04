@@ -1,0 +1,8 @@
+---
+date: 2019-06-18T18:18:36.000Z
+title: "<a href='http://twitter.com/guillaumeberry'>@guillaumeberry</a> <a href='http://twitter.com/manofewords'>@manofewords</a> <a href='http://twitter.com/Yago_0'>@Yago_0</a> <a href='http://twitter.com/flavienknuchel'>@flavienknuchel</a> Go Hugo!″"
+user_mentions: "undefined"
+tweet_id: "1141047575329607680"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["1141047575329607680"],"editableUntil":"2019-06-18T18:48:36.254Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iΟS</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Guillaume Berry","screen_name":"guillaumeberry","indices":["0","15"],"id_str":"25840054","id":"25840054"},{"name":"Manu","screen_name":"manofewords","indices":["16","28"],"id_str":"14056572","id":"14056572"},{"name":"Yann Gouffon","screen_name":"Yago_0","indices":["29","36"],"id_str":"619445918","id":"619445918"},{"name":"flavien knuchel","screen_name":"flavienknuchel","indices":["37","52"],"id_str":"442600360","id":"442600360"}],"urls":[]},"display_text_range":["0","61"],"favorite_count":"1","in_reply_to_status_id_str":"1140732395316027393","id_str":"1141047575329607680","in_reply_to_user_id":"25840054","truncated":false,"retweet_count":"0","id":"1141047575329607680","in_reply_to_status_id":"1140732395316027393","created_at":"Tue Jun 18 18:18:36 +0000 2019","favorited":false,"full_text":"@guillaumeberry @manofewords @Yago_0 @flavienknuchel Go Hugo!","lang":"es","in_reply_to_screen_name":"guillaumeberry","in_reply_to_user_id_str":"25840054"}

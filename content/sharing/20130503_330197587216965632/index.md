@@ -1,0 +1,8 @@
+---
+date: 2013-05-03T05:50:14.000Z
+title: "RT <a href='http://twitter.com/antistatique'>@antistatique</a>: #WYSIWTF Last column from <a href='http://twitter.com/karenmcgrane'>@karenmcgrane</a> on <a href='http://twitter.com/alistapart'>@alistapart</a> “Separation of content from presentation” http://t.co/0OimB2QIrc |…″"
+user_mentions: "undefined"
+tweet_id: "330197587216965632"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["330197587216965632"],"editableUntil":"2013-05-03T06:20:14.224Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"https://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>","entities":{"hashtags":[{"text":"WYSIWTF","indices":["18","26"]}],"symbols":[],"user_mentions":[{"name":"Antistatique","screen_name":"antistatique","indices":["3","16"],"id_str":"21387125","id":"21387125"},{"name":"Karen McGrane find me at r/UXDesign","screen_name":"karenmcgrane","indices":["44","57"],"id_str":"35943","id":"35943"},{"name":"A List Apart","screen_name":"alistapart","indices":["61","72"],"id_str":"18776131","id":"18776131"}],"urls":[{"url":"http://t.co/0OimB2QIrc","expanded_url":"http://alistapart.com/column/wysiwtf","display_url":"alistapart.com/column/wysiwtf","indices":["115","137"]}]},"display_text_range":["0","140"],"favorite_count":"0","id_str":"330197587216965632","truncated":false,"retweet_count":"0","id":"330197587216965632","possibly_sensitive":false,"created_at":"Fri May 03 05:50:14 +0000 2013","favorited":false,"full_text":"RT @antistatique: #WYSIWTF Last column from @karenmcgrane on @alistapart “Separation of content from presentation” http://t.co/0OimB2QIrc |…","lang":"en"}

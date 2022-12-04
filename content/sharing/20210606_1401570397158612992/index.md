@@ -1,0 +1,8 @@
+---
+date: 2021-06-06T16:03:17.000Z
+title: "<a href='http://twitter.com/LeTemps'>@LeTemps</a> <a href='http://twitter.com/kidvaldez'>@kidvaldez</a> Critiquer le QR code est comme critiquer l’URL. Le problème vient de la ressource accédée pas du protocole. Et oui mieux on comprend la technologie, plus on est critique dans son utilisation abusive.″"
+user_mentions: "undefined"
+tweet_id: "1401570397158612992"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["1401570397158612992"],"editableUntil":"2021-06-06T16:33:17.258Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"https://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Le Temps","screen_name":"LeTemps","indices":["0","8"],"id_str":"2711336076","id":"2711336076"},{"name":"Alberto","screen_name":"kidvaldez","indices":["9","19"],"id_str":"53017241","id":"53017241"}],"urls":[]},"display_text_range":["0","219"],"favorite_count":"1","in_reply_to_status_id_str":"1401463636963446785","id_str":"1401570397158612992","in_reply_to_user_id":"2711336076","truncated":false,"retweet_count":"0","id":"1401570397158612992","in_reply_to_status_id":"1401463636963446785","created_at":"Sun Jun 06 16:03:17 +0000 2021","favorited":false,"full_text":"@LeTemps @kidvaldez Critiquer le QR code est comme critiquer l’URL. Le problème vient de la ressource accédée pas du protocole. Et oui mieux on comprend la technologie, plus on est critique dans son utilisation abusive.","lang":"fr","in_reply_to_screen_name":"LeTemps","in_reply_to_user_id_str":"2711336076"}

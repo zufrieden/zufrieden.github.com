@@ -1,0 +1,8 @@
+---
+date: 2011-09-07T20:06:24.000Z
+title: "<a href='http://twitter.com/kidvaldez'>@kidvaldez</a> <a href='http://twitter.com/cirkus_'>@cirkus_</a> <a href='http://twitter.com/_20_cents'>@_20_cents</a> Pour demain <a href='http://twitter.com/rainbow4u'>@rainbow4u</a> nous a préparé le repas avec les bon produits d'Italie ... pas besoin de tup' :-)″"
+user_mentions: "undefined"
+tweet_id: "111530779917557760"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["111530779917557760"],"editableUntil":"2011-09-07T20:36:24.731Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Alberto","screen_name":"kidvaldez","indices":["0","10"],"id_str":"53017241","id":"53017241"},{"name":"Cyril","screen_name":"cirkus_","indices":["11","19"],"id_str":"15278897","id":"15278897"},{"name":"Gschwindeman Vincent","screen_name":"_20_cents","indices":["20","30"],"id_str":"238090521","id":"238090521"},{"name":"Fearless","screen_name":"Rainbow4U","indices":["43","53"],"id_str":"2227208220","id":"2227208220"}],"urls":[]},"display_text_range":["0","135"],"favorite_count":"0","id_str":"111530779917557760","in_reply_to_user_id":"53017241","truncated":false,"retweet_count":"0","id":"111530779917557760","created_at":"Wed Sep 07 20:06:24 +0000 2011","favorited":false,"full_text":"@kidvaldez @cirkus_ @_20_cents Pour demain @rainbow4u nous a préparé le repas avec les bon produits d'Italie ... pas besoin de tup' :-)","lang":"fr","in_reply_to_screen_name":"kidvaldez","in_reply_to_user_id_str":"53017241"}

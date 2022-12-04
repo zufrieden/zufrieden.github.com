@@ -1,0 +1,8 @@
+---
+date: 2014-04-21T16:57:17.000Z
+title: "<a href='http://twitter.com/renajohn'>@renajohn</a>: Meetup JS Romandie, le jeudi 8 mai: extensions Chrome par <a href='http://twitter.com/flrent'>@flrent</a> et ce que nous faisons chez <a href='http://twitter.com/bugbuster_inc'>@bugbuster_inc</a>! /cc <a href='http://twitter.com/gil_les'>@gil_les</a>″"
+user_mentions: "undefined"
+tweet_id: "458288371908247552"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["458288371908247552"],"editableUntil":"2014-04-21T17:27:17.106Z","editsRemaining":"5","isEditEligible":true}},"coordinates":{"type":"Point","coordinates":["-73.9847019","40.702716"]},"retweeted":false,"source":"<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Renault","screen_name":"renajohn","indices":["1","10"],"id_str":"46695353","id":"46695353"},{"name":"Florent Lamoureux","screen_name":"flrent","indices":["70","77"],"id_str":"27418749","id":"27418749"},{"name":"BugBuster","screen_name":"BugBuster_Inc","indices":["106","120"],"id_str":"399463076","id":"399463076"},{"name":"Gilles Doge","screen_name":"gil_les","indices":["126","134"],"id_str":"23044467","id":"23044467"}],"urls":[]},"display_text_range":["0","134"],"favorite_count":"1","geo":{"type":"Point","coordinates":["40.702716","-73.9847019"]},"id_str":"458288371908247552","truncated":false,"retweet_count":"0","id":"458288371908247552","created_at":"Mon Apr 21 16:57:17 +0000 2014","favorited":false,"full_text":"\"@renajohn: Meetup JS Romandie, le jeudi 8 mai: extensions Chrome par @flrent et ce que nous faisons chez @bugbuster_inc! /cc @gil_les","lang":"fr"}

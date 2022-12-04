@@ -1,0 +1,8 @@
+---
+date: 2011-01-29T21:50:18.000Z
+title: "<a href='http://twitter.com/kidvaldez'>@kidvaldez</a> lis absolument cet article et tu comprendras pourquoi <a href='http://twitter.com/gil_les'>@gil_les</a> dit souvent non http://t.co/earNZUp #JasonFried #killBadIdea″"
+user_mentions: "undefined"
+tweet_id: "31469205912035328"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["31469205912035328"],"editableUntil":"2011-01-29T22:20:18.016Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>","entities":{"hashtags":[{"text":"JasonFried","indices":["112","123"]},{"text":"killBadIdea","indices":["124","136"]}],"symbols":[],"user_mentions":[{"name":"Alberto","screen_name":"kidvaldez","indices":["0","10"],"id_str":"53017241","id":"53017241"},{"name":"Gilles Doge","screen_name":"gil_les","indices":["65","73"],"id_str":"23044467","id":"23044467"}],"urls":[{"url":"http://t.co/earNZUp","expanded_url":"http://www.inc.com/magazine/20101201/how-to-kill-a-bad-idea.html","display_url":"inc.com/magazine/20101…","indices":["92","111"]}]},"display_text_range":["0","136"],"favorite_count":"0","id_str":"31469205912035328","in_reply_to_user_id":"53017241","truncated":false,"retweet_count":"0","id":"31469205912035328","possibly_sensitive":false,"created_at":"Sat Jan 29 21:50:18 +0000 2011","favorited":false,"full_text":"@kidvaldez lis absolument cet article et tu comprendras pourquoi @gil_les dit souvent \"non\" http://t.co/earNZUp #JasonFried #killBadIdea","lang":"fr","in_reply_to_screen_name":"kidvaldez","in_reply_to_user_id_str":"53017241"}

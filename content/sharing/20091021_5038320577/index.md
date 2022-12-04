@@ -1,0 +1,8 @@
+---
+date: 2009-10-21T06:14:08.000Z
+title: "Apple Bores Me, But We Fixed Our Mouse http://bit.ly/23iVjO″"
+user_mentions: "undefined"
+tweet_id: "5038320577"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["5038320577"],"editableUntil":"2009-10-21T06:44:08.000Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[],"urls":[]},"display_text_range":["0","59"],"favorite_count":"0","id_str":"5038320577","truncated":false,"retweet_count":"0","id":"5038320577","created_at":"Wed Oct 21 06:14:08 +0000 2009","favorited":false,"full_text":"Apple Bores Me, But We Fixed Our Mouse http://bit.ly/23iVjO","lang":"en"}

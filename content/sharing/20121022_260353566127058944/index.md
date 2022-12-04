@@ -1,0 +1,8 @@
+---
+date: 2012-10-22T12:15:01.000Z
+title: "RT <a href='http://twitter.com/PIWL12'>@PIWL12</a>: Rappel : inscriptions définitives pour le #PIWL, ce vendredi ! http://t.co/iigAHjH0 <a href='http://twitter.com/virtua_gfx'>@virtua_gfx</a> <a href='http://twitter.com/cruncher'>@cruncher</a> <a href='http://twitter.com/wngsolutions'>@wngsolutions</a> <a href='http://twitter.com/dav'>@dav</a> ...″"
+user_mentions: "undefined"
+tweet_id: "260353566127058944"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["260353566127058944"],"editableUntil":"2012-10-22T12:45:01.957Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>","entities":{"hashtags":[{"text":"PIWL","indices":["54","59"]}],"symbols":[],"user_mentions":[{"name":"Piwl","screen_name":"piwl12","indices":["3","10"],"id_str":"1568738704042115077","id":"1568738704042115077"},{"name":"virtua_gfx","screen_name":"virtua_gfx","indices":["96","107"],"id_str":"798182643175018496","id":"798182643175018496"},{"name":"Cruncher","screen_name":"cruncher","indices":["108","117"],"id_str":"292802336","id":"292802336"}],"urls":[{"url":"http://t.co/iigAHjH0","expanded_url":"http://buff.ly/RJBu3j","display_url":"buff.ly/RJBu3j","indices":["75","95"]}]},"display_text_range":["0","140"],"favorite_count":"0","id_str":"260353566127058944","truncated":false,"retweet_count":"0","id":"260353566127058944","possibly_sensitive":false,"created_at":"Mon Oct 22 12:15:01 +0000 2012","favorited":false,"full_text":"RT @PIWL12: Rappel : inscriptions définitives pour le #PIWL, ce vendredi ! http://t.co/iigAHjH0 @virtua_gfx @cruncher @wngsolutions @dav ...","lang":"fr"}

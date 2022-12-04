@@ -1,0 +1,8 @@
+---
+date: 2015-11-17T09:07:59.000Z
+title: "RT <a href='http://twitter.com/antistatique'>@antistatique</a>: En octobre c’était le Japon pour <a href='http://twitter.com/zufrieden'>@zufrieden</a> https://t.co/SWkOl91w5U #work #remote #officelife #stories″"
+user_mentions: "undefined"
+tweet_id: "666543294688731136"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["666543294688731136"],"editableUntil":"2015-11-17T09:37:59.886Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://getfalcon.pro\" rel=\"nofollow\">FalconPro3 BETA</a>","entities":{"hashtags":[{"text":"work","indices":["86","91"]},{"text":"remote","indices":["92","99"]},{"text":"officelife","indices":["100","111"]},{"text":"stories","indices":["112","120"]}],"symbols":[],"user_mentions":[{"name":"Antistatique","screen_name":"antistatique","indices":["3","16"],"id_str":"21387125","id":"21387125"},{"name":"Marc Friederich","screen_name":"zufrieden","indices":["51","61"],"id_str":"18915289","id":"18915289"}],"urls":[{"url":"https://t.co/SWkOl91w5U","expanded_url":"http://antistatique.net/fr/nous/bloggons/2015/10/30/1-mois-au-japon-nouvelle-experience-de-travail-en-remote","display_url":"antistatique.net/fr/nous/bloggo…","indices":["62","85"]}]},"display_text_range":["0","120"],"favorite_count":"0","id_str":"666543294688731136","truncated":false,"retweet_count":"0","id":"666543294688731136","possibly_sensitive":false,"created_at":"Tue Nov 17 09:07:59 +0000 2015","favorited":false,"full_text":"RT @antistatique: En octobre c’était le Japon pour @zufrieden https://t.co/SWkOl91w5U #work #remote #officelife #stories","lang":"fr"}

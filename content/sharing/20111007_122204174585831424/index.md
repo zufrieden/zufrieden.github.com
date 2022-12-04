@@ -1,0 +1,8 @@
+---
+date: 2011-10-07T06:58:40.000Z
+title: "Morning korvapuusti  http://t.co/IeAaTDco I miss finland soooo much  /cc <a href='http://twitter.com/Tteews'>@Tteews</a> <a href='http://twitter.com/josepmariaroca'>@josepmariaroca</a> <a href='http://twitter.com/salutfinlande'>@salutfinlande</a>″"
+user_mentions: "undefined"
+tweet_id: "122204174585831424"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["122204174585831424"],"editableUntil":"2011-10-07T07:28:40.322Z","editsRemaining":"5","isEditEligible":true}},"coordinates":{"type":"Point","coordinates":["6.61536084","46.52324961"]},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Tsegaw A Kebede","screen_name":"Tteews","indices":["73","80"],"id_str":"67350496","id":"67350496"},{"name":"Josep Roca","screen_name":"josepmariaroca","indices":["81","96"],"id_str":"322604646","id":"322604646"},{"name":"Salut Finlande","screen_name":"salutfinlande","indices":["97","111"],"id_str":"54332670","id":"54332670"}],"urls":[{"url":"http://t.co/IeAaTDco","expanded_url":"http://instagr.am/p/PVoBb/","display_url":"instagr.am/p/PVoBb/","indices":["21","41"]}]},"display_text_range":["0","111"],"favorite_count":"0","geo":{"type":"Point","coordinates":["46.52324961","6.61536084"]},"id_str":"122204174585831424","truncated":false,"retweet_count":"0","id":"122204174585831424","possibly_sensitive":false,"created_at":"Fri Oct 07 06:58:40 +0000 2011","favorited":false,"full_text":"Morning korvapuusti  http://t.co/IeAaTDco I miss finland soooo much  /cc @Tteews @josepmariaroca @salutfinlande","lang":"et"}

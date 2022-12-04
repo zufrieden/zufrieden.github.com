@@ -1,0 +1,8 @@
+---
+date: 2012-05-20T19:41:35.000Z
+title: "<a href='http://twitter.com/cedricmoullet'>@cedricmoullet</a> merci ;-) On va checker ça ! /cc <a href='http://twitter.com/gil_les'>@gil_les</a> <a href='http://twitter.com/xavieralexandre'>@xavieralexandre</a> #npa #gis #api″"
+user_mentions: "undefined"
+tweet_id: "204295827211038721"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["204295827211038721"],"editableUntil":"2012-05-20T20:11:35.497Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>","entities":{"hashtags":[{"text":"npa","indices":["74","78"]},{"text":"gis","indices":["79","83"]},{"text":"api","indices":["84","88"]}],"symbols":[],"user_mentions":[{"name":"Cédric Moullet","screen_name":"cedricmoullet","indices":["0","14"],"id_str":"19080700","id":"19080700"},{"name":"Gilles Doge","screen_name":"gil_les","indices":["48","56"],"id_str":"23044467","id":"23044467"},{"name":"Xavier Alexandre","screen_name":"XavierAlexandre","indices":["57","73"],"id_str":"1175470163824713729","id":"1175470163824713729"}],"urls":[]},"display_text_range":["0","88"],"favorite_count":"0","in_reply_to_status_id_str":"204295357696450560","id_str":"204295827211038721","in_reply_to_user_id":"19080700","truncated":false,"retweet_count":"0","id":"204295827211038721","in_reply_to_status_id":"204295357696450560","created_at":"Sun May 20 19:41:35 +0000 2012","favorited":false,"full_text":"@cedricmoullet merci ;-) On va checker ça ! /cc @gil_les @xavieralexandre #npa #gis #api","lang":"fr","in_reply_to_screen_name":"cedricmoullet","in_reply_to_user_id_str":"19080700"}

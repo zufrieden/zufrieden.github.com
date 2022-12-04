@@ -1,0 +1,8 @@
+---
+date: 2014-10-23T09:41:21.000Z
+title: "<a href='http://twitter.com/shalf'>@shalf</a> <a href='http://twitter.com/ClaraMoreau9'>@ClaraMoreau9</a> <a href='http://twitter.com/SciencesEnMarch'>@SciencesEnMarch</a> $249 n’est peut être pas la meilleure marché. Mais je conseil tout de même CM en général.″"
+user_mentions: "undefined"
+tweet_id: "525220423383142400"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["525220423383142400"],"editableUntil":"2014-10-23T10:11:21.715Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"https://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Yann “shalf@mastodon.social” Heurtaux 不停","screen_name":"shalf","indices":["0","6"],"id_str":"61231929","id":"61231929"},{"name":"Clara Moreau","screen_name":"ClaraMoreau9","indices":["7","20"],"id_str":"1297061911","id":"1297061911"},{"name":"SciencesEnMarche","screen_name":"SciencesEnMarch","indices":["21","37"],"id_str":"2588126982","id":"2588126982"}],"urls":[]},"display_text_range":["0","127"],"favorite_count":"1","in_reply_to_status_id_str":"525217805344702464","id_str":"525220423383142400","in_reply_to_user_id":"61231929","truncated":false,"retweet_count":"0","id":"525220423383142400","in_reply_to_status_id":"525217805344702464","created_at":"Thu Oct 23 09:41:21 +0000 2014","favorited":false,"full_text":"@shalf @ClaraMoreau9 @SciencesEnMarch $249 n’est peut être pas la meilleure marché. Mais je conseil tout de même CM en général.","lang":"fr","in_reply_to_screen_name":"shalf","in_reply_to_user_id_str":"61231929"}

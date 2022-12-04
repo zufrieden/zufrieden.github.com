@@ -1,0 +1,8 @@
+---
+date: 2014-02-06T23:20:42.000Z
+title: "RT <a href='http://twitter.com/antistatique'>@antistatique</a>: Sur notre #Blog : <a href='http://twitter.com/zufrieden'>@zufrieden</a> parle de #Remote , <a href='http://twitter.com/HipChat'>@HipChat</a> &amp; de #Boston : http://t.co/Ejfd60TFPj Si t'aime le #Remote - RT!…″"
+user_mentions: "undefined"
+tweet_id: "431568161813843968"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["431568161813843968"],"editableUntil":"2014-02-06T23:50:42.582Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"https://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>","entities":{"hashtags":[{"text":"Blog","indices":["28","33"]},{"text":"Remote","indices":["56","63"]},{"text":"Boston","indices":["84","91"]},{"text":"Remote","indices":["130","137"]}],"symbols":[],"user_mentions":[{"name":"Antistatique","screen_name":"antistatique","indices":["3","16"],"id_str":"21387125","id":"21387125"},{"name":"Marc Friederich","screen_name":"zufrieden","indices":["36","46"],"id_str":"18915289","id":"18915289"},{"name":"Atlassian Hipchat","screen_name":"HipChat","indices":["66","74"],"id_str":"17810599","id":"17810599"}],"urls":[{"url":"http://t.co/Ejfd60TFPj","expanded_url":"http://bit.ly/1nRVTC2","display_url":"bit.ly/1nRVTC2","indices":["94","116"]}]},"display_text_range":["0","144"],"favorite_count":"0","id_str":"431568161813843968","truncated":false,"retweet_count":"0","id":"431568161813843968","possibly_sensitive":false,"created_at":"Thu Feb 06 23:20:42 +0000 2014","favorited":false,"full_text":"RT @antistatique: Sur notre #Blog : @zufrieden parle de #Remote , @HipChat &amp; de #Boston : http://t.co/Ejfd60TFPj Si t'aime le #Remote - RT!…","lang":"fr"}

@@ -1,0 +1,8 @@
+---
+date: 2012-11-24T22:38:23.000Z
+title: "<a href='http://twitter.com/kidvaldez'>@kidvaldez</a> <a href='http://twitter.com/antistatique'>@antistatique</a> <a href='http://twitter.com/gil_les'>@gil_les</a> <a href='http://twitter.com/rkempter'>@rkempter</a> <a href='http://twitter.com/gagarine'>@gagarine</a> pas là ?″"
+user_mentions: "undefined"
+tweet_id: "272469238441193472"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["272469238441193472"],"editableUntil":"2012-11-24T23:08:23.335Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Alberto","screen_name":"kidvaldez","indices":["0","10"],"id_str":"53017241","id":"53017241"},{"name":"Antistatique","screen_name":"antistatique","indices":["11","24"],"id_str":"21387125","id":"21387125"},{"name":"Gilles Doge","screen_name":"gil_les","indices":["25","33"],"id_str":"23044467","id":"23044467"},{"name":"yolk","screen_name":"rkempter","indices":["34","43"],"id_str":"20842787","id":"20842787"},{"name":"Gaga_Rine","screen_name":"GagaRine","indices":["44","53"],"id_str":"1120597036548677632","id":"1120597036548677632"}],"urls":[]},"display_text_range":["0","62"],"favorite_count":"0","in_reply_to_status_id_str":"272391630047301632","id_str":"272469238441193472","in_reply_to_user_id":"53017241","truncated":false,"retweet_count":"0","id":"272469238441193472","in_reply_to_status_id":"272391630047301632","created_at":"Sat Nov 24 22:38:23 +0000 2012","favorited":false,"full_text":"@kidvaldez @antistatique @gil_les @rkempter @gagarine pas là ?","lang":"fr","in_reply_to_screen_name":"kidvaldez","in_reply_to_user_id_str":"53017241"}

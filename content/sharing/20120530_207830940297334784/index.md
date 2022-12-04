@@ -1,0 +1,8 @@
+---
+date: 2012-05-30T13:48:52.000Z
+title: "<a href='http://twitter.com/P45C4L'>@P45C4L</a> <a href='http://twitter.com/deromemont'>@deromemont</a> <a href='http://twitter.com/enigmaprod'>@enigmaprod</a> Je disais pas que c'était du jamais vu ;-) Je trouve que c'est bien réalisé et tout à fait approprié !″"
+user_mentions: "undefined"
+tweet_id: "207830940297334784"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["207830940297334784"],"editableUntil":"2012-05-30T14:18:52.136Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"agatta kristi","screen_name":"P45C4L","indices":["0","7"],"id_str":"2374493017","id":"2374493017"},{"name":"deromemont","screen_name":"deromemont","indices":["8","19"],"id_str":"15982316","id":"15982316"},{"name":"enigmaproduction","screen_name":"enigmaprod","indices":["20","31"],"id_str":"49213651","id":"49213651"}],"urls":[]},"display_text_range":["0","134"],"favorite_count":"0","in_reply_to_status_id_str":"207829273107628032","id_str":"207830940297334784","in_reply_to_user_id":"8301972","truncated":false,"retweet_count":"0","id":"207830940297334784","in_reply_to_status_id":"207829273107628032","created_at":"Wed May 30 13:48:52 +0000 2012","favorited":false,"full_text":"@P45C4L @deromemont @enigmaprod Je disais pas que c'était du jamais vu ;-) Je trouve que c'est bien réalisé et tout à fait approprié !","lang":"fr","in_reply_to_user_id_str":"8301972"}

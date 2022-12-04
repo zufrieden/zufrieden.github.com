@@ -1,0 +1,8 @@
+---
+date: 2013-01-17T13:45:56.000Z
+title: "RT <a href='http://twitter.com/kidvaldez'>@kidvaldez</a>: Avec <a href='http://twitter.com/antistatique'>@antistatique</a> nous allons ouvrir un Open Device Lab :D http://t.co/Fyur9xKo #happy #mobile #device″"
+user_mentions: "undefined"
+tweet_id: "291904189888593921"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["291904189888593921"],"editableUntil":"2013-01-17T14:15:56.844Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>","entities":{"hashtags":[{"text":"happy","indices":["98","104"]},{"text":"mobile","indices":["105","112"]},{"text":"device","indices":["113","120"]}],"symbols":[],"user_mentions":[{"name":"Alberto","screen_name":"kidvaldez","indices":["3","13"],"id_str":"53017241","id":"53017241"},{"name":"Antistatique","screen_name":"antistatique","indices":["20","33"],"id_str":"21387125","id":"21387125"}],"urls":[{"url":"http://t.co/Fyur9xKo","expanded_url":"http://www.facebook.com/photo.php?fbid=10151317015057870&set=a.399871892869.175219.332515887869&type=1","display_url":"facebook.com/photo.php?fbid…","indices":["77","97"]}]},"display_text_range":["0","120"],"favorite_count":"0","id_str":"291904189888593921","truncated":false,"retweet_count":"0","id":"291904189888593921","possibly_sensitive":false,"created_at":"Thu Jan 17 13:45:56 +0000 2013","favorited":false,"full_text":"RT @kidvaldez: Avec @antistatique nous allons ouvrir un \"Open Device Lab\" :D http://t.co/Fyur9xKo #happy #mobile #device","lang":"fr"}

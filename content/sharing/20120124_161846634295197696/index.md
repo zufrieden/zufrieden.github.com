@@ -1,0 +1,8 @@
+---
+date: 2012-01-24T16:23:39.000Z
+title: "yet another helvetica related article :-) http://t.co/V4pAbB1m but I learnt things maybe you will too /cc <a href='http://twitter.com/rainbow4u'>@rainbow4u</a>  <a href='http://twitter.com/20_cents'>@20_cents</a> <a href='http://twitter.com/BaerDaniel'>@BaerDaniel</a>″"
+user_mentions: "undefined"
+tweet_id: "161846634295197696"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["161846634295197696"],"editableUntil":"2012-01-24T16:53:39.238Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Fearless","screen_name":"Rainbow4U","indices":["106","116"],"id_str":"2227208220","id":"2227208220"},{"name":"Vin Cent","screen_name":"20_cents","indices":["118","127"],"id_str":"298590178","id":"298590178"},{"name":"Daniel Bär","screen_name":"BaerDaniel","indices":["128","139"],"id_str":"63305048","id":"63305048"}],"urls":[{"url":"http://t.co/V4pAbB1m","expanded_url":"http://www.fastcodesign.com/1665881/how-helvetica-conquered-the-world-with-its-cool-comforting-logic","display_url":"fastcodesign.com/1665881/how-he…","indices":["42","62"]}]},"display_text_range":["0","139"],"favorite_count":"0","id_str":"161846634295197696","truncated":false,"retweet_count":"0","id":"161846634295197696","possibly_sensitive":false,"created_at":"Tue Jan 24 16:23:39 +0000 2012","favorited":false,"full_text":"yet another helvetica related article :-) http://t.co/V4pAbB1m but I learnt things maybe you will too /cc @rainbow4u  @20_cents @BaerDaniel","lang":"en"}

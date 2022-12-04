@@ -1,0 +1,8 @@
+---
+date: 2020-02-18T07:46:15.000Z
+title: "<a href='http://twitter.com/gaelhurlimann'>@gaelhurlimann</a> Je me souviens du débat de l'image hero en dessus/en dessous du titre pour faciliter le flux de lecture. Du coup avoir le chapeau en dessus de la cover permet de plonger suffisamment dans le contenu pour accepter la pause visuelle. #améliorationsContinues 🙌″"
+user_mentions: "undefined"
+tweet_id: "1229673468289015808"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["1229673468289015808"],"editableUntil":"2020-02-18T08:16:15.725Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>","entities":{"hashtags":[{"text":"améliorationsContinues","indices":["249","272"]}],"symbols":[],"user_mentions":[{"name":"Gaël Hurlimann","screen_name":"gaelhurlimann","indices":["0","14"],"id_str":"35732305","id":"35732305"}],"urls":[]},"display_text_range":["0","276"],"favorite_count":"5","in_reply_to_status_id_str":"1229434300896043008","id_str":"1229673468289015808","in_reply_to_user_id":"35732305","truncated":false,"retweet_count":"0","id":"1229673468289015808","in_reply_to_status_id":"1229434300896043008","created_at":"Tue Feb 18 07:46:15 +0000 2020","favorited":false,"full_text":"@gaelhurlimann Je me souviens du débat de l'image hero en dessus/en dessous du titre pour faciliter le flux de lecture. Du coup avoir le chapeau en dessus de la cover permet de plonger suffisamment dans le contenu pour accepter la \"pause\" visuelle. #améliorationsContinues \\o/","lang":"fr","in_reply_to_screen_name":"gaelhurlimann","in_reply_to_user_id_str":"35732305"}

@@ -1,0 +1,8 @@
+---
+date: 2012-09-21T12:07:11.000Z
+title: "<a href='http://twitter.com/kidvaldez'>@kidvaldez</a> <a href='http://twitter.com/antistatique'>@antistatique</a> <a href='http://twitter.com/booba'>@booba</a> même pas vrai … http://t.co/n3feHNqZ″"
+user_mentions: "undefined"
+tweet_id: "249117569297027072"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["249117569297027072"],"editableUntil":"2012-09-21T12:37:11.558Z","editsRemaining":"5","isEditEligible":true}},"coordinates":{"type":"Point","coordinates":["6.6151511","46.52328789"]},"retweeted":false,"source":"<a href=\"https://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Alberto","screen_name":"kidvaldez","indices":["0","10"],"id_str":"53017241","id":"53017241"},{"name":"Antistatique","screen_name":"antistatique","indices":["11","24"],"id_str":"21387125","id":"21387125"},{"name":"Booba","screen_name":"booba","indices":["25","31"],"id_str":"179530581","id":"179530581"}],"urls":[{"url":"http://t.co/n3feHNqZ","expanded_url":"http://sht.tl/a03LI","display_url":"sht.tl/a03LI","indices":["48","68"]}]},"display_text_range":["0","68"],"favorite_count":"0","in_reply_to_status_id_str":"249117243768705025","geo":{"type":"Point","coordinates":["46.52328789","6.6151511"]},"id_str":"249117569297027072","in_reply_to_user_id":"53017241","truncated":false,"retweet_count":"0","id":"249117569297027072","in_reply_to_status_id":"249117243768705025","possibly_sensitive":false,"created_at":"Fri Sep 21 12:07:11 +0000 2012","favorited":false,"full_text":"@kidvaldez @antistatique @booba même pas vrai … http://t.co/n3feHNqZ","lang":"fr","in_reply_to_screen_name":"kidvaldez","in_reply_to_user_id_str":"53017241"}

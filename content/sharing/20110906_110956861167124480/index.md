@@ -1,0 +1,8 @@
+---
+date: 2011-09-06T06:05:51.000Z
+title: "RT <a href='http://twitter.com/techupch'>@techupch</a>: Next week is <a href='http://twitter.com/frontendconfch'>@frontendconfch</a> in Zürich - one of the few large conferences in Switzerland, don't miss it: http://t.co/hiXzbEp″"
+user_mentions: "undefined"
+tweet_id: "110956861167124480"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["110956861167124480"],"editableUntil":"2011-09-06T06:35:51.838Z","editsRemaining":"5","isEditEligible":true}},"coordinates":{"type":"Point","coordinates":["6.62897511","46.52312264"]},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"techup","screen_name":"techupch","indices":["3","12"],"id_str":"169191861","id":"169191861"},{"name":"We have moved","screen_name":"FRONTENDCONFCH","indices":["27","42"],"id_str":"1119157233311309827","id":"1119157233311309827"}],"urls":[{"url":"http://t.co/hiXzbEp","expanded_url":"http://techup.ch/313/frontend-conference-zurich","display_url":"techup.ch/313/frontend-c…","indices":["119","138"]}]},"display_text_range":["0","138"],"favorite_count":"0","geo":{"type":"Point","coordinates":["46.52312264","6.62897511"]},"id_str":"110956861167124480","truncated":false,"retweet_count":"0","id":"110956861167124480","possibly_sensitive":false,"created_at":"Tue Sep 06 06:05:51 +0000 2011","favorited":false,"full_text":"RT @techupch: Next week is @frontendconfch in Zürich - one of the few large conferences in Switzerland, don't miss it: http://t.co/hiXzbEp","lang":"en"}

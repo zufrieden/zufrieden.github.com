@@ -1,0 +1,8 @@
+---
+date: 2011-10-03T08:59:30.000Z
+title: "RT <a href='http://twitter.com/zufrieden'>@zufrieden</a>: Bonne journée <a href='http://twitter.com/antistatique'>@antistatique</a> ;-) http://t.co/ln1A8Vz7 et sinon on peut planifier la crémaillère !!! Cc <a href='http://twitter.com/ratio'>@ratio</a>″"
+user_mentions: "undefined"
+tweet_id: "120785032855044097"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["120785032855044097"],"editableUntil":"2011-10-03T09:29:30.567Z","editsRemaining":"5","isEditEligible":true}},"coordinates":{"type":"Point","coordinates":["8.07784623","46.41069875"]},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iOS</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Marc Friederich","screen_name":"zufrieden","indices":["3","13"],"id_str":"18915289","id":"18915289"},{"name":"Antistatique","screen_name":"antistatique","indices":["29","42"],"id_str":"21387125","id":"21387125"},{"name":":ratio","screen_name":"ratio","indices":["117","123"],"id_str":"94068560","id":"94068560"}],"urls":[{"url":"http://t.co/ln1A8Vz7","expanded_url":"http://instagr.am/p/O-PqE/","display_url":"instagr.am/p/O-PqE/","indices":["47","67"]}]},"display_text_range":["0","123"],"favorite_count":"0","geo":{"type":"Point","coordinates":["46.41069875","8.07784623"]},"id_str":"120785032855044097","truncated":false,"retweet_count":"0","id":"120785032855044097","possibly_sensitive":false,"created_at":"Mon Oct 03 08:59:30 +0000 2011","favorited":false,"full_text":"RT @zufrieden: Bonne journée @antistatique ;-) http://t.co/ln1A8Vz7 et sinon on peut planifier la crémaillère !!! Cc @ratio","lang":"fr"}

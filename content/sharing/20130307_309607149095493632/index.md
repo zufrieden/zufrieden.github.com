@@ -1,0 +1,8 @@
+---
+date: 2013-03-07T10:11:11.000Z
+title: "<a href='http://twitter.com/rkempter'>@rkempter</a> Yep I saw that https://t.co/7INl9uLYCp retweeted by <a href='http://twitter.com/xavieralexandre'>@xavieralexandre</a> | let’s use it !″"
+user_mentions: "undefined"
+tweet_id: "309607149095493632"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["309607149095493632"],"editableUntil":"2013-03-07T10:41:11.224Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"https://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"yolk","screen_name":"rkempter","indices":["0","9"],"id_str":"20842787","id":"20842787"},{"name":"Xavier Alexandre","screen_name":"XavierAlexandre","indices":["62","78"],"id_str":"1175470163824713729","id":"1175470163824713729"}],"urls":[{"url":"https://t.co/7INl9uLYCp","expanded_url":"https://twitter.com/odannyboy/status/309344747003211776","display_url":"twitter.com/odannyboy/stat…","indices":["25","48"]}]},"display_text_range":["0","95"],"favorite_count":"0","in_reply_to_status_id_str":"309606416145076225","id_str":"309607149095493632","in_reply_to_user_id":"20842787","truncated":false,"retweet_count":"0","id":"309607149095493632","in_reply_to_status_id":"309606416145076225","possibly_sensitive":false,"created_at":"Thu Mar 07 10:11:11 +0000 2013","favorited":false,"full_text":"@rkempter Yep I saw that https://t.co/7INl9uLYCp retweeted by @xavieralexandre | let’s use it !","lang":"en","in_reply_to_screen_name":"rkempter","in_reply_to_user_id_str":"20842787"}

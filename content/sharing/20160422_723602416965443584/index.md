@@ -1,0 +1,8 @@
+---
+date: 2016-04-22T20:00:34.000Z
+title: "RT <a href='http://twitter.com/frontendconfch'>@frontendconfch</a>: According to <a href='http://twitter.com/t3n'>@t3n</a> this is the best Cheat-Sheet for Bootstrap 4: https://t.co/tZiOQRJymG . Created by <a href='http://twitter.com/arechsteiner'>@arechsteiner</a>″"
+user_mentions: "undefined"
+tweet_id: "723602416965443584"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["723602416965443584"],"editableUntil":"2016-04-22T20:30:34.744Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://tapbots.com/tweetbot\" rel=\"nofollow\">Tweetbot for iΟS</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"We have moved","screen_name":"FRONTENDCONFCH","indices":["3","18"],"id_str":"1119157233311309827","id":"1119157233311309827"},{"name":"t3n Magazin","screen_name":"t3n","indices":["33","37"],"id_str":"11060982","id":"11060982"},{"name":"Alexander Rechsteiner","screen_name":"arechsteiner","indices":["121","134"],"id_str":"240614673","id":"240614673"}],"urls":[{"url":"https://t.co/tZiOQRJymG","expanded_url":"http://hackerthemes.com/bootstrap-cheatsheet","display_url":"hackerthemes.com/bootstrap-chea…","indices":["84","107"]}]},"display_text_range":["0","134"],"favorite_count":"0","id_str":"723602416965443584","truncated":false,"retweet_count":"0","id":"723602416965443584","possibly_sensitive":false,"created_at":"Fri Apr 22 20:00:34 +0000 2016","favorited":false,"full_text":"RT @frontendconfch: According to @t3n this is the best Cheat-Sheet for Bootstrap 4: https://t.co/tZiOQRJymG . Created by @arechsteiner","lang":"en"}

@@ -1,0 +1,8 @@
+---
+date: 2015-10-06T07:41:33.000Z
+title: "RT <a href='http://twitter.com/antistatique'>@antistatique</a>: #Meetup Ce soir nous serons avec <a href='http://twitter.com/letemps'>@letemps</a> à l' <a href='http://twitter.com/impacthubgeneva'>@impacthubgeneva</a> venez nombreux: http://t.co/prjdDQz8uX #Geneva″"
+user_mentions: "undefined"
+tweet_id: "651301250630160384"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["651301250630160384"],"editableUntil":"2015-10-06T08:11:33.399Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"https://tapbots.com/software/tweetbot/mac\" rel=\"nofollow\">Tweetbot for Mac</a>","entities":{"hashtags":[{"text":"Meetup","indices":["18","25"]},{"text":"Geneva","indices":["121","128"]}],"symbols":[],"user_mentions":[{"name":"Antistatique","screen_name":"antistatique","indices":["3","16"],"id_str":"21387125","id":"21387125"},{"name":"Le Temps","screen_name":"LeTemps","indices":["51","59"],"id_str":"2711336076","id":"2711336076"},{"name":"Impact Hub Geneva - Lausanne","screen_name":"impacthubgeneva","indices":["65","81"],"id_str":"2805551232","id":"2805551232"}],"urls":[{"url":"http://t.co/prjdDQz8uX","expanded_url":"http://bit.ly/mugvaT","display_url":"bit.ly/mugvaT","indices":["98","120"]}]},"display_text_range":["0","128"],"favorite_count":"0","id_str":"651301250630160384","truncated":false,"retweet_count":"0","id":"651301250630160384","possibly_sensitive":false,"created_at":"Tue Oct 06 07:41:33 +0000 2015","favorited":false,"full_text":"RT @antistatique: #Meetup Ce soir nous serons avec @letemps à l' @impacthubgeneva venez nombreux: http://t.co/prjdDQz8uX #Geneva","lang":"fr"}

@@ -1,0 +1,8 @@
+---
+date: 2014-06-02T10:22:58.000Z
+title: "RT <a href='http://twitter.com/kidvaldez'>@kidvaldez</a>: “<a href='http://twitter.com/MSF_Suisse'>@MSF_Suisse</a>: #Emploi: <a href='http://twitter.com/MSF_Suisse'>@MSF_Suisse</a> recherche un Head of Innovation, CDI 60%, basé à #Genève ► http://t.co/L2zjOYzUYB” <a href='http://twitter.com/zufri'>@zufri</a>…″"
+user_mentions: "undefined"
+tweet_id: "473409428876967936"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["473409428876967936"],"editableUntil":"2014-06-02T10:52:58.023Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>","entities":{"hashtags":[{"text":"Emploi","indices":["29","36"]},{"text":"Genève","indices":["99","106"]}],"symbols":[],"user_mentions":[{"name":"Alberto","screen_name":"kidvaldez","indices":["3","13"],"id_str":"53017241","id":"53017241"},{"name":"MSF Suisse","screen_name":"MSF_Suisse","indices":["16","27"],"id_str":"84098615","id":"84098615"},{"name":"MSF Suisse","screen_name":"MSF_Suisse","indices":["38","49"],"id_str":"84098615","id":"84098615"}],"urls":[{"url":"http://t.co/L2zjOYzUYB","expanded_url":"http://bit.ly/1mPKj9Q","display_url":"bit.ly/1mPKj9Q","indices":["109","131"]}]},"display_text_range":["0","140"],"favorite_count":"0","id_str":"473409428876967936","truncated":false,"retweet_count":"0","id":"473409428876967936","possibly_sensitive":false,"created_at":"Mon Jun 02 10:22:58 +0000 2014","favorited":false,"full_text":"RT @kidvaldez: “@MSF_Suisse: #Emploi: @MSF_Suisse recherche un Head of Innovation, CDI 60%, basé à #Genève ► http://t.co/L2zjOYzUYB” @zufri…","lang":"fr"}

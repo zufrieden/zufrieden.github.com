@@ -1,0 +1,8 @@
+---
+date: 2012-12-12T09:58:08.000Z
+title: "Design Makes Everything Possible. - <a href='http://twitter.com/invisionapp'>@invisionapp</a> Win this t-shirt designed by <a href='http://twitter.com/kylesteed'>@kylesteed</a> http://t.co/YkzCG4bE #invisiontee ;-) <a href='http://twitter.com/rainbow4u'>@rainbow4u</a>″"
+user_mentions: "undefined"
+tweet_id: "278800896010358784"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["278800896010358784"],"editableUntil":"2012-12-12T10:28:08.136Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"https://dev.twitter.com/docs/tfw\" rel=\"nofollow\">Twitter for Websites</a>","entities":{"hashtags":[{"text":"invisiontee","indices":["112","124"]}],"symbols":[],"user_mentions":[{"name":"InVision","screen_name":"InVisionApp","indices":["38","50"],"id_str":"256093789","id":"256093789"},{"name":"Kyle Steed","screen_name":"kylesteed","indices":["80","90"],"id_str":"1572601","id":"1572601"},{"name":"Fearless","screen_name":"Rainbow4U","indices":["129","139"],"id_str":"2227208220","id":"2227208220"}],"urls":[{"url":"http://t.co/YkzCG4bE","expanded_url":"http://bit.ly/invisiontee","display_url":"bit.ly/invisiontee","indices":["91","111"]}]},"display_text_range":["0","139"],"favorite_count":"0","id_str":"278800896010358784","truncated":false,"retweet_count":"0","id":"278800896010358784","possibly_sensitive":false,"created_at":"Wed Dec 12 09:58:08 +0000 2012","favorited":false,"full_text":"\"Design Makes Everything Possible.\" - @invisionapp Win this t-shirt designed by @kylesteed http://t.co/YkzCG4bE #invisiontee ;-) @rainbow4u","lang":"en"}

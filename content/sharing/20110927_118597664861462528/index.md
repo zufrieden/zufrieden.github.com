@@ -1,0 +1,8 @@
+---
+date: 2011-09-27T08:07:41.000Z
+title: "RT <a href='http://twitter.com/claudiomkd'>@claudiomkd</a>: Sauna brand is great! RT <a href='http://twitter.com/TheNextWeb'>@TheNextWeb</a>: Ever seen an elevator pitch in a sauna? <a href='http://twitter.com/aaltoes'>@aaltoes</a> talks about <a href='http://twitter.com/StartupSauna'>@StartupSauna</a> naked!  ...″"
+user_mentions: "undefined"
+tweet_id: "118597664861462528"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["118597664861462528"],"editableUntil":"2011-09-27T08:37:41.398Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://itunes.apple.com/us/app/twitter/id409789998?mt=12\" rel=\"nofollow\">Twitter for Mac</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Claudio M. Camacho","screen_name":"claudiomkd","indices":["3","14"],"id_str":"205117304","id":"205117304"},{"name":"TNW","screen_name":"thenextweb","indices":["41","52"],"id_str":"10876852","id":"10876852"},{"name":"Aaltoes","screen_name":"aaltoes","indices":["94","102"],"id_str":"24410843","id":"24410843"},{"name":"Startup Sauna","screen_name":"startupsauna","indices":["115","128"],"id_str":"264741273","id":"264741273"}],"urls":[]},"display_text_range":["0","140"],"favorite_count":"0","id_str":"118597664861462528","truncated":false,"retweet_count":"0","id":"118597664861462528","created_at":"Tue Sep 27 08:07:41 +0000 2011","favorited":false,"full_text":"RT @claudiomkd: Sauna brand is great! RT @TheNextWeb: Ever seen an elevator pitch in a sauna? @aaltoes talks about @StartupSauna naked!  ...","lang":"en"}

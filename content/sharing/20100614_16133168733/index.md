@@ -1,0 +1,8 @@
+---
+date: 2010-06-14T08:35:31.000Z
+title: "<a href='http://twitter.com/Fran6'>@Fran6</a> <a href='http://twitter.com/Djeje'>@Djeje</a> <a href='http://twitter.com/guiiig'>@guiiig</a> Merci pour vos réponses :-) Vive le cloud sourcing ! <a href='http://twitter.com/guiiig'>@guiiig</a> et le lien avec ember ? quelqu'un a déjà testé ?″"
+user_mentions: "undefined"
+tweet_id: "16133168733"
+pub_type: "tweet"
+---
+{"edit_info":{"initial":{"editTweetIds":["16133168733"],"editableUntil":"2010-06-14T09:05:31.000Z","editsRemaining":"5","isEditEligible":true}},"retweeted":false,"source":"<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>","entities":{"hashtags":[],"symbols":[],"user_mentions":[{"name":"Francis Chouquet","screen_name":"Fran6","indices":["0","6"],"id_str":"1150401","id":"1150401"},{"name":"djeje","screen_name":"djeje","indices":["7","13"],"id_str":"1221901981863772161","id":"1221901981863772161"},{"name":"guiiig","screen_name":"guiiig","indices":["14","21"],"id_str":"7915262","id":"7915262"},{"name":"guiiig","screen_name":"guiiig","indices":["75","82"],"id_str":"7915262","id":"7915262"}],"urls":[]},"display_text_range":["0","131"],"favorite_count":"0","in_reply_to_status_id_str":"16131554202","id_str":"16133168733","in_reply_to_user_id":"7915262","truncated":false,"retweet_count":"0","id":"16133168733","in_reply_to_status_id":"16131554202","created_at":"Mon Jun 14 08:35:31 +0000 2010","favorited":false,"full_text":"@Fran6 @Djeje @guiiig Merci pour vos réponses :-) Vive le cloud sourcing ! @guiiig et le lien avec ember ? quelqu'un a déjà testé ?","lang":"fr","in_reply_to_screen_name":"guiiig","in_reply_to_user_id_str":"7915262"}
