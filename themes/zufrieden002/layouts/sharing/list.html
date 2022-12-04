@@ -1,0 +1,63 @@
+{{ partial "head.html" . }}
+<body>
+  {{ if .Site.Params.mainMenu }}
+    {{ partial "top_menu.html" (dict "Page" . "show_back_menu_item" false) }}
+  {{ end }}
+  <main class="container">
+    <h1>
+      {{ .Title }}
+    </h1>
+    <h2>
+      {{ .Description }}
+    </h2>
+    <section>
+      {{ .Content }}
+    </section>
+    <section>
+      <div class="items items-sharing">
+        
+        
+        {{ range (.Paginate .Pages.ByPublishDate.Reverse 100).Pages }}
+          
+        
+          <div class="item">
+             
+             
+                {{ if .Description }}
+                  <p>{{ .Description  | safeHTML | truncate 600 }}</p>
+                  <small>
+                    <a href="{{.Permalink}}">{{.Title}}</a> —  
+                    {{ if .Params.showDate }}
+                      {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006")}}
+                    {{ end }}
+                  </small>
+                {{else}}
+                  {{/* From Twitter */}}
+                   <p> {{ .Title  | markdownify }}</p>
+                    <small>
+                      From <a href="https://twitter.com/zufrieden/status/{{ .Params.tweet_id }}">@zufrieden</a> —
+                        {{ if .Date }}
+                          {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006")}}
+                        {{ end }}
+                      </small>
+                {{ end }}
+              
+          </div>
+            
+            
+            {{ end }}
+            
+            {{ template "_internal/pagination.html" . }}
+            
+          </div>
+      </div>
+    </section>
+    <section>
+     
+    </section>
+  </main>
+  <footer class="footer">
+    {{ partial "footer.html" . }}
+  </footer>
+</body>
+{{ partial "foot.html" . }}

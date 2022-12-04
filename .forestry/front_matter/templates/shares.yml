@@ -1,0 +1,20 @@
+---
+label: Shares
+hide_body: true
+display_field: title
+fields:
+- type: text
+  label: Title
+  name: title
+- type: textarea
+  name: description
+  label: Description
+- type: datetime
+  name: date
+  label: Date
+- type: boolean
+  name: showDate
+  label: Show date
+  config:
+    required: false
+pages:
