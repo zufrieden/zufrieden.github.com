@@ -21,7 +21,7 @@ jobs:
         run: hugo --minify
 
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@3.0.0
+        uses: SamKirkland/FTP-Deploy-Action@4.3.3
         with:
           ftp-server:  ${{ secrets.FTP_HOST }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
@@ -32,4 +32,3 @@ jobs:
             **/sharing/201*
             **/sharing/2020*
             **/sharing/2021*
-          
