@@ -27,3 +27,9 @@ jobs:
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: public/
+          server-dir: ./sites
+          exclude: |
+          **/sharing/201*
+          **/sharing/2020*
+          **/sharing/2021*
+          
