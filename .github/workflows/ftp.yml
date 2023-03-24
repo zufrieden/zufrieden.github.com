@@ -29,6 +29,7 @@ jobs:
           local-dir: public/
           server-dir: ./sites/
           exclude: |
+            **/sharing/200*
             **/sharing/201*
             **/sharing/2020*
             **/sharing/2021*
