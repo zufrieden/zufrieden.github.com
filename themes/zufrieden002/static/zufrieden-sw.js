@@ -2,7 +2,7 @@
 
 // Inspired/understood by the book GoingOffline from Jeremy Keith and also quite copied his very own website https://adactio.com/serviceworker.js
 
-const version = '20221030-0008';
+const version = '20230505-0009';
 const staticCacheName = version + 'static';
 const pagesCacheName = 'pages';
 const imagesCacheName = 'images';
@@ -21,7 +21,7 @@ function updateStaticCache() {
 	.then( staticCache => {
 		// These items must be cached for the Service Worker to complete installation
 		return staticCache.addAll([
-			'/css/fonts/worksans.woff2',
+			'/css/fonts/fixel.woff',
 			'/css/style.css?' + version,
 			'/writing/going-offline-is-great/',
 			'/writing/a-love-letter-to-the-web/'

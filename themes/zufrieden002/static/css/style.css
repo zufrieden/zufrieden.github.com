@@ -82,11 +82,12 @@
 
 /* fonts */
 @font-face {
-  font-family: 'work sans';
+  font-family: 'fixel';
   font-style: normal;
   font-display: fallback;
   font-weight: 1 999;
-  src: local('Work-Sans'), url('fonts/worksans.woff2') format("woff2-variations");
+  /* src: local('Fixel'), url('fonts/FixelText-Regular.woff2') format("woff2-variations"); */
+  src: local('Fixel'), url('fonts/fixel.woff') format("woff2-variations");
 }
 
 
@@ -94,7 +95,7 @@ html{
   font-size: 16px;
 }
 body{
-  font-family: 'work sans',-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
+  font-family: 'fixel',-apple-system,BlinkMacSystemFont,avenir next,avenir,helvetica neue,helvetica,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
   font-size: clamp(0.7em, calc(0.7em + 1vw), 20em);
   background-color: var(--bg-color);
   background-repeat: no-repeat;
@@ -251,7 +252,7 @@ header nav li {
   list-style: none;
 }
 header nav a, header nav a:visited{
-  font-weight: 600;
+  font-weight: 400;
   display: block;
   padding: 0.3em 0.5em ;
   text-decoration: none;
@@ -268,7 +269,7 @@ header nav .current a{
 }
 header nav .home a{
   font-size: 140%;
-  font-weight: 700;
+  font-weight: 900;
   color: var(--link-color);
 }
 @media (max-width: 900px) {
@@ -327,27 +328,27 @@ h1, h2, h3, h4, h5{
 h1, .h1, .h-huge {
   font-size: clamp(0.7em, calc(2.9em + 1vw), 26em);
   line-height: 1.1em;
-  font-weight: 800;
+  font-weight: 999;
   margin-top: 0;
   margin-bottom: 0;
 }
 h2, .h2 {
   font-size: clamp(0.7em, calc(1.2em + 1vw), 30em);
   line-height: 1.2em;
-  font-weight: 800;
+  font-weight: 700;
   margin-top: 0;
   margin-bottom: 0;
 }
 h3, .h3 {
   font-size: clamp(0.7em, calc(0.9em + 1vw), 30em);
-  font-weight: 550;
+  font-weight: 450;
   line-height: 1.2em;
   margin-top: 0;
   margin-bottom: 0;
 }
 h4, .h4 {
   font-size: clamp(0.7em, calc(0.8em + 1vw), 30em);
-  font-weight: 400;
+  font-weight: 300;
   line-height: 1.2em;
   margin-top: 0;
   margin-bottom: 0;
