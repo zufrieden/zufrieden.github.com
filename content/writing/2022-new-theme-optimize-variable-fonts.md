@@ -7,7 +7,7 @@ tags: ["blog","dev"]
 description : With new colors reacting responsively and a new variable font
 ---
 
-Using [Work Sans](https://github.com/weiweihuanghuang/Work-Sans) variable font to choose ... 
+Using <del>[Work Sans](https://github.com/weiweihuanghuang/Work-Sans)</del> [Fixel](http://fixel.macpaw.com) variable font to choose ... 
 
 <h3 class="youpi">whatever weight I want</h3>
 
