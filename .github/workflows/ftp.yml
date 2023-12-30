@@ -14,7 +14,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.79.1'
+          hugo-version: '0.120.4'
           # extended: true
 
       - name: Build
@@ -27,7 +27,7 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: public/
-          server-dir: ./sites/
+          server-dir: ./sites/zufrieden.io/
           exclude: |
             **/sharing/200*
             **/sharing/201*
