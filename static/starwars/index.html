@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>LegoStarWars Game - Tim</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap");
+			
+		  *{
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		  }
+			html {
+			  font-size: 16px;
+			}
+			
+			body {
+			  background-color: black;
+			  font-family: "Nanum Gothic", sans-serif;
+			  font-size: clamp(0.8em, calc(0.7em + 2vw), 30em);
+			  color: #e5cc6f;
+			}
+			
+			button{
+  					--background: #2F3545;
+  					--shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
+  					--shadow-hover: 0 4px 20px -2px rgba(21, 25, 36, 0.5);
+  					--text: #fff;
+				  padding: 16px 32px;
+				  display: block;
+				  outline: none;
+				  border: none;
+				  cursor: pointer;
+				  background: var(--background);
+				  color: var(--text);
+				  box-shadow: var(--shadow);
+				  -webkit-tap-highlight-color: transparent;
+				  -webkit-appearance: none;
+				  width: 100%;
+				font-size:130%;
+			}
+			button:hover{
+				--background: #181d29;
+				  --shadow: 0 4px 20px -2px rgba(21, 25, 36, 0.5);
+				  --text: #fff;
+			}
+			button:active{
+				--background: #0a0d15;
+				padding:17px 32px 15px;
+			}
+			
+			
+			#intro button, #reponses button{
+				position: fixed;
+				  left: 0px;
+				  right: 0px;
+				  bottom: 0px;
+				z-index:99;
+				animation: appearfrombottom 5s ease-in forwards;
+			}
+			@keyframes appearfrombottom {
+			  from {
+				opacity: 0;
+				bottom:-100%;
+			  }
+			  40%{
+				opacity: 0;  
+				bottom:-100%;
+			  }
+			  to {
+				opacity: 1;
+				bottom:0px;
+			  }
+			}
+			.pre-intro{
+				text-align: left;
+				position: absolute;
+				inset: 0px;
+				width: fit-content;
+			  	height: fit-content;
+				padding: 1rem 4rem;
+				color: rgb(93, 174, 255);
+				margin: auto;
+				animation: disapear 6s linear forwards;
+				z-index: 98;
+			}
+			@keyframes disapear {
+			  from {
+				opacity: 0;
+			  }
+			  20%{
+				opacity: 1;    
+			  }
+			  80%{
+				opacity: 1;  
+			  }
+			  to {
+				opacity: 0;
+			  }
+			}
+			
+			.scene {
+			  perspective: 36rem;
+			  transform-style: preserve-3d;
+			  height: 100vh;
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  overflow: hidden;
+			  position: relative;
+			}
+			
+			.scene::after {
+			  content: "";
+			  position: absolute;
+			  inset: 0;
+			  z-index: 10;
+			  background-image: linear-gradient(
+				black,
+				black 35%,
+				transparent 50%,
+				transparent 90%,
+				black
+			  );
+			  pointer-events: none;
+			}
+			
+			.text {
+			  text-align: justify;
+			  line-height: 1.5;
+			  width: min(70vw, 28rem);
+			  animation: move 120s linear infinite;
+			  --angle: 70deg;
+			}
+			
+			@keyframes move {
+			  from {
+				transform: rotateX(var(--angle)) translateY(64rem);
+			  }
+			  to {
+				transform: rotateX(var(--angle)) translateY(-100rem);
+			  }
+			}
+			
+			.text p {
+			  margin-bottom: 1.5rem;
+			}
+			
+			.text h1,
+			.text h2 {
+			  text-align: center;
+			  margin-bottom: 2rem;
+			}
+			
+			.text sh2 {
+			  text-transform: uppercase;
+			  font-size: 3.5rem;
+			  letter-spacing: -0.1rem;
+			}
+			#space{
+				position: absolute;
+				inset: 0;
+			}
+			
+			/* screen */
+			.screen{
+				position: fixed;
+				inset: 0;
+				/* background-color: rgb(0, 0, 0); */
+			}
+			
+			
+			/* questions */
+			#questions form{
+				height: 100vh;
+				overflow-y: scroll;
+			  overflow-x: hidden;
+			  scroll-snap-type: y mandatory;
+			}
+			fieldset{
+				height:100vh;
+				border: 0px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				scroll-snap-align: start;
+			}
+			#questions-container{
+				height: calc(2 * 100vh);
+			}
+			.question-background{
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position-x: right;
+			}
+			fieldset > *{
+				/* border:1px solid red; */
+			}
+			fieldset legend{
+				padding: 3rem;
+				padding-top: 6rem;
+				font-size: 130%;
+			}
+			fieldset div{
+				display:flex;
+				align-items: center;
+				flex-grow: 1;
+				border-top: 1px solid rgba(255,255,255,0.4);
+				transition: background-color 0.3s ease-in-out;
+			}
+			fieldset div:hover{
+				background-color: rgba(255,255,255,0.1);
+			}
+			fieldset div:has(input[type=radio]:checked){
+				background-color: rgba(255,255,255,0.4);
+			}
+			fieldset label{
+				padding: 1.5rem 3rem;
+				flex-grow: 1;
+			}
+			input[type=radio]{
+				box-shadow: 0px 0px 0px 1px #6d6d6d;
+				font-size: 3em;
+				width: 25px;
+				height: 25px;
+				/* margin-right: 7px; */
+				margin-left:3rem;
+				border: 4px solid #fff;
+				background-clip: border-box;
+				border-radius: 50%;
+				appearance: none;
+				transition: background-color 0.3s, box-shadow 0.3s;
+
+			}
+			
+			input[type=radio]:checked {
+				--checked-color: #e3d300;
+				box-shadow: 0px 0px 0px 4px var(--checked-color);
+				background-color: var(--checked-color);
+			}
+			
+			.couleur-vert input[type=radio]:checked{
+				--checked-color: #0a2;
+			}
+			.couleur-bleu input[type=radio]:checked{
+				--checked-color: #01f;
+			}
+			.couleur-rouge input[type=radio]:checked{
+				--checked-color: #f00;
+			}
+			.couleur-noir input[type=radio]:checked{
+				--checked-color: #333;
+			}
+			.couleur-blanc input[type=radio]:checked{
+				--checked-color: #ccc;
+			}
+
+			/* Result */
+			#reponses-container{
+				flex-wrap: wrap;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.personnages{
+				order: 0;
+				width: 100vw;
+				height: 100vh;
+				object-fit: contain;
+			}
+
+		</style>
+	</head>
+	<body>
+		<header>
+			
+		</header>
+		<canvas id="space"></canvas>
+		<section id="intro" class="screen">
+			<div class="pre-intro">
+				<h2>
+					Il y a bien longtemps, dans une galaxie lointaine, très lointaine...
+				</h2>
+			</div>		
+			<button onClick="javascript:document.getElementById('questions').style.display = 'block';document.getElementById('intro').style.display = 'none';">Démarrer</button>
+			<div class="scene">
+			  <section class="text">
+				<h1>JEU LEGO</h1>
+				<h2>STAR WARS</h2>
+				<h2>de TIM et MARC</h2>
+				<p>
+				  Ce jeu, vous permet de savoir quel personnage de la saga StarWars vous correspond le plus. En répondant à quelques questions.
+				</p>
+				<p>
+				  Pursued by the Empire's sinister agents, Princess
+				  Leia races home aboard her starship, custodian of
+				  the stolen plans that can save her people and
+				  restore freedom to the galaxy...
+				</p>
+			  </section>
+			</div>
+		</section>
+		<section id="questions" style="display: none;" class="screen">
+			
+			<form action="#reponses">
+				<div id="questions-container">
+					
+					<fieldset id="question_1">
+				  	<legend>Quelle est ta couleur préférée ?</legend>
+				  	<div class="couleur-vert">
+						<input type="radio" id="vert" name="couleur" value="vert" onChange="PERSONNAGE(this.value, 3, 'question_2')"/>
+						<label for="vert">Vert</label>
+				  	</div>
+				  	<div class="couleur-bleu">
+						<input type="radio" id="bleu" name="couleur" value="bleu" onChange="PERSONNAGE(this.value, 3, 'question_2')" />
+						<label for="bleu">Bleu</label>
+				  	</div>
+				  	<div class="couleur-rouge">
+						<input type="radio" id="rouge" name="couleur" value="rouge" onChange="PERSONNAGE(this.value, 3, 'question_2')" />
+						<label for="rouge">Rouge</label>
+				  	</div>
+				  	<div class="couleur-noir">
+				    	<input type="radio" id="noir" name="couleur" value="noir" onChange="PERSONNAGE(this.value, 3, 'question_2')" />
+				    	<label for="noir">Noir</label>
+				  	</div>
+				  	<div class="couleur-blanc">
+				  		<input type="radio" id="blanc" name="couleur" value="blanc" onChange="PERSONNAGE(this.value, 3, 'question_2')" />
+				  		<label for="blanc">Blanc</label>
+						</div>				  
+					</fieldset>
+	
+					<fieldset id="question_2">
+				  	<legend>Quelle est ta planète préférée ?</legend>
+				  	<div class="question-background"  style="background-image:url(img/planets/coruscant.webp)">
+						<input type="radio" id="coruscant" name="planete" value="coruscant" onChange="PERSONNAGE(this.value, 3, 'question_3')" />
+						<label for="coruscant">Coruscant</label>
+				  	</div>
+				  	<div class="question-background"  style="background-image:url(img/planets/naboo.webp)">
+						<input type="radio" id="naboo" name="planete" value="naboo" onChange="PERSONNAGE(this.value, 3, 'question_3')" />
+						<label for="naboo">Naboo</label>
+				  	</div>
+				  	<div class="question-background" style="background-image:url(img/planets/tatooine.webp)">
+						<input type="radio" id="tatooine" name="planete" value="tatooine" onChange="PERSONNAGE(this.value, 3, 'question_3')" />
+						<label for="tatooine">Tatooine</label>
+				  	</div>
+				  	<div class="question-background" style="background-image:url(img/planets/dagobah.webp)">
+						<input type="radio" id="dagobah" name="planete" value="dagobah" onChange="PERSONNAGE(this.value, 3, 'question_3')" />
+						<label for="dagobah">Dagobah</label>
+				  	</div>
+				  	<div class="question-background" style="background-image:url(img/planets/yavin4.jpg)">
+				  		<input type="radio" id="yavin4" name="planete" value="yavin4" onChange="PERSONNAGE(this.value, 3, 'question_3')" />
+				  		<label for="yavin4">Yavin 4</label>
+						</div>
+				  	<div class="question-background" style="background-image:url(img/planets/hoth.webp)">
+						<input type="radio" id="hoth" name="planete" value="hoth" onChange="PERSONNAGE(this.value, 3, 'question_3')" />
+						<label for="hoth">Hoth</label>
+				  	</div>
+				  	<div class="question-background" style="background-image:url(img/planets/mandalore.webp)">
+						<input type="radio" id="mandalor" name="planete" value="mandalor" onChange="PERSONNAGE(this.value, 3, 'question_3')" />
+						<label for="mandalor">Mandalor</label>
+				  	</div>
+				  	<div class="question-background" style="background-image:url(img/planets/endor.jpg)">
+					  	<input type="radio" id="endor" name="planete" value="endor" onChange="PERSONNAGE(this.value, 3, 'question_3')" />
+					  	<label for="endor">Endor</label>
+					</div>			  	
+					</fieldset>
+
+					<fieldset id="question_3">
+						<legend>Quelle est ton vaisseau préféré ?</legend>
+						<div class="question-background" style="background-image:url(img/vaisseau/station-commerce.jpg)">
+							  <input type="radio" id="commerce" name="vaisseau" value="commerce" onChange="PERSONNAGE(this.value, 2, 'question_4')" />
+							  <label for="commerce">Station de commerce</label>
+						</div>	
+						<div class="question-background" style="background-image:url(img/vaisseau/republic-attack.jpg)">
+							  <input type="radio" id="republicattack" name="vaisseau" value="republicattack" onChange="PERSONNAGE(this.value, 2, 'question_4')" />
+							  <label for="republicattack">Republic Attack Cruiser</label>
+						</div>		
+						<div class="question-background" style="background-image:url(img/vaisseau/interceptor.jpg)">
+							  <input type="radio" id="interceptor" name="vaisseau" value="interceptor" onChange="PERSONNAGE(this.value, 2, 'question_4')" />
+							  <label for="interceptor">Tie Interceptor</label>
+						</div>	
+						<div class="question-background" style="background-image:url(img/vaisseau/x-wing.webp)">
+							  <input type="radio" id="xwings" name="vaisseau" value="xwings" onChange="PERSONNAGE(this.value, 2, 'question_4')" />
+							  <label for="xwings">X wings</label>
+						</div>
+						<div class="question-background" style="background-image:url(img/vaisseau/faucon-millenium.jpg)">
+							  <input type="radio" id="faucon" name="vaisseau" value="faucon" onChange="PERSONNAGE(this.value, 2, 'question_4')" />
+							  <label for="faucon">Faucon Millenium</label>
+						</div>	
+						<div class="question-background" style="background-image:url(img/vaisseau/destroyer.webp)">
+							  <input type="radio" id="destroyer" name="vaisseau" value="destroyer" onChange="PERSONNAGE(this.value, 2, 'question_4')" />
+							  <label for="destroyer">Destroyer</label>
+						</div>											
+					</fieldset>
+					
+					<fieldset id="question_4">
+						<legend>Quelle est ta boisson préférée</legend>
+						<div>
+							<input type="radio" id="eau" name="boisson" value="eau" onChange="PERSONNAGE(this.value, 1, 'question_5')"/>
+							<label for="eau">L'eau</label>
+						  </div>
+						  <div>
+							<input type="radio" id="huile" name="boisson" value="huile" onChange="PERSONNAGE(this.value, 1, 'question_5')" />
+							<label for="huile">L'huile</label>
+						  </div>
+						  <div>
+							<input type="radio" id="alcool" name="boisson" value="alcool" onChange="PERSONNAGE(this.value, 1, 'question_5')" />
+							<label for="alcool">Alcool</label>
+						  </div>
+						  <div>
+							<input type="radio" id="cola" name="boisson" value="cola" onChange="PERSONNAGE(this.value, 1, 'question_5')" />
+							<label for="cola">Cola</label>
+						  </div>
+						  <div>
+							  <input type="radio" id="dents" name="boisson" value="dents" onChange="PERSONNAGE(this.value, 1, 'question_5')" />
+							  <label for="dents">Liquide pour les dents</label>
+							</div>
+					</fieldset>
+					
+					<fieldset id="question_5">
+						<legend>Quelle est ton drapeau préféré</legend>
+						<div>
+							<input type="radio" id="🏴‍☠️" name="drapeau" value="🏴‍☠️" onChange="PERSONNAGE(this.value, 4, 'question_6')"/>
+							<label for="🏴‍☠️">🏴‍☠️</label>
+						  </div>
+						  <div>
+							<input type="radio" id="🏴" name="drapeau" value="🏴" onChange="PERSONNAGE(this.value, 4, 'question_6')" />
+							<label for="🏴">🏴</label>
+						  </div>
+						  <div>
+							<input type="radio" id="🇨🇭" name="drapeau" value="🇨🇭" onChange="PERSONNAGE(this.value, 4, 'question_6')" />
+							<label for="🇨🇭">🇨🇭</label>
+						  </div>
+						  <div>
+							<input type="radio" id="🇺🇸" name="drapeau" value="🇺🇸" onChange="PERSONNAGE(this.value, 4, 'question_6')" />
+							<label for="🇺🇸">🇺🇸</label>
+						  </div>
+						  <div>
+							  <input type="radio" id="🇻🇳" name="drapeau" value="🇻🇳" onChange="PERSONNAGE(this.value, 4, 'question_6')" />
+							  <label for="🇻🇳">🇻🇳</label>
+							</div>
+						  <div>
+							  <input type="radio" id="🏳️" name="drapeau" value="🏳️" onChange="PERSONNAGE(this.value, 4, 'question_6')" />
+							  <label for="🏳️">🏳️</label>
+							</div>							
+					</fieldset>					
+					<fieldset id="question_6">
+						<legend>Quelle est ta coupe de cheveux préférée</legend>
+						<div>
+							<input type="radio" id="👩‍🦳" name="cheveux" value="👩‍🦳" onChange="PERSONNAGE(this.value, 2, 'fin')"/>
+							<label for="👩‍🦳">👩‍🦳</label>
+						  </div>
+						  <div>
+							<input type="radio" id="🧑‍🦲" name="cheveux" value="🧑‍🦲" onChange="PERSONNAGE(this.value, 2, 'fin')" />
+							<label for="🧑‍🦲">🧑‍🦲</label>
+						  </div>
+						  <div>
+							<input type="radio" id="👽" name="cheveux" value="👽" onChange="PERSONNAGE(this.value, 2, 'fin')" />
+							<label for="👽">👽</label>
+						  </div>
+						  <div>
+							<input type="radio" id="🧔‍♂️" name="cheveux" value="🧔‍♂️" onChange="PERSONNAGE(this.value, 2, 'fin')" />
+							<label for="🧔‍♂️">🧔‍♂️</label>
+						  </div>
+						  <div>
+							  <input type="radio" id="🤖" name="cheveux" value="🤖" onChange="PERSONNAGE(this.value, 2, 'fin')" />
+							  <label for="🤖">🤖</label>
+							</div>
+					</fieldset>					
+									
+					<fieldset id="fin">
+						<legend>Afficher ton personnage !</legend>
+						<button type="reset" onClick="javascript:document.getElementById('reponses').style.display = 'block';document.getElementById('question_1').scrollIntoView();document.getElementById('questions').style.display = 'none'; ">Découvrir</button>
+					</fieldset>
+				</div>
+				
+			</form>
+		</section>
+		<section id="reponses" style="display: none;" class="screen">
+			<button onClick="javascript:location.reload(); return false;">Recommencer</button>
+			<div id="reponses-container">
+				<img src="img/personnages/boba.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="boba"
+					data-couleur="vert"
+					data-planete="tatooine"
+					data-vaisseau="faucon"
+					data-boisson="alcool"
+					data-drapeau="🏴‍☠️"
+					data-cheveux="🧑‍🦲"
+					>
+				<img src="img/personnages/yoda.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="yoda"
+					data-couleur="vert"
+					data-planete="dagobah"
+					data-vaisseau="xwings"
+					data-boisson="eau"
+					data-drapeau="🏳️"
+					data-cheveux="👽"
+					>
+				<img src="img/personnages/shoktroopers.jpg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="shoktroopers"
+					data-couleur="rouge"
+					data-planete="mandalor"
+					data-vaisseau="destroyer"
+					data-boisson="cola"
+					data-drapeau="🇨🇭"
+					data-cheveux="🧔‍♂️"
+					>
+				<img src="img/personnages/clonetroopers1.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="clonetroopers1"
+					data-couleur="blanc"
+					data-planete="mandalor"
+					data-vaisseau="destroyer"
+					data-boisson="cola"
+					data-drapeau="🏳️"
+					data-cheveux="🧑‍🦲"
+					>
+				<img src="img/personnages/snowtroopers.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="snowtroopers"
+					data-couleur="blanc"
+					data-planete="hoth"
+					data-vaisseau="destroyer"
+					data-boisson="alcool"
+					data-drapeau="🇻🇳"
+					data-cheveux="🧔‍♂️"
+					>
+				<img src="img/personnages/pilote_chiens.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="pilote_chiens"
+					data-couleur="noir"
+					data-planete="hoth"
+					data-vaisseau="interceptor"
+					data-boisson="alcool"
+					data-drapeau="🇺🇸"
+					data-cheveux="👩‍🦳"
+					>
+				<img src="img/personnages/droidcombat.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="droidcombat"
+					data-couleur="blanc"
+					data-planete="mandalor"
+					data-vaisseau="commerce"
+					data-boisson="huile"
+					data-drapeau="🏴"
+					data-cheveux="🤖"
+					>
+				<img src="img/personnages/clonetroopers2.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="clonetroopers2"
+					data-couleur="bleu"
+					data-planete="mandalor"
+					data-vaisseau="destroyer"
+					data-boisson="cola"
+					data-drapeau="🇨🇭"
+					data-cheveux="👽"
+					>
+				<img src="img/personnages/bibfortuna.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="bibfortuna"
+					data-couleur="noir"
+					data-planete="tatooine"
+					data-vaisseau="republicattack"
+					data-boisson="alcool"
+					data-drapeau="🏴‍☠️"
+					data-cheveux="👽"
+					>
+				<img src="img/personnages/poulpe.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="poulpe"
+					data-couleur="rouge"
+					data-planete="tatooine"
+					data-vaisseau="republicattack"
+					data-boisson="alcool"
+					data-drapeau="🏴‍☠️"
+					data-cheveux="👽"
+					>
+				<img src="img/personnages/stormtrooper.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="stormtrooper"
+					data-couleur="blanc"
+					data-planete="hoth"
+					data-vaisseau="destroyer"
+					data-boisson="cola"
+					data-drapeau="🏳️"
+					data-cheveux="🧑‍🦲"
+					>
+				<img src="img/personnages/garde_jaba.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="garde_jaba"
+					data-couleur="vert"
+					data-planete="tatooine"
+					data-vaisseau="commerce"
+					data-boisson="alcool"
+					data-drapeau="🇺🇸"
+					data-cheveux="👽"
+					>
+				<img src="img/personnages/groku.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="groku"
+					data-couleur="vert"
+					data-planete="yavin4"
+					data-vaisseau="faucon"
+					data-boisson="eau"
+					data-drapeau="🇻🇳"
+					data-cheveux="👽"
+					>
+				<img src="img/personnages/mando.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="mando"
+					data-couleur="noir"
+					data-planete="mandalor"
+					data-vaisseau="commerce"
+					data-boisson="alcool"
+					data-drapeau="🇺🇸"
+					data-cheveux="🧔‍♂️"
+					>
+				<img src="img/personnages/mandaloriens.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="mandaloriens"
+					data-couleur="bleu"
+					data-planete="mandalor"
+					data-vaisseau="republicattack"
+					data-boisson="eau"
+					data-drapeau="🇨🇭"
+					data-cheveux="🧔‍♂️"
+					>
+				<img src="img/personnages/droidcombat2.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="droidcombat2"
+					data-couleur="noir"
+					data-planete="coruscant"
+					data-vaisseau="commerce"
+					data-boisson="huile"
+					data-drapeau="🏴"
+					data-cheveux="🤖"
+					>
+				<img src="img/personnages/r2d2.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="r2d2"
+					data-couleur="blanc"
+					data-planete="tatooine"
+					data-vaisseau="xwings"
+					data-boisson="huile"
+					data-drapeau="🏳️"
+					data-cheveux="🤖"
+					>
+				<img src="img/personnages/r2d5.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="r2d5"
+					data-couleur="noir"
+					data-planete="coruscant"
+					data-vaisseau="interceptor"
+					data-boisson="huile"
+					data-drapeau="🏴"
+					data-cheveux="🤖"
+					>
+				<img src="img/personnages/poe.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="poe"
+					data-couleur="bleu"
+					data-planete="endor"
+					data-vaisseau="xwings"
+					data-boisson="eau"
+					data-drapeau="🇺🇸"
+					data-cheveux="🧔‍♂️"
+					>
+				<img src="img/personnages/luc.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="luc"
+					data-couleur="blanc"
+					data-planete="hoth"
+					data-vaisseau="xwings"
+					data-boisson="dents"
+					data-drapeau="🇨🇭"
+					data-cheveux="🧔‍♂️"
+					>
+				<img src="img/personnages/pilote.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="pilote"
+					data-couleur="rouge"
+					data-planete="naboo"
+					data-vaisseau="xwings"
+					data-boisson="dents"
+					data-drapeau="🏳️"
+					data-cheveux="🧑‍🦲"
+					>
+				<img src="img/personnages/danseuse.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="danseuse"
+					data-couleur="blanc"
+					data-planete="tatooine"
+					data-vaisseau="commerce"
+					data-boisson="alcool"
+					data-drapeau="🏴‍☠️"
+					data-cheveux="👩‍🦳"
+					>
+				<img src="img/personnages/fenek.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="fenek"
+					data-couleur="noir"
+					data-planete="tatooine"
+					data-vaisseau="faucon"
+					data-boisson="alcool"
+					data-drapeau="🏴‍☠️"
+					data-cheveux="👩‍🦳"
+					>
+				<img src="img/personnages/scoottroopers.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="scoottroopers"
+					data-couleur="blanc"
+					data-planete="endor"
+					data-vaisseau="destroyer"
+					data-boisson="cola"
+					data-drapeau="🇻🇳"
+					data-cheveux="🧔‍♂️"
+					>
+				<img src="img/personnages/darkvador.jpeg" class="personnages"
+					style="order:0;"
+					data-score="0" 
+					data-name="darkvador"
+					data-couleur="noir"
+					data-planete="naboo"
+					data-vaisseau="destroyer"
+					data-boisson="dents"
+					data-drapeau="🇨🇭"
+					data-cheveux="🧑‍🦲"
+					>
+			</div>
+		</section>
+		
+		<script>
+			
+			let personnages = document.querySelectorAll('.personnages');
+			
+			function result(){
+				for (var i = 0; i < personnages.length; i++) {
+					console.log(personnages[i].dataset.name + ' = ' + personnages[i].dataset.score);
+				}	
+				console.log("-------");
+			}
+			
+			
+			function PERSONNAGE(value,points,gonext){
+				
+				for (var i = 0; i < personnages.length; i++) {
+					if(personnages[i].dataset.couleur == value ||
+						personnages[i].dataset.vaisseau == value ||
+						personnages[i].dataset.boisson == value || 
+						personnages[i].dataset.drapeau == value || 
+						personnages[i].dataset.cheveux == value || 
+						personnages[i].dataset.planete == value){
+						personnages[i].dataset.score =  parseInt(personnages[i].dataset.score) + points; 
+						personnages[i].style.order = personnages[i].style.order - points;
+					}
+				}
+				result();
+				//code before the pause
+				setTimeout(function(){
+					//do what you need here
+					document.getElementById(gonext).scrollIntoView({ behavior: 'smooth' })
+				}, 500);
+			}
+			
+			
+			// Stars background 
+			//based on an Example by @curran
+			window.requestAnimFrame = (function(){   return  window.requestAnimationFrame})();
+			var canvas = document.getElementById("space");
+			var c = canvas.getContext("2d");
+			
+			var numStars = 1900;
+			var radius = '0.'+Math.floor(Math.random() * 9) + 1  ;
+			var focalLength = canvas.width *2;
+			var warp = 0;
+			var centerX, centerY;
+			
+			var stars = [], star;
+			var i;
+			
+			var animate = true;
+			
+			initializeStars();
+			
+			function executeFrame(){
+			  
+			  if(animate)
+				requestAnimFrame(executeFrame);
+			  moveStars();
+			  drawStars();
+			}
+			
+			function initializeStars(){
+			  centerX = canvas.width / 2;
+			  centerY = canvas.height / 2;
+			  
+			  stars = [];
+			  for(i = 0; i < numStars; i++){
+				star = {
+				  x: Math.random() * canvas.width,
+				  y: Math.random() * canvas.height,
+				  z: Math.random() * canvas.width,
+				  o: '0.'+Math.floor(Math.random() * 99) + 1
+				};
+				stars.push(star);
+			  }
+			}
+			
+			function moveStars(){
+			  for(i = 0; i < numStars; i++){
+				star = stars[i];
+				star.z--;
+				
+				if(star.z <= 0){
+				  star.z = canvas.width;
+				}
+			  }
+			}
+			
+			function drawStars(){
+			  var pixelX, pixelY, pixelRadius;
+			  
+			  // Resize to the screen
+			  if(canvas.width != window.innerWidth || canvas.width != window.innerWidth){
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+				initializeStars();
+			  }
+			  if(warp==0)
+			  {c.fillStyle = "rgba(0,10,20,1)";
+			  c.fillRect(0,0, canvas.width, canvas.height);}
+			  c.fillStyle = "rgba(209, 255, 255, "+radius+")";
+			  for(i = 0; i < numStars; i++){
+				star = stars[i];
+				
+				pixelX = (star.x - centerX) * (focalLength / star.z);
+				pixelX += centerX;
+				pixelY = (star.y - centerY) * (focalLength / star.z);
+				pixelY += centerY;
+				pixelRadius = 1 * (focalLength / star.z);
+				
+				c.fillRect(pixelX, pixelY, pixelRadius, pixelRadius);
+				c.fillStyle = "rgba(209, 255, 255, "+star.o+")";
+				//c.fill();
+			  }
+			}
+			
+			
+			
+			executeFrame();
+
+			
+		</script>
+		
+	</body>
+</html>
