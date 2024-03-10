@@ -11,8 +11,7 @@ As a reminder to my future self, here is my personal recipe for new fresh instal
 
 ## Install OSX - then re-install OSX
 Format the hard drive with Disk Utility between the 2 installs
-`⌘ + R` on star
-tup
+`⌘ + R` on startup
 
 ## Get .dotfile and .ssh keys
 From only you know where :-) and set right permissions
@@ -39,36 +38,14 @@ From only you know where :-) and set right permissions
 ## In Mac App Store
 - Download previously bought apps (that I still need)
 
-## Install Homebrew
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
-## Add cask
-```bash
-brew tap homebrew/cask
-```
+## Install MacPort
+- [go to macports.org](https://www.macports.org/install.php)
 
 ## Install softs
 ```bash
-brew install --cask finicky
-brew install --cask beaker-browser
-brew install --cask homebrew/cask-versions/firefox-developer-edition
-brew install --cask hazel
-brew install --cask firefox
-brew install --cask doxie
-brew install --cask authy
-brew install --cask nova
-brew install --cask alfred
-brew install --cask docker
-brew install --cask transmit
-brew install --cask vlc
-brew install --cask sequel-pro
-brew install tig
-brew install --cask sitesucker
-brew install --cask Transmission
-brew install hugo
-brew install woff2
+sudo port install tig
+sudo port install hugo
+sudo port install woff2
 ```
 
 ## Workflows
@@ -76,11 +53,21 @@ brew install woff2
 * Alfred - [switch to darkmode](https://www.packal.org/workflow/dark-mode-toggle)
 
 
-
-
-## Install oh my zsh
+## Install fish
 ```bash
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sudo port install fish
 ```
 
+## Git config
+```bash
+touch ~/.gitignore
+```
+
+* add .DS_Store, .hugo_build.lock etc..
+
+```bash
+ git config --global core.excludesfile ~/.gitignore
+```
+
+[source](https://sebastiandedeyne.com/setting-up-a-global-gitignore-file/)
 
