@@ -104,6 +104,7 @@
 			  perspective: 36rem;
 			  transform-style: preserve-3d;
 			  height: 100vh;
+			  height: 100dvh;
 			  display: flex;
 			  align-items: center;
 			  justify-content: center;
@@ -174,12 +175,14 @@
 			/* questions */
 			#questions form{
 				height: 100vh;
+				height: 100dvh;
 				overflow-y: scroll;
 			  overflow-x: hidden;
 			  scroll-snap-type: y mandatory;
 			}
 			fieldset{
-				height:100vh;
+				height: 100vh;
+				height: 100dvh;
 				border: 0px;
 				display: flex;
 				flex-direction: column;
@@ -187,7 +190,8 @@
 				scroll-snap-align: start;
 			}
 			#questions-container{
-				height: calc(2 * 100vh);
+				height: calc(6 * 100vh);
+				height: calc(6 * 100dvh);
 			}
 			.question-background{
 				background-size: contain;
@@ -268,6 +272,7 @@
 				order: 0;
 				width: 100vw;
 				height: 100vh;
+				height: 100dvh;
 				object-fit: contain;
 			}
 
