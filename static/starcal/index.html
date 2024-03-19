@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<title>LegoStarWars Game - Tim</title>
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@700&display=swap");
+			
+		  *{
+		  margin: 0;
+		  padding: 0;
+		  box-sizing: border-box;
+		  }
+			html {
+			  font-size: 18px;
+			}
+			
+			body {
+			  background-color: black;
+			  font-family: "Nanum Gothic", sans-serif;
+			  font-size: clamp(1em, calc(0.7em + 2vw), 30em);
+			  color: #e5cc6f;
+			}
+			
+			button{
+  					--background: #2F3545;
+  					--shadow: 0 2px 8px -1px rgba(21, 25, 36, 0.32);
+  					--shadow-hover: 0 4px 20px -2px rgba(21, 25, 36, 0.5);
+  					--text: #fff;
+				  padding: 1em 2em;
+				  display: block;
+				  outline: none;
+				  border: none;
+				  cursor: pointer;
+				  background: var(--background);
+				  color: var(--text);
+				  box-shadow: var(--shadow);
+				  -webkit-tap-highlight-color: transparent;
+				  -webkit-appearance: none;
+				  width: 100%;
+				font-size:140%;
+			}
+			button:hover{
+				--background: #181d29;
+				  --shadow: 0 4px 20px -2px rgba(21, 25, 36, 0.5);
+				  --text: #fff;
+			}
+			button:active{
+				--background: #0a0d15;
+				padding: 1.1em 2em 0.9em;
+			}
+			
+			
+			#intro button, #reponses button{
+				position: fixed;
+				  left: 0px;
+				  right: 0px;
+				  bottom: 0px;
+				z-index:99;
+				animation: appearfrombottom 5s ease-in forwards;
+			}
+			@keyframes appearfrombottom {
+			  from {
+				opacity: 0;
+				bottom:-100%;
+			  }
+			  40%{
+				opacity: 0;  
+				bottom:-100%;
+			  }
+			  to {
+				opacity: 1;
+				bottom:0px;
+			  }
+			}
+			.pre-intro{
+				text-align: left;
+				position: absolute;
+				inset: 0px;
+				width: fit-content;
+			  	height: fit-content;
+				padding: 1rem 4rem;
+				color: rgb(93, 174, 255);
+				margin: auto;
+				animation: disapear 6s linear forwards;
+				z-index: 98;
+			}
+			@keyframes disapear {
+			  from {
+				opacity: 0;
+			  }
+			  20%{
+				opacity: 1;    
+			  }
+			  80%{
+				opacity: 1;  
+			  }
+			  to {
+				opacity: 0;
+			  }
+			}
+			
+			.scene {
+			  perspective: 36rem;
+			  transform-style: preserve-3d;
+			  height: 100vh;
+			  height: 100dvh;
+			  display: flex;
+			  align-items: center;
+			  justify-content: center;
+			  overflow: hidden;
+			  position: relative;
+			}
+			
+			.scene::after {
+			  content: "";
+			  position: absolute;
+			  inset: 0;
+			  z-index: 10;
+			  background-image: linear-gradient(
+				black,
+				black 35%,
+				transparent 50%,
+				transparent 90%,
+				black
+			  );
+			  pointer-events: none;
+			}
+			
+			.text {
+			  text-align: justify;
+			  line-height: 1.5;
+			  width: min(70vw, 28rem);
+			  animation: move 120s linear infinite;
+			  --angle: 70deg;
+			}
+			
+			@keyframes move {
+			  from {
+				transform: rotateX(var(--angle)) translateY(64rem);
+			  }
+			  to {
+				transform: rotateX(var(--angle)) translateY(-100rem);
+			  }
+			}
+			
+			.text p {
+			  margin-bottom: 1.5rem;
+			}
+			
+			.text h1,
+			.text h2 {
+			  text-align: center;
+			  margin-bottom: 2rem;
+			}
+			
+			.text sh2 {
+			  text-transform: uppercase;
+			  font-size: 3.5rem;
+			  letter-spacing: -0.1rem;
+			}
+			#space{
+				position: absolute;
+				inset: 0;
+			}
+			
+			/* screen */
+			.screen{
+				position: fixed;
+				inset: 0;
+				/* background-color: rgb(0, 0, 0); */
+			}
+			
+			
+			/* questions */
+			#questions form{
+				height: 100vh;
+				height: 100dvh;
+				overflow-y: scroll;
+			  overflow-x: hidden;
+			  scroll-snap-type: y mandatory;
+			}
+			fieldset{
+				height: 100vh;
+				height: 100dvh;
+				border: 0px;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				scroll-snap-align: start;
+			}
+			
+			.question-background{
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position-x: right;
+			}
+			fieldset > *{
+				/* border:1px solid red; */
+			}
+			fieldset legend{
+				padding: 3rem;
+				padding-top: 6rem;
+				font-size: 130%;
+			}
+			fieldset div{
+				position:relative;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: background-color 0.3s ease-in-out;
+			}
+			fieldset div:hover{
+				background-color: rgba(255,255,255,0.1);
+			}
+
+			input[type=number]{
+				position:absolute;
+				top: 50%;
+				left: 50%;
+				margin-left: -12.5vmax;
+				margin-top:  -12.5vmax;
+				box-shadow: 0px 0px 0px 1px #6d6d6d;
+				font-size: 3em;
+				width: 25vmax;
+				height: 25vmax;
+				text-align: center;
+				border: 4px solid #fff;
+				background-color: #ffffff8f;
+				background-clip: border-box;
+				border-radius: 50%;
+				appearance: none;
+				transition: background-color 0.3s, box-shadow 0.3s;
+
+			}
+			
+			
+
+			/* Result */
+			#reponses-container{
+				flex-wrap: wrap;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.personnages{
+				/* order: 0;
+				width: 100vw;
+				height: 100vh;
+				height: 100dvh;
+				object-fit: contain; */
+			}
+
+		</style>
+	</head>
+	<body>
+		<header>
+			
+		</header>
+		<canvas id="space"></canvas>
+		<section id="intro" class="screen">
+			<div class="pre-intro">
+				<h2>
+					Il y a bien longtemps, dans une, deux + cinq galaxies lointaines, très lointaines...
+				</h2>
+			</div>		
+			<button onClick="javascript:document.getElementById('questions').style.display = 'block';document.getElementById('intro').style.display = 'none';">Démarrer</button>
+			<div class="scene">
+			  <section class="text">
+				<h1>CALCUL</h1>
+				<h2>STAR WARS</h2>
+				<p>
+				  Ce jeu, te permet de faire des calculs
+				</p>
+				<p>
+				  ...
+				</p>
+			  </section>
+			</div>
+		</section>
+		<section id="questions" style="display: none;" class="screen">
+			
+			<form action="#reponses">
+				<div id="questions-container">
+					
+					<fieldset id="question">
+				  	<legend>Combien font <span id="chiffre_1"></span> + <span id="chiffre_2"></span> <span id="unite"></span>  </legend>
+					  
+					  <div class="personnage">
+						  
+						  <input type="number" name="reponse" id="reponse" onInput="CALCUL(this.value)">
+						  
+						  <img src="img/personnages/boba.jpeg" class="personnages"  data-name="boba" style="display:none;">
+						  <img src="img/personnages/yoda.jpeg" class="personnages"  data-name="yoda" style="display:none;">
+						  <img src="img/personnages/shoktroopers.jpg" class="personnages"  data-name="shoktroopers" style="display:none;">
+						  <img src="img/personnages/clonetroopers1.jpeg" class="personnages"  data-name="clonetroopers1" style="display:none;">
+						  <img src="img/personnages/snowtroopers.jpeg" class="personnages"  data-name="snowtroopers" style="display:none;">
+						  <img src="img/personnages/pilote_chiens.jpeg" class="personnages"  data-name="pilote_chiens" style="display:none;">
+						  <img src="img/personnages/droidcombat.jpeg" class="personnages"  data-name="droidcombat" style="display:none;">
+						  <img src="img/personnages/clonetroopers2.jpeg" class="personnages"  data-name="clonetroopers2" style="display:none;">
+						  <img src="img/personnages/bibfortuna.jpeg" class="personnages"  data-name="bibfortuna" style="display:none;">
+						  <img src="img/personnages/poulpe.jpeg" class="personnages"  data-name="poulpe" style="display:none;">
+						  <img src="img/personnages/stormtrooper.jpeg" class="personnages"  data-name="stormtrooper" style="display:none;">
+						  <img src="img/personnages/garde_jaba.jpeg" class="personnages"  data-name="garde_jaba" style="display:none;">
+						  <img src="img/personnages/groku.jpeg" class="personnages"  data-name="groku" style="display:none;">
+						  <img src="img/personnages/mando.jpeg" class="personnages"  data-name="mando" style="display:none;">
+						  <img src="img/personnages/mandaloriens.jpeg" class="personnages"  data-name="mandaloriens" style="display:none;">
+						  <img src="img/personnages/droidcombat2.jpeg" class="personnages"  data-name="droidcombat2" style="display:none;">
+						  <img src="img/personnages/r2d2.jpeg" class="personnages"  data-name="r2d2" style="display:none;">
+						  <img src="img/personnages/r2d5.jpeg" class="personnages"  data-name="r2d5" style="display:none;">
+						  <img src="img/personnages/poe.jpeg" class="personnages"  data-name="poe" style="display:none;">
+						  <img src="img/personnages/luc.jpeg" class="personnages"  data-name="luc" style="display:none;">
+						  <img src="img/personnages/pilote.jpeg" class="personnages"  data-name="pilote" style="display:none;">
+						  <img src="img/personnages/danseuse.jpeg" class="personnages"  data-name="danseuse" style="display:none;">
+						  <img src="img/personnages/fenek.jpeg" class="personnages"  data-name="fenek" style="display:none;">
+						  <img src="img/personnages/scoottroopers.jpeg" class="personnages"  data-name="scoottroopers" style="display:none;">
+						  <img src="img/personnages/darkvador.jpeg" class="personnages"  data-name="darkvador" style="display:none;">
+					  
+					  
+				  	
+						
+				  	</div>		  
+					</fieldset>
+	
+				</div>
+				
+			</form>
+		</section>
+		
+		<script>
+			
+			let personnages = document.querySelectorAll('.personnages');
+			let chiffre_1 = document.getElementById('chiffre_1');
+			let chiffre_2  = document.getElementById('chiffre_2');
+			let unite  = document.getElementById('unite');
+			let reponse = document.getElementById('reponse');
+			
+			// set a new game
+			
+			start();
+			
+			function dice(max){
+				return Math.floor(Math.random() * max) + 1;
+			}
+			
+			
+			
+			function start(){
+				
+				reponse.value = "";
+				
+				for (var i = 0; i < personnages.length; i++) {
+				  personnages[i].style.display = "none";
+				}
+				
+				// lancer le dé
+				chiffre_1.textContent = dice(15);
+				chiffre_2.textContent = dice(15);
+				
+				// Choisir un personnage
+				let numperso = dice(personnages.length);
+				unite.textContent = personnages[numperso].dataset.name;
+				personnages[numperso].style.display = "block"
+				
+				
+			}
+			
+			
+			
+			function CALCUL(answer){
+				if(parseInt(chiffre_1.textContent, 10) + parseInt(chiffre_2.textContent, 10)== answer){
+					setTimeout(function(){
+						//do what you need here
+						alert('Bravo');
+						start();
+					}, 500);
+					
+					
+				}
+			}
+			
+			
+			
+			
+			// Stars background 
+			//based on an Example by @curran
+			window.requestAnimFrame = (function(){   return  window.requestAnimationFrame})();
+			var canvas = document.getElementById("space");
+			var c = canvas.getContext("2d");
+			
+			var numStars = 1900;
+			var radius = '0.'+Math.floor(Math.random() * 9) + 1  ;
+			var focalLength = canvas.width *2;
+			var warp = 0;
+			var centerX, centerY;
+			
+			var stars = [], star;
+			var i;
+			
+			var animate = true;
+			
+			initializeStars();
+			
+			function executeFrame(){
+			  
+			  if(animate)
+				requestAnimFrame(executeFrame);
+			  moveStars();
+			  drawStars();
+			}
+			
+			function initializeStars(){
+			  centerX = canvas.width / 2;
+			  centerY = canvas.height / 2;
+			  
+			  stars = [];
+			  for(i = 0; i < numStars; i++){
+				star = {
+				  x: Math.random() * canvas.width,
+				  y: Math.random() * canvas.height,
+				  z: Math.random() * canvas.width,
+				  o: '0.'+Math.floor(Math.random() * 99) + 1
+				};
+				stars.push(star);
+			  }
+			}
+			
+			function moveStars(){
+			  for(i = 0; i < numStars; i++){
+				star = stars[i];
+				star.z--;
+				
+				if(star.z <= 0){
+				  star.z = canvas.width;
+				}
+			  }
+			}
+			
+			function drawStars(){
+			  var pixelX, pixelY, pixelRadius;
+			  
+			  // Resize to the screen
+			  if(canvas.width != window.innerWidth || canvas.width != window.innerWidth){
+				canvas.width = window.innerWidth;
+				canvas.height = window.innerHeight;
+				initializeStars();
+			  }
+			  if(warp==0)
+			  {c.fillStyle = "rgba(0,10,20,1)";
+			  c.fillRect(0,0, canvas.width, canvas.height);}
+			  c.fillStyle = "rgba(209, 255, 255, "+radius+")";
+			  for(i = 0; i < numStars; i++){
+				star = stars[i];
+				
+				pixelX = (star.x - centerX) * (focalLength / star.z);
+				pixelX += centerX;
+				pixelY = (star.y - centerY) * (focalLength / star.z);
+				pixelY += centerY;
+				pixelRadius = 1 * (focalLength / star.z);
+				
+				c.fillRect(pixelX, pixelY, pixelRadius, pixelRadius);
+				c.fillStyle = "rgba(209, 255, 255, "+star.o+")";
+				//c.fill();
+			  }
+			}
+			
+			
+			
+			executeFrame();
+
+			
+		</script>
+		
+	</body>
+</html>
