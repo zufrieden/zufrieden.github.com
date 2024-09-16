@@ -11,6 +11,9 @@ description : This article try to collect sources to prepare my talk about the p
 - La technologie est politique, on le sait tous et toutes depuis longtemps (la langue, la culture, les choix, les marchés, l’argent etc.... ). Une fois ce fait “prouvé” il s’agit de regarder l’histoire d’Internet et du web et identifié ce qui l’a influencé, pourquoi, comment, et le résultat.
 - Que peut-on y faire ?
 
+--> retranscrire le rôle de la technologie - is it good, good enough ? 
+
+
 ### Angles
 - Open Source
 - Infrastructure
