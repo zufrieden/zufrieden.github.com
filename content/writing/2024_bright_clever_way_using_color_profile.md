@@ -391,4 +391,4 @@ Creating a visually striking website or digital experience often comes down to t
 
 ## Source of this trick
 
-With the excellent [newsletter from DataGif](https://datagif.fr/en/media-newsletter/), I discovered the [Digital Divinity](https://restofworld.org/series/digital-divinity/) long-read experience from *Rest of the World*. While reading [this article](https://restofworld.org/2024/divinity-influence-giacminhluat/), I noticed some magical and bright visual elements. I also use this the ghost from [CodePen](https://codepen.io/dana-ciocan/pen/PoXVKrK).
+With the excellent [newsletter from DataGif](https://datagif.fr/en/media-newsletter/), I discovered the [Digital Divinity](https://restofworld.org/series/digital-divinity/) long-read experience from *Rest of the World*. While reading [this article](https://restofworld.org/2024/divinity-influence-giacminhluat/), I noticed some magical and bright visual elements. I also use this the ghost from [CodePen](https://codepen.io/dana-ciocan/pen/PoXVKrK). They talk about the tricks [on their blog](https://restofworld.org/inside/digital-divinity-project/).
