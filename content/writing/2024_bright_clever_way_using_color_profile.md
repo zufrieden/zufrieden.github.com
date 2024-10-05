@@ -4,7 +4,7 @@ date: 2024-10-05T10:51:38+02:00
 showDate: true
 draft: false
 tags: ["blog","dev"]
-description : Using HDR's annoying brightness of videos rendering as a feature*
+description : Using HDR's annoying brightness of videos rendering as a feature
 ---
 
 ## Using HDR's annoying brightness of videos rendering as a feature
