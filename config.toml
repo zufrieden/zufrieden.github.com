@@ -3,7 +3,7 @@ languageCode = "en-us"
 title = "zufrieden.io/"
 theme = "zufrieden002"
 
-paginate = 100
+pagination.pagerSize = 100
 
 [params]
     dateform            = "Jan 02, 2006"
