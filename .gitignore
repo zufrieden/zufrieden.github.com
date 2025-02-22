@@ -3,6 +3,7 @@
 .sass-cache
 .gist-cache
 .pygments-cache
+.nova
 _deploy
 public
 sass.old
