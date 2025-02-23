@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="shortcut icon" href="favicon.ico">
+		
+		<title>Solitaire</title>
+		<style>
+			html{
+				height: 100vh;
+				padding:0;
+				margin:0;
+			}
+			body{
+				padding:0;
+				margin:0;
+				background: rgb(11, 26, 38) url('bg.png') 50% 50% no-repeat;
+				background-size: cover;
+				width: 100vw;
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			
+			td{
+				font-size: 20pt;
+			}
+			table{
+				
+				width: 60vmin;
+				height: 60vmin;
+				border: 1px solid transparent;
+
+			}
+			td{
+				border: 3px solid transparent;
+			}
+			td.place{
+				background-color: rgb(11, 26, 38);
+				border-color: rgb(17, 31, 45)
+				  /* box-shadow: rgb(105, 60, 153) 0px 0px 4px inset, rgb(122, 70, 178) 0px 0px 8px inset, rgb(183, 115, 255) 0px 0px 25px inset;
+				  background-color: black; */
+			}
+			.controls{
+				display: flex;
+				justify-content: center;
+				margin: 1em;
+			}
+			.controls *{
+				font-size: 20pt;
+				background-color: rgb(11, 26, 38);
+				border-color: rgb(17, 31, 45);
+				color: rgb(164, 206, 218);	
+			}
+			.controls input{
+				width: 3ch;
+			}
+			.controls button{
+				
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="text">
+		<form action="index.html">	
+
+		<table width="100%" height="100%" border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_0_3" data-row="0" data-column="3" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_0_4" data-row="0" data-column="4" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_0_5" data-row="0" data-column="5" /></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_1_3" data-row="1" data-column="3" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_1_4" data-row="1" data-column="4" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_1_5" data-row="1" data-column="5" /></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_2_3" data-row="2" data-column="3" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_2_4" data-row="2" data-column="4" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_2_5" data-row="2" data-column="5" /></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_3_0" data-row="3" data-column="0" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_3_1" data-row="3" data-column="1" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_3_2" data-row="3" data-column="2" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_3_3" data-row="3" data-column="3" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_3_4" data-row="3" data-column="4" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_3_5" data-row="3" data-column="5" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_3_6" data-row="3" data-column="6" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_3_7" data-row="3" data-column="7" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_3_8" data-row="3" data-column="8" /></td>
+			</tr>
+			<tr>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_4_0" data-row="4" data-column="0" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_4_1" data-row="4" data-column="1" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_4_2" data-row="4" data-column="2" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_4_3" data-row="4" data-column="3" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" id="el_4_4" data-row="4" data-column="4" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_4_5" data-row="4" data-column="5" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_4_6" data-row="4" data-column="6" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_4_7" data-row="4" data-column="7" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_4_8" data-row="4" data-column="8" /></td>
+			</tr>
+			<tr>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_5_0" data-row="5" data-column="0" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_5_1" data-row="5" data-column="1" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_5_2" data-row="5" data-column="2" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_5_3" data-row="5" data-column="3" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_5_4" data-row="5" data-column="4" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_5_5" data-row="5" data-column="5" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_5_6" data-row="5" data-column="6" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_5_7" data-row="5" data-column="7" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_5_8" data-row="5" data-column="8" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_6_3" data-row="6" data-column="3" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_6_4" data-row="6" data-column="4" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_6_5" data-row="6" data-column="5" /></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_7_3" data-row="7" data-column="3" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_7_4" data-row="7" data-column="4" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_7_5" data-row="7" data-column="5" /></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_8_3" data-row="8" data-column="3" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_8_4" data-row="8" data-column="4" /></td>
+				<td valign="middle" align="center" class="place"><input type="checkbox" checked="checked" id="el_8_5" data-row="8" data-column="5" /></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		<div class="controls">
+			<input type="text" class="score" value="44" id="scoreboard">
+			<button type="reset" id="restartgame">Restart</button>
+		</div>
+		</form>
+		</div>
+		
+		
+		
+		
+		
+		<script>
+				// Select all checkboxes on the page
+				const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+				var activeRound = false;
+				var countChecked = 44;
+				var allowedClick = new Array();
+				var clickedRound = new Array();
+				
+				function positionExiste(colonne, ligne) {
+					// Construct the ID from the provided colonne and ligne
+					let elementId = `el_${ligne}_${colonne}`;
+					
+					// Check if the element with the constructed ID exists
+					return document.getElementById(elementId) !== null;
+				}
+				
+				function positionLibre(colonne, ligne) {
+					
+					if(positionExiste(colonne, ligne)){
+						// Construct the ID from the provided colonne and ligne
+						let elementId = `el_${ligne}_${colonne}`;
+						
+						// Check if the element with the constructed ID exists
+						// Get the checkbox element by ID
+						let checkbox = document.getElementById(elementId);
+						
+						// Check if the element exists and if it is checked
+						return !checkbox.checked;
+					}else{
+						return false;
+					}
+				}
+				
+				document.getElementById('restartgame').addEventListener("click", function (event) {
+					activeRound = false;
+					clickedRound = [];
+					allowedClick = [];
+					countChecked = 44;
+				});
+				
+				// Loop through each checkbox and add an event listener
+				checkboxes.forEach(checkbox => {
+					checkbox.addEventListener("click", function (event) {
+						const id = this.id;
+						const column = this.getAttribute("data-column");
+						const row = this.getAttribute("data-row");
+						
+						console.log("checkbox checked ? " + this.checked);
+						
+						if(!activeRound){
+							// c'est le premier clique
+							
+							console.log('Premier clic');
+							console.log(id + ' et colone : ' + column + ' et ligne : ' + row);	
+							
+							
+							// vérifier que le pion peut se déplacer
+							// J'ai 4 position à vérifier, pour chaque position, est-ce qu'elle existe ? Si oui, est-ce qu'elle est libre ?
+							
+							// 1ere position : c'est même ligne, mais +2 column
+							console.log("check colonne : " + (parseInt(column)+2) +" et ligne :" +row);
+							if(positionExiste((parseInt(column)+2), row) && positionLibre((parseInt(column)+2), row)){
+								allowedClick.push(`el_${row}_${(parseInt(column)+2)}`);
+								console.log(allowedClick);
+							}
+							
+							// 2ième position : c'est même ligne, mais -2 column
+							console.log("check colonne : " + (parseInt(column)-2) +" et ligne :" +row);
+							if(positionExiste((parseInt(column)-2), row) && positionLibre((parseInt(column)-2), row)){
+								allowedClick.push(`el_${row}_${(parseInt(column)-2)}`);
+								console.log(allowedClick);
+							}
+							
+							// 3ième position : c'est même clomne, mais +2 lignes
+							console.log("check colonne : " + column +" et ligne :" +(parseInt(row)+2));
+							if(positionExiste(column, (parseInt(row)+2)) && positionLibre(column, (parseInt(row)+2))){
+								allowedClick.push(`el_${(parseInt(row)+2)}_${column}`);
+								console.log(allowedClick);
+							}							
+							
+							// 4ième position : c'est même clomne, mais -2 lignes
+							console.log("check colonne : " + column +" et ligne :" +(parseInt(row)-2));
+							if(positionExiste(column, (parseInt(row)-2)) && positionLibre(column, (parseInt(row)-2))){
+								allowedClick.push(`el_${(parseInt(row)-2)}_${column}`);
+								console.log(allowedClick);
+							}								
+							
+							// On s'assure que l'on peut jouer
+							if (allowedClick.length >= 1) {
+								// on peut alors démarrer la manche
+								activeRound = true;
+								clickedRound['id'] = id;
+								clickedRound['row'] = row;
+								clickedRound['column'] = column;
+								
+								// et désactiver tous les checkbox qui ne sont pas permise
+								checkboxes.forEach(checkbox => {
+									if (!allowedClick.includes(checkbox.id)) {
+										checkbox.disabled = true; // Set checkbox to inactive	
+									}
+								});
+								
+							}else{
+								// si on ne peut pas jouer alors on fait rien
+								event.preventDefault();
+							}
+							
+							
+						}else{
+							// c'est le deuxième
+							console.log('Deuxième clic');
+							
+							// test si c'est sur le allowClick ? 
+							if(allowedClick.includes(checkbox.id)){
+								
+								// enlever la checkbox entre les 2
+								console.log("id : " + clickedRound['id']);
+								console.log("row : " + clickedRound['row']);
+								console.log("column : " + clickedRound['column']);
+								console.log('compared with');
+								console.log("id : " + id);
+								console.log("row : " + row);
+								console.log("column : " + column);
+								
+								// Si c'est la même colonne 
+									if(clickedRound['column'] == column){
+										// on compare la ligne
+										if(clickedRound['row'] > row){
+										// si elle est plus petite, on fait ligne mois un 
+											console.log(`change : el_${parseInt(row)+1}_${column}`);
+											document.getElementById(`el_${parseInt(row)+1}_${column}`).checked = false;
+										// sinon plus un 
+										}else{
+											console.log(`change : el_${parseInt(row)-1}_${column}`);
+											document.getElementById(`el_${parseInt(row)-1}_${column}`).checked = false;
+										}		
+									}
+								// Si c'est la même ligne
+									// on compare la colonne
+									if(clickedRound['row'] == row){
+										// on compare la ligne
+										if(clickedRound['column'] > column){
+										// si elle est plus petite, on fait colonne mois un 
+											console.log(`change : el_${row}_${parseInt(column)+1}`);
+											document.getElementById(`el_${row}_${parseInt(column)+1}`).checked = false;
+										// sinon plus un 
+										}else{
+											console.log(`change : el_${row}_${parseInt(column)-1}`);
+											document.getElementById(`el_${row}_${parseInt(column)-1}`).checked = false;
+										}		
+									}
+								
+								// si oui alors il faut reset le tour
+								activeRound = false;
+								clickedRound = [];
+								allowedClick = [];
+								countChecked = parseInt(countChecked) - 1;
+								document.getElementById('scoreboard').value = countChecked;
+								
+								
+								// et désactiver tous les checkbox qui ne sont pas permise
+								checkboxes.forEach(checkbox => {
+									checkbox.disabled = false; // Set checkbox to active again
+								});
+								
+							}
+							
+						}
+						
+						
+					});
+				});
+
+		</script>
+		
+	</body>
+</html>

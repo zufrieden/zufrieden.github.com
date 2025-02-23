@@ -1,0 +1,367 @@
+<!doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="shortcut icon" href="favicon.ico">
+		<title>Solitaire</title>
+		<style>
+		
+			@-webkit-keyframes blur-n-hue {
+			  0% {
+				filter: blur(10px) hue-rotate(-15deg);
+			  }
+			  50% {
+				filter: blur(20px) hue-rotate(0deg);
+			  }
+			  100% {
+				filter: blur(10px) hue-rotate(-15deg);
+			  }
+			}
+			@keyframes blur-n-hue {
+			  0% {
+				filter: blur(10px) hue-rotate(-15deg);
+			  }
+			  50% {
+				filter: blur(20px) hue-rotate(0deg);
+			  }
+			  100% {
+				filter: blur(10px) hue-rotate(-15deg);
+			  }
+			}
+			@-webkit-keyframes move {
+			  from {
+				top: 0%;
+				opacity: 0.8;
+			  }
+			  to {
+				top: 100%;
+				opacity: 1;
+			  }
+			}
+			@keyframes move {
+			  from {
+				top: 0%;
+				opacity: 0.8;
+			  }
+			  to {
+				top: 100%;
+				opacity: 1;
+			  }
+			}
+			@-webkit-keyframes angle {
+			  0% {
+				transform: rotateX(58deg);
+			  }
+			  50% {
+				transform: rotateX(60deg);
+			  }
+			  100% {
+				transform: rotateX(58deg);
+			  }
+			}
+			@keyframes angle {
+			  0% {
+				transform: rotateX(58deg);
+			  }
+			  50% {
+				transform: rotateX(60deg);
+			  }
+			  100% {
+				transform: rotateX(58deg);
+			  }
+			}
+			@-webkit-keyframes bg {
+			  0% {
+				background-color: rgba(46, 46, 46, 0);
+			  }
+			  49% {
+				background-color: rgba(46, 46, 46, 0);
+			  }
+			  50.5% {
+				background-color: rgba(155, 155, 206, 0.4);
+			  }
+			  51% {
+				background-color: rgba(46, 46, 46, 0);
+			  }
+			  51.5% {
+				background-color: rgba(155, 155, 206, 0.3);
+			  }
+			  57% {
+				background-color: rgba(46, 46, 46, 0);
+			  }
+			  100% {
+				background-color: rgba(46, 46, 46, 0);
+			  }
+			}
+			@keyframes bg {
+			  0% {
+				background-color: rgba(46, 46, 46, 0);
+			  }
+			  49% {
+				background-color: rgba(46, 46, 46, 0);
+			  }
+			  50.5% {
+				background-color: rgba(155, 155, 206, 0.4);
+			  }
+			  51% {
+				background-color: rgba(46, 46, 46, 0);
+			  }
+			  51.5% {
+				background-color: rgba(155, 155, 206, 0.3);
+			  }
+			  57% {
+				background-color: rgba(46, 46, 46, 0);
+			  }
+			  100% {
+				background-color: rgba(46, 46, 46, 0);
+			  }
+			}
+			html {
+			  background: #141414;
+			}
+			
+			body {
+			  background: #202020;
+			  -webkit-animation: bg 10s infinite ease-out;
+					  animation: bg 10s infinite ease-out;
+			  height: 100vh;
+			  overflow: hidden;
+			  position: relative;
+			  margin: 0;
+			}
+			body:before {
+			  content: "";
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  width: 100%;
+			  height: 100%;
+			  background-color: rgba(30, 30, 30, 0.2);
+			  background: -webkit-repeating-linear-gradient(top, transparent 0px, transparent 1px, rgba(30, 30, 30, 0.15) 1px, rgba(30, 30, 30, 0.15) 2px);
+			  -webkit-background-size: 100% 2px;
+			  background: -moz-repeating-linear-gradient(top, transparent 0px, transparent 1px, rgba(30, 30, 30, 0.15) 1px, rgba(30, 30, 30, 0.15) 2px);
+			  -moz-background-size: 100% 2px;
+			  display: block;
+			  z-index: 10;
+			}
+			
+			.text {
+			  color: white;
+			  font: lighter 24px/150% "Helvetica Neue", Helvetica, sans-serif;
+			  letter-spacing: 0.2rem;
+			  position: absolute;
+			  top: 20%;
+			  left: 50%;
+			  transform: translateX(-50%);
+			  text-align: center;
+			  line-height: 1.2em;
+			  filter: colour-shift(10);
+			  z-index: 20;
+			}
+			.text b {
+			  font-size: 2.5em;
+			}
+			.text b:after {
+			  content: "v2";
+			  font-weight: 100;
+			  font-size: 12px;
+			  position: absolute;
+			}
+			.text a{
+				color: white;
+				font-weight: bold;
+				text-decoration: none;
+				display: block;
+				border: 1px solid white;
+				padding: 1em;
+			}
+			
+			main {
+			  -webkit-animation: blur-n-hue 5s infinite ease-in-out;
+					  animation: blur-n-hue 5s infinite ease-in-out;
+			  content: "";
+			  display: block;
+			  background: #57b5e0;
+			  background: linear-gradient(180deg, color(display-p3 0.205 0.632 1) 0%, color(display-p3 0.101 0.473 0.793) 6%, color(display-p3 0.205 0.632 1 / 0.627) 8%, color(display-p3 0.354 0.575 0.767) 12%, color(display-p3 0.104 0.579 0.989) 100%);
+			  width: 150vw;
+			  height: 80%;
+			  left: -25%;
+			  bottom: -10%;
+			  position: absolute;
+			}
+			
+			.grid {
+			  perspective: 300px;
+			  width: 100%;
+			  height: 100%;
+			  position: relative;
+			}
+			.grid .grid-inner {
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  bottom: 0;
+			  width: 100%;
+			  height: 100%;
+			  transform: rotateX(60deg);
+			}
+			
+			.line {
+			  display: block;
+			  position: absolute;
+			  width: 0px;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  bottom: 0;
+			  border: 1px solid white;
+			  box-sizing: border-box;
+			  height: 100%;
+			  background: white;
+			  box-shadow: 0px 0px 6px 2px rgba(255, 225, 225, 0.8);
+			}
+			
+			.hori, .vert {
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  right: 0;
+			  bottom: 0;
+			  width: 100vw;
+			  height: 100vh;
+			}
+			
+			.hori .line:nth-child(1) {
+			  left: -40%;
+			}
+			.hori .line:nth-child(2) {
+			  left: -20%;
+			}
+			.hori .line:nth-child(3) {
+			  left: 0%;
+			}
+			.hori .line:nth-child(4) {
+			  left: 20%;
+			}
+			.hori .line:nth-child(5) {
+			  left: 40%;
+			}
+			.hori .line:nth-child(6) {
+			  left: 60%;
+			}
+			.hori .line:nth-child(7) {
+			  left: 80%;
+			}
+			.hori .line:nth-child(8) {
+			  left: 100%;
+			}
+			.hori .line:nth-child(9) {
+			  left: 120%;
+			}
+			.hori .line:nth-child(10) {
+			  left: 140%;
+			}
+			
+			.vert .line {
+			  -webkit-animation: move 5s infinite linear;
+					  animation: move 5s infinite linear;
+			  width: 200%;
+			  left: -50%;
+			  height: 0px;
+			}
+			.vert .line:nth-child(1) {
+			  -webkit-animation: none;
+					  animation: none;
+			  opacity: 0.7;
+			}
+			.vert .line:nth-child(2) {
+			  -webkit-animation-delay: 0.5s;
+					  animation-delay: 0.5s;
+			}
+			.vert .line:nth-child(3) {
+			  -webkit-animation-delay: 1s;
+					  animation-delay: 1s;
+			}
+			.vert .line:nth-child(4) {
+			  -webkit-animation-delay: 1.5s;
+					  animation-delay: 1.5s;
+			}
+			.vert .line:nth-child(5) {
+			  -webkit-animation-delay: 2s;
+					  animation-delay: 2s;
+			}
+			.vert .line:nth-child(6) {
+			  -webkit-animation-delay: 2.5s;
+					  animation-delay: 2.5s;
+			}
+			.vert .line:nth-child(7) {
+			  -webkit-animation-delay: 3s;
+					  animation-delay: 3s;
+			}
+			.vert .line:nth-child(8) {
+			  -webkit-animation-delay: 3.5s;
+					  animation-delay: 3.5s;
+			}
+			.vert .line:nth-child(9) {
+			  -webkit-animation-delay: 4s;
+					  animation-delay: 4s;
+			}
+			.vert .line:nth-child(10) {
+			  -webkit-animation-delay: 4.5s;
+					  animation-delay: 4.5s;
+			}
+		
+			
+		
+
+		</style>
+	</head>
+	<body>
+		<div class="text">
+		<h2>
+			SolitaireTron
+		</h2>
+		<a href="./game.html">START</a>
+		</div>
+		
+		<main>
+			
+		</main>
+		<div class="grid">
+			<div class="grid-inner">
+				<div class="hori">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+				<div class="vert">
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+					<div class="line"></div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+	</body>
+</html>
