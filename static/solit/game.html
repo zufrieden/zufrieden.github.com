@@ -29,8 +29,8 @@
 			}
 			table{
 				
-				width: 60vmin;
-				height: 60vmin;
+				width: 90vmin;
+				height: 90vmin;
 				border: 1px solid transparent;
 
 			}
@@ -38,10 +38,45 @@
 				border: 3px solid transparent;
 			}
 			td.place{
-				background-color: rgb(11, 26, 38);
-				border-color: rgb(17, 31, 45)
+				/* background-color: rgb(11, 26, 38);
+				border-color: rgb(17, 31, 45); */
 				  /* box-shadow: rgb(105, 60, 153) 0px 0px 4px inset, rgb(122, 70, 178) 0px 0px 8px inset, rgb(183, 115, 255) 0px 0px 25px inset;
 				  background-color: black; */
+			}
+			input[type=checkbox]{
+				  width: 100%;
+				  height: 100%;
+				  display: grid;
+					place-content: center;
+				  -webkit-appearance: none;
+				  appearance: none;
+				  background: linear-gradient(#d0e9f0 0%, #72c6d2 40%, #2f96a9 100%);
+				  border-radius: 100%;
+				  box-shadow: inset 0px 1px 1px white, 0px 1px 10px; 
+				  opacity: 0.9;
+			}
+			input[type="checkbox"]::before {
+			  content: "";
+			  width: 0.65em;
+			  height: 0.65em;
+			  border-radius: 0.65em;
+			  transform: scale(0);
+			  transition: 120ms transform ease-in-out;
+			  box-shadow: inset 1em 1em color(display-p3 1 1 1);
+			}
+			
+			input[type="checkbox"]:checked::before {
+			  transform: scale(3);
+			}
+			input[type=checkbox]:checked{
+				background:#2f9dad;
+				background: linear-gradient(#62b0c9 0%, #135e7a 40%, #2f96a9 100%);
+				box-shadow: inset 0px 1px 1px rgb(163, 205, 217), 0px 1px 10px; 
+			}
+			input[type=checkbox]:disabled{
+				opacity: 0.5;
+				background: linear-gradient(#a3cdd9 0%, #2f9dad 40%, #2f96a9 100%);
+				box-shadow: inset 0px 1px 1px rgb(163, 205, 217), 0px 1px 10px; 
 			}
 			.controls{
 				display: flex;
@@ -49,13 +84,21 @@
 				margin: 1em;
 			}
 			.controls *{
-				font-size: 20pt;
+				background: linear-gradient(#d0e9f0 0%, #72c6d2 40%, #2f96a9 100%);
+				  border-radius: 100%;
+				  box-shadow: inset 0px 1px 1px white, 0px 1px 10px; 
+				  opacity: 0.9;
+				-webkit-appearance: none;
+				  appearance: none;
+				font-size: 1.4em;
 				background-color: rgb(11, 26, 38);
-				border-color: rgb(17, 31, 45);
-				color: rgb(164, 206, 218);	
+				border:none;
+				padding: 0.4em;
+				width: 2em;
+				height: 2em;
+				text-align: center;
 			}
 			.controls input{
-				width: 3ch;
 			}
 			.controls button{
 				
@@ -170,7 +213,7 @@
 		</table>
 		<div class="controls">
 			<input type="text" class="score" value="44" id="scoreboard">
-			<button type="reset" id="restartgame">Restart</button>
+			<button type="reset" id="restartgame">↻</button>
 		</div>
 		</form>
 		</div>
