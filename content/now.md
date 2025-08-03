@@ -1,6 +1,6 @@
 ---
 title: "Now ⏲️"
-date: 2023-12-02T13:42:49-05:00
+date: 2025-08-02T13:42:49-05:00
 ---
 
 ## What's up for me NOW
@@ -17,6 +17,4 @@ My concern for the future is growing. A real transition is necessary (we've neve
 
 Our industry also needs a total transition. I welcome every piece of technology that challenges, simplifies, and questions the need for more. I am fascinated by understanding why we invent and how needs evolve around new technologies, or how sometimes the real need for them is never questioned.
 
-
-
-__updated end of 2023__
+__updated summer 2025__
