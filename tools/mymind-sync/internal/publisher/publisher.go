@@ -112,12 +112,7 @@ func publishOne(
 	}
 	result.Title = page.Title
 
-	relPath := site.AvailablePath(fmt.Sprintf(
-		"content/%s/%s_%s.md",
-		mapping.Section,
-		page.Date.Format("20060102"),
-		hugosite.Slugify(page.Title),
-	))
+	relPath := site.AvailablePath(fmt.Sprintf("content/%s/%s", mapping.Section, mapping.Filename(page)))
 	result.Path = relPath
 
 	if opts.DryRun {

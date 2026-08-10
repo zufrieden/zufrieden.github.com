@@ -2,23 +2,40 @@
 
 Publishes [mymind](https://mymind.com) objects to this Hugo site.
 
-Once a day (or on demand) it looks for objects tagged `share` but not `shared`,
-creates a page under `content/sharing/`, and then tags the object `shared` in
-mymind so it is never published twice.
+Once a day (or on demand) it looks for objects carrying a trigger tag, creates
+the matching Hugo page, and then writes a "done" tag back to mymind so nothing
+is ever published twice.
+
+| mymind tag | Hugo section       | done tag |
+| ---------- | ------------------ | -------- |
+| `share`    | `content/sharing/` | `shared` |
+| `keep`     | `content/linking/` | `keeped` |
 
 ## Mapping
 
-| Hugo page               | mymind object                        |
-| ----------------------- | ------------------------------------ |
-| `title`                 | `title`                              |
-| `date`                  | today (the day it is shared)         |
-| `description`           | first `notes` entry, else `summary`  |
-| body                    | `source.url` as a markdown link      |
-| filename                | `YYYYMMDD_slugified_title.md`        |
+Common to both:
 
-Pages are scaffolded with `hugo new content content/sharing/<file>.md`, so
-`archetypes/sharing.md` stays the source of truth for `showDate`, `draft` and
-anything else you add there. The three mapped fields are overwritten afterwards.
+| Hugo front matter | mymind object                       |
+| ----------------- | ----------------------------------- |
+| `title`           | `title`                             |
+| `date`            | today (the day it is published)     |
+| `description`     | first `notes` entry, else `summary` |
+
+Where they differ:
+
+|          | `sharing`                          | `linking`                       |
+| -------- | ---------------------------------- | ------------------------------- |
+| the URL  | body, as a markdown link           | `link:` front matter key        |
+| `tags`   | —                                  | the object's mymind tags        |
+| body     | the markdown link                  | empty                           |
+| filename | `YYYYMMDD_slugified_title.md`      | `slugified_title.md`, no date   |
+
+The `linking` filename carries no date prefix, matching the pages already in
+`content/linking/`. The done tag is never included in the page's own `tags`.
+
+Pages are scaffolded with `hugo new content content/<section>/<file>.md`, so
+the archetypes stay the source of truth for `showDate`, `draft` and anything
+else you add there. Only the mapped keys are overwritten afterwards.
 
 ## Setup
 
@@ -36,8 +53,9 @@ cp .env.example .env
 ```sh
 cd tools/mymind-sync
 
-go run . -dry-run -v      # show what would be published, touch nothing
-go run . -v               # publish for real
+go run . -dry-run -v         # show what would be published, touch nothing
+go run . -v                  # publish both sections for real
+go run . -v -type linking    # just one section
 go test ./...
 ```
 
@@ -46,9 +64,9 @@ current directory), so running from `tools/mymind-sync` just works.
 
 ### Flags
 
-| Flag         | Default          | Meaning                                              |
-| ------------ | ---------------- | ---------------------------------------------------- |
-| `-type`      | `sharing`        | Which content type to publish                        |
+| Flag         | Default            | Meaning                                            |
+| ------------ | ------------------ | -------------------------------------------------- |
+| `-type`      | `linking,sharing`  | Comma-separated content types; both run by default |
 | `-repo`      | `.`              | Path inside the Hugo site                            |
 | `-env`       | `.env`           | Credentials file (optional)                          |
 | `-query`     | *(mapping's)*    | Override the mymind search query                     |

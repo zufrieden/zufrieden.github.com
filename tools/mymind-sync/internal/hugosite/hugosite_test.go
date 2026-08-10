@@ -25,6 +25,33 @@ func TestSlugify(t *testing.T) {
 	}
 }
 
+// URLize must reproduce the paths Hugo generates under /tags/, or the links in
+// a description would 404.
+func TestURLize(t *testing.T) {
+	cases := map[string]string{
+		"Artificial intelligence": "artificial-intelligence",
+		"Artificial Intelligence": "artificial-intelligence",
+		"UX design":               "ux-design",
+		"ai":                      "ai",
+		"Business strategy":       "business-strategy",
+		"  padded  words  ":       "padded-words",
+		"already-hyphenated":      "already-hyphenated",
+		"punctuation! removed?":   "punctuation-removed",
+		"keeps_underscores":       "keeps_underscores",
+		"":                        "",
+		"!!!":                     "",
+		// Non-ASCII: Hugo percent-encodes these, so refuse rather than guess.
+		"Café":      "",
+		"日本語":       "",
+		"Zürich AG": "",
+	}
+	for in, want := range cases {
+		if got := URLize(in); got != want {
+			t.Errorf("URLize(%q) = %q, want %q", in, got, want)
+		}
+	}
+}
+
 func TestSlugifyTruncatesOnWordBoundary(t *testing.T) {
 	got := Slugify(strings.Repeat("alpha beta ", 20))
 	if len(got) > maxSlugLen {
@@ -83,6 +110,56 @@ link: "https://example.com"
 `
 	if got != want {
 		t.Errorf("patchFrontMatter mismatch\n--- got ---\n%s\n--- want ---\n%s", got, want)
+	}
+}
+
+// An archetype that lists the same key twice must not yield front matter with
+// a duplicate key — the second one has to go.
+func TestPatchFrontMatterCollapsesDuplicateKeys(t *testing.T) {
+	scaffold := `---
+title: "x"
+showDate: false
+tags: []
+link: https://
+tags: ["keep"]
+description :
+---
+`
+	got, err := patchFrontMatter(scaffold, []Field{
+		{Key: "tags", Value: YAMLStringSlice([]string{"keep", "js"})},
+		{Key: "link", Value: YAMLString("https://example.com")},
+	}, "")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if n := strings.Count(got, "tags:"); n != 1 {
+		t.Errorf("got %d tags keys, want 1:\n%s", n, got)
+	}
+	if !strings.Contains(got, `tags: ["keep","js"]`) {
+		t.Errorf("the surviving tags line is wrong:\n%s", got)
+	}
+	// The first occurrence keeps its position in the block.
+	if strings.Index(got, "tags:") > strings.Index(got, "link:") {
+		t.Errorf("tags should stay at the first declaration's position:\n%s", got)
+	}
+}
+
+func TestYAMLStringSlice(t *testing.T) {
+	cases := []struct {
+		in   []string
+		want string
+	}{
+		{nil, "[]"},
+		{[]string{}, "[]"},
+		{[]string{"keep"}, `["keep"]`},
+		{[]string{"keep", "js"}, `["keep","js"]`},
+		{[]string{`quote"inside`}, `["quote\"inside"]`},
+	}
+	for _, tc := range cases {
+		if got := YAMLStringSlice(tc.in); got != tc.want {
+			t.Errorf("YAMLStringSlice(%q) = %s, want %s", tc.in, got, tc.want)
+		}
 	}
 }
 

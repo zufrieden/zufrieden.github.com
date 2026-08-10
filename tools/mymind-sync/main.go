@@ -1,11 +1,14 @@
 // Command mymind-sync publishes tagged mymind objects to this Hugo site.
 //
-// It looks for objects carrying the "share" tag but not "shared", creates a
-// page under content/sharing/ for each of them, and then tags the object
-// "shared" in mymind so it is not picked up again.
+// It looks for objects carrying a trigger tag but not the matching done tag,
+// creates the corresponding Hugo page, and then writes the done tag back to
+// mymind so the object is not picked up again:
+//
+//	#share -> content/sharing/, then tagged "shared"
+//	#keep  -> content/linking/, then tagged "keeped"
 //
 //	mymind-sync -dry-run
-//	mymind-sync -type sharing -limit 10
+//	mymind-sync -type linking -limit 10
 package main
 
 import (
@@ -35,19 +38,20 @@ func main() {
 
 func run() error {
 	var (
-		contentType = flag.String("type", "sharing", "content type to publish ("+strings.Join(publisher.Names(), ", ")+")")
-		repoPath    = flag.String("repo", ".", "path inside the Hugo site; the site root is discovered from here")
-		envPath     = flag.String("env", ".env", "path to a .env file with credentials (optional; real env vars win)")
-		query       = flag.String("query", "", "override the mymind search query")
-		limit       = flag.Int("limit", 50, "maximum number of objects to process in one run")
-		timezone    = flag.String("timezone", "Europe/Zurich", "timezone used for the page date and filename prefix")
-		hugoBin     = flag.String("hugo", "hugo", "hugo executable used to scaffold pages from the archetype")
-		dryRun      = flag.Bool("dry-run", false, "report what would be published without writing or tagging")
-		verbose     = flag.Bool("v", false, "verbose logging")
+		contentTypes = flag.String("type", strings.Join(publisher.Names(), ","),
+			"comma-separated content types to publish ("+strings.Join(publisher.Names(), ", ")+")")
+		repoPath = flag.String("repo", ".", "path inside the Hugo site; the site root is discovered from here")
+		envPath  = flag.String("env", ".env", "path to a .env file with credentials (optional; real env vars win)")
+		query    = flag.String("query", "", "override the mymind search query")
+		limit    = flag.Int("limit", 50, "maximum number of objects to process in one run")
+		timezone = flag.String("timezone", "Europe/Zurich", "timezone used for the page date and filename prefix")
+		hugoBin  = flag.String("hugo", "hugo", "hugo executable used to scaffold pages from the archetype")
+		dryRun   = flag.Bool("dry-run", false, "report what would be published without writing or tagging")
+		verbose  = flag.Bool("v", false, "verbose logging")
 	)
 	flag.Parse()
 
-	mapping, err := publisher.Lookup(*contentType)
+	mappings, err := publisher.LookupAll(*contentTypes)
 	if err != nil {
 		return err
 	}
@@ -80,30 +84,42 @@ func run() error {
 		logf = func(format string, args ...any) { fmt.Fprintf(os.Stderr, "  "+format+"\n", args...) }
 	}
 
-	fmt.Printf("mymind-sync: %s -> %s (site: %s)\n", mapping.SourceTag, "content/"+mapping.Section, site.Root)
+	fmt.Printf("mymind-sync: site %s\n", site.Root)
 	if *dryRun {
 		fmt.Println("dry run: nothing will be written or tagged")
 	}
 
-	results, err := publisher.Run(ctx, client, site, mapping, publisher.Options{
-		Limit:  *limit,
-		DryRun: *dryRun,
-		Now:    time.Now().In(location),
-		Query:  *query,
-		Logf:   logf,
-	})
-	if err != nil {
-		return err
+	// A -query override only makes sense for a single content type; each
+	// mapping otherwise builds its own `tag:x -tag:y` search.
+	if *query != "" && len(mappings) > 1 {
+		return fmt.Errorf("-query applies to one content type at a time; add -type <name>")
 	}
 
-	report(results)
+	var all []publisher.Result
+	for _, mapping := range mappings {
+		fmt.Printf("\n#%s -> content/%s\n", mapping.SourceTag, mapping.Section)
 
-	created := publisher.Count(results, publisher.StatusCreated) + publisher.Count(results, publisher.StatusPlanned)
+		results, err := publisher.Run(ctx, client, site, mapping, publisher.Options{
+			Limit:  *limit,
+			DryRun: *dryRun,
+			Now:    time.Now().In(location),
+			Query:  *query,
+			Logf:   logf,
+		})
+		if err != nil {
+			return fmt.Errorf("%s: %w", mapping.Name, err)
+		}
+
+		report(results)
+		all = append(all, results...)
+	}
+
+	created := publisher.Count(all, publisher.StatusCreated) + publisher.Count(all, publisher.StatusPlanned)
 	if err := writeGitHubOutput(created); err != nil {
 		return err
 	}
 
-	if failed := publisher.Count(results, publisher.StatusFailed); failed > 0 {
+	if failed := publisher.Count(all, publisher.StatusFailed); failed > 0 {
 		return fmt.Errorf("%d object(s) failed to publish", failed)
 	}
 	return nil

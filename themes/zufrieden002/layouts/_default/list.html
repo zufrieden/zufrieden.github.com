@@ -24,7 +24,8 @@
             </a>
             <h3>
               {{ if .Description }}
-                {{ .Description }}
+                {{/* used by /tags/ term pages; linking descriptions are pre-escaped HTML */}}
+                {{ .Description | safeHTML }}
               {{ end }}
               {{ if .Params.event }}
               {{ .Params.event }} –

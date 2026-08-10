@@ -40,6 +40,37 @@ func Slugify(title string) string {
 	return slug
 }
 
+// URLize mirrors Hugo's `urlize` for taxonomy terms: lowercased, whitespace
+// runs collapsed to a single hyphen, punctuation dropped. "Artificial
+// intelligence" becomes "artificial-intelligence", which is the path Hugo
+// generates at /tags/artificial-intelligence/.
+//
+// It deliberately returns "" for anything it cannot slugify confidently — a
+// term containing non-ASCII letters, say, which Hugo percent-encodes in ways
+// this function does not reproduce. Callers treat "" as "do not link", so an
+// uncertain case degrades to plain text instead of a URL that 404s.
+func URLize(s string) string {
+	var b strings.Builder
+	pendingHyphen := false
+	for _, r := range strings.ToLower(strings.TrimSpace(s)) {
+		switch {
+		case r >= 'a' && r <= 'z', r >= '0' && r <= '9', r == '_':
+			if pendingHyphen && b.Len() > 0 {
+				b.WriteByte('-')
+			}
+			pendingHyphen = false
+			b.WriteRune(r)
+		case unicode.IsSpace(r), r == '-':
+			pendingHyphen = true
+		case unicode.IsLetter(r) || unicode.IsDigit(r):
+			return "" // non-ASCII: Hugo's encoding is not reproduced here
+		default:
+			// Punctuation is dropped, as Hugo does.
+		}
+	}
+	return b.String()
+}
+
 func transliterate(s string) string {
 	var b strings.Builder
 	for _, r := range s {

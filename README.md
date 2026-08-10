@@ -62,9 +62,9 @@ the push event above.
 ## Automation: publishing from mymind
 
 `tools/mymind-sync/` is a small Go app that publishes
-[mymind](https://mymind.com) objects to `content/sharing/`. Once a day it looks
-for objects tagged `share` but not `shared`, creates a page for each, and tags
-the object `shared` in mymind so it is never published twice.
+[mymind](https://mymind.com) objects to the site. Once a day it looks
+for objects tagged `share` (→ `content/sharing/`) or `keep` (→ `content/linking/`)
+and tags them `shared` / `keeped` in mymind so nothing is published twice.
 
 Quick start:
 

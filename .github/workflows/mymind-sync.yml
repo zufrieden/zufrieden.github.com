@@ -41,7 +41,8 @@ jobs:
         with:
           hugo-version: '0.120.4'
 
-      - name: Publish new mymind shares
+      # Both content types in one invocation, so `created` counts all of them.
+      - name: Publish new mymind objects
         id: sync
         working-directory: tools/mymind-sync
         env:
@@ -56,13 +57,13 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add content/sharing
+          git add content/sharing content/linking
           if git diff --cached --quiet; then
             echo "no new pages to commit"
             exit 0
           fi
           count=$(git diff --cached --name-only | wc -l | tr -d ' ')
-          git commit -m "sharing: publish ${count} item(s) from mymind"
+          git commit -m "content: publish ${count} item(s) from mymind"
           git push origin HEAD:source
           echo "committed=true" >> "$GITHUB_OUTPUT"
 

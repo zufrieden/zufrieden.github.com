@@ -9,7 +9,8 @@
     </h1>
     {{ if .Description }}
       <h3>
-        {{ .Description }}
+        {{/* mymind-sync escapes the description and may embed tag links in it */}}
+        {{ .Description | safeHTML }}
       </h3>
     {{ end }}
     <section>

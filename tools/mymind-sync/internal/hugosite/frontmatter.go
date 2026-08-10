@@ -32,6 +32,16 @@ func YAMLString(s string) string {
 // YAMLRaw passes a value through untouched (dates, booleans, numbers).
 func YAMLRaw(s string) string { return s }
 
+// YAMLStringSlice renders a flow-style array, e.g. ["keep","js"], matching the
+// style of the existing linking pages. An empty slice renders as [].
+func YAMLStringSlice(values []string) string {
+	quoted := make([]string, 0, len(values))
+	for _, v := range values {
+		quoted = append(quoted, YAMLString(v))
+	}
+	return "[" + strings.Join(quoted, ",") + "]"
+}
+
 // patchFrontMatter takes a page produced from an archetype, overrides the given
 // front matter fields (appending any that the archetype didn't define), and
 // replaces the body.
@@ -65,18 +75,36 @@ func patchFrontMatter(source string, fields []Field, body string) (string, error
 	return out.String(), nil
 }
 
+// setField overwrites the first line declaring field.Key, appending it if the
+// archetype does not declare it at all.
+//
+// Any *further* line declaring the same key is dropped: an archetype that
+// accidentally lists a key twice would otherwise produce front matter with a
+// duplicate key, where which value wins is anyone's guess.
 func setField(lines []string, field Field) []string {
 	rendered := field.Key + ": " + field.Value
 	pattern := regexp.MustCompile(`^\s*` + regexp.QuoteMeta(field.Key) + `\s*:`)
-	for i, line := range lines {
+
+	out := lines[:0:0] // fresh backing array; never alias the caller's slice
+	replaced := false
+	for _, line := range lines {
 		if pattern.MatchString(line) {
-			lines[i] = rendered
-			return lines
+			if replaced {
+				continue
+			}
+			replaced = true
+			out = append(out, rendered)
+			continue
 		}
+		out = append(out, line)
 	}
+	if replaced {
+		return out
+	}
+
 	// Drop trailing blank lines so the appended key stays inside the block.
-	for len(lines) > 0 && strings.TrimSpace(lines[len(lines)-1]) == "" {
-		lines = lines[:len(lines)-1]
+	for len(out) > 0 && strings.TrimSpace(out[len(out)-1]) == "" {
+		out = out[:len(out)-1]
 	}
-	return append(lines, rendered)
+	return append(out, rendered)
 }

@@ -37,7 +37,8 @@
             </a>
             <h4>
               {{ if .Description }}
-                {{ .Description }}
+                {{/* linking descriptions are pre-escaped HTML with tag links */}}
+                {{ .Description | safeHTML }}
               {{ end }}
               {{ if .Params.event }}
                 {{ .Params.event }} –
