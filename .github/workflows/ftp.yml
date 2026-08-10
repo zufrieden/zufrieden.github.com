@@ -4,12 +4,23 @@ on:
   push:
     branches:
       - source  # Set a branch to deploy
+  # Callable by other workflows (mymind-sync), because a push made with
+  # GITHUB_TOKEN does not trigger the push event above.
+  workflow_call:
+    inputs:
+      ref:
+        description: 'Ref to build and deploy; empty means the triggering commit'
+        type: string
+        required: false
+        default: ''
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ inputs.ref }}
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
