@@ -78,6 +78,10 @@ go run . -v               # publish for real
 Full documentation — flags, the field mapping, the GitHub Actions setup, and how
 to add a new content type — is in [`tools/mymind-sync/README.md`](tools/mymind-sync/README.md).
 
+New to Go? [`tools/mymind-sync/GO-PRIMER.md`](tools/mymind-sync/GO-PRIMER.md)
+explains the language concepts used in that app, with every example pointing at
+real code in the project.
+
 ## Repository layout
 
 ```

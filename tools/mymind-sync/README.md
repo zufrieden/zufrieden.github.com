@@ -105,6 +105,12 @@ mymind tags. Leave it unticked to publish for real.
   reported and left **untagged**, so it gets picked up again if you later add a
   URL. A skip is not a failure — the rest of the batch still publishes.
 
+## New to Go?
+
+[`GO-PRIMER.md`](GO-PRIMER.md) walks through the language concepts used here —
+packages, imports, pointers, interfaces, error handling and the testing
+conventions — with every example pointing at real code in this directory.
+
 ## Adding a content type
 
 `internal/publisher/mapping.go` holds a registry of `Mapping` values. A mapping
