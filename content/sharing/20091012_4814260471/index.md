@@ -1,6 +1,6 @@
 ---
 date: 2009-10-12T18:23:39.000Z
-title: "Splash Screen Design Evolution of Famous Design Software’s | Dzine Blog								     http://bit.ly/bJgLb″"
+title: "Splash Screen Design Evolution of Famous Design Software’s | Dzine Blog"
 user_mentions: "undefined"
 tweet_id: "4814260471"
 pub_type: "tweet"
