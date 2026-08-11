@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/zufrieden/zufrieden.github.com/tools/mymind-sync/internal/hugosite"
+	"github.com/zufrieden/zufrieden.github.com/tools/internal/hugosite"
 	"github.com/zufrieden/zufrieden.github.com/tools/mymind-sync/internal/mymind"
 )
 

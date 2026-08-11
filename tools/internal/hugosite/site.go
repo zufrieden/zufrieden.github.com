@@ -56,14 +56,24 @@ func (s *Site) Exists(relPath string) bool {
 // AvailablePath returns relPath, or the first free `_2`, `_3`, ... variant of
 // it. Two items shared on the same day can slugify to the same name.
 func (s *Site) AvailablePath(relPath string) string {
-	if !s.Exists(relPath) {
+	return s.AvailablePathExcluding(relPath, nil)
+}
+
+// AvailablePathExcluding is AvailablePath, additionally treating every path in
+// taken as occupied. It exists for a dry run, where nothing is written and so
+// two same-day, same-slug items would otherwise both be reported at the very
+// same path — making the preview disagree with what a real run would do.
+func (s *Site) AvailablePathExcluding(relPath string, taken map[string]bool) string {
+	free := func(candidate string) bool { return !taken[candidate] && !s.Exists(candidate) }
+
+	if free(relPath) {
 		return relPath
 	}
 	ext := path.Ext(relPath)
 	stem := strings.TrimSuffix(relPath, ext)
 	for n := 2; n < 100; n++ {
 		candidate := fmt.Sprintf("%s_%d%s", stem, n, ext)
-		if !s.Exists(candidate) {
+		if free(candidate) {
 			return candidate
 		}
 	}
@@ -100,6 +110,33 @@ func (s *Site) CreatePage(relPath string, fields []Field, body string) (cleanup 
 	}
 
 	return func() { os.Remove(absPath) }, nil
+}
+
+// WriteFile writes data to relPath inside the site, creating parent
+// directories. Like CreatePage it refuses to overwrite, and returns a cleanup
+// function that removes the file again — used to undo a downloaded asset when
+// the page it belongs to cannot be written.
+func (s *Site) WriteFile(relPath string, data []byte) (cleanup func(), err error) {
+	if s.Exists(relPath) {
+		return nil, fmt.Errorf("%s already exists", relPath)
+	}
+
+	absPath := filepath.Join(s.Root, filepath.FromSlash(relPath))
+	if err := os.MkdirAll(filepath.Dir(absPath), 0o755); err != nil {
+		return nil, err
+	}
+	if err := os.WriteFile(absPath, data, 0o644); err != nil {
+		os.Remove(absPath)
+		return nil, err
+	}
+	return func() { os.Remove(absPath) }, nil
+}
+
+// RemoveAll deletes relPath and anything under it, and is a no-op when it does
+// not exist. It is for clearing assets left behind by a run that was killed
+// between downloading them and writing the page they belong to.
+func (s *Site) RemoveAll(relPath string) error {
+	return os.RemoveAll(filepath.Join(s.Root, filepath.FromSlash(relPath)))
 }
 
 // scaffold produces the archetype-expanded page content, preferring `hugo new`

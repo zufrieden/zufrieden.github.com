@@ -16,12 +16,27 @@ than a toy snippet, so you can open the file and read around it.
 
 ## 1. Module, packages, directories
 
-`go.mod` declares the module. Its name is the import prefix for everything
+`tools/go.mod` declares the module. Its name is the import prefix for everything
 inside:
 
 ```
-module github.com/zufrieden/zufrieden.github.com/tools/mymind-sync
+module github.com/zufrieden/zufrieden.github.com/tools
 go 1.22
+```
+
+One module covers every tool in `tools/`, which is what lets them share
+`tools/internal/hugosite` without publishing it anywhere:
+
+```
+tools/
+  go.mod
+  internal/hugosite/        shared by every tool
+  mymind-sync/
+    main.go                 package main
+    internal/{config,mymind,publisher}/
+  mastodon-sync/
+    main.go                 package main
+    internal/{mastodon,publisher}/
 ```
 
 Three rules that surprise most newcomers:
@@ -30,9 +45,11 @@ Three rules that surprise most newcomers:
   with `package mymind` (`internal/mymind/types.go:1`,
   `internal/mymind/client.go:5`). They are one package split across files —
   `client.go` uses `Object` from `types.go` with no import.
-- **`internal/` is enforced by the compiler.** Anything under `internal/` can
-  only be imported by code inside `tools/mymind-sync/`. Nobody outside can
-  depend on it.
+- **`internal/` is enforced by the compiler**, relative to the directory it sits
+  in. `tools/internal/hugosite` is importable by anything under `tools/`, while
+  `tools/mymind-sync/internal/mymind` is importable only from inside
+  `tools/mymind-sync/` — so `mastodon-sync` cannot reach into it even by
+  accident. Nothing outside `tools/` can import either.
 - **`package main` + `func main()` = an executable** (`main.go:9`,
   `main.go:29`). Every other package is a library.
 

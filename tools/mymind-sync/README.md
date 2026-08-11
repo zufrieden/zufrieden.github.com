@@ -61,8 +61,12 @@ cd tools/mymind-sync
 go run . -dry-run -v         # show what would be published, touch nothing
 go run . -v                  # publish both sections for real
 go run . -v -type linking    # just one section
-go test ./...
+cd .. && go test ./...       # tests for every tool, including shared hugosite
 ```
+
+`content/sharing/` is also fed by [`mastodon-sync`](../mastodon-sync/), which
+publishes Mastodon posts into the same section. The two never collide: they key
+off different tags and record different front matter.
 
 The Hugo site root is discovered by walking up from `-repo` (default: the
 current directory), so running from `tools/mymind-sync` just works.

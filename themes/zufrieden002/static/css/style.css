@@ -407,8 +407,11 @@ section{
 /* Tags */
 .tags{
   margin: 1rem 0 0 0;
-  display: flex;
+  /* display: flex; */
   font-size: 70%;
+}
+.tags li{
+  float: left;
 }
 .tags li, .tags a{
   list-style: none;

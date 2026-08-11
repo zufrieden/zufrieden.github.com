@@ -17,3 +17,6 @@ node_modules
 # mymind-sync
 tools/mymind-sync/.env
 tools/mymind-sync/mymind-sync
+
+# mastodon-sync (public feed, so no credentials — just the built binary)
+tools/mastodon-sync/mastodon-sync

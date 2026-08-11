@@ -248,6 +248,107 @@ description :
 	}
 }
 
+func TestFrontMatterValues(t *testing.T) {
+	root := t.TempDir()
+	mustWrite(t, filepath.Join(root, "config.toml"), "baseURL = \"https://example.com/\"\n")
+
+	// A page written by this tool.
+	mustWrite(t, filepath.Join(root, "content", "sharing", "20260809_sunset.md"), `---
+title: "Sunset in the Baltic Sea"
+mastodon_id: "117066375180847363"
+---
+Sunset in the Baltic Sea
+`)
+	// A page bundle, the shape the imported tweets use.
+	mustWrite(t, filepath.Join(root, "content", "sharing", "20090112_1114006814", "index.md"), `---
+title: "Registering Twitter"
+mastodon_id : 116380224548967393
+---
+`)
+	// Pages that must not contribute: no such key, no front matter at all, and
+	// a key that only appears in the body.
+	mustWrite(t, filepath.Join(root, "content", "sharing", "20260810_mymind.md"), `---
+title: "From mymind"
+description: "x"
+---
+`)
+	mustWrite(t, filepath.Join(root, "content", "sharing", "notes.txt"), "mastodon_id: \"999\"\n")
+	mustWrite(t, filepath.Join(root, "content", "sharing", "20260811_body.md"), `---
+title: "Body mention"
+---
+mastodon_id: "888"
+`)
+
+	site := &Site{Root: root}
+	got, err := site.FrontMatterValues("sharing", "mastodon_id")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	want := map[string]string{
+		"117066375180847363": "content/sharing/20260809_sunset.md",
+		"116380224548967393": "content/sharing/20090112_1114006814/index.md",
+	}
+	if len(got) != len(want) {
+		t.Fatalf("got %d values, want %d: %v", len(got), len(want), got)
+	}
+	for id, path := range want {
+		if got[id] != path {
+			t.Errorf("%s -> %q, want %q", id, got[id], path)
+		}
+	}
+}
+
+// A section that has never been published to is normal on a first run, not an
+// error.
+func TestFrontMatterValuesOnMissingSection(t *testing.T) {
+	site := &Site{Root: t.TempDir()}
+	got, err := site.FrontMatterValues("sharing", "mastodon_id")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(got) != 0 {
+		t.Errorf("got %v, want empty", got)
+	}
+}
+
+func TestUnquoteYAML(t *testing.T) {
+	cases := map[string]string{
+		`"117066375180847363"`: "117066375180847363",
+		`117066375180847363`:   "117066375180847363",
+		`'single'`:             "single",
+		`"with \"quotes\""`:    `with "quotes"`,
+		`""`:                   "",
+		``:                     "",
+	}
+	for in, want := range cases {
+		if got := unquoteYAML(in); got != want {
+			t.Errorf("unquoteYAML(%s) = %q, want %q", in, got, want)
+		}
+	}
+}
+
+func TestWriteFile(t *testing.T) {
+	site := &Site{Root: t.TempDir()}
+	relPath := "static/images/mastodon/117066375180847363/1.jpeg"
+
+	cleanup, err := site.WriteFile(relPath, []byte("jpeg-bytes"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if !site.Exists(relPath) {
+		t.Fatal("file was not written")
+	}
+	if _, err := site.WriteFile(relPath, []byte("other")); err == nil {
+		t.Error("expected WriteFile to refuse an existing file")
+	}
+
+	cleanup()
+	if site.Exists(relPath) {
+		t.Error("cleanup did not remove the file")
+	}
+}
+
 func TestDiscover(t *testing.T) {
 	root := t.TempDir()
 	mustWrite(t, filepath.Join(root, "config.toml"), "baseURL = \"https://example.com/\"\n")

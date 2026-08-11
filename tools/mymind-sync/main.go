@@ -23,8 +23,8 @@ import (
 	"time"
 	_ "time/tzdata" // embed the tz database so -timezone works on bare runners
 
+	"github.com/zufrieden/zufrieden.github.com/tools/internal/hugosite"
 	"github.com/zufrieden/zufrieden.github.com/tools/mymind-sync/internal/config"
-	"github.com/zufrieden/zufrieden.github.com/tools/mymind-sync/internal/hugosite"
 	"github.com/zufrieden/zufrieden.github.com/tools/mymind-sync/internal/mymind"
 	"github.com/zufrieden/zufrieden.github.com/tools/mymind-sync/internal/publisher"
 )

@@ -24,6 +24,15 @@
         </a>
       </h2>
       {{ end }}
+      {{/* Posted on Mastodon and synced here by tools/mastodon-sync. */}}
+      {{ if .Params.mastodon_url }}
+      <h2>
+        🐘
+        <a href="{{ .Params.mastodon_url }}" rel="syndication">
+          {{ with .Site.Params.mastodonHandle }}{{ . }}{{ else }}on Mastodon{{ end }}
+        </a>
+      </h2>
+      {{ end }}
       <p>
         {{ .Date.Format (.Site.Params.dateForm | default "Mon Jan 02, 2006") }}
         {{ with .Params.tags }}

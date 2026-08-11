@@ -1,0 +1,85 @@
+name: mastodon sync
+
+on:
+  schedule:
+    # 05:30 UTC — half an hour after mymind sync, so the two never race for the
+    # same content/sharing commit.
+    - cron: '30 5 * * *'
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Report what would be published without writing anything'
+        type: boolean
+        default: false
+
+# Never let two runs publish the same post twice.
+concurrency:
+  group: mastodon-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    outputs:
+      created: ${{ steps.sync.outputs.created }}
+      committed: ${{ steps.commit.outputs.committed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: source
+
+      - name: Setup Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          cache: false # the tool has no dependencies
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.120.4'
+
+      # No secrets: the account's RSS feed is public. Idempotency comes from the
+      # mastodon_id already recorded in the checked-out pages, which is why the
+      # checkout above must be the branch the pages live on.
+      - name: Publish new Mastodon posts
+        id: sync
+        working-directory: tools/mastodon-sync
+        run: go run . -v -repo "$GITHUB_WORKSPACE" ${{ inputs.dry_run && '-dry-run' || '' }}
+
+      # always(): if some posts failed, still commit the ones that succeeded.
+      - name: Commit and push
+        id: commit
+        if: ${{ always() && steps.sync.outputs.created != '' && steps.sync.outputs.created != '0' && !inputs.dry_run }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Attachments are committed alongside their page: a page referencing an
+          # image that never landed would deploy a broken post. The directory
+          # only exists once a post with an attachment has been published, and
+          # `git add` on a missing path is an error.
+          git add content/sharing
+          if [ -d static/images/mastodon ]; then
+            git add static/images/mastodon
+          fi
+          if git diff --cached --quiet; then
+            echo "no new pages to commit"
+            exit 0
+          fi
+          pages=$(git diff --cached --name-only -- content/sharing | wc -l | tr -d ' ')
+          git commit -m "content: publish ${pages} post(s) from mastodon"
+          git push origin HEAD:source
+          echo "committed=true" >> "$GITHUB_OUTPUT"
+
+  # A push made with GITHUB_TOKEN does not trigger the push-based deploy
+  # workflow, so call it directly.
+  deploy:
+    needs: sync
+    if: ${{ always() && needs.sync.outputs.committed == 'true' }}
+    uses: ./.github/workflows/ftp.yml
+    with:
+      ref: source
+    secrets: inherit
