@@ -3,6 +3,7 @@ package mymind
 import (
 	"encoding/json"
 	"strings"
+	"time"
 )
 
 // Object is a mymind saved item. Only the fields this tool needs are mapped;
@@ -90,6 +91,23 @@ func (o Object) SourceURL() string {
 		return strings.TrimSpace(o.Source.URL)
 	}
 	return strings.TrimSpace(o.URL)
+}
+
+// CreatedAt parses the object's `created` timestamp, which the API documents as
+// an RFC 3339 instant in UTC (https://access.mymind.com/api/types#timestamp).
+// The second return value is false when it is missing or unparseable, so
+// callers can fall back rather than publishing a zero date.
+func (o Object) CreatedAt() (time.Time, bool) {
+	trimmed := strings.TrimSpace(o.Created)
+	if trimmed == "" {
+		return time.Time{}, false
+	}
+	// RFC3339 also accepts fractional seconds, so it covers the nano variant.
+	t, err := time.Parse(time.RFC3339, trimmed)
+	if err != nil {
+		return time.Time{}, false
+	}
+	return t, true
 }
 
 // FirstNote returns the body of the first attached note, if any. The mymind

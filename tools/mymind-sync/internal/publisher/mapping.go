@@ -42,8 +42,10 @@ type Mapping struct {
 	// Filename builds the page's filename (no directory). Sections do not
 	// agree: sharing prefixes the date, linking does not.
 	Filename func(page Page) string
-	// Build converts an object into a page. Returning an error skips the
-	// object without tagging it, so it gets retried on the next run.
+	// Build converts an object into a page. now is the run time, used only as
+	// the fallback date for an object mymind gave no `created` timestamp for.
+	// Returning an error skips the object without tagging it, so it gets
+	// retried on the next run.
 	Build func(obj mymind.Object, now time.Time) (Page, error)
 }
 
@@ -104,7 +106,7 @@ func Names() []string {
 // sharing maps a mymind object onto content/sharing/:
 //
 //	title       <- object title
-//	date        <- the day it is shared (today)
+//	date        <- the day it was saved in mymind (object.created)
 //	description <- first note, falling back to the AI summary
 //	body        <- the source URL as a markdown link
 var sharing = Mapping{
@@ -130,7 +132,7 @@ var sharing = Mapping{
 		// plain text is what belongs here.
 		return Page{
 			Title:       titleFor(obj, sourceURL),
-			Date:        now,
+			Date:        pageDate(obj, now),
 			Description: plainDescription(obj),
 			Body:        markdownLink(sourceURL),
 		}, nil
@@ -140,7 +142,7 @@ var sharing = Mapping{
 // linking maps a mymind object onto content/linking/:
 //
 //	title       <- object title
-//	date        <- the day it is published (today)
+//	date        <- the day it was saved in mymind (object.created)
 //	tags        <- the object's mymind tags
 //	link        <- source.url, in the front matter rather than the body
 //	description <- first note, falling back to the AI summary
@@ -166,7 +168,7 @@ var linking = Mapping{
 
 		return Page{
 			Title:       titleFor(obj, sourceURL),
-			Date:        now,
+			Date:        pageDate(obj, now),
 			Description: htmlDescription(obj, tags),
 			Extra: []hugosite.Field{
 				{Key: "tags", Value: hugosite.YAMLStringSlice(tags)},
@@ -174,6 +176,23 @@ var linking = Mapping{
 			},
 		}, nil
 	},
+}
+
+// pageDate is when the page says it happened: the moment the object was saved
+// in mymind, not the moment this tool got around to publishing it. The two
+// differ whenever a run is late, and it is the save date that the reader cares
+// about.
+//
+// The timestamp comes back in UTC, so it is moved into the run's timezone
+// before anyone reads a day off it — otherwise anything saved between midnight
+// and 02:00 Zurich time would be dated the day before in the filename prefix.
+// An object with no usable `created` falls back to the run time.
+func pageDate(obj mymind.Object, now time.Time) time.Time {
+	created, ok := obj.CreatedAt()
+	if !ok {
+		return now
+	}
+	return created.In(now.Location())
 }
 
 // tagsFor lists the object's mymind tags for the front matter, dropping the

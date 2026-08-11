@@ -643,6 +643,94 @@ func TestSameDayTitleCollisionGetsSuffix(t *testing.T) {
 	}
 }
 
+// A page is dated by when the object was saved in mymind, not by when the run
+// happened — so a run that is a month late still files the page under the day
+// it was kept.
+func TestPageDateComesFromCreated(t *testing.T) {
+	for _, tc := range []struct {
+		contentType string
+		wantPath    string
+	}{
+		{"sharing", "content/sharing/20260704_thing.md"},
+		{"linking", "content/linking/thing.md"},
+	} {
+		mapping, _ := Lookup(tc.contentType)
+		site := newTestSite(t)
+		client := &fakeClient{objects: []mymind.Object{{
+			ID: "obj-1", Title: "Thing",
+			Source:  &mymind.Source{URL: "https://example.com/x"},
+			Tags:    []mymind.Tag{{Name: mapping.SourceTag}},
+			Created: "2026-07-04T18:20:00Z",
+		}}}
+
+		results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
+		if err != nil {
+			t.Fatal(err)
+		}
+		if Count(results, StatusCreated) != 1 {
+			t.Fatalf("%s: unexpected results: %+v", tc.contentType, results)
+		}
+		if results[0].Path != tc.wantPath {
+			t.Errorf("%s: path = %q, want %q", tc.contentType, results[0].Path, tc.wantPath)
+		}
+
+		got, err := os.ReadFile(filepath.Join(site.Root, results[0].Path))
+		if err != nil {
+			t.Fatal(err)
+		}
+		// 18:20 UTC read in the run's +02:00 zone.
+		if want := "date: 2026-07-04T20:20:00+02:00\n"; !strings.Contains(string(got), want) {
+			t.Errorf("%s: front matter missing %q:\n%s", tc.contentType, want, got)
+		}
+	}
+}
+
+// The timestamp arrives in UTC, so anything saved late in the evening Zurich
+// time would be filed under the previous day if the zone were ignored.
+func TestPageDateUsesTheRunTimezone(t *testing.T) {
+	mapping, _ := Lookup("sharing")
+	site := newTestSite(t)
+	client := &fakeClient{objects: []mymind.Object{{
+		ID: "obj-1", Title: "Thing",
+		Source:  &mymind.Source{URL: "https://example.com/x"},
+		Tags:    []mymind.Tag{{Name: "share"}},
+		Created: "2026-07-04T22:30:00Z",
+	}}}
+
+	results, err := Run(context.Background(), client, site, mapping, Options{
+		Now: testTime(t).In(time.FixedZone("CEST", 2*60*60)),
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if want := "content/sharing/20260705_thing.md"; results[0].Path != want {
+		t.Errorf("path = %q, want %q", results[0].Path, want)
+	}
+}
+
+// An object mymind gave no usable timestamp for still gets published, dated by
+// the run instead.
+func TestPageDateFallsBackToNow(t *testing.T) {
+	mapping, _ := Lookup("sharing")
+	for name, created := range map[string]string{"missing": "", "unparseable": "4 July 2026"} {
+		site := newTestSite(t)
+		client := &fakeClient{objects: []mymind.Object{{
+			ID: "obj-1", Title: "Thing",
+			Source:  &mymind.Source{URL: "https://example.com/x"},
+			Tags:    []mymind.Tag{{Name: "share"}},
+			Created: created,
+		}}}
+
+		results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
+		if err != nil {
+			t.Fatal(err)
+		}
+		if want := "content/sharing/20260810_thing.md"; results[0].Path != want {
+			t.Errorf("%s: path = %q, want %q", name, results[0].Path, want)
+		}
+	}
+}
+
 func TestQueryOverride(t *testing.T) {
 	mapping, _ := Lookup("sharing")
 	client := &fakeClient{}

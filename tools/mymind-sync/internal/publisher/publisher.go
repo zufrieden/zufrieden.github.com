@@ -40,7 +40,9 @@ type Options struct {
 	Limit int
 	// DryRun reports what would happen without writing files or tagging.
 	DryRun bool
-	// Now is the publication timestamp; also drives the filename prefix.
+	// Now is the run time. A page is dated by the object's mymind `created`
+	// timestamp; Now only supplies the timezone that timestamp is read in, and
+	// the date itself for an object that has no usable one.
 	Now time.Time
 	// Query overrides the mapping's default mymind search.
 	Query string
@@ -130,7 +132,7 @@ func publishOne(
 
 	// Tag last: the page is the deliverable, the tag is the bookkeeping. If
 	// tagging fails we roll the page back so the next run retries cleanly
-	// instead of publishing a duplicate under tomorrow's date.
+	// instead of publishing a second copy under a "_2" suffix.
 	if err := client.AddTags(ctx, obj.ID, mapping.DoneTag); err != nil {
 		cleanup()
 		result.Status = StatusFailed

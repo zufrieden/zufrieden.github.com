@@ -13,6 +13,7 @@ import (
 	"net/http/httptest"
 	"strings"
 	"testing"
+	"time"
 )
 
 const testKeyID = "kid-123"
@@ -225,6 +226,42 @@ func TestSourceURLFallsBackToTopLevelURL(t *testing.T) {
 	}
 	if obj.SourceURL() != "https://example.com/top" {
 		t.Errorf("SourceURL = %q", obj.SourceURL())
+	}
+}
+
+func TestCreatedAt(t *testing.T) {
+	cases := map[string]struct {
+		raw  string
+		want string // RFC3339 in UTC, or "" when it should not parse
+	}{
+		"utc":        {`"2024-03-01T12:00:00Z"`, "2024-03-01T12:00:00Z"},
+		"offset":     {`"2024-03-01T14:00:00+02:00"`, "2024-03-01T12:00:00Z"},
+		"fractional": {`"2024-03-01T12:00:00.123456Z"`, "2024-03-01T12:00:00Z"},
+		"padded":     {`"  2024-03-01T12:00:00Z  "`, "2024-03-01T12:00:00Z"},
+		"missing":    {`""`, ""},
+		"date only":  {`"2024-03-01"`, ""},
+		"epoch":      {`"1709294400"`, ""},
+	}
+	for name, tc := range cases {
+		var obj Object
+		if err := json.Unmarshal([]byte(`{"created":`+tc.raw+`}`), &obj); err != nil {
+			t.Errorf("%s: %v", name, err)
+			continue
+		}
+		got, ok := obj.CreatedAt()
+		if tc.want == "" {
+			if ok {
+				t.Errorf("%s: CreatedAt = %s, want no timestamp", name, got)
+			}
+			continue
+		}
+		if !ok {
+			t.Errorf("%s: CreatedAt reported no timestamp, want %s", name, tc.want)
+			continue
+		}
+		if formatted := got.UTC().Format(time.RFC3339); formatted != tc.want {
+			t.Errorf("%s: CreatedAt = %s, want %s", name, formatted, tc.want)
+		}
 	}
 }
 

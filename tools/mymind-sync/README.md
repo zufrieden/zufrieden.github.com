@@ -18,8 +18,13 @@ Common to both:
 | Hugo front matter | mymind object                       |
 | ----------------- | ----------------------------------- |
 | `title`           | `title`                             |
-| `date`            | today (the day it is published)     |
+| `date`            | `created` (the day it was saved)    |
 | `description`     | first `notes` entry, else `summary` |
+
+The date is the object's mymind `created` timestamp, read in `-timezone`, not
+the day the tool happens to run — so a late or catch-up run still dates each
+page by when you saved it. Objects whose `created` is missing or unparseable
+fall back to the run date.
 
 Where they differ:
 
@@ -71,7 +76,7 @@ current directory), so running from `tools/mymind-sync` just works.
 | `-env`       | `.env`           | Credentials file (optional)                          |
 | `-query`     | *(mapping's)*    | Override the mymind search query                     |
 | `-limit`     | `50`             | Max objects per run                                  |
-| `-timezone`  | `Europe/Zurich`  | Timezone for the page date and filename prefix       |
+| `-timezone`  | `Europe/Zurich`  | Timezone `created` is read in for the date and prefix |
 | `-hugo`      | `hugo`           | Hugo executable used for scaffolding                 |
 | `-dry-run`   | `false`          | Report only; no files written, no tags added         |
 | `-v`         | `false`          | Verbose logging                                      |
@@ -113,8 +118,8 @@ mymind tags. Leave it unticked to publish for real.
 
 - **Tagging is the bookkeeping, the page is the deliverable.** The page is
   written first, then the object is tagged. If tagging fails the page is rolled
-  back, so the next run retries cleanly instead of publishing a duplicate under
-  tomorrow's date.
+  back, so the next run retries cleanly instead of publishing a second copy
+  under a `_2` suffix.
 - **The object's tags are the authority.** Even if the search query misbehaves,
   anything already carrying `shared` is skipped.
 - **Two items shared the same day** with the same slug get a `_2`, `_3`, … suffix.
