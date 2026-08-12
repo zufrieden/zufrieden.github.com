@@ -25,6 +25,11 @@ const (
 	DefaultUA      = "zufrieden-mymind-sync/1.0"
 
 	tokenTTL = 5 * time.Minute
+
+	// maxDownloadBytes caps a single file fetched from /objects/:id/blob. Well
+	// above anything worth putting on the site, low enough that a runaway
+	// response cannot exhaust memory.
+	maxDownloadBytes = 64 << 20 // 64 MiB
 )
 
 type Client struct {
@@ -223,6 +228,75 @@ func (c *Client) ListObjects(ctx context.Context, query string, limit int) ([]Ob
 		return nil, err
 	}
 	return decodeObjects(raw)
+}
+
+// Blob downloads the file behind an object — the image or PDF it was made
+// from — and returns the bytes with the MIME type the server reported.
+//
+// The endpoint answers either with the bytes or with a redirect to mymind's
+// media host, where the pre-signed URL is the credential and this key has no
+// business being sent.
+func (c *Client) Blob(ctx context.Context, objectID string) ([]byte, string, error) {
+	if strings.TrimSpace(objectID) == "" {
+		return nil, "", fmt.Errorf("mymind: empty object id")
+	}
+	return c.download(ctx, "/objects/"+url.PathEscape(objectID)+"/blob")
+}
+
+// download is do() for an endpoint answering with a file rather than JSON: it
+// keeps the response's content type and refuses to read an unbounded body into
+// memory.
+func (c *Client) download(ctx context.Context, path string) ([]byte, string, error) {
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, c.baseURL+path, nil)
+	if err != nil {
+		return nil, "", err
+	}
+
+	token, err := c.sign(http.MethodGet, path, time.Now())
+	if err != nil {
+		return nil, "", err
+	}
+	req.Header.Set("Authorization", "Bearer "+token)
+	req.Header.Set("User-Agent", c.userAgent)
+	req.Header.Set("Accept", "*/*")
+
+	// The token is minted for this one path on the API host; a redirect leads
+	// somewhere else, so it is stripped rather than handed to whatever answers
+	// there. Go does this itself when the domain changes — doing it explicitly
+	// means the guarantee does not rest on where mymind happens to host its
+	// media today.
+	follow := *c.http
+	follow.CheckRedirect = func(req *http.Request, via []*http.Request) error {
+		if len(via) >= 10 {
+			return fmt.Errorf("stopped after %d redirects", len(via))
+		}
+		req.Header.Del("Authorization")
+		return nil
+	}
+
+	resp, err := follow.Do(req)
+	if err != nil {
+		return nil, "", fmt.Errorf("mymind: GET %s: %w", path, err)
+	}
+	defer resp.Body.Close()
+
+	if resp.StatusCode >= 400 {
+		raw, _ := io.ReadAll(io.LimitReader(resp.Body, 4<<10))
+		return nil, "", &APIError{Status: resp.StatusCode, Body: string(raw)}
+	}
+
+	// One spare byte, so an oversized file is reported rather than silently
+	// truncated into a corrupt one.
+	body, err := io.ReadAll(io.LimitReader(resp.Body, maxDownloadBytes+1))
+	if err != nil {
+		return nil, "", fmt.Errorf("mymind: reading GET %s: %w", path, err)
+	}
+	if len(body) > maxDownloadBytes {
+		return nil, "", fmt.Errorf("mymind: GET %s: file is larger than %d bytes", path, maxDownloadBytes)
+	}
+
+	contentType, _, _ := strings.Cut(resp.Header.Get("Content-Type"), ";")
+	return body, strings.ToLower(strings.TrimSpace(contentType)), nil
 }
 
 // AddTags attaches tags to an object. The endpoint is idempotent, so re-tagging

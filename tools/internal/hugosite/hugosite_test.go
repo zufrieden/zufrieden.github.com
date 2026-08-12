@@ -248,6 +248,60 @@ description :
 	}
 }
 
+func TestBundlePath(t *testing.T) {
+	cases := map[string]string{
+		"content/sharing/20260810_thing.md": "content/sharing/20260810_thing/index.md",
+		"content/linking/thing.md":          "content/linking/thing/index.md",
+	}
+	for in, want := range cases {
+		if got := BundlePath(in); got != want {
+			t.Errorf("BundlePath(%q) = %q, want %q", in, got, want)
+		}
+	}
+}
+
+// Hugo renders `thing.md` and `thing/index.md` at the same URL and refuses to
+// build a site holding both, so the two forms have to compete for one name —
+// whichever is asked for.
+func TestAvailablePathTreatsAPageAndItsBundleAsOneSlot(t *testing.T) {
+	root := t.TempDir()
+	mustWrite(t, filepath.Join(root, "config.toml"), "baseURL = \"https://example.com/\"\n")
+	site := &Site{Root: root}
+
+	// A bundle is numbered on its directory: "thing_2/index.md", never
+	// "thing/index_2.md", which Hugo would not read as a bundle at all.
+	bundle := "content/sharing/20260810_thing/index.md"
+	if got := site.AvailablePath(bundle); got != bundle {
+		t.Fatalf("AvailablePath = %q, want %q", got, bundle)
+	}
+
+	mustWrite(t, filepath.Join(root, "content", "sharing", "20260810_thing.md"), "---\n---\n")
+	if got, want := site.AvailablePath(bundle), "content/sharing/20260810_thing_2/index.md"; got != want {
+		t.Errorf("bundle competing with a page = %q, want %q", got, want)
+	}
+
+	// And the other way round: a plain page must step aside for an existing
+	// bundle of the same name.
+	mustWrite(t, filepath.Join(root, "content", "sharing", "20260811_other", "index.md"), "---\n---\n")
+	page := "content/sharing/20260811_other.md"
+	if got, want := site.AvailablePath(page), "content/sharing/20260811_other_2.md"; got != want {
+		t.Errorf("page competing with a bundle = %q, want %q", got, want)
+	}
+
+	// A directory left half-written by an interrupted run still holds the slot:
+	// the next attempt writes a fresh bundle rather than reusing the debris.
+	mustWrite(t, filepath.Join(root, "content", "sharing", "20260812_orphan", "1.jpg"), "not-a-page")
+	if got, want := site.AvailablePath("content/sharing/20260812_orphan/index.md"), "content/sharing/20260812_orphan_2/index.md"; got != want {
+		t.Errorf("bundle competing with an orphan directory = %q, want %q", got, want)
+	}
+
+	// The dry run's "already handed out" set works on both forms.
+	taken := map[string]bool{"content/sharing/20260813_x.md": true}
+	if got, want := site.AvailablePathExcluding("content/sharing/20260813_x/index.md", taken), "content/sharing/20260813_x_2/index.md"; got != want {
+		t.Errorf("AvailablePathExcluding = %q, want %q", got, want)
+	}
+}
+
 func TestFrontMatterValues(t *testing.T) {
 	root := t.TempDir()
 	mustWrite(t, filepath.Join(root, "config.toml"), "baseURL = \"https://example.com/\"\n")

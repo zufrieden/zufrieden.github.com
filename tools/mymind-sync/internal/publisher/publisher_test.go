@@ -19,11 +19,30 @@ type fakeClient struct {
 	tagErr   error
 	tagged   map[string][]string
 	lastQury string
+
+	// blobs are the bytes GET /objects/:id/blob answers with, blobType the
+	// content type it reports, and downloaded the ids it was asked for.
+	blobs      map[string][]byte
+	blobType   map[string]string
+	blobErr    error
+	downloaded []string
 }
 
 func (f *fakeClient) ListObjects(_ context.Context, query string, _ int) ([]mymind.Object, error) {
 	f.lastQury = query
 	return f.objects, f.listErr
+}
+
+func (f *fakeClient) Blob(_ context.Context, objectID string) ([]byte, string, error) {
+	f.downloaded = append(f.downloaded, objectID)
+	if f.blobErr != nil {
+		return nil, "", f.blobErr
+	}
+	body, ok := f.blobs[objectID]
+	if !ok {
+		return nil, "", errors.New("no blob for " + objectID)
+	}
+	return body, f.blobType[objectID], nil
 }
 
 func (f *fakeClient) AddTags(_ context.Context, objectID string, names ...string) error {
@@ -213,7 +232,7 @@ func TestLinkingTagsExcludeDoneTag(t *testing.T) {
 		Title:  "Thing",
 		Source: &mymind.Source{URL: "https://example.com"},
 		Tags:   []mymind.Tag{{Name: "keep"}, {Name: "Keeped"}, {Name: " js "}, {Name: ""}},
-	}, testTime(t))
+	}, nil, testTime(t))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -234,7 +253,7 @@ func TestLinkingWithNoTagsRendersEmptyArray(t *testing.T) {
 	page, err := mapping.Build(mymind.Object{
 		Title:  "Thing",
 		Source: &mymind.Source{URL: "https://example.com"},
-	}, testTime(t))
+	}, nil, testTime(t))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -247,7 +266,7 @@ func TestLinkingWithNoTagsRendersEmptyArray(t *testing.T) {
 
 func TestLinkingRequiresSourceURL(t *testing.T) {
 	mapping, _ := Lookup("linking")
-	if _, err := mapping.Build(mymind.Object{Title: "A PDF"}, testTime(t)); err == nil {
+	if _, err := mapping.Build(mymind.Object{Title: "A PDF"}, nil, testTime(t)); err == nil {
 		t.Fatal("expected an error when the object has no link")
 	}
 }
@@ -396,7 +415,7 @@ func TestDescriptionAppliesToBothSections(t *testing.T) {
 
 	for _, name := range []string{"sharing", "linking"} {
 		mapping, _ := Lookup(name)
-		page, err := mapping.Build(obj, testTime(t))
+		page, err := mapping.Build(obj, nil, testTime(t))
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -416,7 +435,7 @@ func TestSharingDescriptionIsPlainText(t *testing.T) {
 		Summary: `R&D and "quotes" and 5 < 6, plus [[AI]]`,
 		Source:  &mymind.Source{URL: "https://example.com"},
 		Tags:    []mymind.Tag{{Name: "share"}, {Name: "ai"}},
-	}, testTime(t))
+	}, nil, testTime(t))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -437,7 +456,7 @@ func TestNoteWinsOverSummaryAndIsCleaned(t *testing.T) {
 		Summary: "the AI summary",
 		Notes:   []mymind.Note{{Content: mymind.Content{Body: "my own [[note]] here"}}},
 		Source:  &mymind.Source{URL: "https://example.com"},
-	}, testTime(t))
+	}, nil, testTime(t))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -452,7 +471,7 @@ func TestDescriptionFallsBackToSummary(t *testing.T) {
 		Title:   "Thing",
 		Summary: "  An AI summary.  ",
 		Source:  &mymind.Source{URL: "https://example.com"},
-	}, testTime(t))
+	}, nil, testTime(t))
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -461,36 +480,45 @@ func TestDescriptionFallsBackToSummary(t *testing.T) {
 	}
 }
 
-func TestBuildRequiresSourceURL(t *testing.T) {
+// A sharing page is a link *or* a file. An object with neither — a plain note,
+// say — has nothing to publish.
+func TestBuildRequiresALinkOrAFile(t *testing.T) {
 	mapping, _ := Lookup("sharing")
 
-	// A PDF, image or plain note has no link to publish.
-	noLink := []struct {
+	nothingToPublish := []struct {
 		name string
 		obj  mymind.Object
 	}{
-		{"no source at all", mymind.Object{Title: "A PDF"}},
-		{"empty source url", mymind.Object{Title: "A PDF", Source: &mymind.Source{URL: ""}}},
-		{"blank source url", mymind.Object{Title: "A PDF", Source: &mymind.Source{URL: "   "}}},
+		{"no source at all", mymind.Object{Title: "A note"}},
+		{"empty source url", mymind.Object{Title: "A note", Source: &mymind.Source{URL: ""}}},
+		{"blank source url", mymind.Object{Title: "A note", Source: &mymind.Source{URL: "   "}}},
 	}
-	for _, tc := range noLink {
-		if _, err := mapping.Build(tc.obj, testTime(t)); err == nil {
+	for _, tc := range nothingToPublish {
+		if _, err := mapping.Build(tc.obj, nil, testTime(t)); err == nil {
 			t.Errorf("%s: expected an error, got none", tc.name)
 		}
 	}
+
+	// The same object, once it has a file, is publishable.
+	page, err := mapping.Build(mymind.Object{Title: "A note"}, &Asset{Type: "application/pdf", Label: "notes.pdf", stem: "notes"}, testTime(t))
+	if err != nil {
+		t.Fatalf("an object with a file should publish: %v", err)
+	}
+	if want := "[notes.pdf](notes.pdf)"; page.Body != want {
+		t.Errorf("body = %q, want %q", page.Body, want)
+	}
 }
 
-// A PDF saved to mymind and tagged `share` has no source.url. It must be
-// skipped, left untagged (so it is retried if a URL is added later), and it
-// must not stop the linked objects in the same batch from being published.
-func TestObjectWithoutLinkIsSkippedButBatchContinues(t *testing.T) {
+// An object with nothing to publish is skipped, left untagged so it is retried
+// once it has a link or a file, and must not stop the rest of the batch.
+func TestObjectWithNothingToPublishIsSkippedButBatchContinues(t *testing.T) {
 	mapping, _ := Lookup("sharing")
 	site := newTestSite(t)
 	client := &fakeClient{objects: []mymind.Object{
 		{
-			ID:      "pdf-1",
-			Title:   "Vers une Société des Communs",
-			Summary: "A PDF with no link attached.",
+			ID:      "note-1",
+			Title:   "Just a thought",
+			Summary: "A note with neither a link nor a file.",
 			Tags:    []mymind.Tag{{Name: "share"}},
 		},
 		{
@@ -509,15 +537,18 @@ func TestObjectWithoutLinkIsSkippedButBatchContinues(t *testing.T) {
 		t.Fatalf("expected 2 results, got %d", len(results))
 	}
 
-	pdf, link := results[0], results[1]
-	if pdf.Status != StatusSkipped {
-		t.Errorf("PDF status = %s, want skipped", pdf.Status)
+	note, link := results[0], results[1]
+	if note.Status != StatusSkipped {
+		t.Errorf("note status = %s, want skipped", note.Status)
 	}
-	if !strings.Contains(pdf.Reason, "no link") {
-		t.Errorf("PDF reason = %q, want it to mention the missing link", pdf.Reason)
+	if !strings.Contains(note.Reason, "no link and no file") {
+		t.Errorf("note reason = %q, want it to mention the missing link and file", note.Reason)
 	}
-	if _, tagged := client.tagged["pdf-1"]; tagged {
-		t.Error("the PDF must stay untagged so it is retried once it has a URL")
+	if _, tagged := client.tagged["note-1"]; tagged {
+		t.Error("the note must stay untagged so it is retried once it has something to publish")
+	}
+	if len(client.downloaded) != 0 {
+		t.Errorf("nothing to download, yet the blob endpoint was called for %v", client.downloaded)
 	}
 
 	if link.Status != StatusCreated {
@@ -532,7 +563,331 @@ func TestObjectWithoutLinkIsSkippedButBatchContinues(t *testing.T) {
 
 	// A skip is not a failure: the run should exit cleanly.
 	if Count(results, StatusFailed) != 0 {
-		t.Errorf("skipping a PDF should not fail the run: %+v", results)
+		t.Errorf("skipping an object should not fail the run: %+v", results)
+	}
+}
+
+// An uploaded image has no URL to point at: the file is the page. It is saved
+// into a leaf bundle so Hugo sees it as a page resource — the only form its
+// image processing works on — and shown with a relative reference, which is
+// what the render hook resolves.
+func TestImageBecomesABundleWithTheFileBesideIt(t *testing.T) {
+	mapping, _ := Lookup("sharing")
+	site := newTestSite(t)
+	client := &fakeClient{
+		objects: []mymind.Object{{
+			ID:      "img-1",
+			Title:   "Sunset in the Baltic sea",
+			Summary: "Taken from the ferry.",
+			Blob:    &mymind.Blob{Name: "IMG_4821.JPEG", Type: "image/jpeg", Width: 2400, Height: 1600},
+			Tags:    []mymind.Tag{{Name: "share"}},
+		}},
+		blobs: map[string][]byte{"img-1": []byte("jpeg-bytes")},
+		// What mymind's media host actually answers: the object's own type is
+		// the one that knows this is an image.
+		blobType: map[string]string{"img-1": "application/octet-stream"},
+	}
+
+	results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(results) != 1 || results[0].Status != StatusCreated {
+		t.Fatalf("unexpected results: %+v", results)
+	}
+
+	wantPath := "content/sharing/20260810_sunset_in_the_baltic_sea/index.md"
+	if results[0].Path != wantPath {
+		t.Errorf("path = %q, want %q", results[0].Path, wantPath)
+	}
+
+	got, err := os.ReadFile(filepath.Join(site.Root, wantPath))
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := `---
+title: "Sunset in the Baltic sea"
+date: 2026-08-10T09:30:00+02:00
+showDate: true
+draft: false
+description: "Taken from the ferry."
+---
+![Sunset in the Baltic sea](img_4821.jpg)
+`
+	if string(got) != want {
+		t.Errorf("page mismatch\n--- got ---\n%s\n--- want ---\n%s", got, want)
+	}
+
+	file := "content/sharing/20260810_sunset_in_the_baltic_sea/img_4821.jpg"
+	saved, err := os.ReadFile(filepath.Join(site.Root, file))
+	if err != nil {
+		t.Fatalf("the image was not saved beside the page: %v", err)
+	}
+	if string(saved) != "jpeg-bytes" {
+		t.Errorf("saved image = %q", saved)
+	}
+	if tags := client.tagged["img-1"]; len(tags) != 1 || tags[0] != "shared" {
+		t.Errorf("tagged = %v, want [shared]", tags)
+	}
+}
+
+// A PDF cannot be shown, so it is linked — labelled with the name it was
+// uploaded under, which is the only thing on the page that says what the file
+// is.
+func TestPDFIsLinkedByItsUploadedName(t *testing.T) {
+	mapping, _ := Lookup("sharing")
+	site := newTestSite(t)
+	client := &fakeClient{
+		objects: []mymind.Object{{
+			ID:    "pdf-1",
+			Title: "Vers une Société des Communs",
+			Blob:  &mymind.Blob{Name: "Vers une Société des Communs.pdf", Type: "application/pdf"},
+			Tags:  []mymind.Tag{{Name: "share"}},
+		}},
+		blobs:    map[string][]byte{"pdf-1": []byte("%PDF-1.7")},
+		blobType: map[string]string{"pdf-1": "application/pdf"},
+	}
+
+	results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(results) != 1 || results[0].Status != StatusCreated {
+		t.Fatalf("unexpected results: %+v", results)
+	}
+
+	wantPath := "content/sharing/20260810_vers_une_societe_des_communs/index.md"
+	if results[0].Path != wantPath {
+		t.Errorf("path = %q, want %q", results[0].Path, wantPath)
+	}
+
+	got, err := os.ReadFile(filepath.Join(site.Root, wantPath))
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := "[Vers une Société des Communs.pdf](vers_une_societe_des_communs.pdf)\n"
+	if !strings.HasSuffix(string(got), want) {
+		t.Errorf("body should end with %q:\n%s", want, got)
+	}
+	if !site.Exists("content/sharing/20260810_vers_une_societe_des_communs/vers_une_societe_des_communs.pdf") {
+		t.Error("the PDF was not saved beside the page")
+	}
+}
+
+// An object that has both — an image saved from a web page — keeps its link.
+// The file is the substance, the URL is where it came from.
+func TestFileAndLinkBothAppear(t *testing.T) {
+	mapping, _ := Lookup("sharing")
+	site := newTestSite(t)
+	client := &fakeClient{
+		objects: []mymind.Object{{
+			ID:     "both-1",
+			Title:  "A poster",
+			Source: &mymind.Source{URL: "https://example.com/poster"},
+			Blob:   &mymind.Blob{Name: "poster.png", Type: "image/png"},
+			Tags:   []mymind.Tag{{Name: "share"}},
+		}},
+		blobs:    map[string][]byte{"both-1": []byte("png-bytes")},
+		blobType: map[string]string{"both-1": "image/png"},
+	}
+
+	results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
+	if err != nil {
+		t.Fatal(err)
+	}
+	got, err := os.ReadFile(filepath.Join(site.Root, results[0].Path))
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := "![A poster](poster.png)\n\n[https://example.com/poster](https://example.com/poster)\n"
+	if !strings.HasSuffix(string(got), want) {
+		t.Errorf("body should end with %q:\n%s", want, got)
+	}
+}
+
+// mymind does not always report a MIME type in the listing. The download's
+// response header settles it, and it has to be read before the page is built:
+// the type decides both the extension and whether the file is shown or linked.
+func TestMissingMediaTypeComesFromTheDownload(t *testing.T) {
+	mapping, _ := Lookup("sharing")
+	site := newTestSite(t)
+	client := &fakeClient{
+		objects: []mymind.Object{{
+			ID:    "img-1",
+			Title: "Untyped",
+			Blob:  &mymind.Blob{Path: "/uploads/abc123"},
+			Tags:  []mymind.Tag{{Name: "share"}},
+		}},
+		blobs:    map[string][]byte{"img-1": []byte("png-bytes")},
+		blobType: map[string]string{"img-1": "image/png; charset=binary"},
+	}
+
+	results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if results[0].Status != StatusCreated {
+		t.Fatalf("unexpected results: %+v", results)
+	}
+	got, err := os.ReadFile(filepath.Join(site.Root, results[0].Path))
+	if err != nil {
+		t.Fatal(err)
+	}
+	// The blob had no name either, so the object's title names the file.
+	if want := "![Untyped](untyped.png)\n"; !strings.HasSuffix(string(got), want) {
+		t.Errorf("body should end with %q:\n%s", want, got)
+	}
+}
+
+// Publishing a page without the file it is about would be worse than not
+// publishing it: the object stays untagged, so the next run tries again.
+func TestDownloadFailureLeavesTheObjectUntagged(t *testing.T) {
+	mapping, _ := Lookup("sharing")
+	site := newTestSite(t)
+	client := &fakeClient{
+		objects: []mymind.Object{{
+			ID:    "img-1",
+			Title: "Thing",
+			Blob:  &mymind.Blob{Name: "thing.jpg", Type: "image/jpeg"},
+			Tags:  []mymind.Tag{{Name: "share"}},
+		}},
+		blobErr: errors.New("mymind: HTTP 502"),
+	}
+
+	results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(results) != 1 || results[0].Status != StatusFailed {
+		t.Fatalf("unexpected results: %+v", results)
+	}
+	if site.Exists("content/sharing/20260810_thing") {
+		t.Error("nothing should have been written")
+	}
+	if len(client.tagged) != 0 {
+		t.Errorf("a failed download must leave the object untagged, got %v", client.tagged)
+	}
+}
+
+// Rolling back a bundle takes the file with it — a directory holding an orphan
+// image would otherwise be committed, and the retry would land in a "_2".
+func TestTagFailureRollsBackTheWholeBundle(t *testing.T) {
+	mapping, _ := Lookup("sharing")
+	site := newTestSite(t)
+	client := &fakeClient{
+		tagErr: errors.New("boom"),
+		objects: []mymind.Object{{
+			ID:    "img-1",
+			Title: "Thing",
+			Blob:  &mymind.Blob{Name: "thing.jpg", Type: "image/jpeg"},
+			Tags:  []mymind.Tag{{Name: "share"}},
+		}},
+		blobs:    map[string][]byte{"img-1": []byte("jpeg-bytes")},
+		blobType: map[string]string{"img-1": "image/jpeg"},
+	}
+
+	results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(results) != 1 || results[0].Status != StatusFailed {
+		t.Fatalf("unexpected results: %+v", results)
+	}
+	if site.Exists("content/sharing/20260810_thing") {
+		t.Error("the bundle should have been removed after the tagging failure")
+	}
+}
+
+// A dry run must not spend a download either.
+func TestDryRunDoesNotDownload(t *testing.T) {
+	mapping, _ := Lookup("sharing")
+	site := newTestSite(t)
+	client := &fakeClient{objects: []mymind.Object{{
+		ID:    "img-1",
+		Title: "Thing",
+		Blob:  &mymind.Blob{Name: "thing.jpg", Type: "image/jpeg"},
+		Tags:  []mymind.Tag{{Name: "share"}},
+	}}}
+
+	results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t), DryRun: true})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if Count(results, StatusPlanned) != 1 {
+		t.Fatalf("unexpected results: %+v", results)
+	}
+	// The planned path is the bundle the real run would write.
+	if want := "content/sharing/20260810_thing/index.md"; results[0].Path != want {
+		t.Errorf("path = %q, want %q", results[0].Path, want)
+	}
+	if len(client.downloaded) != 0 {
+		t.Errorf("dry run downloaded %v", client.downloaded)
+	}
+	if site.Exists("content/sharing/20260810_thing") {
+		t.Error("dry run wrote a bundle")
+	}
+}
+
+// A linking page is a pointer at somebody else's URL, so a file is no
+// substitute for one — and there is no reason to spend a download finding that
+// out.
+func TestLinkingIgnoresFiles(t *testing.T) {
+	mapping, _ := Lookup("linking")
+	site := newTestSite(t)
+	client := &fakeClient{
+		objects: []mymind.Object{{
+			ID:    "pdf-1",
+			Title: "A PDF",
+			Blob:  &mymind.Blob{Name: "paper.pdf", Type: "application/pdf"},
+			Tags:  []mymind.Tag{{Name: "keep"}},
+		}},
+		blobs: map[string][]byte{"pdf-1": []byte("%PDF-1.7")},
+	}
+
+	results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(results) != 1 || results[0].Status != StatusSkipped {
+		t.Fatalf("unexpected results: %+v", results)
+	}
+	if len(client.downloaded) != 0 {
+		t.Errorf("linking downloaded %v", client.downloaded)
+	}
+	if len(client.tagged) != 0 {
+		t.Errorf("nothing should have been tagged, got %v", client.tagged)
+	}
+}
+
+// A page and a bundle of the same name render at the same URL, and Hugo
+// refuses to build a site containing both. The second one shared that day has
+// to take a suffix even though the first is not a bundle at all.
+func TestBundleAndPageOfTheSameNameDoNotCollide(t *testing.T) {
+	mapping, _ := Lookup("sharing")
+	site := newTestSite(t)
+	client := &fakeClient{
+		objects: []mymind.Object{
+			{ID: "a", Title: "Thing", Source: &mymind.Source{URL: "https://example.com/a"},
+				Tags: []mymind.Tag{{Name: "share"}}},
+			{ID: "b", Title: "Thing", Blob: &mymind.Blob{Name: "thing.jpg", Type: "image/jpeg"},
+				Tags: []mymind.Tag{{Name: "share"}}},
+		},
+		blobs:    map[string][]byte{"b": []byte("jpeg-bytes")},
+		blobType: map[string]string{"b": "image/jpeg"},
+	}
+
+	results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if Count(results, StatusCreated) != 2 {
+		t.Fatalf("unexpected results: %+v", results)
+	}
+	if want := "content/sharing/20260810_thing.md"; results[0].Path != want {
+		t.Errorf("first path = %q, want %q", results[0].Path, want)
+	}
+	if want := "content/sharing/20260810_thing_2/index.md"; results[1].Path != want {
+		t.Errorf("second path = %q, want %q", results[1].Path, want)
 	}
 }
 
@@ -540,7 +895,7 @@ func TestTitleFallsBackToHost(t *testing.T) {
 	mapping, _ := Lookup("sharing")
 	page, err := mapping.Build(mymind.Object{
 		Source: &mymind.Source{URL: "https://www.example.com/a/b"},
-	}, testTime(t))
+	}, nil, testTime(t))
 	if err != nil {
 		t.Fatal(err)
 	}

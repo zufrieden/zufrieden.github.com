@@ -50,8 +50,8 @@ Three rules that surprise most newcomers:
   `tools/mymind-sync/internal/mymind` is importable only from inside
   `tools/mymind-sync/` — so `mastodon-sync` cannot reach into it even by
   accident. Nothing outside `tools/` can import either.
-- **`package main` + `func main()` = an executable** (`main.go:9`,
-  `main.go:29`). Every other package is a library.
+- **`package main` + `func main()` = an executable** (`main.go:12`,
+  `main.go:32`). Every other package is a library.
 
 ## 2. Imports
 
@@ -69,7 +69,7 @@ import (
   URL.
 - **An unused import is a compile error**, not a warning. Go is aggressive
   about this; `gofmt` and your editor will strip them.
-- `_ "time/tzdata"` (`main.go:21`) — the underscore means *"import for side
+- `_ "time/tzdata"` (`main.go:24`) — the underscore means *"import for side
   effects only."* That package registers the world timezone database into the
   binary. Nothing in it is ever called, so without `_` it would not compile.
   It is what makes `-timezone Europe/Zurich` work on a bare CI runner.
@@ -81,14 +81,14 @@ import (
 There is no `public` / `private` keyword. **The first letter decides:**
 
 ```go
-func Run(...)          // publisher.go:55  — exported, callable from main.go
-func publishOne(...)   // publisher.go:86  — package-private
+func Run(...)          // publisher.go:59  — exported, callable from main.go
+func publishOne(...)   // publisher.go:90  — package-private
 type Object struct{}   // exported
-baseURL string         // client.go:31 — lowercase field, invisible outside the package
+baseURL string         // client.go:36 — lowercase field, invisible outside the package
 ```
 
-This is why `Client` has lowercase fields (`client.go:30-36`) and a `New`
-constructor (`client.go:43`): callers cannot reach in and set `secret`
+This is why `Client` has lowercase fields (`client.go:35-41`) and a `New`
+constructor (`client.go:48`): callers cannot reach in and set `secret`
 directly, so `New` can guarantee it is always properly decoded.
 
 ## 4. Syntax you'll trip on
@@ -125,8 +125,9 @@ and maps.
 **Zero values, not null.** An unset `string` is `""`, an `int` is `0`, a struct
 is a struct with all fields zeroed. `Result{}` is valid and usable immediately.
 
-**`*` is a pointer.** `Source *Source` (`types.go:15`) is a pointer so it can be
-`nil` — that is precisely how a PDF with no link is detected (`types.go:89`):
+**`*` is a pointer.** `Source *Source` (`types.go:18`) is a pointer so it can be
+`nil` — that is precisely how an uploaded PDF, which was never saved from a web
+page and so has no source at all, is told apart (`types.go:162`):
 
 ```go
 if o.Source != nil && strings.TrimSpace(o.Source.URL) != "" {
@@ -134,20 +135,21 @@ if o.Source != nil && strings.TrimSpace(o.Source.URL) != "" {
 
 Order matters: `&&` short-circuits, so `o.Source.URL` is only evaluated once
 `o.Source` is known non-nil. Reverse them and you get a nil-pointer panic on
-the PDF.
+the PDF. `Blob *Blob` is the same idea from the other side: nil means the object
+carries no file, and `HasBlob` is that check under a name.
 
 **Methods are functions with a receiver:**
 
 ```go
-func (o Object) SourceURL() string   // types.go:88  — value receiver, gets a copy
-func (c *Client) sign(...)           // client.go:91 — pointer receiver, can mutate
+func (o Object) SourceURL() string   // types.go:161  — value receiver, gets a copy
+func (c *Client) sign(...)           // client.go:96 — pointer receiver, can mutate
 ```
 
 Rule of thumb: pointer receiver if the method mutates or the struct is large;
 value receiver for small read-only ones. `UnmarshalJSON` *must* be a pointer
-receiver (`types.go:38`) — it fills the struct in.
+receiver (`types.go:111`) — it fills the struct in.
 
-**Struct tags** are the string literals after fields (`types.go:12`):
+**Struct tags** are the string literals after fields (`types.go:15`):
 
 ```go
 Title string `json:"title"`
@@ -177,24 +179,25 @@ also compile errors, so `_` gets used a lot.
 
 ## 5. Interfaces — the one genuinely different idea
 
-`publisher.go:15`:
+`publisher.go:16`:
 
 ```go
 type Fetcher interface {
 	ListObjects(ctx context.Context, query string, limit int) ([]mymind.Object, error)
+	Blob(ctx context.Context, objectID string) ([]byte, string, error)
 	AddTags(ctx context.Context, objectID string, names ...string) error
 }
 ```
 
 Go interfaces are **implicit**. `*mymind.Client` never says "I implement
-Fetcher" — it just happens to have both methods, so it satisfies it. No
+Fetcher" — it just happens to have all three methods, so it satisfies it. No
 `implements` keyword, no inheritance.
 
 Why this matters practically: `Run` takes a `Fetcher`, not a `*mymind.Client`.
-So the tests hand it a `fakeClient` (`publisher_test.go:16-38`) with the same
-two methods, and the whole publishing pipeline is testable **without a network,
-an API key, or the real mymind account**. That single interface is why there
-are 28 tests instead of 3.
+So the tests hand it a `fakeClient` (`publisher_test.go:16-46`) with the same
+three methods, and the whole publishing pipeline is testable **without a
+network, an API key, or the real mymind account** — downloads included. That
+single interface is why there are over fifty tests instead of three.
 
 The `names ...string` is a *variadic* parameter — call it as
 `AddTags(ctx, id, "shared")` or `AddTags(ctx, id, "a", "b")`; inside it is a
@@ -246,7 +249,7 @@ for in, want := range cases {
 
 One loop, many cases; adding a case is one line. Note that map iteration order
 is deliberately random in Go, so only use a map when the cases are independent.
-`publisher_test.go:154` uses a slice of structs instead, where order and richer
+`publisher_test.go:488` uses a slice of structs instead, where order and richer
 fields matter.
 
 **Helpers the standard library gives you:**
@@ -276,18 +279,18 @@ There is one canonical formatting and no debate about it — always run `gofmt`.
 
 ## Where to start reading
 
-`main.go:36` (`run`) is the entry point, and it is short: parse flags → load
+`main.go:39` (`run`) is the entry point, and it is short: parse flags → load
 config → build the client → call `publisher.Run` → print a report.
 
 From there:
 
 | Read next | Why |
 | --------- | --- |
-| `internal/publisher/publisher.go:55` | The loop over objects |
-| `internal/publisher/publisher.go:86` | What happens to a single object, including the roll-back on a failed tag |
+| `internal/publisher/publisher.go:59` | The loop over objects |
+| `internal/publisher/publisher.go:90` | What happens to a single object, including the roll-back on a failed tag |
 | `internal/publisher/mapping.go:79` | The mymind → Hugo field mapping, in one struct literal |
-| `internal/mymind/client.go:91` | JWT signing — small, self-contained, and the part that had the base64 bug |
-| `internal/mymind/types.go:38-86` | The trickiest code here: custom JSON unmarshalling that tolerates several response shapes |
+| `internal/mymind/client.go:96` | JWT signing — small, self-contained, and the part that had the base64 bug |
+| `internal/mymind/types.go:105-159` | The trickiest code here: custom JSON unmarshalling that tolerates several response shapes |
 
 ## Further reading
 

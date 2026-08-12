@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"html"
 	"net/url"
+	"path"
 	"regexp"
 	"sort"
 	"strings"
@@ -42,11 +43,16 @@ type Mapping struct {
 	// Filename builds the page's filename (no directory). Sections do not
 	// agree: sharing prefixes the date, linking does not.
 	Filename func(page Page) string
-	// Build converts an object into a page. now is the run time, used only as
-	// the fallback date for an object mymind gave no `created` timestamp for.
-	// Returning an error skips the object without tagging it, so it gets
-	// retried on the next run.
-	Build func(obj mymind.Object, now time.Time) (Page, error)
+	// Files says whether the section publishes the file an object carries. A
+	// sharing page can be the file itself; a linking page is a pointer at
+	// somebody else's URL, so a file has no place on it.
+	Files bool
+	// Build converts an object into a page. asset is the file that will be
+	// saved into the page's bundle, or nil when the object carries none. now is
+	// the run time, used only as the fallback date for an object mymind gave no
+	// `created` timestamp for. Returning an error skips the object without
+	// tagging it, so it gets retried on the next run.
+	Build func(obj mymind.Object, asset *Asset, now time.Time) (Page, error)
 }
 
 // SearchQuery is the mymind search that selects unpublished objects.
@@ -108,35 +114,50 @@ func Names() []string {
 //	title       <- object title
 //	date        <- the day it was saved in mymind (object.created)
 //	description <- first note, falling back to the AI summary
-//	body        <- the source URL as a markdown link
+//	body        <- the attached file, then the source URL as a markdown link
 var sharing = Mapping{
 	Name:      "sharing",
 	Section:   "sharing",
 	SourceTag: "share",
 	DoneTag:   "shared",
+	Files:     true,
 	Filename: func(page Page) string {
 		return page.Date.Format("20060102") + "_" + hugosite.Slugify(page.Title) + ".md"
 	},
-	Build: func(obj mymind.Object, now time.Time) (Page, error) {
-		// A sharing page is a link, so objects saved as a PDF, image, file or
-		// plain note have nothing to point at. Skip them rather than
-		// publishing an empty page — and leave them untagged so they get
-		// picked up again if a URL is added later.
+	Build: func(obj mymind.Object, asset *Asset, now time.Time) (Page, error) {
+		// A sharing page is either a link or a file. An object that is neither
+		// — a plain note, say — has nothing to publish, so it is skipped and
+		// left untagged, to be picked up again once it has one.
 		sourceURL := obj.SourceURL()
-		if sourceURL == "" {
-			return Page{}, fmt.Errorf("no link attached (source.url is empty)")
+		if sourceURL == "" && asset == nil {
+			return Page{}, fmt.Errorf("nothing to publish (no link and no file attached)")
 		}
 
 		// A sharing page carries no tags, so no entity has a tag page to
 		// point at, and sharing/single.html renders the description escaped:
 		// plain text is what belongs here.
+		title := titleFor(obj, sourceURL, asset)
 		return Page{
-			Title:       titleFor(obj, sourceURL),
+			Title:       title,
 			Date:        pageDate(obj, now),
 			Description: plainDescription(obj),
-			Body:        markdownLink(sourceURL),
+			Body:        sharingBody(sourceURL, asset, title),
 		}, nil
 	},
+}
+
+// sharingBody puts the file first and its provenance after it: an uploaded
+// image or PDF is the substance of the page, and the source URL — which most
+// uploads do not have at all — is a pointer at where it came from.
+func sharingBody(sourceURL string, asset *Asset, title string) string {
+	blocks := make([]string, 0, 2)
+	if markdown := asset.Markdown(title); markdown != "" {
+		blocks = append(blocks, markdown)
+	}
+	if sourceURL != "" {
+		blocks = append(blocks, markdownLink(sourceURL))
+	}
+	return strings.Join(blocks, "\n\n")
 }
 
 // linking maps a mymind object onto content/linking/:
@@ -158,7 +179,9 @@ var linking = Mapping{
 	Filename: func(page Page) string {
 		return hugosite.Slugify(page.Title) + ".md"
 	},
-	Build: func(obj mymind.Object, now time.Time) (Page, error) {
+	Build: func(obj mymind.Object, _ *Asset, now time.Time) (Page, error) {
+		// Unlike sharing, a file is no substitute for a link here: the whole
+		// point of a linking page is that it points somewhere else.
 		sourceURL := obj.SourceURL()
 		if sourceURL == "" {
 			return Page{}, fmt.Errorf("no link attached (source.url is empty)")
@@ -167,7 +190,7 @@ var linking = Mapping{
 		tags := tagsFor(obj, "keeped")
 
 		return Page{
-			Title:       titleFor(obj, sourceURL),
+			Title:       titleFor(obj, sourceURL, nil),
 			Date:        pageDate(obj, now),
 			Description: htmlDescription(obj, tags),
 			Extra: []hugosite.Field{
@@ -285,12 +308,20 @@ func resolveWikiLinks(raw string, linkableTags []string) string {
 	return b.String()
 }
 
-func titleFor(obj mymind.Object, sourceURL string) string {
+// titleFor names the page: the object's own title, then the host it was saved
+// from, then the name of the file it carries — an upload has no host, and its
+// filename is the only thing left that says what it is.
+func titleFor(obj mymind.Object, sourceURL string, asset *Asset) string {
 	if title := singleLine(obj.Title); title != "" {
 		return title
 	}
 	if parsed, err := url.Parse(sourceURL); err == nil && parsed.Host != "" {
 		return strings.TrimPrefix(parsed.Host, "www.")
+	}
+	if asset != nil {
+		if label := singleLine(strings.TrimSuffix(asset.Label, path.Ext(asset.Label))); label != "" {
+			return label
+		}
 	}
 	return "Untitled"
 }

@@ -1,0 +1,35 @@
+{{- /*
+  Image render hook.
+
+  A page bundle's own file — how tools/mymind-sync saves an uploaded image,
+  right next to index.md — is a page resource, so Hugo can resize it and serve
+  a smaller WebP with a 2x srcset. Everything else is passed through unchanged:
+  the /images/… paths that tools/mastodon-sync and the older posts use live
+  under static/, which Hugo can only copy, and an SVG or an animated GIF is
+  better off untouched than resampled.
+*/ -}}
+{{- $alt := .Text | plainify -}}
+{{- $maxWidth := 1200 -}}
+{{- $processable := slice "jpeg" "png" "webp" "tiff" "bmp" -}}
+
+{{- $resource := "" -}}
+{{- with .Page -}}
+  {{- $resource = .Resources.GetMatch $.Destination -}}
+{{- end -}}
+
+{{- if and $resource (eq $resource.ResourceType "image") (in $processable $resource.MediaType.SubType) -}}
+  {{- $width := cond (lt $resource.Width $maxWidth) $resource.Width $maxWidth -}}
+  {{- $img := $resource.Resize (printf "%dx webp q85" $width) -}}
+  {{- $srcset := $img.RelPermalink -}}
+  {{- if ge $resource.Width (mul $width 2) -}}
+    {{- $retina := $resource.Resize (printf "%dx webp q85" (mul $width 2)) -}}
+    {{- $srcset = printf "%s 1x, %s 2x" $img.RelPermalink $retina.RelPermalink -}}
+  {{- end -}}
+  <img src="{{ $img.RelPermalink }}" srcset="{{ $srcset }}"
+    width="{{ $img.Width }}" height="{{ $img.Height }}"
+    alt="{{ $alt }}"{{ with .Title }} title="{{ . }}"{{ end }}
+    loading="lazy" decoding="async">
+{{- else -}}
+  <img src="{{ .Destination | safeURL }}" alt="{{ $alt }}"{{ with .Title }} title="{{ . }}"{{ end }}
+    loading="lazy" decoding="async">
+{{- end -}}

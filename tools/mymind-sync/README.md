@@ -32,11 +32,52 @@ Where they differ:
 | -------- | ---------------------------------- | ------------------------------- |
 | the URL  | body, as a markdown link           | `link:` front matter key        |
 | `tags`   | —                                  | the object's mymind tags        |
-| body     | the markdown link                  | empty                           |
+| body     | the file, then the markdown link   | empty                           |
+| files    | saved into the page                | ignored                         |
 | filename | `YYYYMMDD_slugified_title.md`      | `slugified_title.md`, no date   |
 
 The `linking` filename carries no date prefix, matching the pages already in
 `content/linking/`. The done tag is never included in the page's own `tags`.
+
+## Files
+
+An object saved as an upload — a PDF, an image — carries a `blob`, and often no
+URL at all. Those used to be skipped for want of anything to link to. Now the
+file *is* the page: `sharing` downloads it from `GET /objects/:id/blob` and
+writes a [leaf bundle](https://gohugo.io/content-management/page-bundles/)
+instead of a plain page.
+
+```
+content/sharing/20260802_vers_une_societe_des_communs/
+  index.md
+  vers_une_societe_des_communs.pdf
+```
+
+The URL is unchanged — Hugo renders `thing.md` and `thing/index.md` at the same
+address — but a file inside a bundle is a *page resource*, and that is the only
+thing [Hugo's image processing](https://gohugo.io/content-management/image-processing/)
+works on. Anything under `static/` it can only copy. So the theme's image render
+hook (`layouts/_default/_markup/render-image.html`) resizes a bundled image to
+1200px, serves it as WebP with a 2x `srcset`, and passes every other image
+through untouched — including the `/images/mastodon/…` paths that
+[`mastodon-sync`](../mastodon-sync/) writes into `static/`.
+
+| the object                | the body                                       |
+| ------------------------- | ---------------------------------------------- |
+| an image                  | `![title](photo.jpg)`                           |
+| any other file            | `[the uploaded name.pdf](the_uploaded_name.pdf)` |
+| a file *and* a source URL | the file, then the link beneath it              |
+
+The saved filename is derived, never taken: the uploaded name is slugified (the
+object's title stands in when mymind kept no name), and the extension comes from
+the MIME type. The type itself is read from the object, then from the download's
+`Content-Type`, and failing both from the bytes — mymind's media host serves
+uploads as `application/octet-stream`, which would otherwise leave an image
+looking like an anonymous file to link rather than show.
+
+`linking` deliberately does not do any of this. A linking page is a pointer at
+somebody else's URL, so a file is no substitute for one, and an object with only
+a file is still skipped there.
 
 Pages are scaffolded with `hugo new content content/<section>/<file>.md`, so
 the archetypes stay the source of truth for `showDate`, `draft` and anything
@@ -126,11 +167,17 @@ mymind tags. Leave it unticked to publish for real.
   under a `_2` suffix.
 - **The object's tags are the authority.** Even if the search query misbehaves,
   anything already carrying `shared` is skipped.
-- **Two items shared the same day** with the same slug get a `_2`, `_3`, … suffix.
-- **Objects with no link are skipped.** A sharing page *is* a link, so a PDF,
-  image, file or plain note tagged `share` has nothing to point at. It is
-  reported and left **untagged**, so it gets picked up again if you later add a
-  URL. A skip is not a failure — the rest of the batch still publishes.
+- **Two items shared the same day** with the same slug get a `_2`, `_3`, …
+  suffix. A page and a bundle of the same name compete for it: Hugo renders both
+  at the same URL and refuses to build a site holding the two.
+- **Objects with neither a link nor a file are skipped.** A plain note tagged
+  `share` has nothing to publish. It is reported and left **untagged**, so it
+  gets picked up again once it has one. A skip is not a failure — the rest of
+  the batch still publishes.
+- **A file that will not download fails its object rather than publishing
+  without it.** A page missing the very thing it is about is worse than no page;
+  nothing is tagged, so the next run retries from scratch. Rolling back a bundle
+  removes the directory, file included.
 
 ## New to Go?
 
@@ -155,8 +202,11 @@ Register the new mapping and it becomes available as `-type <name>`.
   before signing. Signing with the base64 text instead gets you a
   `401 Invalid signature`. Paste the secret as shown — the tool decodes it.
 - The `path` claim is the path only; the query string is not signed.
-- Endpoints used: `GET /objects` (with a `q` search query) and
-  `POST /objects/:id/tags`.
+- Endpoints used: `GET /objects` (with a `q` search query),
+  `GET /objects/:id/blob` and `POST /objects/:id/tags`.
+- The blob endpoint answers with the bytes or a redirect to mymind's media host.
+  The token is minted for one path on the API host, so it is stripped before the
+  redirect is followed — from there the pre-signed URL is the credential.
 - The API is in beta; the client decodes object payloads leniently (JSON array,
   NDJSON stream, or enveloped array) so a response-shape change is less likely
   to break the run.

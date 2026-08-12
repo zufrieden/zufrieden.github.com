@@ -185,6 +185,9 @@ main{
 
 .container img{
   max-width: 100%;
+  /* The image render hook sets width/height so the layout does not jump while
+     the picture loads; height:auto is what keeps a scaled-down one in ratio. */
+  height: auto;
 }
 
 .gallery{

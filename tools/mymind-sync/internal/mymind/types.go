@@ -1,7 +1,9 @@
 package mymind
 
 import (
+	"cmp"
 	"encoding/json"
+	"path"
 	"strings"
 	"time"
 )
@@ -15,6 +17,7 @@ type Object struct {
 	URL      string   `json:"url"`
 	Source   *Source  `json:"source"`
 	Content  *Content `json:"content"`
+	Blob     *Blob    `json:"blob"`
 	Tags     []Tag    `json:"tags"`
 	Notes    []Note   `json:"notes"`
 	Created  string   `json:"created"`
@@ -24,6 +27,75 @@ type Object struct {
 type Source struct {
 	URL string `json:"url"`
 }
+
+// Blob is the file an object was made from — the image or PDF that was
+// uploaded, as opposed to a bookmarked page, which has a source URL instead.
+// Its bytes are fetched separately, from GET /objects/:id/blob.
+//
+// https://access.mymind.com/api/types#blobreference
+type Blob struct {
+	// Path is the location under https://mymind.media.
+	Path string `json:"path"`
+	// Type is the MIME type, e.g. "image/jpeg" or "application/pdf".
+	Type string `json:"type"`
+	// Name is the filename it was uploaded under, when mymind kept one.
+	Name string `json:"name"`
+	// URL is the fully-qualified location, when the API includes one.
+	URL string `json:"url"`
+	// Width and Height are the pixel dimensions of an image.
+	Width  int `json:"width"`
+	Height int `json:"height"`
+}
+
+// UnmarshalJSON also accepts `mimeType` for the MIME type. The API is in beta
+// and its own examples disagree with its type reference on this key; reading
+// both means a file is still recognised as an image either way.
+func (b *Blob) UnmarshalJSON(data []byte) error {
+	type alias Blob
+	var raw struct {
+		alias
+		MimeType    string `json:"mimeType"`
+		ContentType string `json:"contentType"`
+	}
+	if err := json.Unmarshal(data, &raw); err != nil {
+		return err
+	}
+	*b = Blob(raw.alias)
+	if b.Type == "" {
+		b.Type = cmp.Or(raw.MimeType, raw.ContentType)
+	}
+	return nil
+}
+
+// MediaType is the blob's MIME type, lowercased and without the parameters a
+// header can carry ("image/jpeg; charset=binary").
+func (b *Blob) MediaType() string {
+	if b == nil {
+		return ""
+	}
+	base, _, _ := strings.Cut(b.Type, ";")
+	return strings.ToLower(strings.TrimSpace(base))
+}
+
+// UploadedName is the name the file was uploaded under, or "" when mymind kept
+// none. Directory components are stripped, but it is still only a suggestion:
+// the caller decides what is safe to write to disk.
+//
+// The blob's `path` is deliberately not a fallback — it is an opaque key on
+// mymind's media host, which makes a poor filename and a worse link label.
+func (b *Blob) UploadedName() string {
+	if b == nil {
+		return ""
+	}
+	name := strings.TrimSpace(b.Name)
+	if name == "" {
+		return ""
+	}
+	return path.Base(name)
+}
+
+// HasBlob reports whether the object carries a file of its own.
+func (o Object) HasBlob() bool { return o.Blob != nil }
 
 type Tag struct {
 	ID   string `json:"id,omitempty"`

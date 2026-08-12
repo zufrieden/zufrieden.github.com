@@ -39,7 +39,8 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
-          hugo-version: '0.120.4'
+          hugo-version: '0.163.3'
+          extended: true
 
       # Both content types in one invocation, so `created` counts all of them.
       - name: Publish new mymind objects
@@ -62,7 +63,9 @@ jobs:
             echo "no new pages to commit"
             exit 0
           fi
-          count=$(git diff --cached --name-only | wc -l | tr -d ' ')
+          # Pages only: an object with a file stages the file too, and one item
+          # publishing as "2 item(s)" would read as a bug.
+          count=$(git diff --cached --name-only | grep -c '\.md$' || true)
           git commit -m "content: publish ${count} item(s) from mymind"
           git push origin HEAD:source
           echo "committed=true" >> "$GITHUB_OUTPUT"

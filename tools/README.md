@@ -24,8 +24,17 @@ tools/
 
 `internal/hugosite` is the shared part: everything about *writing a page into a
 Hugo site* — finding the site root, scaffolding from the archetype, patching
-front matter, slugifying a title, picking a free filename. It is the code where a
-bug would quietly corrupt front matter, so there is one copy.
+front matter, slugifying a title, picking a free filename or page bundle. It is
+the code where a bug would quietly corrupt front matter, so there is one copy.
+
+The two differ in where a downloaded file goes, and the difference is
+deliberate. `mymind-sync` writes a page bundle — `index.md` with the image or
+PDF beside it — because a bundled file is a page resource, which is the only
+thing [Hugo's image processing](https://gohugo.io/content-management/image-processing/)
+can touch. `mastodon-sync` still saves attachments under
+`static/images/mastodon/<status id>/`, keyed by an id that the page must be
+findable by; moving it to bundles would be a rewrite of pages already published.
+The theme's image render hook handles both.
 
 Each tool's own `internal/` stays private to it, and Go enforces that: nothing
 outside `tools/mymind-sync/` can import `tools/mymind-sync/internal/...`. The

@@ -150,6 +150,88 @@ func TestAddTags(t *testing.T) {
 	}
 }
 
+func TestBlobSignsAndReturnsTheBytes(t *testing.T) {
+	var gotPath, gotMethod string
+	var claims map[string]any
+
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		gotPath, gotMethod = r.URL.Path, r.Method
+		_, claims = decodeToken(t, r.Header.Get("Authorization"))
+		w.Header().Set("Content-Type", "application/pdf; charset=binary")
+		io.WriteString(w, "%PDF-1.7")
+	}))
+	defer server.Close()
+
+	client, _ := New(server.URL, testKeyID, testSecret)
+	body, contentType, err := client.Blob(context.Background(), "obj 1")
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	if gotMethod != http.MethodGet || gotPath != "/objects/obj 1/blob" {
+		t.Errorf("got %s %s, want GET /objects/obj 1/blob", gotMethod, gotPath)
+	}
+	// The token is pinned to the escaped path, which is what was requested.
+	if claims["path"] != "/objects/obj%201/blob" || claims["method"] != "GET" {
+		t.Errorf("unexpected JWT claims: %v", claims)
+	}
+	if string(body) != "%PDF-1.7" {
+		t.Errorf("body = %q", body)
+	}
+	if contentType != "application/pdf" {
+		t.Errorf("content type = %q, want application/pdf with the parameters dropped", contentType)
+	}
+
+	if _, _, err := client.Blob(context.Background(), "  "); err == nil {
+		t.Error("expected an error for an empty object id")
+	}
+}
+
+// mymind answers a blob request with a redirect to its media host. The
+// Authorization header must not follow it there — the signed URL is the
+// credential from that point on, and Go drops the header on a host change.
+func TestBlobFollowsTheRedirectToTheMediaHost(t *testing.T) {
+	var mediaAuth string
+	media := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		mediaAuth = r.Header.Get("Authorization")
+		w.Header().Set("Content-Type", "image/jpeg")
+		io.WriteString(w, "jpeg-bytes")
+	}))
+	defer media.Close()
+
+	api := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		http.Redirect(w, r, media.URL+"/uploads/abc123?signature=x", http.StatusFound)
+	}))
+	defer api.Close()
+
+	client, _ := New(api.URL, testKeyID, testSecret)
+	body, contentType, err := client.Blob(context.Background(), "obj-1")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if string(body) != "jpeg-bytes" || contentType != "image/jpeg" {
+		t.Errorf("body = %q, content type = %q", body, contentType)
+	}
+	if mediaAuth != "" {
+		t.Errorf("the API token was forwarded to the media host: %q", mediaAuth)
+	}
+}
+
+func TestBlobReportsAnHTTPError(t *testing.T) {
+	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(http.StatusNotFound)
+		io.WriteString(w, `{"title":"Not found"}`)
+	}))
+	defer server.Close()
+
+	client, _ := New(server.URL, testKeyID, testSecret)
+	_, _, err := client.Blob(context.Background(), "obj-1")
+	var apiErr *APIError
+	if !errors.As(err, &apiErr) || apiErr.Status != 404 {
+		t.Fatalf("expected a 404 *APIError, got %v", err)
+	}
+}
+
 func TestAPIErrorFromProblemJSON(t *testing.T) {
 	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "application/problem+json")

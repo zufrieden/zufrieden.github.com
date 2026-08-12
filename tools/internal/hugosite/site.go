@@ -13,6 +13,19 @@ import (
 	"strings"
 )
 
+// bundleIndex is the filename that turns a directory into a Hugo leaf bundle,
+// where the page and the files it carries live together.
+const bundleIndex = "index.md"
+
+// BundlePath turns a plain page path into the leaf bundle rendering at the same
+// URL: "content/sharing/20260810_thing.md" becomes
+// "content/sharing/20260810_thing/index.md". A page needs to be a bundle for
+// the files beside it to be page resources, which is what Hugo's image
+// processing works on — anything under static/ it can only copy.
+func BundlePath(pagePath string) string {
+	return strings.TrimSuffix(pagePath, path.Ext(pagePath)) + "/" + bundleIndex
+}
+
 var configFilenames = []string{
 	"hugo.toml", "hugo.yaml", "hugo.yml", "hugo.json",
 	"config.toml", "config.yaml", "config.yml", "config.json",
@@ -63,21 +76,61 @@ func (s *Site) AvailablePath(relPath string) string {
 // taken as occupied. It exists for a dry run, where nothing is written and so
 // two same-day, same-slug items would otherwise both be reported at the very
 // same path — making the preview disagree with what a real run would do.
+//
+// A page and the leaf bundle of the same name occupy one slot, not two: Hugo
+// renders `sharing/thing.md` and `sharing/thing/index.md` at the same URL and
+// refuses to build a site containing both. So the numbering is applied to the
+// stem the two forms share, and both forms are checked before a name counts as
+// free.
 func (s *Site) AvailablePathExcluding(relPath string, taken map[string]bool) string {
-	free := func(candidate string) bool { return !taken[candidate] && !s.Exists(candidate) }
+	stem, suffix := pageSlot(relPath)
 
-	if free(relPath) {
-		return relPath
+	free := func(stem string) bool {
+		for _, form := range slotForms(stem, suffix) {
+			if taken[form] || s.Exists(form) {
+				return false
+			}
+		}
+		return true
 	}
-	ext := path.Ext(relPath)
-	stem := strings.TrimSuffix(relPath, ext)
+
+	if free(stem) {
+		return stem + suffix
+	}
 	for n := 2; n < 100; n++ {
-		candidate := fmt.Sprintf("%s_%d%s", stem, n, ext)
+		candidate := fmt.Sprintf("%s_%d", stem, n)
 		if free(candidate) {
-			return candidate
+			return candidate + suffix
 		}
 	}
 	return relPath
+}
+
+// pageSlot splits a path into the part a numbered variant is built from and the
+// part that identifies its form — ".md" for a plain page, "/index.md" for a
+// leaf bundle. A bundle is numbered on its directory, so the suffix stays
+// "index.md" rather than becoming "index_2.md", which Hugo would not recognise
+// as a bundle at all.
+func pageSlot(relPath string) (stem, suffix string) {
+	if path.Base(relPath) == bundleIndex {
+		return path.Dir(relPath), "/" + bundleIndex
+	}
+	ext := path.Ext(relPath)
+	return strings.TrimSuffix(relPath, ext), ext
+}
+
+// slotForms lists everything that would occupy the slot named by stem. For a
+// page that is the flat file and the bundle; for a bundle it is the whole
+// directory, which also rejects one left half-written by an interrupted run.
+func slotForms(stem, suffix string) []string {
+	switch suffix {
+	case "/" + bundleIndex:
+		return []string{stem, stem + ".md"}
+	case ".md":
+		return []string{stem + ".md", stem + "/" + bundleIndex}
+	default:
+		return []string{stem + suffix}
+	}
 }
 
 // CreatePage scaffolds relPath from its section archetype, then overrides the
