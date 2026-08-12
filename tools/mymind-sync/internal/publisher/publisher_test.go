@@ -264,11 +264,35 @@ func TestLinkingWithNoTagsRendersEmptyArray(t *testing.T) {
 	}
 }
 
-func TestLinkingRequiresSourceURL(t *testing.T) {
+// Like sharing, a linking page needs a link or a file. An object with neither
+// has nothing to publish.
+func TestLinkingRequiresALinkOrAFile(t *testing.T) {
 	mapping, _ := Lookup("linking")
-	if _, err := mapping.Build(mymind.Object{Title: "A PDF"}, nil, testTime(t)); err == nil {
-		t.Fatal("expected an error when the object has no link")
+	if _, err := mapping.Build(mymind.Object{Title: "A note"}, nil, testTime(t)); err == nil {
+		t.Fatal("expected an error when the object has neither a link nor a file")
 	}
+
+	// The same object, once it has a file, is publishable — and carries no link.
+	page, err := mapping.Build(mymind.Object{Title: "A PDF"},
+		&Asset{Type: "application/pdf", Label: "paper.pdf", stem: "paper"}, testTime(t))
+	if err != nil {
+		t.Fatalf("an object with a file should publish: %v", err)
+	}
+	if want := "[paper.pdf](paper.pdf)"; page.Body != want {
+		t.Errorf("body = %q, want %q", page.Body, want)
+	}
+	if got := extraField(page, "link"); got != `""` {
+		t.Errorf("link = %s, want an empty string so the archetype placeholder is overwritten", got)
+	}
+}
+
+func extraField(page Page, key string) string {
+	for _, f := range page.Extra {
+		if f.Key == key {
+			return f.Value
+		}
+	}
+	return ""
 }
 
 // Both sections are independent: a `share` object must not land in linking and
@@ -832,34 +856,107 @@ func TestDryRunDoesNotDownload(t *testing.T) {
 	}
 }
 
-// A linking page is a pointer at somebody else's URL, so a file is no
-// substitute for one — and there is no reason to spend a download finding that
-// out.
-func TestLinkingIgnoresFiles(t *testing.T) {
+// An uploaded image kept with #keep has no URL to point at, so the file is the
+// page — a bundle, exactly as in sharing, with the archetype's placeholder
+// `link:` blanked out so the template renders no link at all.
+func TestLinkingPublishesAFileAsABundle(t *testing.T) {
 	mapping, _ := Lookup("linking")
 	site := newTestSite(t)
 	client := &fakeClient{
 		objects: []mymind.Object{{
-			ID:    "pdf-1",
-			Title: "A PDF",
-			Blob:  &mymind.Blob{Name: "paper.pdf", Type: "application/pdf"},
-			Tags:  []mymind.Tag{{Name: "keep"}},
+			ID:      "img-1",
+			Title:   "The AI Adoption Spiral",
+			Summary: "Infographic showing the psychological journey of AI adoption.",
+			Notes:   []mymind.Note{{Content: mymind.Content{Body: "AI adoption spiral graphic 🌀"}}},
+			Blob:    &mymind.Blob{Name: "slack-imgs.jpg", Type: "image/jpeg", Width: 800, Height: 800},
+			Tags:    []mymind.Tag{{Name: "keep"}, {Name: "ai"}},
+			Created: "2026-04-21T19:10:33.249585Z",
 		}},
-		blobs: map[string][]byte{"pdf-1": []byte("%PDF-1.7")},
+		blobs:    map[string][]byte{"img-1": []byte("jpeg-bytes")},
+		blobType: map[string]string{"img-1": "application/octet-stream"},
 	}
 
 	results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(results) != 1 || results[0].Status != StatusSkipped {
+	if len(results) != 1 || results[0].Status != StatusCreated {
 		t.Fatalf("unexpected results: %+v", results)
 	}
-	if len(client.downloaded) != 0 {
-		t.Errorf("linking downloaded %v", client.downloaded)
+
+	wantPath := "content/linking/the_ai_adoption_spiral/index.md"
+	if results[0].Path != wantPath {
+		t.Errorf("path = %q, want %q", results[0].Path, wantPath)
 	}
-	if len(client.tagged) != 0 {
-		t.Errorf("nothing should have been tagged, got %v", client.tagged)
+
+	got, err := os.ReadFile(filepath.Join(site.Root, wantPath))
+	if err != nil {
+		t.Fatal(err)
+	}
+	want := `---
+title: "The AI Adoption Spiral"
+date: 2026-04-21T21:10:33+02:00
+showDate: false
+draft: false
+tags: ["keep","ai"]
+link: ""
+description: "AI adoption spiral graphic 🌀"
+---
+![The AI Adoption Spiral](slack_imgs.jpg)
+`
+	if string(got) != want {
+		t.Errorf("page mismatch\n--- got ---\n%s\n--- want ---\n%s", got, want)
+	}
+
+	file := "content/linking/the_ai_adoption_spiral/slack_imgs.jpg"
+	saved, err := os.ReadFile(filepath.Join(site.Root, file))
+	if err != nil {
+		t.Fatalf("the image was not saved beside the page: %v", err)
+	}
+	if string(saved) != "jpeg-bytes" {
+		t.Errorf("saved image = %q", saved)
+	}
+	if tags := client.tagged["img-1"]; len(tags) != 1 || tags[0] != "keeped" {
+		t.Errorf("tagged = %v, want [keeped]", tags)
+	}
+}
+
+// The link and the file do not compete on a linking page: the link lives in the
+// front matter, the file in the body, so an object carrying both keeps both.
+func TestLinkingKeepsBothTheLinkAndTheFile(t *testing.T) {
+	mapping, _ := Lookup("linking")
+	site := newTestSite(t)
+	client := &fakeClient{
+		objects: []mymind.Object{{
+			ID:     "both-1",
+			Title:  "A poster",
+			Source: &mymind.Source{URL: "https://example.com/poster"},
+			Blob:   &mymind.Blob{Name: "poster.png", Type: "image/png"},
+			Tags:   []mymind.Tag{{Name: "keep"}},
+		}},
+		blobs:    map[string][]byte{"both-1": []byte("png-bytes")},
+		blobType: map[string]string{"both-1": "image/png"},
+	}
+
+	results, err := Run(context.Background(), client, site, mapping, Options{Now: testTime(t)})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if want := "content/linking/a_poster/index.md"; results[0].Path != want {
+		t.Fatalf("path = %q, want %q (results: %+v)", results[0].Path, want, results)
+	}
+	got, err := os.ReadFile(filepath.Join(site.Root, results[0].Path))
+	if err != nil {
+		t.Fatal(err)
+	}
+	if want := `link: "https://example.com/poster"`; !strings.Contains(string(got), want) {
+		t.Errorf("front matter missing %q:\n%s", want, got)
+	}
+	if want := "![A poster](poster.png)\n"; !strings.HasSuffix(string(got), want) {
+		t.Errorf("body should end with %q:\n%s", want, got)
+	}
+	if !site.Exists("content/linking/a_poster/poster.png") {
+		t.Error("the image was not saved beside the page")
 	}
 }
 

@@ -32,8 +32,8 @@ Where they differ:
 | -------- | ---------------------------------- | ------------------------------- |
 | the URL  | body, as a markdown link           | `link:` front matter key        |
 | `tags`   | —                                  | the object's mymind tags        |
-| body     | the file, or else the link         | empty                           |
-| files    | saved into the page                | ignored                         |
+| body     | the file, or else the link         | the file, or else empty         |
+| files    | saved into the page                | saved into the page             |
 | filename | `YYYYMMDD_slugified_title.md`      | `slugified_title.md`, no date   |
 
 The `linking` filename carries no date prefix, matching the pages already in
@@ -43,8 +43,8 @@ The `linking` filename carries no date prefix, matching the pages already in
 
 An object saved as an upload — a PDF, an image — carries a `blob`, and often no
 URL at all. Those used to be skipped for want of anything to link to. Now the
-file *is* the page: `sharing` downloads it from `GET /objects/:id/blob` and
-writes a [leaf bundle](https://gohugo.io/content-management/page-bundles/)
+file *is* the page: both sections download it from `GET /objects/:id/blob` and
+write a [leaf bundle](https://gohugo.io/content-management/page-bundles/)
 instead of a plain page.
 
 ```
@@ -66,13 +66,19 @@ through untouched — including the `/images/mastodon/…` paths that
 | ------------------------- | ------------------------------------------------ |
 | an image                  | `![title](photo.jpg)`                             |
 | any other file            | `[the uploaded name.pdf](the_uploaded_name.pdf)`  |
-| a file *and* a source URL | the file alone                                    |
+| a file *and* a source URL | the file alone (`sharing`)                        |
 
-The body is the file **or** the link, never both. An object's `source.url` is
-where mymind fetched the bytes from, so for an upload it is the file's own
-address on somebody's CDN — a link that would send the reader to the very thing
-the page is already showing them. For the same reason the file's name, not that
-URL's host, is what names an untitled page.
+In a `sharing` body the file and the link never appear together. An object's
+`source.url` is where mymind fetched the bytes from, so for an upload it is the
+file's own address on somebody's CDN — a link that would send the reader to the
+very thing the page is already showing them. For the same reason the file's
+name, not that URL's host, is what names an untitled page.
+
+On a `linking` page the two do not compete: the link lives in the `link:` front
+matter key and the file in the body, so an object carrying both keeps both. An
+object with only a file gets a bundle and an empty `link: ""` — written
+explicitly, because the archetype ships a placeholder `link: https://` that
+would otherwise survive and render a 🌍 link to nowhere.
 
 The saved filename is derived, never taken: the uploaded name is slugified (the
 object's title stands in when mymind kept no name), and the extension comes from
@@ -80,10 +86,6 @@ the MIME type. The type itself is read from the object, then from the download's
 `Content-Type`, and failing both from the bytes — mymind's media host serves
 uploads as `application/octet-stream`, which would otherwise leave an image
 looking like an anonymous file to link rather than show.
-
-`linking` deliberately does not do any of this. A linking page is a pointer at
-somebody else's URL, so a file is no substitute for one, and an object with only
-a file is still skipped there.
 
 Pages are scaffolded with `hugo new content content/<section>/<file>.md`, so
 the archetypes stay the source of truth for `showDate`, `draft` and anything
@@ -177,7 +179,7 @@ mymind tags. Leave it unticked to publish for real.
   suffix. A page and a bundle of the same name compete for it: Hugo renders both
   at the same URL and refuses to build a site holding the two.
 - **Objects with neither a link nor a file are skipped.** A plain note tagged
-  `share` has nothing to publish. It is reported and left **untagged**, so it
+  `share` or `keep` has nothing to publish. It is reported and left **untagged**, so it
   gets picked up again once it has one. A skip is not a failure — the rest of
   the batch still publishes.
 - **A file that will not download fails its object rather than publishing
@@ -196,7 +198,7 @@ conventions — with every example pointing at real code in this directory.
 `internal/publisher/mapping.go` holds a registry of `Mapping` values. A mapping
 declares the Hugo section, the trigger tag, the done tag, and a `Build` function
 turning an object into a `Page`. `Page.Extra` carries section-specific front
-matter — for a future `linking` type that would be the archetype's `link:` key.
+matter — for `linking` that is the archetype's `tags:` and `link:` keys.
 Register the new mapping and it becomes available as `-type <name>`.
 
 ## API notes

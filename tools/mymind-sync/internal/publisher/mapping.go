@@ -43,9 +43,7 @@ type Mapping struct {
 	// Filename builds the page's filename (no directory). Sections do not
 	// agree: sharing prefixes the date, linking does not.
 	Filename func(page Page) string
-	// Files says whether the section publishes the file an object carries. A
-	// sharing page can be the file itself; a linking page is a pointer at
-	// somebody else's URL, so a file has no place on it.
+	// Files says whether the section publishes the file an object carries.
 	Files bool
 	// Build converts an object into a page. asset is the file that will be
 	// saved into the page's bundle, or nil when the object carries none. now is
@@ -164,34 +162,42 @@ func sharingBody(sourceURL string, asset *Asset, title string) string {
 //	tags        <- the object's mymind tags
 //	link        <- source.url, in the front matter rather than the body
 //	description <- first note, falling back to the AI summary
+//	body        <- the attached file, when there is one
 //
-// Unlike sharing, the filename carries no date prefix — matching the existing
-// pages in content/linking/ — and the body is left empty, because the whole
-// point of a linking page is the `link:` key.
+// Unlike sharing, the filename carries no date prefix, matching the existing
+// pages in content/linking/. And the link does not compete with the file: it
+// lives in the front matter, so a page can carry both.
 var linking = Mapping{
 	Name:      "linking",
 	Section:   "linking",
 	SourceTag: "keep",
 	DoneTag:   "keeped",
+	Files:     true,
 	Filename: func(page Page) string {
 		return hugosite.Slugify(page.Title) + ".md"
 	},
-	Build: func(obj mymind.Object, _ *Asset, now time.Time) (Page, error) {
-		// Unlike sharing, a file is no substitute for a link here: the whole
-		// point of a linking page is that it points somewhere else.
+	Build: func(obj mymind.Object, asset *Asset, now time.Time) (Page, error) {
+		// Same rule as sharing: a page needs something to point at or something
+		// to show. An object with neither — a plain note — is skipped and left
+		// untagged, to be picked up again once it has one.
 		sourceURL := obj.SourceURL()
-		if sourceURL == "" {
-			return Page{}, fmt.Errorf("no link attached (source.url is empty)")
+		if sourceURL == "" && asset == nil {
+			return Page{}, fmt.Errorf("nothing to publish (no link and no file attached)")
 		}
 
 		tags := tagsFor(obj, "keeped")
+		title := titleFor(obj, sourceURL, asset)
 
 		return Page{
-			Title:       titleFor(obj, sourceURL, nil),
+			Title:       title,
 			Date:        pageDate(obj, now),
 			Description: htmlDescription(obj, tags),
+			Body:        asset.Markdown(title),
 			Extra: []hugosite.Field{
 				{Key: "tags", Value: hugosite.YAMLStringSlice(tags)},
+				// Written even when empty. The archetype ships a placeholder
+				// `link: https://`, and leaving that in place on a page with no
+				// link of its own would render a 🌍 link to nowhere.
 				{Key: "link", Value: hugosite.YAMLString(sourceURL)},
 			},
 		}, nil
