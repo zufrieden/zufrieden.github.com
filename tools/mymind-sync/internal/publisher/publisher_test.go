@@ -674,9 +674,10 @@ func TestPDFIsLinkedByItsUploadedName(t *testing.T) {
 	}
 }
 
-// An object that has both — an image saved from a web page — keeps its link.
-// The file is the substance, the URL is where it came from.
-func TestFileAndLinkBothAppear(t *testing.T) {
+// An object that has both keeps only the file. mymind's source URL for an
+// upload is where the bytes were fetched from — the image's own address on a
+// CDN — so linking it would point the reader at what the page already shows.
+func TestAFileLeavesTheSourceURLOffThePage(t *testing.T) {
 	mapping, _ := Lookup("sharing")
 	site := newTestSite(t)
 	client := &fakeClient{
@@ -699,9 +700,12 @@ func TestFileAndLinkBothAppear(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	want := "![A poster](poster.png)\n\n[https://example.com/poster](https://example.com/poster)\n"
+	want := "![A poster](poster.png)\n"
 	if !strings.HasSuffix(string(got), want) {
 		t.Errorf("body should end with %q:\n%s", want, got)
+	}
+	if strings.Contains(string(got), "https://example.com/poster") {
+		t.Errorf("the source URL should not reach the page:\n%s", got)
 	}
 }
 

@@ -114,7 +114,7 @@ func Names() []string {
 //	title       <- object title
 //	date        <- the day it was saved in mymind (object.created)
 //	description <- first note, falling back to the AI summary
-//	body        <- the attached file, then the source URL as a markdown link
+//	body        <- the attached file, or else the source URL as a markdown link
 var sharing = Mapping{
 	Name:      "sharing",
 	Section:   "sharing",
@@ -146,18 +146,15 @@ var sharing = Mapping{
 	},
 }
 
-// sharingBody puts the file first and its provenance after it: an uploaded
-// image or PDF is the substance of the page, and the source URL — which most
-// uploads do not have at all — is a pointer at where it came from.
+// sharingBody is the file when there is one, and the link otherwise — never
+// both. An object's source URL is where mymind fetched the bytes from, so for
+// an upload it is the file's own address on somebody's CDN: a link that shows
+// the reader the same thing the page is already showing them.
 func sharingBody(sourceURL string, asset *Asset, title string) string {
-	blocks := make([]string, 0, 2)
-	if markdown := asset.Markdown(title); markdown != "" {
-		blocks = append(blocks, markdown)
+	if asset != nil {
+		return asset.Markdown(title)
 	}
-	if sourceURL != "" {
-		blocks = append(blocks, markdownLink(sourceURL))
-	}
-	return strings.Join(blocks, "\n\n")
+	return markdownLink(sourceURL)
 }
 
 // linking maps a mymind object onto content/linking/:
@@ -308,20 +305,22 @@ func resolveWikiLinks(raw string, linkableTags []string) string {
 	return b.String()
 }
 
-// titleFor names the page: the object's own title, then the host it was saved
-// from, then the name of the file it carries — an upload has no host, and its
-// filename is the only thing left that says what it is.
+// titleFor names the page: the object's own title, then the name of the file it
+// carries, then the host it was saved from. The file comes before the host for
+// the same reason its source URL never reaches the page — that URL points at
+// some CDN, and "carbon-media.accelerator.net" is a worse heading than the
+// name the file was uploaded under.
 func titleFor(obj mymind.Object, sourceURL string, asset *Asset) string {
 	if title := singleLine(obj.Title); title != "" {
 		return title
-	}
-	if parsed, err := url.Parse(sourceURL); err == nil && parsed.Host != "" {
-		return strings.TrimPrefix(parsed.Host, "www.")
 	}
 	if asset != nil {
 		if label := singleLine(strings.TrimSuffix(asset.Label, path.Ext(asset.Label))); label != "" {
 			return label
 		}
+	}
+	if parsed, err := url.Parse(sourceURL); err == nil && parsed.Host != "" {
+		return strings.TrimPrefix(parsed.Host, "www.")
 	}
 	return "Untitled"
 }

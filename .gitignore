@@ -13,6 +13,7 @@ source/stylesheets/screen.css
 vendor
 node_modules
 .hugo_build.lock
+resources/_gen
 
 # mymind-sync
 tools/mymind-sync/.env

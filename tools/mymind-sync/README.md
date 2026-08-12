@@ -32,7 +32,7 @@ Where they differ:
 | -------- | ---------------------------------- | ------------------------------- |
 | the URL  | body, as a markdown link           | `link:` front matter key        |
 | `tags`   | —                                  | the object's mymind tags        |
-| body     | the file, then the markdown link   | empty                           |
+| body     | the file, or else the link         | empty                           |
 | files    | saved into the page                | ignored                         |
 | filename | `YYYYMMDD_slugified_title.md`      | `slugified_title.md`, no date   |
 
@@ -62,11 +62,17 @@ hook (`layouts/_default/_markup/render-image.html`) resizes a bundled image to
 through untouched — including the `/images/mastodon/…` paths that
 [`mastodon-sync`](../mastodon-sync/) writes into `static/`.
 
-| the object                | the body                                       |
-| ------------------------- | ---------------------------------------------- |
-| an image                  | `![title](photo.jpg)`                           |
-| any other file            | `[the uploaded name.pdf](the_uploaded_name.pdf)` |
-| a file *and* a source URL | the file, then the link beneath it              |
+| the object                | the body                                         |
+| ------------------------- | ------------------------------------------------ |
+| an image                  | `![title](photo.jpg)`                             |
+| any other file            | `[the uploaded name.pdf](the_uploaded_name.pdf)`  |
+| a file *and* a source URL | the file alone                                    |
+
+The body is the file **or** the link, never both. An object's `source.url` is
+where mymind fetched the bytes from, so for an upload it is the file's own
+address on somebody's CDN — a link that would send the reader to the very thing
+the page is already showing them. For the same reason the file's name, not that
+URL's host, is what names an untitled page.
 
 The saved filename is derived, never taken: the uploaded name is slugified (the
 object's title stands in when mymind kept no name), and the extension comes from
