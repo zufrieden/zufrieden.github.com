@@ -1,23 +1,24 @@
 /* color sheme https://coolors.co/f7eae3-64b78e-59a37e-302f4d-120d31 */
 
 :root {
---bg-color: hsla(21, 52%, 94%, 1);
---snow-bg-color: hsla(215, 59%, 43%, 1);
---snow-bg-color-light: hsla(215, 59%, 50%, 1);
---link-color: hsla(215, 59%, 43%, 1);
---link-color-hover: hsla(215, 59%, 50%, 1);
---link-color-visited: hsla(255, 46%, 42%, 1);
---text-color: hsla(202, 85%, 5%, 1);
+--bg-color: hsl(21, 52%, 94%);
+--snow-bg-color: hsl(215, 59%, 43%);
+--snow-bg-color-light: hsl(215, 59%, 50%);
+--link-color: hsl(215, 59%, 43%);
+--link-color-hover: hsl(215, 59%, 50%);
+--link-color-visited: hsl(255, 46%, 42%);
+--text-color: hsl(202, 85%, 5%);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-color: hsla(202, 85%, 4%, 1);
-    --snow-bg-color: hsla(202, 85%, 8%, 1);
-    --snow-bg-color-light: hsla(202, 85%, 12%, 1);
-    --link-color: hsla(215, 100%, 59.6%, 0.9);
-    --link-color-hover: hsla(215, 100%, 59.6%, 1);
-    --link-color-visited: hsla(255, 100%, 69.4%, 0.96);
+    --bg-color: hsl(202, 85%, 4%);
+    --snow-bg-color: hsl(202, 85%, 8%);
+    --snow-bg-color-light: hsl(202, 85%, 12%);
+    /* Opaque equivalents of the former semi-transparent values, flattened over --bg-color */
+    --link-color: hsl(215, 80%, 54%);
+    --link-color-hover: hsl(215, 100%, 59.6%);
+    --link-color-visited: hsl(255, 89%, 67%);
     --text-color: hsl(20, 60%, 98%);
     }
 }
